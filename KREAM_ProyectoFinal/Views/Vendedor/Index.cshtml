@@ -1,0 +1,399 @@
+﻿<script>
+    // Ejecuta la función al cargar la página
+    document.addEventListener('DOMContentLoaded', actualizarContadorCarrito);
+</script>
+
+
+<style>
+
+    .card-body {
+        flex: 1 1 auto;
+        padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+        color: var(--bs-card-color);
+        height: 520px;
+    }
+
+
+    .carousel-item {
+        text-align: center;
+        overflow: hidden;
+    }
+
+        .carousel-item img {
+            max-height: 300px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+    .carousel-indicators {
+        bottom: 10px;
+    }
+
+        .carousel-indicators button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .carousel-indicators [data-bs-target] {
+            box-sizing: content-box;
+            flex: 0 1 auto;
+            width: 12px;
+            height: 18px;
+            padding: 0;
+            margin-right: 3px;
+            margin-left: 3px;
+            text-indent: -999px;
+            cursor: pointer;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            transition: opacity 0.6s ease;
+        }
+
+
+
+
+
+
+
+
+    /*Lo que sigue controla que todas las imagenes tengan el mismo tamaño y un width ya heredado de 100%*/
+    .img-container {
+        height: 232px; /* Altura deseada */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ddd; /* Color de fondo si no hay imagen */
+    }
+
+    .img-fluid {
+        height: 232px;
+        object-fit: cover;
+    }
+
+    button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
+        cursor: pointer;
+        opacity: 1;
+    }
+
+
+    .contenedor-filtros {
+        /* border: solid 1px; */
+        display: table;
+        color: white;
+        align-items: center;
+        padding: 30px;
+        width: 98%;
+        margin: auto;
+        background: #54c47c;
+        box-shadow: 0px 94px 277px -6px #ffffff;
+    }
+
+
+    body {
+        /*background-image: url('/Content/images/fondoPrincipal.jpg');*/
+        background-color: #fff
+    }
+
+
+
+    .button-85 {
+        padding: 0.6em 2em;
+        border: none;
+        outline: none;
+        color: rgb(255, 255, 255);
+        background: #111;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+        .button-85:before {
+            content: "";
+            background: linear-gradient( 45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000 );
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            -webkit-filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing-button-85 20s linear infinite;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 10px;
+        }
+
+    @@keyframes glowing-button-85 {
+        0% {
+            background-position: 0 0;
+        }
+
+        50% {
+            background-position: 400% 0;
+        }
+
+        100% {
+            background-position: 0 0;
+        }
+    }
+
+    .button-85:after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #222;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+    }
+
+    .button-29 {
+        align-items: center;
+        appearance: none;
+        background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+        border: 0;
+        border-radius: 6px;
+        box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: inline-flex;
+        font-family: "JetBrains Mono",monospace;
+        height: 48px;
+        justify-content: center;
+        line-height: 1;
+        list-style: none;
+        overflow: hidden;
+        padding-left: 16px;
+        padding-right: 16px;
+        position: relative;
+        text-align: left;
+        text-decoration: none;
+        transition: box-shadow .15s,transform .15s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+        will-change: box-shadow,transform;
+        font-size: 18px;
+    }
+
+
+
+    .boton-agregar-carrito {
+        height: 31px;
+        margin-left: 5px;
+        width: 282%;
+        padding: 1px;
+    }
+
+        .boton-agregar-carrito svg {
+            width: 21px;
+            height: 20px;
+        }
+
+    .card:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        transform: scale(1.02);
+        transition: all 0.3s ease;
+    }
+</style>
+
+
+<!--                                     VENDEDOR                                                   -->
+
+<main>
+
+    <!-- Filtro de búsqueda -->
+    <div class="contenedor-filtros mb-4">
+
+        <form method="get" action="@Url.Action("Index", "Vendedor")">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="Categoria">Categoria:</label>
+                    <input type="text" class="form-control" id="Categoria" name="Categoria" placeholder="Cualquier tipo" />
+                </div>
+
+                <div class="col-md-2 mb-3">
+                    <button type="submit" class="btn btn-success">Buscar</button>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+
+
+    <div class="container mt-4">
+
+        <h2 class="mb-4" style="color: white;">Lista de Tours | @ViewBag.UsuarioActual  </h2> <!--USAMOS VIEWBAGS PARA JALAR DE CONTROLADOR EL DATO DEL USUARIOACTUAL QUE DECLARAMOS EN EL CONTROLER-->
+
+        <a class="btn btn-primary mb-4" href="@Url.Action("Add")">Agregar</a>
+
+        <div class="row">
+            @foreach (var producto in Model)
+            {
+                <div class="col-md-4 col-lg-4 mb-4">
+                    <!--Esta linea lo que hace es que en pantallas grandes y medianas cambie a 3 columnas , de esta fomra vamos a dejar espacio para el buscador de tennis  | como esta puesto con 4 es como decir 12/4 = 3 12 porque bootstrap usa ese sistema de 12 -->
+                    <div class="card">
+                        <div class="card-body">
+
+
+                            <h5 class="card-title" style="height:100px !important">@producto.Nombre</h5>
+                            <p class="card-text" style="height:35px !important">@producto.Lugar | @producto.Personas personas | @producto.Categoria</p>
+                            <p class="card-text"><strong>Precio: @string.Format("${0:N2}", producto.Precio) | @producto.CantidadEnStock Disponibles </strong></p>
+
+
+                            <!-- Contenedor del carrusel para cada tarjeta -->
+                            <div id="carouselProducto@(producto.ProductoID)" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
+                                <!--hace que la transicion dure 10 segundos salvo que la persona cambie a otra imagen-->
+                                <div class="carousel-inner">
+                                    @for (int i = 0; i < 3; i++)
+                                    {
+                                        <div class="carousel-item @(i == 0 ? "active" : "")">
+                                            @if (i == 0 && producto.Imagen != null && producto.Imagen.Length > 0)
+                                            {
+                                                <img src="data:image/png;base64,@Convert.ToBase64String(producto.Imagen)" alt="Imagen del Producto" class="img-fluid" />
+                                            }
+
+                                            <!--Cuando no hay imagen -->
+                                            @if (i == 0 && (producto.Imagen == null || producto.Imagen.Length == 0))
+                                            {
+                                                <!--Este codigo lo que hace es decirle , si por alguna razon no hay imagen , mantente del mismo tamaño como si hubiera , esto para que no choque el estilo de las cosas ni las imagenes en caso que la persona no haya metido una imagen o solo tenga 2 de 3 digamos -->
+                                                <!--Ademas con pasar la variable tambien va a decir cual es la imagen que no se ha subido por si le interesa al vendedor-->
+                                                <div style="height: 232px;  display: flex; justify-content: center; align-items: center;">
+                                                    <p style="font-size: x-large; color: #0d6efd;">Sin Imagen [@i]</p>
+                                                </div>
+                                            }
+
+
+                                            @if (i == 1 && producto.Imagen2 != null && producto.Imagen2.Length > 0)
+                                            {
+                                                <img src="data:image/png;base64,@Convert.ToBase64String(producto.Imagen2)" alt="Segunda Imagen del Producto" class="img-fluid" />
+                                            }
+
+
+                                            <!--Cuando no hay imagen -->
+                                            @if (i == 1 && (producto.Imagen2 == null || producto.Imagen2.Length == 0))
+                                            {
+                                                <!--Este codigo lo que hace es decirle , si por alguna razon no hay imagen , mantente del mismo tamaño como si hubiera , esto para que no choque el estilo de las cosas ni las imagenes en caso que la persona no haya metido una imagen o solo tenga 2 de 3 digamos -->
+
+                                                <div style="height: 232px; display: flex; justify-content: center; align-items: center;">
+                                                    <p style="font-size: x-large; color: #0d6efd;">Sin Imagen [@i]</p>
+                                                </div>
+                                            }
+
+                                            @if (i == 2 && producto.Imagen3 != null && producto.Imagen3.Length > 0)
+                                            {
+                                                <img src="data:image/png;base64,@Convert.ToBase64String(producto.Imagen3)" alt="Tercera Imagen del Producto" class="img-fluid" />
+                                            }
+
+
+                                            <!--Cuando no hay imagen -->
+                                            @if (i == 2 && (producto.Imagen3 == null || producto.Imagen3.Length == 0))
+                                            {
+                                                <!--Este codigo lo que hace es decirle , si por alguna razon no hay imagen , mantente del mismo tamaño como si hubiera , esto para que no choque el estilo de las cosas ni las imagenes en caso que la persona no haya metido una imagen o solo tenga 2 de 3 digamos -->
+
+                                                <div style="height: 232px; display: flex; justify-content: center; align-items: center;">
+                                                    <p style="font-size: x-large; color: #0d6efd;">Sin Imagen [@i]</p>
+                                                </div>
+                                            }
+
+
+
+                                        </div>
+                                    }
+                                </div>
+
+
+
+                                <!-- Controles personalizados -->
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselProducto@(producto.ProductoID)" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselProducto@(producto.ProductoID)" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+
+                            </div>
+
+
+                            <!-- Acciones -->
+                            <div class="mt-3">
+                                <a class="btn btn-secondary" href="@Url.Action("Edit", new { ProductoID = @producto.ProductoID })">Editar</a>
+                                <a class="btn btn-danger" href="@Url.Action("Delete", new { ProductoID = @producto.ProductoID })" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?');">Eliminar</a>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+
+</main>
+<a href="@Url.Action("Index", "Home")" class="btn btn-success">Regresar al menú principal</a>
+<script>
+    // Inicializar los carruseles al cargar la página
+    @foreach (var producto in Model)
+    {
+        <text>
+        var carouselProducto@(producto.ProductoID) = new bootstrap.Carousel(document.getElementById('carouselProducto@(producto.ProductoID)'));
+        </text>
+    }
+</script>
+
+
+
+
+
+<!-- Agregar Font Awesome y Bootstrap (popper.js y bootstrap.js) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+
+<style>
+    .floating-buttons {
+        position: fixed;
+        bottom: 50%;
+        right: 20px;
+        transform: translateY(50%);
+    }
+
+        .floating-buttons a {
+            display: block;
+            margin-bottom: 10px;
+        }
+</style>
+
+<script>
+    // Inicializar tooltips de Bootstrap
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
+
+
+
+
+

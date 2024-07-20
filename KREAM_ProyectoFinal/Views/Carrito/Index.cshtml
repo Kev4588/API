@@ -1,0 +1,199 @@
+﻿@using KREAM_ProyectoFinal.Models.ViewModel
+
+@{
+    ViewBag.Title = "Carrito";
+    var usuario = Session["UsuarioActual"] as UsersViewModel;
+    var productosEnCarritoIds = new List<int>();
+
+    // Verificar si ProductosEnCarrito no es nulo ni está vacío
+    if (!string.IsNullOrEmpty(usuario.ProductosEnCarrito))
+    {
+        // Realizar la operación Split solo si hay productos en el carrito
+        productosEnCarritoIds = usuario.ProductosEnCarrito.Split(',').Select(int.Parse).ToList();
+    }
+}
+
+<div class="container mt-4">
+    <h3 class="text-center mb-4">Carrito de @usuario.Nombre | Llevas @productosEnCarritoIds.Count productos en el carrito</h3>
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Producto</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio Unitario</th>
+                <th scope="col"></th> <!-- Espacio para el botón "Quitar" -->
+            </tr>
+        </thead>
+        <tbody>
+            @if (ViewBag.DetallesProductosEnCarrito != null && ViewBag.DetallesProductosEnCarrito.Count > 0)
+            {
+                foreach (var producto in ViewBag.DetallesProductosEnCarrito)
+                {
+                    <tr>
+                        <td>@producto.Nombre</td>
+                        <td>@producto.Cantidad</td>
+                        <td>$@producto.Precio</td>
+                        <td>
+                            <form method="post" action="@Url.Action("QuitarProducto", "Carrito")">
+                                <input type="hidden" name="productoId" value="@producto.ProductoID" />
+                                <button type="submit" class="btn btn-danger">Quitar</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+
+                <!-- Total General -->
+                <tr>
+                    <td colspan="3" class="text-right">Total General:</td>
+                    <td>@ViewBag.TotalGeneral.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture("en-US"))</td>
+                </tr>
+
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4" class="text-center">No hay productos en el carrito</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Botones de regresar y comprar -->
+    <div class="d-flex justify-content-between">
+        <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Regresar</a>
+        <a href="@Url.Action("PasarelaPago", "Carrito")" class="btn btn-success">Comprar</a>
+    </div>
+</div>
+
+
+
+
+
+
+
+<style>
+    body {
+        background-color: #fff;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        margin: 0;
+        font-family: var(--bs-body-font-family);
+        font-size: var(--bs-body-font-size);
+        font-weight: var(--bs-body-font-weight);
+        line-height: var(--bs-body-line-height);
+        color: var(--bs-body-color);
+        text-align: var(--bs-body-text-align);
+        background-color: var(--bs-body-bg);
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    .body-content {
+        margin-top: 15px;
+        max-width: fit-content;
+        padding: 50;
+        padding-right: 15px;
+        display: flex;
+        align-items: center;
+        border: solid 33px white;
+        margin-top: 25px;
+        justify-content: center;
+        box-shadow: 0px 0px 10px 10px #00c2cb;
+        background-color: black;
+        /* opacity: -27.8; */
+        /* background-image: url(/Content/images/fondoPrincipal.jpg); */
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .mt-4 {
+        margin-top: 1.5rem !important;
+        width: 100%;
+    }
+
+
+
+
+
+    @@keyframes glowing-button-85 {
+        0% {
+            background-position: 0 0;
+        }
+
+        50% {
+            background-position: 400% 0;
+        }
+
+        100% {
+            background-position: 0 0;
+        }
+    }
+
+
+
+
+
+
+    .table {
+        width: 100%;
+    }
+
+        .table th,
+        .table td {
+            border: 1px solid #dee2e6;
+            padding: 8px;
+            vertical-align: middle;
+        }
+
+        .table th {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f8f9fa;
+    }
+
+    .btn {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--ACCION PARA CUANDO SE PULSA EL BOTON COMPRAR MOSTRAR UN WARNING DE QUE SE COMPLETO Y DEVOLVE AL USUARIO A LA TIENDA -->
+<script>
+
+
+    function comprar() {
+        document.getElementById("compraForm").submit();
+    }
+</script>
+

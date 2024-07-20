@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TRAVEL2ModelStoreContainer" CdmEntityContainer="TRAVEL2Entities">
+    <EntitySetMapping Name="Comentarios">
+      <EntityTypeMapping TypeName="TRAVEL2Model.Comentarios">
+        <MappingFragment StoreEntitySet="Comentarios">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hoteles">
+      <EntityTypeMapping TypeName="TRAVEL2Model.Hoteles">
+        <MappingFragment StoreEntitySet="Hoteles">
+          <ScalarProperty Name="IDHotel" ColumnName="IDHotel" />
+          <ScalarProperty Name="TipoDeHabitacion" ColumnName="TipoDeHabitacion" />
+          <ScalarProperty Name="CantidadDePersonas" ColumnName="CantidadDePersonas" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="NombreHotel" ColumnName="NombreHotel" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="Imagen2" ColumnName="Imagen2" />
+          <ScalarProperty Name="Imagen3" ColumnName="Imagen3" />
+          <ScalarProperty Name="web" ColumnName="web" />
+          <ScalarProperty Name="ComentarioHotel" ColumnName="ComentarioHotel" />
+          <ScalarProperty Name="CalificacionHotel" ColumnName="CalificacionHotel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Productos">
+      <EntityTypeMapping TypeName="TRAVEL2Model.Productos">
+        <MappingFragment StoreEntitySet="Productos">
+          <ScalarProperty Name="ProductoID" ColumnName="ProductoID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Lugar" ColumnName="Lugar" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="Personas" ColumnName="Personas" />
+          <ScalarProperty Name="CantidadEnStock" ColumnName="CantidadEnStock" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+          <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+          <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+          <ScalarProperty Name="Vendedor" ColumnName="Vendedor" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="Imagen2" ColumnName="Imagen2" />
+          <ScalarProperty Name="Imagen3" ColumnName="Imagen3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserType">
+      <EntityTypeMapping TypeName="TRAVEL2Model.UserType">
+        <MappingFragment StoreEntitySet="UserType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserStatus" ColumnName="UserStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="DeleteUserbyId" FunctionName="TRAVEL2Model.Store.DeleteUserbyId" />
+    <FunctionImportMapping FunctionImportName="FilterProduct" FunctionName="TRAVEL2Model.Store.FilterProduct" />
+    <FunctionImportMapping FunctionImportName="GuardarComentarios" FunctionName="TRAVEL2Model.Store.GuardarComentarios" />
+    <FunctionImportMapping FunctionImportName="obtenerComentariosPorProducto" FunctionName="TRAVEL2Model.Store.obtenerComentariosPorProducto" />
+    <FunctionImportMapping FunctionImportName="ShowProducts" FunctionName="TRAVEL2Model.Store.ShowProducts" />
+    <FunctionImportMapping FunctionImportName="UpdateUser" FunctionName="TRAVEL2Model.Store.UpdateUser" />
+    <FunctionImportMapping FunctionImportName="VerifyPassword" FunctionName="TRAVEL2Model.Store.VerifyPassword" />
+    <FunctionImportMapping FunctionImportName="VerifyUser" FunctionName="TRAVEL2Model.Store.VerifyUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TRAVEL2Model.VerifyUser_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+          <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="TipoDeUsuario" ColumnName="TipoDeUsuario" />
+          <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+          <ScalarProperty Name="MarcaVendedor" ColumnName="MarcaVendedor" />
+          <ScalarProperty Name="ProductosEnCarrito" ColumnName="ProductosEnCarrito" />
+          <ScalarProperty Name="socialMediaID" ColumnName="socialMediaID" />
+          <ScalarProperty Name="PreguntaSeguridad" ColumnName="PreguntaSeguridad" />
+          <ScalarProperty Name="RespuestaPreguntaSeguridad" ColumnName="RespuestaPreguntaSeguridad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="VerifyUserCedula" FunctionName="TRAVEL2Model.Store.VerifyUserCedula">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TRAVEL2Model.VerifyUserCedula_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+          <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="TipoDeUsuario" ColumnName="TipoDeUsuario" />
+          <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+          <ScalarProperty Name="MarcaVendedor" ColumnName="MarcaVendedor" />
+          <ScalarProperty Name="ProductosEnCarrito" ColumnName="ProductosEnCarrito" />
+          <ScalarProperty Name="socialMediaID" ColumnName="socialMediaID" />
+          <ScalarProperty Name="PreguntaSeguridad" ColumnName="PreguntaSeguridad" />
+          <ScalarProperty Name="RespuestaPreguntaSeguridad" ColumnName="RespuestaPreguntaSeguridad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="VerifyUserGmail" FunctionName="TRAVEL2Model.Store.VerifyUserGmail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TRAVEL2Model.VerifyUserGmail_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+          <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="TipoDeUsuario" ColumnName="TipoDeUsuario" />
+          <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+          <ScalarProperty Name="MarcaVendedor" ColumnName="MarcaVendedor" />
+          <ScalarProperty Name="ProductosEnCarrito" ColumnName="ProductosEnCarrito" />
+          <ScalarProperty Name="socialMediaID" ColumnName="socialMediaID" />
+          <ScalarProperty Name="PreguntaSeguridad" ColumnName="PreguntaSeguridad" />
+          <ScalarProperty Name="RespuestaPreguntaSeguridad" ColumnName="RespuestaPreguntaSeguridad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="VerifyUserSocialMedia" FunctionName="TRAVEL2Model.Store.VerifyUserSocialMedia">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TRAVEL2Model.VerifyUserSocialMedia_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+          <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="TipoDeUsuario" ColumnName="TipoDeUsuario" />
+          <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+          <ScalarProperty Name="MarcaVendedor" ColumnName="MarcaVendedor" />
+          <ScalarProperty Name="ProductosEnCarrito" ColumnName="ProductosEnCarrito" />
+          <ScalarProperty Name="socialMediaID" ColumnName="socialMediaID" />
+          <ScalarProperty Name="PreguntaSeguridad" ColumnName="PreguntaSeguridad" />
+          <ScalarProperty Name="RespuestaPreguntaSeguridad" ColumnName="RespuestaPreguntaSeguridad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="TRAVEL2Model.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="RespuestaPreguntaSeguridad" ColumnName="RespuestaPreguntaSeguridad" />
+          <ScalarProperty Name="PreguntaSeguridad" ColumnName="PreguntaSeguridad" />
+          <ScalarProperty Name="socialMediaID" ColumnName="socialMediaID" />
+          <ScalarProperty Name="ProductosEnCarrito" ColumnName="ProductosEnCarrito" />
+          <ScalarProperty Name="MarcaVendedor" ColumnName="MarcaVendedor" />
+          <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+          <ScalarProperty Name="TipoDeUsuario" ColumnName="TipoDeUsuario" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+          <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

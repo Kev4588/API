@@ -1,0 +1,201 @@
+﻿@using KREAM_ProyectoFinal.Models.ViewModel
+
+@{
+    ViewBag.Title = "Perfil";
+    var usuario = Session["UsuarioActual"] as UsersViewModel;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link href="~/Content/bootstrap-utilities.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-grid.min.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"
+            integrity="sha512-WMEKGZ7L5LWgaPeJtw9MBM4i5w5OSBlSjTjCtSnvFJGSVD26gE5+Td12qN5pvWXhuWaWcVwF++F7aqu9cvqP0A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+
+
+
+        .topbar {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: stretch;
+            justify-content: space-evenly;
+            height: 5vh;
+            margin-bottom: 25px;
+        }
+
+        .tabs {
+            display: flex;
+            flex-grow: 1;
+            justify-content: center;
+            align-items: stretch;
+            justify-content: center;
+        }
+
+        .opciones {
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            font-family: Staatliches;
+            font-size: 15px;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style="border-bottom: 2px solid #a9a7a2bc; padding-bottom: 0px; padding-top: 0px">
+        <a class="navbar-brand" href="#" style="font-family: 'Stalinist One'; font-size: 28px; padding-left: 20px">
+            K.R.E.A.M
+        </a>
+        <div class="container" style="font-family: Staatliches">
+
+            @if (ViewBag.TipoUsuario == 1) // ADMIN
+            {
+                <!-- Imprimiendo el nombre de la persona según su nombre y sexo (bienvenido/bienvenida) registrado -->
+                @Html.ActionLink("ENTRO EN EL IF ADMIN", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+            }
+            else if (ViewBag.TipoUsuario == 2) // VENDEDOR
+            {
+                @Html.ActionLink("ENTRO EN EL IF VENDEDOR", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+            }
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar navegación" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+
+                    @if (ViewBag.TipoUsuario == 1) // ADMIN
+                    {
+                        <li>@Html.ActionLink("MENU ADMIN", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Acerca de", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Contacto", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+
+
+                    }
+                    else if (ViewBag.TipoUsuario == 2) // VENDEDOR
+                    {
+                        <li>@Html.ActionLink("MENU VENDEDOR", "Index", "Vendedor", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Acerca de", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Contacto", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+
+                    }
+                    else if (ViewBag.TipoUsuario == 3) // COMPRADOR
+                    {
+
+                        <li>@Html.ActionLink("MENU COMPRADOR", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Acerca de", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Contacto", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    }
+
+
+                </ul>
+
+
+
+                <!--CODIGO PARA QUE LA PERSONA HAGA LOG OUT Y SUELTE EL USERSESSION  | esto solo pasa si la persona no es Null o si ya se logueo sino no sale-->
+                <!-- PARA USAR ESTO PRIMERO TIENEN QUE ESTAR SEGUROS QUE EL HEADER DE ESTA PAGINA CONTIENE LOS CONTROLADORES NECESARIOS , YA LUEGO SI USAN USUARIO.[LO QUE QUIERAN]-->
+                <div class="d-flex">
+                    @if (usuario != null)
+                    {
+                        <span class="text-dark font-weight-bold my-auto mx-1">Bienvenido: @usuario.Nombre </span>
+                        <span class="text-dark font-weight-bold my-auto mx-3">
+                            <i class="bi bi-person-circle"></i>  @ViewBag.UserSession
+                        </span>
+                        <a href="@Url.Action("Logout","Login")" class="btn btn-outline-primary" title="Cerrar Sesión">
+                            <i class="bi bi-box-arrow-right"></i>
+                        </a>
+                    }
+                </div>
+
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="topbar">
+        <div class="tabs">
+            <div class="opciones" style="border-left: 2px solid #a9a7a2bc">Perfil</div>
+            <div class="opciones">Informacion de Pago</div>
+            <div class="opciones">Productos</div>
+            <div class="opciones" style="border-right: 2px solid #a9a7a2bc">Configuracion</div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+
+
+
+    </div>
+    @RenderBody()
+    <hr />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer style="margin: 0px;">
+        <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+    </footer>
+
+    @*<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"
+            integrity="sha512-WMEKGZ7L5LWgaPeJtw9MBM4i5w5OSBlSjTjCtSnvFJGSVD26gE5+Td12qN5pvWXhuWaWcVwF++F7aqu9cvqP0A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>*@
+
+
+
+
+
+
+</body>
+
+
+</html>

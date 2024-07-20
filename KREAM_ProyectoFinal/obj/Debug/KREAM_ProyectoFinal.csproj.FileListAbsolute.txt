@@ -1,0 +1,900 @@
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy - Copy.png
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy.png
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Content\Images\logindunks.png
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll.config
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.pdb
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\csc.exe
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\csc.exe.config
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\csc.rsp
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\csi.exe
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\csi.exe.config
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\csi.rsp
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Buffers.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Memory.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\vbc.exe
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\vbc.exe.config
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\vbc.rsp
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Antlr3.Runtime.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Newtonsoft.Json.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Helpers.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Mvc.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Optimization.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Razor.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\WebGrease.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.xml
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.xml
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Newtonsoft.Json.xml
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Helpers.xml
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Mvc.xml
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Razor.xml
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.xml
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.xml
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Optimization.xml
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Antlr3.Runtime.pdb
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Razor.resources.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.AssemblyReference.cache
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.CopyComplete
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.dll
+C:\Users\Gabriel\Documents\GitHub\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.pdb
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.AssemblyReference.cache
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.CoreCompileInputs.cache
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.pdb
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy - Copy.png
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy.png
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Content\Images\logindunks.png
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll.config
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.pdb
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\csc.exe
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\csc.exe.config
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\csc.rsp
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\csi.exe
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\csi.exe.config
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\csi.rsp
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Buffers.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Memory.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\vbc.exe
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\vbc.exe.config
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\vbc.rsp
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Antlr3.Runtime.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Newtonsoft.Json.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Helpers.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Mvc.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Optimization.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Razor.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\WebGrease.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.xml
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.xml
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Newtonsoft.Json.xml
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Helpers.xml
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Mvc.xml
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Razor.xml
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.xml
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.xml
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.xml
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Optimization.xml
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Antlr3.Runtime.pdb
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Helpers.resources.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Mvc.resources.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Razor.resources.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.resources.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Optimization.resources.dll
+C:\Users\DFV Asesores\Documents\GitHub\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.CopyComplete
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.AssemblyReference.cache
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.CoreCompileInputs.cache
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.pdb
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.AssemblyReference.cache
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.CoreCompileInputs.cache
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.pdb
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy - Copy.png
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy.png
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\Content\Images\logindunks.png
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll.config
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.pdb
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\csc.exe
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\csc.exe.config
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\csc.rsp
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\csi.exe
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\csi.exe.config
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\csi.rsp
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.targets
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Buffers.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Collections.Immutable.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Memory.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Numerics.Vectors.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Reflection.Metadata.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\vbc.exe
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\vbc.exe.config
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\vbc.rsp
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe.config
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\Antlr3.Runtime.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\Microsoft.Web.Infrastructure.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\Newtonsoft.Json.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.Helpers.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.Mvc.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.Optimization.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.Razor.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\WebGrease.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.xml
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.xml
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\Newtonsoft.Json.xml
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.Helpers.xml
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.Mvc.xml
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.Razor.xml
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.xml
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.xml
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.xml
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.Optimization.xml
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\Antlr3.Runtime.pdb
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Helpers.resources.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Mvc.resources.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Razor.resources.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.resources.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Deployment.resources.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Razor.resources.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Optimization.resources.dll
+E:\OneDrive - ULACIT ED CR\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.CopyComplete
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy - Copy.png
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy.png
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Content\Images\logindunks.png
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll.config
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.pdb
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\csc.exe
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\csc.exe.config
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\csc.rsp
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\csi.exe
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\csi.exe.config
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\csi.rsp
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Buffers.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Memory.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\vbc.exe
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\vbc.exe.config
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\vbc.rsp
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Antlr3.Runtime.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Newtonsoft.Json.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Helpers.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Mvc.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Optimization.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Razor.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\WebGrease.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.xml
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.xml
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Newtonsoft.Json.xml
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Helpers.xml
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Mvc.xml
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Razor.xml
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.xml
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.xml
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.xml
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\System.Web.Optimization.xml
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\Antlr3.Runtime.pdb
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Helpers.resources.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Mvc.resources.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Razor.resources.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.resources.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Optimization.resources.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.CopyComplete
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy - Copy.png
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy.png
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\Content\Images\logindunks.png
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll.config
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.pdb
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\csc.exe
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\csc.exe.config
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\csc.rsp
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\csi.exe
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\csi.exe.config
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\csi.rsp
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.targets
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Buffers.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Collections.Immutable.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Memory.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Numerics.Vectors.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Reflection.Metadata.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\vbc.exe
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\vbc.exe.config
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\vbc.rsp
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe.config
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\Antlr3.Runtime.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\Microsoft.Web.Infrastructure.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\Newtonsoft.Json.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.Helpers.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.Mvc.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.Optimization.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.Razor.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\WebGrease.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.xml
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.xml
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\Newtonsoft.Json.xml
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.Helpers.xml
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.Mvc.xml
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.Razor.xml
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.xml
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.xml
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.xml
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\System.Web.Optimization.xml
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\Antlr3.Runtime.pdb
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Helpers.resources.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Mvc.resources.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Razor.resources.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.resources.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Deployment.resources.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Razor.resources.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Optimization.resources.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.AssemblyReference.cache
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.CoreCompileInputs.cache
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_Pr.08DFF21C.Up2Date
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.dll
+E:\OneDrive - ULACIT ED CR\MATERIAS GANADAS\DISEÑO DE APLICACIONES DE SOFTWARE\PROYECTO\REPOSITORIO KREAM VALE\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.pdb
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.AssemblyReference.cache
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.CoreCompileInputs.cache
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.pdb
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy - Copy.png
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy.png
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\Content\Images\logindunks.png
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll.config
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.pdb
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\csc.exe
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\csc.exe.config
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\csc.rsp
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\csi.exe
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\csi.exe.config
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\csi.rsp
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.targets
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Buffers.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Collections.Immutable.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Memory.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Numerics.Vectors.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Reflection.Metadata.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\vbc.exe
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\vbc.exe.config
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\vbc.rsp
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe.config
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\Antlr3.Runtime.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\Microsoft.Web.Infrastructure.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\Newtonsoft.Json.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\System.Web.Helpers.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\System.Web.Mvc.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\System.Web.Optimization.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\System.Web.Razor.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\WebGrease.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.xml
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.xml
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\Newtonsoft.Json.xml
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\System.Web.Helpers.xml
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\System.Web.Mvc.xml
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\System.Web.Razor.xml
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.xml
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.xml
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.xml
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\System.Web.Optimization.xml
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\Antlr3.Runtime.pdb
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Helpers.resources.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Mvc.resources.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Razor.resources.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.resources.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Deployment.resources.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Razor.resources.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Optimization.resources.dll
+E:\UNIVERSIDAD\WEB\PRUEBAS DE PROYECTOS\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_Pr.08DFF21C.Up2Date
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy - Copy.png
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy.png
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\Content\Images\logindunks.png
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll.config
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.pdb
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\csc.exe
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\csc.exe.config
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\csc.rsp
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\csi.exe
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\csi.exe.config
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\csi.rsp
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Buffers.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Memory.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\vbc.exe
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\vbc.exe.config
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\vbc.rsp
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\Antlr3.Runtime.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\Newtonsoft.Json.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\System.Web.Helpers.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\System.Web.Mvc.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\System.Web.Optimization.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\System.Web.Razor.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\WebGrease.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.xml
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.xml
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\Newtonsoft.Json.xml
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\System.Web.Helpers.xml
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\System.Web.Mvc.xml
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\System.Web.Razor.xml
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.xml
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.xml
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.xml
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\System.Web.Optimization.xml
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\Antlr3.Runtime.pdb
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Helpers.resources.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Mvc.resources.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Razor.resources.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.resources.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\bin\es\System.Web.Optimization.resources.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.AssemblyReference.cache
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.CoreCompileInputs.cache
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.CopyComplete
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.dll
+C:\Users\MARIA VALERIA J\Desktop\KREAM\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.pdb
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy - Copy.png
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy.png
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Content\Images\logindunks.png
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll.config
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.pdb
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csc.exe
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csc.exe.config
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csc.rsp
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csi.exe
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csi.exe.config
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csi.rsp
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Buffers.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Memory.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\vbc.exe
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\vbc.exe.config
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\vbc.rsp
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Antlr3.Runtime.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\EntityFramework.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Newtonsoft.Json.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Helpers.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Mvc.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Optimization.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Razor.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\WebGrease.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\EntityFramework.xml
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.xml
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Newtonsoft.Json.xml
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Helpers.xml
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Mvc.xml
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Razor.xml
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.xml
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.xml
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.xml
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Optimization.xml
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Antlr3.Runtime.pdb
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.Helpers.resources.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.Mvc.resources.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.Razor.resources.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.resources.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.Optimization.resources.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.AssemblyReference.cache
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.CoreCompileInputs.cache
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.CopyComplete
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.dll
+C:\Users\MARIA VALERIA J\Documents\GitHub\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.pdb
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy - Copy.png
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy.png
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Content\Images\logindunks.png
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll.config
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.pdb
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csc.exe
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csc.exe.config
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csc.rsp
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csi.exe
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csi.exe.config
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csi.rsp
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Buffers.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Memory.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\vbc.exe
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\vbc.exe.config
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\vbc.rsp
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Antlr3.Runtime.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\EntityFramework.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Newtonsoft.Json.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Helpers.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Mvc.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Optimization.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Razor.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\WebGrease.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\EntityFramework.xml
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.xml
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Newtonsoft.Json.xml
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Helpers.xml
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Mvc.xml
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Razor.xml
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.xml
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.xml
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.xml
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Optimization.xml
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Antlr3.Runtime.pdb
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.Helpers.resources.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.Mvc.resources.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.Razor.resources.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.resources.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.Optimization.resources.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.AssemblyReference.cache
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.CoreCompileInputs.cache
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.CopyComplete
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.dll
+C:\Users\emili\Documents\Universidad\Desarrolo Web\DestinosCaribev2\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.pdb
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy - Copy.png
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy.png
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Content\Images\logindunks.png
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll.config
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.pdb
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csc.exe
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csc.exe.config
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csc.rsp
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csi.exe
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csi.exe.config
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csi.rsp
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Buffers.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Memory.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\vbc.exe
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\vbc.exe.config
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\vbc.rsp
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Antlr3.Runtime.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\EntityFramework.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Newtonsoft.Json.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Helpers.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Mvc.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Optimization.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Razor.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\WebGrease.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\EntityFramework.xml
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.xml
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Newtonsoft.Json.xml
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Helpers.xml
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Mvc.xml
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Razor.xml
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.xml
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.xml
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.xml
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Optimization.xml
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Antlr3.Runtime.pdb
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.Helpers.resources.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.Mvc.resources.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.Razor.resources.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.resources.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.Optimization.resources.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.AssemblyReference.cache
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.CoreCompileInputs.cache
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.CopyComplete
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.dll
+C:\Users\MARIA VALERIA J\Desktop\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.pdb
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy - Copy.png
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy.png
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Content\Images\logindunks.png
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll.config
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.pdb
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csc.exe
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csc.exe.config
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csc.rsp
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csi.exe
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csi.exe.config
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csi.rsp
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.targets
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Buffers.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Collections.Immutable.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Memory.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Numerics.Vectors.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Reflection.Metadata.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\vbc.exe
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\vbc.exe.config
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\vbc.rsp
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe.config
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Antlr3.Runtime.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\EntityFramework.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Microsoft.Web.Infrastructure.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Newtonsoft.Json.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Helpers.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Mvc.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Optimization.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Razor.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\WebGrease.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\EntityFramework.xml
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.xml
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Newtonsoft.Json.xml
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Helpers.xml
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Mvc.xml
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Razor.xml
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.xml
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.xml
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.xml
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Optimization.xml
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Antlr3.Runtime.pdb
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.Helpers.resources.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.Mvc.resources.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.Razor.resources.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.resources.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Deployment.resources.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Razor.resources.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.Optimization.resources.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.AssemblyReference.cache
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.CoreCompileInputs.cache
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_Pr.08DFF21C.Up2Date
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.dll
+E:\UNIVERSIDAD\WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.pdb
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy - Copy.png
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy.png
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Content\Images\logindunks.png
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll.config
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.pdb
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csc.exe
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csc.exe.config
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csc.rsp
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csi.exe
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csi.exe.config
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\csi.rsp
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.Managed.Core.targets
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Buffers.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Collections.Immutable.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Memory.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Numerics.Vectors.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Reflection.Metadata.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\vbc.exe
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\vbc.exe.config
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\vbc.rsp
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\roslyn\VBCSCompiler.exe.config
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Antlr3.Runtime.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\EntityFramework.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Microsoft.Web.Infrastructure.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Newtonsoft.Json.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Helpers.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Mvc.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Optimization.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Razor.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\WebGrease.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\EntityFramework.xml
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\EntityFramework.SqlServer.xml
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Newtonsoft.Json.xml
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Helpers.xml
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Mvc.xml
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Razor.xml
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.xml
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.Deployment.xml
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.WebPages.Razor.xml
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\System.Web.Optimization.xml
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\Antlr3.Runtime.pdb
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.Helpers.resources.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.Mvc.resources.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.Razor.resources.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.resources.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Deployment.resources.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Razor.resources.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\bin\es\System.Web.Optimization.resources.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.AssemblyReference.cache
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.csproj.CoreCompileInputs.cache
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_Pr.08DFF21C.Up2Date
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.dll
+E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO TOTAL FINAL\Proyecto_DestinosCaribeCR\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.pdb

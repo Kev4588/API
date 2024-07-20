@@ -1,0 +1,10 @@
+<<<<<<< Updated upstream
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/KREAM_ProyectoFinal/FileContentIndex
+=======
+
+*.vsidx
+>>>>>>> Stashed changes

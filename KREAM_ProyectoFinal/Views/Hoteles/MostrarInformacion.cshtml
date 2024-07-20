@@ -1,0 +1,137 @@
+﻿
+<div class="container mt-4">
+    <h2 class="mb-4" style="color: black;">Lista de HOTELES | @ViewBag.UsuarioActual</h2>
+
+    <!-- Filtro de búsqueda -->
+    <div class="contenedor-filtros mb-4">
+        <form method="get" action="@Url.Action("MostrarInformacion", "Hoteles")">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="NombreHotel">Nombre</label>
+                    <input type="text" class="form-control" id="NombreHotel" name="NombreHotel" placeholder="Nombre del Hotel" />
+                </div>
+                
+                <div class="col-md-6 mb-3">
+                    <label for="cantidadDePersonas">Cantidad de Personas</label>
+                    <select class="form-control" id="cantidadDePersonas" name="cantidadDePersonas">
+                        <option value=""> -- Cantidad de Personas --</option>
+                        @foreach (var personas in ViewBag.cantidadPersonas as SelectList)
+                        {
+                            <option value="@personas.Value" @(personas.Text == ViewBag.tipoDeHabitacion ? "selected" : "")>@personas.Text</option>
+                        }
+
+
+
+                    </select>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <button type="submit" class="btn btn-success">Buscar</button>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+    <div class="col-md-2 mb-3">
+        <a href="@Url.Action("Add", "Hoteles")" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="left" title="Agregar nuevo">Agregar</a>
+    </div>
+    <!-- Lista de Hoteles -->
+    <div class="row">
+        @foreach (var hotel in Model)
+        {
+            <div class="col-md-4 col-lg-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@hotel.NombreHotel</h5>
+                        <p class="card-text"> Habitación @hotel.TipoDeHabitacion para @hotel.CantidadDePersonas personas  </p>
+                        <p class="card-text">@hotel.Precio</p>
+                        <div id="carouselHotel@(hotel.IDHotel)" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
+                            <div class="carousel-inner">
+                                @for (int i = 0; i < 3; i++)
+                                {
+                                    <div class="carousel-item @(i == 0 ? "active" : "")">
+                                        @if (i == 0 && hotel.Imagen != null && hotel.Imagen.Length > 0)
+                                        {
+                                            <img src="data:image/png;base64,@Convert.ToBase64String(hotel.Imagen)" alt="Imagen del Hotel" class="img-fluid" />
+                                        }
+                                        @if (i == 0 && (hotel.Imagen == null || hotel.Imagen.Length == 0))
+                                        {
+                                            <div style="height: 232px;  display: flex; justify-content: center; align-items: center;">
+                                                <p style="font-size: x-large; color: #0d6efd;">Sin Imagen [@i]</p>
+                                            </div>
+                                        }
+                                        @if (i == 1 && hotel.Imagen2 != null && hotel.Imagen2.Length > 0)
+                                        {
+                                            <img src="data:image/png;base64,@Convert.ToBase64String(hotel.Imagen2)" alt="Segunda Imagen del Hotel" class="img-fluid" />
+                                        }
+                                        @if (i == 1 && (hotel.Imagen2 == null || hotel.Imagen2.Length == 0))
+                                        {
+                                            <div style="height: 232px; display: flex; justify-content: center; align-items: center;">
+                                                <p style="font-size: x-large; color: #0d6efd;">Sin Imagen [@i]</p>
+                                            </div>
+                                        }
+                                        @if (i == 2 && hotel.Imagen3 != null && hotel.Imagen3.Length > 0)
+                                        {
+                                            <img src="data:image/png;base64,@Convert.ToBase64String(hotel.Imagen3)" alt="Tercera Imagen del Hotel" class="img-fluid" />
+                                        }
+                                        @if (i == 2 && (hotel.Imagen3 == null || hotel.Imagen3.Length == 0))
+                                        {
+                                            <div style="height: 232px; display: flex; justify-content: center; align-items: center;">
+                                                <p style="font-size: x-large; color: #0d6efd;">Sin Imagen [@i]</p>
+                                            </div>
+                                        }
+                                    </div>
+                                }
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselHotel@(hotel.IDHotel)" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselHotel@(hotel.IDHotel)" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="mt-3">
+                            <a class="btn btn-secondary" href="@Url.Action("Edit", new { IDHotel = @hotel.IDHotel })">Editar</a>
+                            <a class="btn btn-danger" href="@Url.Action("Delete", new { IDHotel = @hotel.IDHotel })" onclick="return confirm('¿Estás seguro de que deseas eliminar este hotel?');">Eliminar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <a href="@Url.Action("Index", "Home")" class="btn btn-success">Regresar al menú principal</a>
+
+</div>
+
+
+
+<!-- Agregar Font Awesome y Bootstrap (popper.js y bootstrap.js) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+
+<style>
+    .floating-buttons {
+        position: fixed;
+        bottom: 50%;
+        right: 20px;
+        transform: translateY(50%);
+    }
+
+        .floating-buttons a {
+            display: block;
+            margin-bottom: 10px;
+        }
+</style>
+
+<script>
+    // Inicializar tooltips de Bootstrap
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
+

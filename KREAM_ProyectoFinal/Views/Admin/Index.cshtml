@@ -1,0 +1,84 @@
+﻿@using KREAM_ProyectoFinal.Models.ViewModel
+
+@{
+    ViewBag.Title = "Index";
+    var usuario = Session["UsuarioActual"] as UsersViewModel;
+}
+
+@model List<KREAM_ProyectoFinal.Models.TableViewModel.UsersTableViewModel>
+
+<h2 class="text-center">BIENVENIDO @usuario.Nombre.ToUpper()  </h2>
+
+<div class="container mt-4">
+
+    <h2 class="mb-4">Lista de Usuarios</h2>
+
+    <a class="btn btn-success mb-4" href="@Url.Action("Add")">Agregar</a>
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Cedula</th>
+                    <th>Nombre</th>
+                    <th>Primer Apellido</th>
+                    <th>Segundo Apellido</th>
+                    <th>Edad</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                    <th>Sexo</th>
+                    <th>Direccion</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var users in Model)
+                {
+                    <tr>
+                        <td>@users.Cedula</td>
+                        <td>@users.Nombre</td>
+                        <td>@users.PrimerApellido</td>
+                        <td>@users.SegundoApellido</td>
+                        <td>@users.Edad</td>
+                        <td>@users.Telefono</td>
+                        <td>@users.Correo</td>
+                        <td>@users.Sexo</td>
+                        <td style="max-height: 100px; overflow-y: auto;">@users.Direccion</td>
+                        
+                        <td>
+                            @if (!users.Sexo.Contains("X"))
+                            {
+
+                                <button class="btn btn-warning" onclick="document.location.href = '@Url.Content("~/Admin/Edit/")@users.Id'">Editar</button>
+                            }
+                                <button class="btn btn-danger" onclick="eliminarUser(@users.Id)"> Borrar </button>
+                            </td>
+
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<a href="@Url.Action("Index", "Home")" class="btn btn-success">Regresar al menú principal</a>
+
+
+<script>
+        function eliminarUser(Id) {
+            if (confirm("Desea eliminar el registro?")) {
+                let url = "@Url.Content("~/Admin/Delete/")" + Id;
+
+                $.post(url, function (respuesta) {
+                    if (respuesta === "200") {
+                        document.location.href = "@Url.Content("~/Admin/Index")";
+                        alert("Registro borrado exitosamente");
+                    } else {
+                        alert("Ocurrio un error al borrar " + respuesta)
+                    }
+                })
+            }
+        }
+</script>
+
+

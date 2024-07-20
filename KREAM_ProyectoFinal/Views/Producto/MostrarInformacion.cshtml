@@ -1,0 +1,201 @@
+﻿@model KREAM_ProyectoFinal.Models.ViewModel.ProductosViewModel
+@{
+    ViewBag.Title = "MostrarInformacion";
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles del Producto</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .product-details {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            color: black;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-images {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .product-images .no-image {
+            display: flex;
+            justify-content: center; /* Centra el contenido horizontalmente */
+            align-items: center; /* Centra el contenido verticalmente */
+            margin-bottom: 25px;
+        }
+
+        .product-images img {
+            max-width: 400px;
+            height: auto;
+            margin-right: 20px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .product-images img:hover {
+            transform: scale(1.1); /* Hacer zoom al pasar el cursor sobre la imagen */
+        }
+        .product-info p {
+            margin-bottom: 10px;
+        }
+
+        .product-info select {
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        .product-rating span {
+            color: #ffcc00;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .carrito,
+        .regresar {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 10px;
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="product-details">
+        <h1 style="text-align: center;">@Html.DisplayFor(model => model.Nombre)</h1>
+
+        <div class="product-images">
+            <div>
+                @if (Model.Imagen != null)
+                {
+                    <img id="main-image" src="data:image/png;base64,@Convert.ToBase64String(Model.Imagen)" alt="Imagen del Producto" class="img-fluid" />
+                }
+                else
+                {
+                    <img class="no-image" src="~/Images/No-image-found.jpg" alt="Imagen del Producto" />
+                }
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                @if (Model.Imagen2 != null)
+                {
+                    <img src="data:image/png;base64,@Convert.ToBase64String(Model.Imagen2)" alt="Imagen del Producto" class="img-fluid" style="max-width: 200px; height: auto; margin-bottom: 10px;" onclick="swapImages(this)" />
+                }
+                @if (Model.Imagen3 != null)
+                {
+                    <img src="data:image/png;base64,@Convert.ToBase64String(Model.Imagen3)" alt="Imagen del Producto" class="img-fluid" style="max-width: 200px; height: auto;" onclick="swapImages(this)" />
+                }
+
+            </div>
+        </div>
+
+        <div class="product-info">
+            <p><strong>Descripción:</strong> @Html.DisplayFor(model => model.Descripcion)</p>
+            <p><strong>Precio:</strong> @Html.DisplayFor(model => model.Precio)</p>
+            <p><strong>Categoría:</strong> @Html.DisplayFor(model => model.Categoria)</p>
+            <p><strong>Cantidad de Personas:</strong> @Html.DisplayFor(model => model.Personas)</p>
+
+            
+            @if (Model.CantidadEnStock != 0)
+            {
+                <form method="post" action="@Url.Action("AgregarAlCarrito", "Home")">
+                    <input type="hidden" name="productoId" value="@Model.ProductoID" />
+                    <button type="submit" class="carrito btn btn-primary">Agregar al carrito</button>
+                </form>
+            }
+            else
+            {
+                <h3>AGOTADO</h3>
+            }
+
+            <input type="button" class="regresar btn btn-danger" value="Regresar" onclick="document.location.href = '@Url.Content("~/Home/Index")'" />
+
+
+        </div>
+
+
+        <br /><br />
+        <h3>Dejar un comentario:</h3>
+        <form asp-controller="Producto" asp-action="MostrarInformacion" method="post" onsubmit="return validarFormulario()">
+                        
+            <input type="hidden" id="idProducto" name="idProducto" value="@Model.ProductoID" />
+
+            <div class="form-group">
+                <label for="comentario">Comentario:</label>
+                <textarea id="comentario" name="comentario" class="form-control" rows="4" required></textarea>
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary">Publicar</button>
+            <button type="button" class="btn btn-secondary" onclick="limpiarTexto()">Cancelar</button>
+        </form>
+
+        <br />
+        <h3>Comentarios publicados:</h3>
+        @foreach (var comentario in Model.Comentarios)
+        {
+            <div class="card mb-3">
+                <div class="card-body" style="background-color: #e7f5ff;">
+                    
+                    <p class="card-text">@comentario.Comentario</p>
+                   
+                </div>
+            </div>
+        }
+
+
+    </div>
+
+    <script>
+        function swapImages(img) {
+            var mainImage = document.getElementById('main-image');
+            var clickedSrc = img.src;
+            var mainSrc = mainImage.src;
+            mainImage.src = clickedSrc;
+            img.src = mainSrc;
+            mainImage.style.maxWidth = '400px';
+            mainImage.style.marginRight = '20px';
+            img.style.maxWidth = '200px';
+            img.style.marginRight = '0';
+        }
+    </script>
+
+    <script>
+        function limpiarTexto() {
+            document.getElementById('comentario').value = '';
+        }
+    </script>
+
+    <script>
+        function validarFormulario() {
+            var comentario = document.getElementById('comentario').value.trim(); 
+
+            if (comentario === '') {
+                alert('El comentario no puede estar vacío'); 
+                return false; 
+            }
+                        
+            return true;
+        }
+    </script>
+
+</body>
+</html>
+
+
+

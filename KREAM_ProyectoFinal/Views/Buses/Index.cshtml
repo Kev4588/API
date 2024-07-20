@@ -1,0 +1,441 @@
+﻿
+
+
+
+<style>
+
+    .card-body {
+        flex: 1 1 auto;
+        padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+        color: var(--bs-card-color);
+        height: 453px;
+    }
+
+
+    .carousel-item {
+        text-align: center;
+        overflow: hidden;
+    }
+
+        .carousel-item img {
+            max-height: 300px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+    .carousel-indicators {
+        bottom: 10px;
+    }
+
+        .carousel-indicators button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .carousel-indicators [data-bs-target] {
+            box-sizing: content-box;
+            flex: 0 1 auto;
+            width: 12px;
+            height: 18px;
+            padding: 0;
+            margin-right: 3px;
+            margin-left: 3px;
+            text-indent: -999px;
+            cursor: pointer;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            transition: opacity 0.6s ease;
+        }
+
+    .carousel-control-prev {
+        left: 0;
+        background-color: gray;
+    }
+
+
+    .carousel-control-next {
+        right: 0;
+        background-color: gray;
+    }
+
+
+
+    /*Lo que sigue controla que todas las imagenes tengan el mismo tamaño y un width ya heredado de 100%*/
+    .img-container {
+        height: 232px; /* Altura deseada */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ddd; /* Color de fondo si no hay imagen */
+    }
+
+    .img-fluid {
+        height: 232px;
+        object-fit: cover;
+    }
+
+    button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
+        cursor: pointer;
+        
+        opacity: 1;
+    }
+
+
+    .contenedor-filtros {
+        /* border: solid 1px; */
+        display: table;
+        color: white;
+        align-items: center;
+        padding: 50px;
+        width: 90%;
+        margin: auto;
+        background: #1b1718;
+        box-shadow: 0px 94px 277px -6px #ffffff;
+    }
+
+
+    body {
+        background-image: url('/Content/images/fondoPrincipal.jpg'); /* Ajusta la ruta según la estructura de tu proyecto */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Fondo fijo mientras se desplaza */
+    }
+
+
+
+    .button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+    .button-29 {
+        align-items: center;
+        appearance: none;
+        background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+        border: 0;
+        border-radius: 6px;
+        box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: inline-flex;
+        font-family: "JetBrains Mono",monospace;
+        height: 48px;
+        justify-content: center;
+        line-height: 1;
+        list-style: none;
+        overflow: hidden;
+        padding-left: 16px;
+        padding-right: 16px;
+        position: relative;
+        text-align: left;
+        text-decoration: none;
+        transition: box-shadow .15s,transform .15s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+        will-change: box-shadow,transform;
+        font-size: 18px;
+    }
+
+        .button-29:focus {
+            box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+        }
+
+        .button-29:hover {
+            box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+            transform: translateY(-2px);
+        }
+
+        .button-29:active {
+            box-shadow: #3c4fe0 0 3px 7px inset;
+            transform: translateY(2px);
+        }
+
+
+
+    .boton-ver {
+        display: flex;
+        width: 80px;
+        justify-content: center;
+        height: max-content;
+        font-size: larger;
+        color: white;
+    }
+
+    .contenedor-botones 
+    
+    {
+       
+        align-items: center;
+        display: flex;
+    }
+
+    .boton-agregar-carrito {
+        height: 31px;
+        margin-left: 5px;
+        width: 282%;
+        padding:1px;
+    }
+
+        .boton-agregar-carrito svg {
+            width: 21px;
+            height: 20px;
+        }
+
+
+</style>
+
+<main>
+
+    <div class="container mt-4">
+        <!-- Barra de búsqueda y filtros --> 
+
+    <div class="contenedor-filtros">
+
+        <form method="get" action="@Url.Action("Index", "Home")">
+            <div class="row">
+
+                <!-- Buscar por Nombre -->
+                <div class="col-md-4 mb-3">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Cualquiera" />
+                </div>
+
+                <!-- Buscar por Marca | esto a la ez lo que esta haciendo es jalar el viewbag de marcas para presentarlas al usuario , esto incluye si un vendedor mete una neuva marca tambien-->
+                <div class="col-md-4 mb-3">
+                    <label for="personas">Personas:</label>
+                    <select class="form-control" id="personas" name="personas">
+                        <option value="">Cantidad de Personas</option>
+                        @foreach (var personas in ViewBag.Personas as SelectList)
+                        {
+                            <option value="@personas.Value">@personas.Text</option>
+                        }
+                    </select>
+                </div>
+
+                <!--CATEGORIA CON UN DROPDOWN QUE MUESTRE A LA PERSONA LAS CATEGORIAS QUE TNEMOS -->
+                <div class="col-md-4 mb-3">
+                    <label for="marca">Categoria:</label>
+                    <select class="form-control" id="categoria" name="categoria">
+                        <option value="">Cualquier Categoria</option>
+                        @foreach (var categoria in ViewBag.Categoria as SelectList)
+                        {
+                            <option value="@categoria.Value">@categoria.Text</option>
+                        }
+                    </select>
+                </div>
+
+
+                <!-- Buscar por Lugar -->
+                <div class="col-md-4 mb-3">
+                    <label for="color">Lugar:</label>
+                    <input type="text" class="form-control" id="lugar" name="lugar" placeholder="Cualquiera" />
+                </div>
+
+                <!-- Buscar por Proveedor -->
+                <div class="col-md-4 mb-3">
+                    <label for="proveedor">Proveedor:</label>
+                    <select class="form-control" id="proveedor" name="proveedor">
+                        <option value="">Seleccionar</option>
+                        <option value="M">Baja</option>
+                        <option value="F">Alta</option>
+                    </select>
+                </div>
+
+
+                <!-- Buscar por Precio -->
+                <div class="col-md-4 mb-3">
+                    <label for="precioMax">Precio Máximo:</label>
+                    <input type="range" id="precioMax" name="precioMax" min="1" max="1000" step="10" value="1000" placeholder="Cualquiera" />  <!--Range limit , eto nos sirve para que la persona pueda elegir el precio , el minimo es 1 para testing y su maxio valor quemado es 1000-->
+                    <output for="precioMax" id="precioMaxOutput">$1000</output>
+                </div>
+
+
+                <!--BOTON DE BUSCAR -->
+                <div class="col-md-2 mb-3">
+                    <button type="submit" class="button-85">Buscar</button>
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+
+
+
+
+
+        <div class="container mt-4">
+            <div class="row">
+                @foreach (var producto in Model)
+                {
+                    <div class="col-md-4 col-lg-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">@producto.Nombre</h5>
+                                <p class="card-text">@producto.Lugar | @(producto.Proveedor == "F" ? "Mujer" : "Hombre") | @producto.Personas |@producto.Categoria</p> <!--Logica que metimos para saber si el zapato es de hombre o mujer e indicarlo en tarjeta jalando los parametros de producto-->
+
+                                <p class="card-text"><strong>Precio: @string.Format("${0:N2}", producto.Precio)  | @producto.CantidadEnStock Disponibles </strong></p> <!--Muestra el valor de las tennis en dolares -->
+                                <!-- Contenedor del carrusel para cada tarjeta -->
+                                <div id="carouselProducto@(producto.ProductoID)" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
+                                    <!-- Hace que la transición dure 10 segundos salvo que la persona cambie a otra imagen -->
+                                    <div class="carousel-inner">
+                                        <!-- Imagen 1 -->
+                                        @if (producto.Imagen != null && producto.Imagen.Length > 0)
+                                        {
+                                            <div class="carousel-item active">
+                                                <img src="data:image/png;base64,@Convert.ToBase64String(producto.Imagen)" alt="Imagen del Producto" class="img-fluid" />
+                                            </div>
+                                        }
+
+                                        <!-- Imagen 2 -->
+                                        @if (producto.Imagen2 != null && producto.Imagen2.Length > 0)
+                                        {
+                                            <div class="carousel-item @(producto.Imagen == null || producto.Imagen.Length == 0 ? "active" : "")">
+                                                <div class="img-container">
+                                                    <img src="data:image/png;base64,@Convert.ToBase64String(producto.Imagen2)" alt="Segunda Imagen del Producto" class="img-fluid" />
+                                                </div>
+                                            </div>
+                                        }
+
+                                        <!-- Imagen 3 -->
+                                        @if (producto.Imagen3 != null && producto.Imagen3.Length > 0)
+                                        {
+                                            <div class="carousel-item @(producto.Imagen == null || producto.Imagen.Length == 0 ? "active" : "")">
+                                                <div class="img-container">
+                                                    <img src="data:image/png;base64,@Convert.ToBase64String(producto.Imagen3)" alt="Tercera Imagen del Producto" class="img-fluid" />
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+
+                                    <!-- Controles personalizados -->
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselProducto@(producto.ProductoID)" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselProducto@(producto.ProductoID)" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+
+
+                                </div>
+
+                                <!-- Acciones -->
+                                <div class="mt-3 contenedor-botones" style="display:"flex">
+                                  
+                                    <button class="btn btn-info boton-ver button-29" onclick="document.location.href = '@Url.Content("~/Producto/MostrarInformacion/")@producto.ProductoID'">
+                                    Ver
+                                    </button>
+
+                                    @if (@producto.CantidadEnStock != 0)
+                                    {
+                                        <form method="post" style ="margin-bottom: 0px !important;" action="@Url.Action("AgregarAlCarrito", "Home")">
+                                            <input type="hidden" name="productoId" value="@producto.ProductoID" />
+                                            <button type="submit" class="btn btn-outline-success boton-agregar-carrito button-29"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0" />
+</svg></button>
+                                        </form>
+                                    }
+                                    else
+                                    {
+                                        <h3 style="color: red; margin-top: 11px; margin-left: 30px;">AGOTADO</h3>
+
+                                    }
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                }
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<!--eSTE Script lo quehace es controlar el costo de filtro que se usa en los precios , -->
+<script>
+    // Actualiza el valor del output al cambiar el slider
+    document.getElementById('precioMax').addEventListener('input', function () {
+        document.getElementById('precioMaxOutput').value = '$' + this.value;
+    });
+
+</script>
+

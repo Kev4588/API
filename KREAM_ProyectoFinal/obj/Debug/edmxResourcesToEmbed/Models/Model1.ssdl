@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TRAVEL2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Comentarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdProducto" Type="int" Nullable="false" />
+    <Property Name="Comentario" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hoteles">
+    <Key>
+      <PropertyRef Name="IDHotel" />
+    </Key>
+    <Property Name="IDHotel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoDeHabitacion" Type="varchar" MaxLength="100" />
+    <Property Name="CantidadDePersonas" Type="int" />
+    <Property Name="Descripcion" Type="varchar(max)" />
+    <Property Name="Precio" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="NombreHotel" Type="varchar" MaxLength="100" />
+    <Property Name="Imagen" Type="varbinary(max)" />
+    <Property Name="Imagen2" Type="varbinary(max)" />
+    <Property Name="Imagen3" Type="varbinary(max)" />
+    <Property Name="web" Type="varchar(max)" />
+    <Property Name="ComentarioHotel" Type="varchar" MaxLength="100" />
+    <Property Name="CalificacionHotel" Type="int" />
+  </EntityType>
+  <EntityType Name="Productos">
+    <Key>
+      <PropertyRef Name="ProductoID" />
+    </Key>
+    <Property Name="ProductoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="255" />
+    <Property Name="Lugar" Type="varchar" MaxLength="55" />
+    <Property Name="Descripcion" Type="text" />
+    <Property Name="Precio" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Categoria" Type="varchar" MaxLength="100" />
+    <Property Name="Personas" Type="varchar" MaxLength="100" />
+    <Property Name="CantidadEnStock" Type="int" />
+    <Property Name="Comentario" Type="text" />
+    <Property Name="Calificacion" Type="int" />
+    <Property Name="Proveedor" Type="varchar" MaxLength="100" />
+    <Property Name="Vendedor" Type="int" />
+    <Property Name="Imagen" Type="varbinary(max)" />
+    <Property Name="Imagen2" Type="varbinary(max)" />
+    <Property Name="Imagen3" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cedula" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="20" />
+    <Property Name="PrimerApellido" Type="varchar" MaxLength="20" />
+    <Property Name="SegundoApellido" Type="varchar" MaxLength="20" />
+    <Property Name="Edad" Type="int" />
+    <Property Name="Telefono" Type="int" />
+    <Property Name="Correo" Type="varchar" MaxLength="50" />
+    <Property Name="Sexo" Type="varchar" MaxLength="1" />
+    <Property Name="Direccion" Type="varchar" MaxLength="50" />
+    <Property Name="TipoDeUsuario" Type="int" />
+    <Property Name="Contrasena" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MarcaVendedor" Type="varchar" MaxLength="40" />
+    <Property Name="ProductosEnCarrito" Type="nvarchar(max)" />
+    <Property Name="socialMediaID" Type="varchar" MaxLength="100" />
+    <Property Name="PreguntaSeguridad" Type="varchar" MaxLength="100" />
+    <Property Name="RespuestaPreguntaSeguridad" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserStatus" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Comentarios_Productos">
+    <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
+    <End Role="Comentarios" Type="Self.Comentarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="ProductoID" />
+      </Principal>
+      <Dependent Role="Comentarios">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_UserType">
+    <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="TipoDeUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="DeleteUserbyId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="var_Id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="FilterProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="var_genero" Type="varchar" Mode="In" />
+    <Parameter Name="var_color" Type="varchar" Mode="In" />
+    <Parameter Name="var_marca" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GuardarComentarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdProducto" Type="int" Mode="In" />
+    <Parameter Name="Comentario" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="obtenerComentariosPorProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdProducto" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ShowProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UpdateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+    <Parameter Name="Cedula" Type="int" Mode="In" />
+    <Parameter Name="Nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="PrimerApellido" Type="nvarchar" Mode="In" />
+    <Parameter Name="SegundoApellido" Type="nvarchar" Mode="In" />
+    <Parameter Name="Edad" Type="int" Mode="In" />
+    <Parameter Name="Telefono" Type="nvarchar" Mode="In" />
+    <Parameter Name="Correo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Direccion" Type="nvarchar" Mode="In" />
+    <Parameter Name="Sexo" Type="char" Mode="In" />
+  </Function>
+  <Function Name="VerifyPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cedula" Type="varchar" Mode="In" />
+    <Parameter Name="Contrasena" Type="varchar" Mode="In" />
+    <Parameter Name="Autenticado" Type="bit" Mode="InOut" />
+  </Function>
+  <Function Name="VerifyUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="var_cedula" Type="nvarchar" Mode="In" />
+    <Parameter Name="var_contrasena" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="VerifyUserCedula" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="var_cedula" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="VerifyUserGmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="var_correo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="VerifyUserSocialMedia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="var_socialMediaID" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="TRAVEL2ModelStoreContainer">
+    <EntitySet Name="Comentarios" EntityType="Self.Comentarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hoteles" EntityType="Self.Hoteles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserType" EntityType="Self.UserType" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Comentarios_Productos" Association="Self.FK_Comentarios_Productos">
+      <End Role="Productos" EntitySet="Productos" />
+      <End Role="Comentarios" EntitySet="Comentarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_UserType" Association="Self.FK_Users_UserType">
+      <End Role="UserType" EntitySet="UserType" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

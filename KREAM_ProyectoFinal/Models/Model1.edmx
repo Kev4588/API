@@ -1,0 +1,617 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TRAVEL2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Comentarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdProducto" Type="int" Nullable="false" />
+          <Property Name="Comentario" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hoteles">
+          <Key>
+            <PropertyRef Name="IDHotel" />
+          </Key>
+          <Property Name="IDHotel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoDeHabitacion" Type="varchar" MaxLength="100" />
+          <Property Name="CantidadDePersonas" Type="int" />
+          <Property Name="Descripcion" Type="varchar(max)" />
+          <Property Name="Precio" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="NombreHotel" Type="varchar" MaxLength="100" />
+          <Property Name="Imagen" Type="varbinary(max)" />
+          <Property Name="Imagen2" Type="varbinary(max)" />
+          <Property Name="Imagen3" Type="varbinary(max)" />
+          <Property Name="web" Type="varchar(max)" />
+          <Property Name="ComentarioHotel" Type="varchar" MaxLength="100" />
+          <Property Name="CalificacionHotel" Type="int" />
+        </EntityType>
+        <EntityType Name="Productos">
+          <Key>
+            <PropertyRef Name="ProductoID" />
+          </Key>
+          <Property Name="ProductoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="255" />
+          <Property Name="Lugar" Type="varchar" MaxLength="55" />
+          <Property Name="Descripcion" Type="text" />
+          <Property Name="Precio" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Categoria" Type="varchar" MaxLength="100" />
+          <Property Name="Personas" Type="varchar" MaxLength="100" />
+          <Property Name="CantidadEnStock" Type="int" />
+          <Property Name="Comentario" Type="text" />
+          <Property Name="Calificacion" Type="int" />
+          <Property Name="Proveedor" Type="varchar" MaxLength="100" />
+          <Property Name="Vendedor" Type="int" />
+          <Property Name="Imagen" Type="varbinary(max)" />
+          <Property Name="Imagen2" Type="varbinary(max)" />
+          <Property Name="Imagen3" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="20" />
+          <Property Name="PrimerApellido" Type="varchar" MaxLength="20" />
+          <Property Name="SegundoApellido" Type="varchar" MaxLength="20" />
+          <Property Name="Edad" Type="int" />
+          <Property Name="Telefono" Type="int" />
+          <Property Name="Correo" Type="varchar" MaxLength="50" />
+          <Property Name="Sexo" Type="varchar" MaxLength="1" />
+          <Property Name="Direccion" Type="varchar" MaxLength="50" />
+          <Property Name="TipoDeUsuario" Type="int" />
+          <Property Name="Contrasena" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="MarcaVendedor" Type="varchar" MaxLength="40" />
+          <Property Name="ProductosEnCarrito" Type="nvarchar(max)" />
+          <Property Name="socialMediaID" Type="varchar" MaxLength="100" />
+          <Property Name="PreguntaSeguridad" Type="varchar" MaxLength="100" />
+          <Property Name="RespuestaPreguntaSeguridad" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="UserType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserStatus" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Comentarios_Productos">
+          <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
+          <End Role="Comentarios" Type="Self.Comentarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Productos">
+              <PropertyRef Name="ProductoID" />
+            </Principal>
+            <Dependent Role="Comentarios">
+              <PropertyRef Name="IdProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_UserType">
+          <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="TipoDeUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="DeleteUserbyId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="var_Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="FilterProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="var_genero" Type="varchar" Mode="In" />
+          <Parameter Name="var_color" Type="varchar" Mode="In" />
+          <Parameter Name="var_marca" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GuardarComentarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdProducto" Type="int" Mode="In" />
+          <Parameter Name="Comentario" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="obtenerComentariosPorProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdProducto" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ShowProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="UpdateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="Cedula" Type="int" Mode="In" />
+          <Parameter Name="Nombre" Type="nvarchar" Mode="In" />
+          <Parameter Name="PrimerApellido" Type="nvarchar" Mode="In" />
+          <Parameter Name="SegundoApellido" Type="nvarchar" Mode="In" />
+          <Parameter Name="Edad" Type="int" Mode="In" />
+          <Parameter Name="Telefono" Type="nvarchar" Mode="In" />
+          <Parameter Name="Correo" Type="nvarchar" Mode="In" />
+          <Parameter Name="Direccion" Type="nvarchar" Mode="In" />
+          <Parameter Name="Sexo" Type="char" Mode="In" />
+        </Function>
+        <Function Name="VerifyPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Cedula" Type="varchar" Mode="In" />
+          <Parameter Name="Contrasena" Type="varchar" Mode="In" />
+          <Parameter Name="Autenticado" Type="bit" Mode="InOut" />
+        </Function>
+        <Function Name="VerifyUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="var_cedula" Type="nvarchar" Mode="In" />
+          <Parameter Name="var_contrasena" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="VerifyUserCedula" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="var_cedula" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="VerifyUserGmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="var_correo" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="VerifyUserSocialMedia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="var_socialMediaID" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="TRAVEL2ModelStoreContainer">
+          <EntitySet Name="Comentarios" EntityType="Self.Comentarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hoteles" EntityType="Self.Hoteles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserType" EntityType="Self.UserType" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Comentarios_Productos" Association="Self.FK_Comentarios_Productos">
+            <End Role="Productos" EntitySet="Productos" />
+            <End Role="Comentarios" EntitySet="Comentarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_UserType" Association="Self.FK_Users_UserType">
+            <End Role="UserType" EntitySet="UserType" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TRAVEL2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Comentarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdProducto" Type="Int32" Nullable="false" />
+          <Property Name="Comentario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Productos" Relationship="Self.FK_Comentarios_Productos" FromRole="Comentarios" ToRole="Productos" />
+        </EntityType>
+        <EntityType Name="Hoteles">
+          <Key>
+            <PropertyRef Name="IDHotel" />
+          </Key>
+          <Property Name="IDHotel" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoDeHabitacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CantidadDePersonas" Type="Int32" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="NombreHotel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Imagen2" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Imagen3" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="web" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ComentarioHotel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CalificacionHotel" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Productos">
+          <Key>
+            <PropertyRef Name="ProductoID" />
+          </Key>
+          <Property Name="ProductoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Lugar" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Categoria" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Personas" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CantidadEnStock" Type="Int32" />
+          <Property Name="Comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Calificacion" Type="Int32" />
+          <Property Name="Proveedor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Vendedor" Type="Int32" />
+          <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Imagen2" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Imagen3" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Comentarios" Relationship="Self.FK_Comentarios_Productos" FromRole="Productos" ToRole="Comentarios" />
+        </EntityType>
+        <EntityType Name="UserType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="TRAVEL2Model.FK_Users_UserType" FromRole="UserType" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK_Comentarios_Productos">
+          <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
+          <End Role="Comentarios" Type="Self.Comentarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Productos">
+              <PropertyRef Name="ProductoID" />
+            </Principal>
+            <Dependent Role="Comentarios">
+              <PropertyRef Name="IdProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TRAVEL2Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Comentarios" EntityType="Self.Comentarios" />
+          <EntitySet Name="Hoteles" EntityType="Self.Hoteles" />
+          <EntitySet Name="Productos" EntityType="Self.Productos" />
+          <EntitySet Name="UserType" EntityType="Self.UserType" />
+          <AssociationSet Name="FK_Comentarios_Productos" Association="Self.FK_Comentarios_Productos">
+            <End Role="Productos" EntitySet="Productos" />
+            <End Role="Comentarios" EntitySet="Comentarios" />
+          </AssociationSet>
+          <FunctionImport Name="DeleteUserbyId">
+          <Parameter Name="var_Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="FilterProduct">
+            <Parameter Name="var_genero" Mode="In" Type="String" />
+            <Parameter Name="var_color" Mode="In" Type="String" />
+            <Parameter Name="var_marca" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GuardarComentarios">
+            <Parameter Name="IdProducto" Mode="In" Type="Int32" />
+            <Parameter Name="Comentario" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="obtenerComentariosPorProducto">
+          <Parameter Name="IdProducto" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ShowProducts" ReturnType="Collection(String)" />
+          <FunctionImport Name="UpdateUser">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="Cedula" Mode="In" Type="Int32" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="PrimerApellido" Mode="In" Type="String" />
+            <Parameter Name="SegundoApellido" Mode="In" Type="String" />
+            <Parameter Name="Edad" Mode="In" Type="Int32" />
+            <Parameter Name="Telefono" Mode="In" Type="String" />
+            <Parameter Name="Correo" Mode="In" Type="String" />
+            <Parameter Name="Direccion" Mode="In" Type="String" />
+            <Parameter Name="Sexo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="VerifyPassword">
+            <Parameter Name="Cedula" Mode="In" Type="String" />
+            <Parameter Name="Contrasena" Mode="In" Type="String" />
+            <Parameter Name="Autenticado" Mode="InOut" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="VerifyUser" ReturnType="Collection(TRAVEL2Model.VerifyUser_Result)">
+            <Parameter Name="var_cedula" Mode="In" Type="String" />
+            <Parameter Name="var_contrasena" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="VerifyUserCedula" ReturnType="Collection(TRAVEL2Model.VerifyUserCedula_Result)">
+          <Parameter Name="var_cedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="VerifyUserGmail" ReturnType="Collection(TRAVEL2Model.VerifyUserGmail_Result)">
+          <Parameter Name="var_correo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="VerifyUserSocialMedia" ReturnType="Collection(TRAVEL2Model.VerifyUserSocialMedia_Result)">
+          <Parameter Name="var_socialMediaID" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Users" EntityType="TRAVEL2Model.Users" />
+          <AssociationSet Name="FK_Users_UserType" Association="TRAVEL2Model.FK_Users_UserType">
+            <End Role="UserType" EntitySet="UserType" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+        <ComplexType Name="VerifyUser_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="Cedula" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="PrimerApellido" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="SegundoApellido" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="Edad" Nullable="true" />
+          <Property Type="Int32" Name="Telefono" Nullable="true" />
+          <Property Type="String" Name="Correo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Sexo" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="Direccion" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="TipoDeUsuario" Nullable="true" />
+          <Property Type="String" Name="Contrasena" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="MarcaVendedor" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="ProductosEnCarrito" Nullable="true" />
+          <Property Type="String" Name="socialMediaID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="PreguntaSeguridad" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="RespuestaPreguntaSeguridad" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="VerifyUserCedula_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="Cedula" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="PrimerApellido" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="SegundoApellido" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="Edad" Nullable="true" />
+          <Property Type="Int32" Name="Telefono" Nullable="true" />
+          <Property Type="String" Name="Correo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Sexo" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="Direccion" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="TipoDeUsuario" Nullable="true" />
+          <Property Type="String" Name="Contrasena" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="MarcaVendedor" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="ProductosEnCarrito" Nullable="true" />
+          <Property Type="String" Name="socialMediaID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="PreguntaSeguridad" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="RespuestaPreguntaSeguridad" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="VerifyUserGmail_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="Cedula" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="PrimerApellido" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="SegundoApellido" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="Edad" Nullable="true" />
+          <Property Type="Int32" Name="Telefono" Nullable="true" />
+          <Property Type="String" Name="Correo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Sexo" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="Direccion" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="TipoDeUsuario" Nullable="true" />
+          <Property Type="String" Name="Contrasena" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="MarcaVendedor" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="ProductosEnCarrito" Nullable="true" />
+          <Property Type="String" Name="socialMediaID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="PreguntaSeguridad" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="RespuestaPreguntaSeguridad" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="VerifyUserSocialMedia_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="Cedula" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="PrimerApellido" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="SegundoApellido" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="Edad" Nullable="true" />
+          <Property Type="Int32" Name="Telefono" Nullable="true" />
+          <Property Type="String" Name="Correo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Sexo" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="Direccion" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="TipoDeUsuario" Nullable="true" />
+          <Property Type="String" Name="Contrasena" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="MarcaVendedor" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="ProductosEnCarrito" Nullable="true" />
+          <Property Type="String" Name="socialMediaID" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="PreguntaSeguridad" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="RespuestaPreguntaSeguridad" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PrimerApellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SegundoApellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Edad" Type="Int32" />
+          <Property Name="Telefono" Type="Int32" />
+          <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sexo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TipoDeUsuario" Type="Int32" />
+          <Property Name="Contrasena" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MarcaVendedor" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="ProductosEnCarrito" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="socialMediaID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PreguntaSeguridad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RespuestaPreguntaSeguridad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UserType" Relationship="TRAVEL2Model.FK_Users_UserType" FromRole="Users" ToRole="UserType" />
+        </EntityType>
+        <Association Name="FK_Users_UserType">
+          <End Type="TRAVEL2Model.UserType" Role="UserType" Multiplicity="0..1" />
+          <End Type="TRAVEL2Model.Users" Role="Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="TipoDeUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TRAVEL2ModelStoreContainer" CdmEntityContainer="TRAVEL2Entities">
+          <EntitySetMapping Name="Comentarios">
+            <EntityTypeMapping TypeName="TRAVEL2Model.Comentarios">
+              <MappingFragment StoreEntitySet="Comentarios">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+                <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hoteles">
+            <EntityTypeMapping TypeName="TRAVEL2Model.Hoteles">
+              <MappingFragment StoreEntitySet="Hoteles">
+                <ScalarProperty Name="IDHotel" ColumnName="IDHotel" />
+                <ScalarProperty Name="TipoDeHabitacion" ColumnName="TipoDeHabitacion" />
+                <ScalarProperty Name="CantidadDePersonas" ColumnName="CantidadDePersonas" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="NombreHotel" ColumnName="NombreHotel" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="Imagen2" ColumnName="Imagen2" />
+                <ScalarProperty Name="Imagen3" ColumnName="Imagen3" />
+                <ScalarProperty Name="web" ColumnName="web" />
+                <ScalarProperty Name="ComentarioHotel" ColumnName="ComentarioHotel" />
+                <ScalarProperty Name="CalificacionHotel" ColumnName="CalificacionHotel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Productos">
+            <EntityTypeMapping TypeName="TRAVEL2Model.Productos">
+              <MappingFragment StoreEntitySet="Productos">
+                <ScalarProperty Name="ProductoID" ColumnName="ProductoID" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Lugar" ColumnName="Lugar" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Personas" ColumnName="Personas" />
+                <ScalarProperty Name="CantidadEnStock" ColumnName="CantidadEnStock" />
+                <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+                <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
+                <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+                <ScalarProperty Name="Vendedor" ColumnName="Vendedor" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="Imagen2" ColumnName="Imagen2" />
+                <ScalarProperty Name="Imagen3" ColumnName="Imagen3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserType">
+            <EntityTypeMapping TypeName="TRAVEL2Model.UserType">
+              <MappingFragment StoreEntitySet="UserType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserStatus" ColumnName="UserStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="DeleteUserbyId" FunctionName="TRAVEL2Model.Store.DeleteUserbyId" />
+          <FunctionImportMapping FunctionImportName="FilterProduct" FunctionName="TRAVEL2Model.Store.FilterProduct" />
+          <FunctionImportMapping FunctionImportName="GuardarComentarios" FunctionName="TRAVEL2Model.Store.GuardarComentarios" />
+          <FunctionImportMapping FunctionImportName="obtenerComentariosPorProducto" FunctionName="TRAVEL2Model.Store.obtenerComentariosPorProducto" />
+          <FunctionImportMapping FunctionImportName="ShowProducts" FunctionName="TRAVEL2Model.Store.ShowProducts" />
+          <FunctionImportMapping FunctionImportName="UpdateUser" FunctionName="TRAVEL2Model.Store.UpdateUser" />
+          <FunctionImportMapping FunctionImportName="VerifyPassword" FunctionName="TRAVEL2Model.Store.VerifyPassword" />
+          <FunctionImportMapping FunctionImportName="VerifyUser" FunctionName="TRAVEL2Model.Store.VerifyUser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TRAVEL2Model.VerifyUser_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+                <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="TipoDeUsuario" ColumnName="TipoDeUsuario" />
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="MarcaVendedor" ColumnName="MarcaVendedor" />
+                <ScalarProperty Name="ProductosEnCarrito" ColumnName="ProductosEnCarrito" />
+                <ScalarProperty Name="socialMediaID" ColumnName="socialMediaID" />
+                <ScalarProperty Name="PreguntaSeguridad" ColumnName="PreguntaSeguridad" />
+                <ScalarProperty Name="RespuestaPreguntaSeguridad" ColumnName="RespuestaPreguntaSeguridad" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="VerifyUserCedula" FunctionName="TRAVEL2Model.Store.VerifyUserCedula">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TRAVEL2Model.VerifyUserCedula_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+                <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="TipoDeUsuario" ColumnName="TipoDeUsuario" />
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="MarcaVendedor" ColumnName="MarcaVendedor" />
+                <ScalarProperty Name="ProductosEnCarrito" ColumnName="ProductosEnCarrito" />
+                <ScalarProperty Name="socialMediaID" ColumnName="socialMediaID" />
+                <ScalarProperty Name="PreguntaSeguridad" ColumnName="PreguntaSeguridad" />
+                <ScalarProperty Name="RespuestaPreguntaSeguridad" ColumnName="RespuestaPreguntaSeguridad" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="VerifyUserGmail" FunctionName="TRAVEL2Model.Store.VerifyUserGmail">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TRAVEL2Model.VerifyUserGmail_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+                <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="TipoDeUsuario" ColumnName="TipoDeUsuario" />
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="MarcaVendedor" ColumnName="MarcaVendedor" />
+                <ScalarProperty Name="ProductosEnCarrito" ColumnName="ProductosEnCarrito" />
+                <ScalarProperty Name="socialMediaID" ColumnName="socialMediaID" />
+                <ScalarProperty Name="PreguntaSeguridad" ColumnName="PreguntaSeguridad" />
+                <ScalarProperty Name="RespuestaPreguntaSeguridad" ColumnName="RespuestaPreguntaSeguridad" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="VerifyUserSocialMedia" FunctionName="TRAVEL2Model.Store.VerifyUserSocialMedia">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TRAVEL2Model.VerifyUserSocialMedia_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+                <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="TipoDeUsuario" ColumnName="TipoDeUsuario" />
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="MarcaVendedor" ColumnName="MarcaVendedor" />
+                <ScalarProperty Name="ProductosEnCarrito" ColumnName="ProductosEnCarrito" />
+                <ScalarProperty Name="socialMediaID" ColumnName="socialMediaID" />
+                <ScalarProperty Name="PreguntaSeguridad" ColumnName="PreguntaSeguridad" />
+                <ScalarProperty Name="RespuestaPreguntaSeguridad" ColumnName="RespuestaPreguntaSeguridad" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="TRAVEL2Model.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="RespuestaPreguntaSeguridad" ColumnName="RespuestaPreguntaSeguridad" />
+                <ScalarProperty Name="PreguntaSeguridad" ColumnName="PreguntaSeguridad" />
+                <ScalarProperty Name="socialMediaID" ColumnName="socialMediaID" />
+                <ScalarProperty Name="ProductosEnCarrito" ColumnName="ProductosEnCarrito" />
+                <ScalarProperty Name="MarcaVendedor" ColumnName="MarcaVendedor" />
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="TipoDeUsuario" ColumnName="TipoDeUsuario" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+                <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

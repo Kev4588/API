@@ -1,0 +1,46 @@
+﻿@model KREAM_ProyectoFinal.Models.ViewModel.UserRecuperaContrasenaViewModel
+
+
+@{
+    ViewBag.Title = "RecuperaContrasena";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Correo Electrónico</title>
+
+</head>
+<body>
+
+    <div id="form-container">
+        @using (Html.BeginForm("recuperaContrasena", "Login", FormMethod.Post, new { role = "form", @class = "" }))
+        {
+            <h1 class="title">Cambio contrasena</h1>
+
+            @Html.AntiForgeryToken();
+            @Html.ValidationMessage("error", new { @class = "text-danger" })
+
+            @Html.HiddenFor(n => n.Correo)
+            @Html.HiddenFor(n => n.Id)
+
+
+            @Html.LabelFor(n => n.Contrasena, " Nueva Contraseña:") @Html.ValidationMessageFor(n => n.Contrasena, "", new { @class = "text-danger" })
+            @Html.PasswordFor(n => n.Contrasena, new { @class = "form-control" })
+
+            @Html.LabelFor(n => n.ConfirmarContrasena, "Confirmar Contraseña:") @Html.ValidationMessageFor(n => n.ConfirmarContrasena, "", new { @class = "text-danger" })
+            @Html.PasswordFor(n => n.ConfirmarContrasena, new { @class = "form-control" })
+
+
+            <br>
+            <input type="submit" class="btn btn-success" value="Cambiar contrasena"><br><br>
+
+        }
+
+        <a href="/Login/Login" class="btn btn-secondary">Volver</a>
+    </div>
+</body>
+</html>
+

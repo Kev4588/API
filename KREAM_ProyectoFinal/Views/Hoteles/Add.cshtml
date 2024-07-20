@@ -1,0 +1,162 @@
+﻿@model KREAM_ProyectoFinal.Models.TableViewModel.HotelesTableViewModel
+@{
+    ViewBag.Title = "Agregar Nueva Habitacion/Hotel";
+}
+
+<style>
+    body {
+        background-color: white;
+        font-family: Arial, sans-serif;
+    }
+
+    h2 {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .container-add {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-label {
+        font-weight: bold;
+    }
+
+    .form-control {
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    input[type="submit"],
+    input[type="button"] {
+        width: auto;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        input[type="submit"].btn-primary {
+            background-color: #28a745;
+            color: white;
+        }
+
+        input[type="button"].btn-outline-danger {
+            background-color: transparent;
+            border: 2px solid #dc3545;
+            color: #dc3545;
+        }
+
+            input[type="button"].btn-outline-danger:hover {
+                background-color: #dc3545;
+                color: white;
+            }
+</style>
+
+<h2>Agregar Nueva Habitación</h2>
+
+<div class="container-add">
+    @using (Html.BeginForm("Add", "Hoteles", FormMethod.Post, new { enctype = "multipart/form-data", @class = "row g-3" }))
+    {
+        <!-- Campos del formulario -->
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.NombreHotel, htmlAttributes: new { @class = "form-label" })
+            @Html.EditorFor(model => model.NombreHotel, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NombreHotel, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Otros campos del formulario -->
+
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.web, htmlAttributes: new { @class = "form-label" })
+            @Html.EditorFor(model => model.web, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.web, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.CantidadDePersonas, htmlAttributes: new { @class = "form-label" })
+            @Html.EditorFor(model => model.CantidadDePersonas, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.CantidadDePersonas, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Otros campos del formulario -->
+
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.Precio, htmlAttributes: new { @class = "form-label" })
+            @Html.EditorFor(model => model.Precio, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Precio, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.TipoDeHabitacion, htmlAttributes: new { @class = "form-label" })
+            <select id="GeneroDropdown" name="TipoDeHabitacion" class="form-control" data-val="true" data-val-required="La selección de género es obligatoria.">
+                <option value="" selected>-- Tipo de Habitación --</option>
+                <option value="Individual">Individual</option>
+                <option value="Doble">Doble</option>                
+                <option value="Familiar">Familiar</option>
+            </select>
+            @Html.ValidationMessageFor(model => model.TipoDeHabitacion, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Otros campos del formulario -->
+
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "form-label" })
+            @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
+        </div>
+
+       
+        <!-- IMAGENES -->
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.Imagen, "Imagen")
+            <input type="file" name="ImagenFile" id="ImagenFile" class="form-control" onchange="previewImage(this, 'previewImagen')" />
+            <img id="previewImagen" style="max-width: 200px; max-height: 200px; margin-top: 10px;" />
+        </div>
+
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.Imagen2, "Imagen2")
+            <input type="file" name="ImagenFile2" id="ImagenFile2" class="form-control" onchange="previewImage(this, 'previewImagen2')" />
+            <img id="previewImagen2" style="max-width: 200px; max-height: 200px; margin-top: 10px;" />
+        </div>
+
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.Imagen3, "Imagen3")
+            <input type="file" name="ImagenFile3" id="ImagenFile3" class="form-control" onchange="previewImage(this, 'previewImagen3')" />
+            <img id="previewImagen3" style="max-width: 200px; max-height: 200px; margin-top: 10px;" />
+        </div>
+
+        <div class="col-12 mt-4">
+            <input type="submit" value="Agregar" class="btn btn-primary" />
+            <input type="button" class="btn btn-outline-danger ms-2" value="Regresar" onclick="document.location.href = '@Url.Content("~/Hoteles/MostrarInformacion")'" />
+        </div>
+    }
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function previewImage(input, previewId) {
+        var preview = document.getElementById(previewId);
+        var file = input.files[0];
+        var reader = new FileReader();
+
+        reader.onloadend = function () {
+            preview.src = reader.result;
+        };
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "";
+        }
+    }
+</script>

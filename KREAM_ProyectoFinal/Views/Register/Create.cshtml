@@ -1,0 +1,76 @@
+﻿@model KREAM_ProyectoFinal.Models.ViewModel.UsersViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<html>
+<head>
+    <title>Registro de Usuario</title>
+
+</head>
+<body style="background-color: black;">
+    @if (TempData["Mensaje"] != null)
+    {
+        <script>
+            alert('@TempData["Mensaje"]');
+            TempData["Mensaje"] = null;
+        </script>
+    }
+
+    @using (Html.BeginForm("Create", "Register", FormMethod.Post, new { @class = "needs-validation", id = "mainForm" }))
+    {
+        <div class="background-container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="container form-container" style="color: white;">
+                        <h2 style="display: flex; font-family: Staatliches; color: black; justify-content: center">Crear una cuenta</h2>
+                        <div id="paso1" class="form-step-active" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+
+                            @Html.TextBoxFor(Model => Model.Cedula, null, new { @class = "form-control", placeholder = "Cédula", required = "required", pattern = "[0-9]{9}", title = "La cédula debe contener solo números y tener 9 dígitos" })
+                            @Html.TextBoxFor(Model => Model.Nombre, null, new { @class = "form-control", placeholder = "Nombre", required = "required" })
+                            @Html.TextBoxFor(Model => Model.PrimerApellido, null, new { @class = "form-control", placeholder = "Primer Apellido", required = "required" })
+                            @Html.TextBoxFor(Model => Model.SegundoApellido, null, new { @class = "form-control", placeholder = "Segundo Apellido", required = "required" })
+                            @Html.TextBoxFor(Model => Model.Edad, null, new { @class = "form-control", placeholder = "Edad", required = "required", pattern = "[0-9]+", title = "La edad debe ser un número" })
+                            <div class="form-group">
+                                <select id="GenderTypeDropdown" name="Sexo" class="form-control" data-val="true" data-val-required="Género obligatorio" required="required">
+                                    <option value="" selected>-- Elegir Género --</option>
+                                    <option value="F">Femenino</option>
+                                    <option value="M">Masculino</option>
+                                    <option value="O">Otro</option>
+                                </select>
+                                @Html.ValidationMessageFor(model => model.Sexo, "", new { @class = "text-danger" })
+                            </div>
+                            @Html.TextBoxFor(Model => Model.Telefono, null, new { @class = "form-control", placeholder = "Teléfono", required = "required", pattern = "[0-9]{8}", title = "El teléfono debe contener exactamente 8 dígitos" })
+                            @Html.TextAreaFor(Model => Model.Direccion, new { @class = "form-control", placeholder = "Dirección", required = "required" })
+                            @Html.TextBoxFor(Model => Model.Correo, new { @class = "form-control", placeholder = "Correo", required = "required", type = "email" })
+
+                            @Html.TextBoxFor(Model => Model.Contrasena, new { @class = "form-control", id = "Contrasena", placeholder = "Contraseña", type = "password", required = "required" })
+
+                            @Html.DropDownListFor(model => model.PreguntaSeguridad, new SelectList(
+                                new[]
+                                {
+                                    new SelectListItem { Text = "¿Cuál es el nombre de tu mejor amigo durante la infancia?", Value = "AmigoInfancia" },
+                                    new SelectListItem { Text = "¿Cuál era la marca de tu primer vehículo?", Value = "MarcaPrimerVehiculo" },
+                                    new SelectListItem { Text = "¿Cuál es tu película o libro favorito?", Value = "PeliculaLibroFavorito" },
+                                    new SelectListItem { Text = "¿Cuál es el nombre de tu primer mascota?", Value = "PrimerMascota" }
+                                }, "Value", "Text"), "-- Seleccione su pregunta de seguridad --", new { @class = "form-control", required = "required" })
+                            @Html.TextBoxFor(n => n.RespuestaPreguntaSeguridad, new { @class = "form-control", placeholder = "Respuesta", required = "required" })
+                        </div>
+                        <button type="submit" id="submit" class="boton-IS">Crear Cuenta</button>
+                        <button class="boton-RG" onclick="document.location.href = '@Url.Content("~/Login/Login")'">Regresar</button>
+
+                        <div class="col-md-9"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+
+
+
+</body>
+
+
+
+</html>

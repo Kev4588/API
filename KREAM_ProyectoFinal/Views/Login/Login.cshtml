@@ -1,0 +1,527 @@
+﻿@model KREAM_ProyectoFinal.Models.ViewModel.UsersViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    body {
+        margin: 0;
+        padding: 0;
+        color: white; /* Cambia el color del texto a blanco */
+        overflow: hidden; /* Evita el scroll en la vista */
+        background-image: url('../../content/Images/art.png');
+        background-size: cover;
+        background-position: center;
+        background-color: black;
+    }
+
+    .container-login {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-form {
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .form-control {
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+        padding: 10px;
+        margin-bottom: 20px;
+        font-family: Staatliches;
+        border-radius: 25px;
+    }
+
+        .form-control::placeholder {
+            color: white;
+        }
+
+    .boton-IS,
+    .boton-RG {
+        background-color: transparent;
+        border: 2px solid white;
+        border-radius: 25px;
+        font-family: Staatliches;
+        color: white;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 14px;
+        letter-spacing: 1px;
+        margin-top: 10px;
+        display: inline-block;
+    }
+
+        .boton-IS:hover,
+        .boton-RG:hover {
+            background-color: white;
+            color: black;
+        }
+
+    #olvidadoContrasena {
+        color: white;
+        text-decoration: underline;
+        margin-top: 10px;
+        display: inline-block;
+    }
+
+    .social-login-buttons {
+        margin-top: 20px;
+    }
+
+    .google-signin-button {
+        color: #757575;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-left: 10px;
+    }
+
+        
+
+    .facebook-login-button {
+        background-color: #3b5998;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+        .facebook-login-button:hover {
+            background-color: #2d4373;
+        }
+</style>
+
+<div class="container-login">
+    <div class="login-form">
+        <form action="@Url.Action("Login", "Login")" method="post">
+            <h2>Iniciar sesión</h2>
+
+            <input type="text" id="username" name="username" class="form-control" placeholder="Nombre de usuario" required>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required>
+
+            <input type="submit" value="Ingresar" class="boton-IS">
+            <button class="boton-RG" onclick="document.location.href = '@Url.Content("~/Register/Create")'">Crear cuenta</button>
+
+            <br>
+            <a href="#" id="olvidadoContrasena" onclick="recuperarContrasena(); return false;">¿Se te ha olvidado la contraseña?</a>
+
+            <div class="social-login-buttons">
+                <div id="google-signin-button" class="google-signin-button"></div>
+                <div class="fb-login-button" data-width="150" data-size="large" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="false" scope="public_profile,email" onlogin="checkLoginState();"></div>
+            </div>
+
+            <p style="color: red;">
+                @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                {
+                    @ViewBag.ErrorMessage
+                }
+            </p>
+        </form>
+    </div>
+</div>
+
+<script>
+            /*este script permite la rotacion de las imagenes del login sin perder el formato definido en el container*/
+
+            var images = ['../../content/Images/Jordans.png', '../../content/Images/Kanye.png', '../../content/Images/Yeezys.png',
+                '../../content/Images/varias.png', '../../content/Images/varias1.png', '../../content/Images/NB.png']; // arreglo de imagenes
+            var currentIndex = 0;
+
+            function rotateBackgroundImage() {
+                currentIndex = (currentIndex + 1) % images.length; // moverse a la siguiente imagen
+                var imageUrl = images[currentIndex];
+                document.querySelector('.background-container').style.backgroundImage = 'url(' + imageUrl + ')';
+            }
+
+            setInterval(rotateBackgroundImage, 3000); // rotar cada 3 segundos y se pueden definir otros intervalos
+
+            window.onload = function () {//Acciones a ejecitar una vez que la pagina carga
+
+                google.accounts.id.initialize({
+                    client_id: '80683042380-k970d3dvshehfrs19t4ng07fhki94f8c.apps.googleusercontent.com',//Obtenido desde el Google developer console
+                    callback: handleCredentialResponse,
+                    scope: 'openid profile email' // Solicitar permiso acceso al perfil y correo electrónico del usuario
+                });
+                google.accounts.id.renderButton(
+                    document.getElementById('google-signin-button'),
+                    { theme: 'filled_blue', size: 'large' }
+                );
+            };
+
+            function handleCredentialResponse(response) {
+                const token = response.credential;
+
+                // Separar el token  JWT recibido en  partes (encabezado, cuerpo y firma)
+                const [encodedHeader, encodedPayload, signature] = token.split('.');
+
+                try {
+                    // Decodificar las partes Base64 utilizando atob
+                    const decodedHeader = atob(encodedHeader);
+                    const decodedPayload = atob(encodedPayload);
+
+                    // Parsea el cuerpo decodificado como JSON para obtener los datos
+                    const payloadData = JSON.parse(decodedPayload);
+
+                    // Verificar si el token contiene la propiedad email y name
+                    if (payloadData && payloadData.email && payloadData.name) {
+                        const userEmail = payloadData.email;
+                        const userName = payloadData.name;
+                        console.log('Correo almacenado:', userEmail);
+
+                        // Dividir el nombre en nombre, primer apellido y segundo apellido
+                        const [nombre, primerApellido] = userName.split(' ');
+
+                        console.log('Nombre:', nombre);
+                        console.log('Primer Apellido:', primerApellido);
+
+
+
+                        $.ajax({
+                            url: '@Url.Action("usuarioExiste", "Login")',
+                            type: 'POST',
+                            data: { email: userEmail },
+                            success: function(data) {
+                                if (data === "0") {
+
+                                    var respuesta = confirm("Usuario no registrado en plataforma, presione Aceptar para registrarlo y continuar");
+                                    if (respuesta) {
+                                        alert("Registrando usuario..." + nombre);
+
+                                        $.ajax({
+                                                 url: '@Url.Action("CreateAPI", "Login")',
+                                                 type: 'POST',
+                                                 data: {
+                                                    nombre: nombre,
+                                                    primerApellido: primerApellido,
+                                                    userEmail: userEmail
+                                                  },
+                                                  success: function (data) {
+
+                                                      if (data == 0) {
+
+                                                          window.location.href = "/Home/index";
+                                                      } else {
+                                                          window.location.href = "/Login/Login";
+                                                      }
+
+                                                },
+                                                error: function (error) {
+                                                console.error("Error: ", error);
+                                                }
+                                        });
+
+
+
+                                    } else {
+                                        alert("Ha cancelado el ingreso por Google API, redireccionando...");
+                                        window.location.href = "/Login/Login";
+                                    }
+
+
+                                 } else {
+                                    window.location.href = "/Home/index";
+                                }
+                            },
+                            error: function(error) {
+                                console.error("Error: ", error);
+                            }
+                        });
+                    } else {
+                        console.log('No se encontró el correo electrónico o el nombre en el token JWT.');
+                    }
+                } catch (error) {
+                    console.error('Error al decodificar el token JWT:', error.message);
+                }
+            }
+
+//********************************************************************************************************* */
+
+            function recuperarContrasena() {
+                // Solicitar al usuario que ingrese el correo electrónico
+                var correoElectronico = prompt("Por favor, ingresa el correo electrónico de la cuenta a recuperar:");
+
+                if (correoElectronico != null) {
+                    // Validar si el correo electrónico es válido
+                    if (correoElectronico.trim() != "") {
+                        $.ajax({
+                            url: '@Url.Action("usuarioExiste2", "Login")',
+                            type: 'POST',
+                            data: { email: correoElectronico },
+                            success: function (data) {
+                                if (data === "0") {
+                                    alert("El correo electrónico digitado no está registrado en la plataforma");
+                                    recuperarContrasena();
+                                } else {
+                                    var preguntaSeguridad = "";
+                                    var respuestaPreguntaSeguridad = "";
+                                    // Obtener la pregunta de seguridad
+                                    $.ajax({
+                                        url: '@Url.Action("devuelvePreguntaSeguridad", "Login")',
+                                        type: 'POST',
+                                        data: { email: correoElectronico },
+                                        success: function (preguntaData) {
+                                            preguntaSeguridad = preguntaData;
+                                            //alert(preguntaSeguridad);
+
+                                            if (preguntaSeguridad == "MarcaPrimerVehiculo") {
+                                                preguntaSeguridad = "¿Cuál era la marca de tu primer vehículo?";
+                                            } else if (preguntaSeguridad == "PeliculaLibroFavorito") {
+                                                preguntaSeguridad = "¿Cuál es tu película o libro favorito?";
+                                            } else if (preguntaSeguridad == "AmigoInfancia") {
+                                                preguntaSeguridad = "¿Cuál es el nombre de tu mejor amigo durante la infancia?";
+                                            } else if (preguntaSeguridad == "PrimerMascota") {
+                                                preguntaSeguridad = "¿Cuál es el nombre de tu primer mascota?";
+                                            } else {
+                                                alert("Recuperacion contrasena no disponible para usuarios API");
+                                                //recuperarContrasena();
+                                                window.location.href = "/Login/Login";
+
+                                            }
+
+                                            $.ajax({
+                                                url: '@Url.Action("devuelveRespuestaPreguntaSeguridad", "Login")',
+                                                type: 'POST',
+                                                data: { email: correoElectronico },
+                                                success: function (respuestaData) {
+                                                    respuestaPreguntaSeguridad = respuestaData;
+                                                    //alert(respuestaPreguntaSeguridad);
+                                                    //********************************************************* /
+                                                    var intentos = 3;
+                                                    var respuestaCorrecta = false;
+                                                    var cancelarOperacion = false;
+                                                    while (intentos > 0 && !respuestaCorrecta) {
+                                                        alert("Por favor digite la respuesta para la pregunta de seguridad' " + preguntaSeguridad + "'");
+                                                        respuestaUsuario = prompt("Por favor digite la respuesta para la pregunta mostrada anteriormente, intentos restantes:" + intentos);
+                                                        intentos--;
+                                                        if (respuestaUsuario != null) {
+                                                            if (respuestaUsuario.trim() != "") {
+                                                                if (respuestaUsuario.toLowerCase() == respuestaPreguntaSeguridad.toLowerCase()) {
+                                                                    respuestaCorrecta = true;
+                                                                    intentos = 0;
+                                                                    window.location.href = "/login/recuperaContrasena?email=" + encodeURIComponent(correoElectronico);
+
+                                                                } else {
+                                                                    alert("Respuesta incorrecta. Intentos restantes: " + intentos);
+                                                                }
+                                                            } else {
+                                                                alert("Debes ingresar una respuesta válida. Intentos restantes: " + intentos);
+                                                            }
+                                                        } else {
+                                                            alert("Has cancelado verificacion de preguntas seguridad. Redireccionando a pantalla de login...");
+                                                            intentos = 0;
+                                                            cancelarOperacion = true;
+                                                            window.location.href = "/Login/Login";
+                                                        }
+
+                                                    }
+                                                    if (!respuestaCorrecta) {
+                                                        if (cancelarOperacion == false) {
+                                                            alert("No cuenta con más intentos. Para cambiar sus preguntas de seguridad por favor contactar a la linea de ayuda +506 4080 4001");
+                                                        }
+                                                    } else {
+                                                        window.location.href = "/login/recuperaContrasena?email=" + encodeURIComponent(correoElectronico);
+
+
+                                                    }
+
+
+                                                }, error: function (xhr, status, error) {
+                                                    console.error("Error al obtener la respuesta de pregunta de seguridad: ", error);
+                                                }
+
+
+                                            });
+
+
+
+
+                                        }, error: function (xhr, status, error) {
+                                            console.error("Error al obtener la pregunta de seguridad: ", error);
+                                        }
+
+                                    });
+
+
+
+
+
+
+                                }
+
+                            }, error: function (error) {
+                                console.error("Error: ", error);
+                            }
+                        });
+                    } else {
+                        alert("Debes ingresar un correo electrónico válido.");
+                        recuperarContrasena();
+                    }
+                } else {
+                    alert("Has cancelado el ingreso de correo electrónico.");
+                    window.location.href = "/Login/Login";
+                }
+
+            }
+//***************************************************************************************************************************** */
+
+
+        //Borra cualquier dato almacenado para que pida inicio de sesion todas las veces
+        localStorage.clear();
+        sessionStorage.clear();
+
+        window.fbAsyncInit = function () {
+
+            FB.init({
+                appId: '726896496246194',// obtenido desde el meta developer portal
+                cookie: false,
+                xfbml: true,
+                version: 'v12.0'
+            });
+
+            FB.AppEvents.logPageView();
+        };
+
+        //funcion para cargar sdk de facebook
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+
+
+        function checkLoginState() {
+
+            FB.getLoginStatus(function (response) {
+
+                console.log('loginState');
+                console.log(response);
+                statusChangeCallback(response);
+            });
+        }
+
+        function logoutAndClearData() {
+            if (window.FB) {
+                FB.logout(function (response) {
+                    console.log('User logged out successfully');
+                    clearBrowserData(); // Limpia datos del navegador
+                    //window.location.reload(); // Recarga la página para limpiar el estado en la memoria
+                });
+            } else {
+                console.log('FB SDK not initialized or already cleaned up.');
+            }
+        }
+        function clearBrowserData() {
+            // Limpia cookies
+            clearCookies();
+            // Limpia almacenamiento local
+            localStorage.clear();
+            // Limpia almacenamiento de sesión
+            sessionStorage.clear();
+            console.log("All browser data cleared.");
+        }
+
+        function clearCookies() {
+            var cookies = document.cookie.split(";");
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                var eqPos = cookie.indexOf("=");
+                var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+            }
+        }
+
+ function statusChangeCallback(response) {
+    if (response.status === 'connected') {
+        // El usuario está conectado a Facebook y autorizado en tu aplicación
+        console.log('Logged in and authenticated');
+
+        FB.api('/me', { fields: 'first_name,last_name' }, function(apiResponse) {
+            if (!apiResponse.error) {
+                console.log('User ID:', response.authResponse.userID);
+                console.log('First Name:', apiResponse.first_name);
+                console.log('Last Name:', apiResponse.last_name);
+
+                var socialMediaID = response.authResponse.userID;
+                var nombre = apiResponse.first_name;
+                var primerApellido = apiResponse.last_name;
+                logoutAndClearData();
+
+                $.ajax({
+                    url: '@Url.Action("usuarioExisteSocialMedia", "Login")',
+                    type: 'POST',
+                    data: { socialMediaID: socialMediaID },
+                    success: function(data) {
+                        if (data === "0") {
+                            var respuesta = confirm("Usuario no registrado en plataforma, presione Aceptar para registrarlo y continuar");
+                            if (respuesta) {
+                                alert("Registrando usuario..." + nombre);
+                                $.ajax({
+                                    url: '@Url.Action("CreateAPI2", "Login")',
+                                    type: 'POST',
+                                    data: {
+                                        nombre: nombre,
+                                        primerApellido: primerApellido,
+                                        socialMediaID: socialMediaID
+                                    },
+                                    success: function(data) {
+                                        if (data == 0) {
+                                            window.location.href = "/Home/index";
+                                        } else {
+                                            window.location.href = "/Login/Login";
+                                        }
+                                    },
+                                    error: function(error) {
+                                        console.error("Error: ", error);
+                                    }
+                                });
+                            } else {
+                                alert("Ha cancelado el ingreso por Facebook API, redireccionando...");
+                                window.location.href = "/Login/Login";
+                            }
+                        } else {
+                            window.location.href = "/Home/index";
+                        }
+                    },
+                    error: function(error) {
+                        console.error("Error: ", error);
+                    }
+                });
+            } else {
+                console.log('Error fetching user details:', apiResponse.error);
+            }
+        });
+    } else {
+        // El usuario no está conectado a Facebook o no ha autorizado tu aplicación
+        console.log('Not logged into Facebook or not authenticated');
+    }
+}
+
+
+
+
+
+</script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>

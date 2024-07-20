@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Style/Pago/Index.css" rel="stylesheet" />
+    <style>
+        span {
+            font-size: 16px;
+        }
+
+        label {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header text-center">
+                <h3>Confirmar Pago</h3>
+            </div>
+            <div class="card-body">
+                <div class="container mt-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-5">
+                            <div class="credit-card" id="credit-card">
+                                <h4 class="card-title text-center">Tarjeta</h4>
+                                <div class="card-field">
+                                    <label for="card-number">Número</label>
+                                    <span id="cardNumber">XXXX XXXX XXXX XXXX</span>
+                                </div>
+                                <div class="card-field">
+                                    <label for="name">Nombre</label>
+                                    <span id="name"></span>
+                                </div>
+                                <div class="card-field">
+                                    <label for="expiry">Fecha (MM/YY)</label>
+                                    <span id="expiry">XX/XX</span>
+                                    <label for="cvv">CVV</label>
+                                    <span id="cvv">XXX</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="checkout-form mt-4">
+                                <form id="payment-form" method="post" action="@Url.Action("CompraRealizada", "Carrito")">
+                                    <div class="form-group">
+                                        <label for="card-number">Número de Tarjeta</label>
+                                        <input type="text" class="form-control" id="card-number" maxlength="19" placeholder="XXXX XXXX XXXX XXXX" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="card-holder">Titular de la Tarjeta</label>
+                                        <input type="text" class="form-control" maxlength="17" id="card-holder" placeholder="Nombre Apellido" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="card-expiry">Fecha de Expiración</label>
+                                        <input type="text" class="form-control" id="card-expiry" maxlength="5" pattern="\d{2}/\d{2}" placeholder="MM/YY" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="card-cvv">CVV</label>
+                                        <input type="password" class="form-control" id="cvv-form" maxlength="3" placeholder="XXX" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-lg btn-block btn-success">Pagar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function comprar() {
+            document.getElementById("payment-form").submit();
+        }
+        $('#card-holder').on('input', function () {
+
+            $('#name').text(this.value || 'Nombre Apellido');
+        });
+
+        $('#card-expiry').on('input', function () {
+            $('#expiry').text(this.value || 'XX/XX');
+        });
+
+        $('#cvv-form').on('input', function () {
+            $('#cvv').text(this.value || 'XXX');
+        });
+
+        $('#card-number').on('input', function () {
+            $('#cardNumber').text(this.value || 'XXXX XXXX XXXX XXXX');
+        });
+
+        $('#payment-form').submit(function (event) {
+            event.preventDefault();
+            let timerInterval;
+            Swal.fire({
+                title: "Procesando pago",
+                html: "",
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading();
+                    const timer = Swal.getPopup().querySelector("b");
+                    timerInterval = setInterval(() => {
+                        timer.textContent = `${Swal.getTimerLeft()}`;
+                    }, 100);
+                },
+                willClose: () => {
+                    clearInterval(timerInterval);
+                }
+            }).then((result) => {
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    Swal.fire({
+                        title: "Exito",
+                        text: "Pago exitoso",
+                        icon: "success"
+                    });
+                    comprar();
+                    setTimeout(function () {
+                        window.location.href = "/Home/Index";
+                    }, 3000);
+                }
+            });
+        });
+    </script>
+    <script>
+
+
+        
+    </script>
+</body>
+</html>
