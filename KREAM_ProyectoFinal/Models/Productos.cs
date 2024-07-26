@@ -17,7 +17,7 @@ namespace KREAM_ProyectoFinal.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Productos()
         {
-            this.Comentarios = new HashSet<Comentarios>();
+            this.Comentarios1 = new HashSet<Comentarios>();
         }
     
         public int ProductoID { get; set; }
@@ -28,7 +28,7 @@ namespace KREAM_ProyectoFinal.Models
         public string Categoria { get; set; }
         public string Personas { get; set; }
         public Nullable<int> CantidadEnStock { get; set; }
-        public string Comentario { get; set; }
+        public string Comentarios { get; set; }
         public Nullable<int> Calificacion { get; set; }
         public string Proveedor { get; set; }
         public Nullable<int> Vendedor { get; set; }
@@ -37,6 +37,6 @@ namespace KREAM_ProyectoFinal.Models
         public byte[] Imagen3 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Comentarios> Comentarios { get; set; }
+        public virtual ICollection<Comentarios> Comentarios1 { get; set; }
     }
 }

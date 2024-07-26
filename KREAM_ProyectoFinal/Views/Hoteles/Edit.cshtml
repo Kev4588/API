@@ -1,4 +1,4 @@
-﻿@model KREAM_ProyectoFinal.Models.TableViewModel.HotelesTableViewModel
+﻿@model PURIS_FLASH.Models.TableViewModel.HotelesTableViewModel
 
 @{
     ViewBag.Title = "Editar Tour";
@@ -22,30 +22,35 @@
 
 
         <div class="col-md-6">
-            <label class="form-label">Tipo de Habitación</label>
-            @Html.EditorFor(model => model.TipoDeHabitacion, new { htmlAttributes = new { @class = "form-control" } })
+            <label class="form-label">Tipo de Transporte</label>
+            @Html.DropDownListFor(model => model.TipoDeHabitacion, new List<SelectListItem>
+            {
+                new SelectListItem { Value = "Moto", Text = "Moto" },
+                new SelectListItem { Value = "Carro", Text = "Carro" },
+                new SelectListItem { Value = "Bicicleta", Text = "Bicicleta" },
+                new SelectListItem { Value = "Cuadraciclo", Text = "Cuadraciclo" },
+                new SelectListItem { Value = "Camion", Text = "Camion" }
+            }, new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.TipoDeHabitacion, "", new { @class = "text-danger" })
         </div>
 
-        <div class="col-md-6">
-            <label class="form-label">Cantidad de Personas</label>
-            <input class="form-control" type="number" min="1" name="CantidadDePersonas" value="@Model.CantidadDePersonas" />
-            @Html.ValidationMessageFor(model => model.CantidadDePersonas, "", new { @class = "text-danger" })
-        </div>
+
+
 
         <div class="col-md-6">
-            <label class="form-label">Precio</label>
-            @Html.EditorFor(model => model.Precio, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Precio, "", new { @class = "text-danger" })
+            <label class="form-label">Teléfono (max 8 digitos)</label>
+            @Html.TextBoxFor(model => model.Telefono, new { @class = "form-control", @type = "text", @pattern = "[0-9]{8}", @maxlength = "8", @inputmode = "numeric", @title = "Solo se permiten números con una longitud de 8 dígitos" })
+            @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
         </div>
 
+
         <div class="col-md-6">
-            <label class="form-label">Descripcion</label>
-            @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control" } })
+            <label class="form-label">Descripción</label>
+            @Html.TextAreaFor(model => model.Descripcion, new { @class = "form-control", @rows = 5 })
             @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
         </div>
 
-        
+
 
         <div class="col-md-6">
             <label class="form-label">Imagen 1</label>

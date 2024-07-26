@@ -1,14 +1,15 @@
-﻿using KREAM_ProyectoFinal.Models.TableViewModel;
-using KREAM_ProyectoFinal.Models.ViewModel;
-using KREAM_ProyectoFinal.Models;
+﻿using PURIS_FLASH.Models.TableViewModel;
+using PURIS_FLASH.Models.ViewModel;
+using PURIS_FLASH.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.SqlClient;
+using KREAM_ProyectoFinal.Models;
 
-namespace KREAM_ProyectoFinal.Controllers
+namespace PURIS_FLASH.Controllers
 {
     [VerificarSesion]
     public class UserController : Controller

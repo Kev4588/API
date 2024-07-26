@@ -6,10 +6,11 @@ using System.Web;
 using System.Web.Mvc;
 using Antlr.Runtime.Misc;
 using KREAM_ProyectoFinal.Models;
-using KREAM_ProyectoFinal.Models.TableViewModel;
-using KREAM_ProyectoFinal.Models.ViewModel;
+using PURIS_FLASH.Models;
+using PURIS_FLASH.Models.TableViewModel;
+using PURIS_FLASH.Models.ViewModel;
 
-namespace KREAM_ProyectoFinal.Controllers
+namespace PURIS_FLASH.Controllers
 {
     [VerificarSesion]
     public class VendedorController : Controller
@@ -40,7 +41,7 @@ namespace KREAM_ProyectoFinal.Controllers
                                 Categoria = p.Categoria,
                                 Personas = p.Personas,
                                 CantidadEnStock = p.CantidadEnStock,
-                                Comentario = p.Comentario,
+                                Comentario = p.Comentarios,
                                 Proveedor = p.Proveedor,
                                 Imagen = p.Imagen,
                                 Imagen2 = p.Imagen2,
@@ -141,7 +142,7 @@ namespace KREAM_ProyectoFinal.Controllers
                     Categoria = model.Categoria,
                     Personas = model.Personas,
                     CantidadEnStock = model.CantidadEnStock,
-                    Comentario = model.Comentario,
+                    Comentarios = model.Comentario,
                     Calificacion = model.Calificacion,
                     Proveedor = model.Proveedor,
                     //Vendedor = usuario.Cedula,
@@ -190,7 +191,7 @@ namespace KREAM_ProyectoFinal.Controllers
                     Categoria = producto.Categoria,
                     Personas = producto.Personas,
                     CantidadEnStock = producto.CantidadEnStock,
-                    Comentario = producto.Comentario,
+                    Comentario = producto.Comentarios,
                     Calificacion = producto.Calificacion != null ? (int)producto.Calificacion : 0, // Convertir de forma segura
                     Proveedor = producto.Proveedor,
 
@@ -239,7 +240,7 @@ namespace KREAM_ProyectoFinal.Controllers
                 productoTO.Categoria = model.Categoria;
                 productoTO.Personas = model.Personas;
                 productoTO.CantidadEnStock = model.CantidadEnStock;
-                productoTO.Comentario = model.Comentario;
+                productoTO.Comentarios = model.Comentario;
                 productoTO.Calificacion = model.Calificacion;
                 productoTO.Proveedor = model.Proveedor;
 

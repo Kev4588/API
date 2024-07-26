@@ -1,12 +1,13 @@
-﻿using KREAM_ProyectoFinal.Models.TableViewModel;
-using KREAM_ProyectoFinal.Models;
-using KREAM_ProyectoFinal.Models.ViewModel;
+﻿using PURIS_FLASH.Models.TableViewModel;
+using PURIS_FLASH.Models;
+using PURIS_FLASH.Models.ViewModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using System;
+using KREAM_ProyectoFinal.Models;
 
-namespace KREAM_ProyectoFinal.Controllers
+namespace PURIS_FLASH.Controllers
 {
     [VerificarSesion]
     public class CarritoController : Controller

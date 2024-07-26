@@ -18,7 +18,7 @@ namespace KREAM_ProyectoFinal.Models
         public string TipoDeHabitacion { get; set; }
         public Nullable<int> CantidadDePersonas { get; set; }
         public string Descripcion { get; set; }
-        public Nullable<decimal> Precio { get; set; }
+        public Nullable<int> Telefono { get; set; }
         public string NombreHotel { get; set; }
         public byte[] Imagen { get; set; }
         public byte[] Imagen2 { get; set; }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace KREAM_ProyectoFinal.Controllers
+namespace PURIS_FLASH.Controllers
 {
     [VerificarSesion]
     public class CompradorController : Controller

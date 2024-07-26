@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace KREAM_ProyectoFinal.Models.TableViewModel
+namespace PURIS_FLASH.Models.TableViewModel
 {
     public class HotelesTableViewModel
     {
@@ -18,7 +18,7 @@ namespace KREAM_ProyectoFinal.Models.TableViewModel
         public string web { get; set; }
 
         
-        public decimal Precio { get; set; }
+        public int? Telefono { get; set; } /*SUPER IMPORTANTE , SI NO TIENE ESE int? da un error de NULL , tiene que tener eso para que acepte Nulls o se caeria todo*/
 
         
         public int CalificacionHotel { get; set; }
@@ -59,10 +59,6 @@ namespace KREAM_ProyectoFinal.Models.TableViewModel
 
         public int Cantidad { get; set; }
 
-        // Calcula el total multiplicando el precio por la cantidad
-        public decimal Total
-        {
-            get { return Precio * Cantidad; }
-        }
+      
     }
 }

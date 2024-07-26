@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="TRAVEL2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="TRAVEL2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Comentarios">
           <Key>
             <PropertyRef Name="Id" />
@@ -21,7 +21,7 @@
           <Property Name="TipoDeHabitacion" Type="varchar" MaxLength="100" />
           <Property Name="CantidadDePersonas" Type="int" />
           <Property Name="Descripcion" Type="varchar(max)" />
-          <Property Name="Precio" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Telefono" Type="int" />
           <Property Name="NombreHotel" Type="varchar" MaxLength="100" />
           <Property Name="Imagen" Type="varbinary(max)" />
           <Property Name="Imagen2" Type="varbinary(max)" />
@@ -42,7 +42,7 @@
           <Property Name="Categoria" Type="varchar" MaxLength="100" />
           <Property Name="Personas" Type="varchar" MaxLength="100" />
           <Property Name="CantidadEnStock" Type="int" />
-          <Property Name="Comentario" Type="text" />
+          <Property Name="Comentarios" Type="text" />
           <Property Name="Calificacion" Type="int" />
           <Property Name="Proveedor" Type="varchar" MaxLength="100" />
           <Property Name="Vendedor" Type="int" />
@@ -164,7 +164,8 @@
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TRAVEL2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -185,7 +186,7 @@
           <Property Name="TipoDeHabitacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="CantidadDePersonas" Type="Int32" />
           <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Telefono" Type="Int32" />
           <Property Name="NombreHotel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Imagen2" Type="Binary" MaxLength="Max" FixedLength="false" />
@@ -206,14 +207,37 @@
           <Property Name="Categoria" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Personas" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="CantidadEnStock" Type="Int32" />
-          <Property Name="Comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Comentarios" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Calificacion" Type="Int32" />
           <Property Name="Proveedor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Vendedor" Type="Int32" />
           <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Imagen2" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Imagen3" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="Comentarios" Relationship="Self.FK_Comentarios_Productos" FromRole="Productos" ToRole="Comentarios" />
+          <NavigationProperty Name="Comentarios1" Relationship="Self.FK_Comentarios_Productos" FromRole="Productos" ToRole="Comentarios" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PrimerApellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SegundoApellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Edad" Type="Int32" />
+          <Property Name="Telefono" Type="Int32" />
+          <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sexo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TipoDeUsuario" Type="Int32" />
+          <Property Name="Contrasena" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MarcaVendedor" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="ProductosEnCarrito" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="socialMediaID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PreguntaSeguridad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RespuestaPreguntaSeguridad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UserType" Relationship="Self.FK_Users_UserType" FromRole="Users" ToRole="UserType" />
         </EntityType>
         <EntityType Name="UserType">
           <Key>
@@ -221,7 +245,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Users" Relationship="TRAVEL2Model.FK_Users_UserType" FromRole="UserType" ToRole="Users" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Users_UserType" FromRole="UserType" ToRole="Users" />
         </EntityType>
         <Association Name="FK_Comentarios_Productos">
           <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
@@ -235,17 +259,34 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Users_UserType">
+          <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="TipoDeUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="TRAVEL2Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Comentarios" EntityType="Self.Comentarios" />
           <EntitySet Name="Hoteles" EntityType="Self.Hoteles" />
           <EntitySet Name="Productos" EntityType="Self.Productos" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
           <EntitySet Name="UserType" EntityType="Self.UserType" />
           <AssociationSet Name="FK_Comentarios_Productos" Association="Self.FK_Comentarios_Productos">
             <End Role="Productos" EntitySet="Productos" />
             <End Role="Comentarios" EntitySet="Comentarios" />
           </AssociationSet>
+          <AssociationSet Name="FK_Users_UserType" Association="Self.FK_Users_UserType">
+            <End Role="UserType" EntitySet="UserType" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
           <FunctionImport Name="DeleteUserbyId">
-          <Parameter Name="var_Id" Mode="In" Type="Int32" />
+            <Parameter Name="var_Id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="FilterProduct">
             <Parameter Name="var_genero" Mode="In" Type="String" />
@@ -257,7 +298,7 @@
             <Parameter Name="Comentario" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="obtenerComentariosPorProducto">
-          <Parameter Name="IdProducto" Mode="In" Type="Int32" />
+            <Parameter Name="IdProducto" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ShowProducts" ReturnType="Collection(String)" />
           <FunctionImport Name="UpdateUser">
@@ -282,19 +323,14 @@
             <Parameter Name="var_contrasena" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="VerifyUserCedula" ReturnType="Collection(TRAVEL2Model.VerifyUserCedula_Result)">
-          <Parameter Name="var_cedula" Mode="In" Type="String" />
+            <Parameter Name="var_cedula" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="VerifyUserGmail" ReturnType="Collection(TRAVEL2Model.VerifyUserGmail_Result)">
-          <Parameter Name="var_correo" Mode="In" Type="String" />
+            <Parameter Name="var_correo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="VerifyUserSocialMedia" ReturnType="Collection(TRAVEL2Model.VerifyUserSocialMedia_Result)">
-          <Parameter Name="var_socialMediaID" Mode="In" Type="String" />
+            <Parameter Name="var_socialMediaID" Mode="In" Type="String" />
           </FunctionImport>
-          <EntitySet Name="Users" EntityType="TRAVEL2Model.Users" />
-          <AssociationSet Name="FK_Users_UserType" Association="TRAVEL2Model.FK_Users_UserType">
-            <End Role="UserType" EntitySet="UserType" />
-            <End Role="Users" EntitySet="Users" />
-          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="VerifyUser_Result">
           <Property Type="Int32" Name="Id" Nullable="false" />
@@ -372,41 +408,6 @@
           <Property Type="String" Name="PreguntaSeguridad" Nullable="true" MaxLength="100" />
           <Property Type="String" Name="RespuestaPreguntaSeguridad" Nullable="true" MaxLength="100" />
         </ComplexType>
-        <EntityType Name="Users">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Cedula" Type="Int32" Nullable="false" />
-          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="PrimerApellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="SegundoApellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Edad" Type="Int32" />
-          <Property Name="Telefono" Type="Int32" />
-          <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Sexo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TipoDeUsuario" Type="Int32" />
-          <Property Name="Contrasena" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="MarcaVendedor" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="ProductosEnCarrito" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="socialMediaID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="PreguntaSeguridad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="RespuestaPreguntaSeguridad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="UserType" Relationship="TRAVEL2Model.FK_Users_UserType" FromRole="Users" ToRole="UserType" />
-        </EntityType>
-        <Association Name="FK_Users_UserType">
-          <End Type="TRAVEL2Model.UserType" Role="UserType" Multiplicity="0..1" />
-          <End Type="TRAVEL2Model.Users" Role="Users" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UserType">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Users">
-              <PropertyRef Name="TipoDeUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -429,7 +430,7 @@
                 <ScalarProperty Name="TipoDeHabitacion" ColumnName="TipoDeHabitacion" />
                 <ScalarProperty Name="CantidadDePersonas" ColumnName="CantidadDePersonas" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
                 <ScalarProperty Name="NombreHotel" ColumnName="NombreHotel" />
                 <ScalarProperty Name="Imagen" ColumnName="Imagen" />
                 <ScalarProperty Name="Imagen2" ColumnName="Imagen2" />
@@ -451,13 +452,36 @@
                 <ScalarProperty Name="Categoria" ColumnName="Categoria" />
                 <ScalarProperty Name="Personas" ColumnName="Personas" />
                 <ScalarProperty Name="CantidadEnStock" ColumnName="CantidadEnStock" />
-                <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
                 <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
                 <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
                 <ScalarProperty Name="Vendedor" ColumnName="Vendedor" />
                 <ScalarProperty Name="Imagen" ColumnName="Imagen" />
                 <ScalarProperty Name="Imagen2" ColumnName="Imagen2" />
                 <ScalarProperty Name="Imagen3" ColumnName="Imagen3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="TRAVEL2Model.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+                <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="TipoDeUsuario" ColumnName="TipoDeUsuario" />
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="MarcaVendedor" ColumnName="MarcaVendedor" />
+                <ScalarProperty Name="ProductosEnCarrito" ColumnName="ProductosEnCarrito" />
+                <ScalarProperty Name="socialMediaID" ColumnName="socialMediaID" />
+                <ScalarProperty Name="PreguntaSeguridad" ColumnName="PreguntaSeguridad" />
+                <ScalarProperty Name="RespuestaPreguntaSeguridad" ColumnName="RespuestaPreguntaSeguridad" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -568,29 +592,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="TRAVEL2Model.Users">
-              <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="RespuestaPreguntaSeguridad" ColumnName="RespuestaPreguntaSeguridad" />
-                <ScalarProperty Name="PreguntaSeguridad" ColumnName="PreguntaSeguridad" />
-                <ScalarProperty Name="socialMediaID" ColumnName="socialMediaID" />
-                <ScalarProperty Name="ProductosEnCarrito" ColumnName="ProductosEnCarrito" />
-                <ScalarProperty Name="MarcaVendedor" ColumnName="MarcaVendedor" />
-                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
-                <ScalarProperty Name="TipoDeUsuario" ColumnName="TipoDeUsuario" />
-                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
-                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
-                <ScalarProperty Name="Correo" ColumnName="Correo" />
-                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="Edad" ColumnName="Edad" />
-                <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
-                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

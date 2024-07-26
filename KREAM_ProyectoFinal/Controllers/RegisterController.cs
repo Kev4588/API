@@ -1,6 +1,6 @@
-﻿using KREAM_ProyectoFinal.Models.TableViewModel;
-using KREAM_ProyectoFinal.Models;
-using KREAM_ProyectoFinal.Models.ViewModel;
+﻿using PURIS_FLASH.Models.TableViewModel;
+using PURIS_FLASH.Models;
+using PURIS_FLASH.Models.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
@@ -14,8 +14,9 @@ using System.Security.Principal;
 using System.Data.Entity.Validation;
 using Microsoft.Ajax.Utilities;
 using System.Web.Optimization;
+using KREAM_ProyectoFinal.Models;
 
-namespace KREAM_ProyectoFinal.Controllers
+namespace PURIS_FLASH.Controllers
 {
     [VerificarSesion]
     public class RegisterController : Controller

@@ -1,9 +1,10 @@
-﻿using System;
+﻿using KREAM_ProyectoFinal.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace KREAM_ProyectoFinal.Models.ViewModel
+namespace PURIS_FLASH.Models.ViewModel
 {
     public class ProductosViewModel
     {

@@ -16,7 +16,7 @@
     <Property Name="TipoDeHabitacion" Type="varchar" MaxLength="100" />
     <Property Name="CantidadDePersonas" Type="int" />
     <Property Name="Descripcion" Type="varchar(max)" />
-    <Property Name="Precio" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Telefono" Type="int" />
     <Property Name="NombreHotel" Type="varchar" MaxLength="100" />
     <Property Name="Imagen" Type="varbinary(max)" />
     <Property Name="Imagen2" Type="varbinary(max)" />
@@ -37,7 +37,7 @@
     <Property Name="Categoria" Type="varchar" MaxLength="100" />
     <Property Name="Personas" Type="varchar" MaxLength="100" />
     <Property Name="CantidadEnStock" Type="int" />
-    <Property Name="Comentario" Type="text" />
+    <Property Name="Comentarios" Type="text" />
     <Property Name="Calificacion" Type="int" />
     <Property Name="Proveedor" Type="varchar" MaxLength="100" />
     <Property Name="Vendedor" Type="int" />

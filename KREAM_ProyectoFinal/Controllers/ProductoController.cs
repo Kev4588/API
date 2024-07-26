@@ -1,14 +1,16 @@
-﻿using KREAM_ProyectoFinal.Models.TableViewModel;
-using KREAM_ProyectoFinal.Models.ViewModel;
-using KREAM_ProyectoFinal.Models;
+﻿using PURIS_FLASH.Models.TableViewModel;
+using PURIS_FLASH.Models.ViewModel;
+using PURIS_FLASH.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using KREAM_ProyectoFinal.Models;
 
-namespace KREAM_ProyectoFinal.Controllers
+
+namespace PURIS_FLASH.Controllers
 {
     [VerificarSesion]
     public class ProductoController : Controller
@@ -38,7 +40,7 @@ namespace KREAM_ProyectoFinal.Controllers
                 model.Categoria = productTO.Categoria;
                 model.Personas = productTO.Personas;
                 model.CantidadEnStock = productTO.CantidadEnStock;
-                model.Comentario = productTO.Comentario;
+                model.Comentario = productTO.Comentarios;
                 model.Calificacion = (int)(productTO.Calificacion ?? 0);
                 model.Proveedor = productTO.Proveedor;
                 model.Vendedor = productTO.Vendedor;
@@ -63,7 +65,7 @@ namespace KREAM_ProyectoFinal.Controllers
                 var usuario = Session["UsuarioActual"] as UsersTableViewModel;
 
                 db.Database.ExecuteSqlCommand(
-                    "EXEC GuardarComentarios @IdProducto, @Comentario",                    
+                    "EXEC GuardarComentario @IdProducto, @Comentario",                    
                     new SqlParameter("@IdProducto", idProducto),
                     new SqlParameter("@Comentario", comentario)
                 );
@@ -77,29 +79,6 @@ namespace KREAM_ProyectoFinal.Controllers
 
 
 
-        
-        public ActionResult MostrarInformacionHoteles(int Id)
-        {
-            HotelesViewModel model = new HotelesViewModel();
-            using (var db = new TRAVEL2Entities())
-            {
-                var hotelTO = db.Hoteles.Find(Id);
-
-                model.IDHotel = hotelTO.IDHotel;
-                model.TipoDeHabitacion = hotelTO.TipoDeHabitacion;
-                model.CantidadDePersonas = hotelTO.CantidadDePersonas;
-                model.Descripcion = hotelTO.Descripcion;
-                model.Precio = (decimal)hotelTO.Precio;
-                model.NombreHotel = hotelTO.NombreHotel;
-                model.Imagen = hotelTO.Imagen;
-                model.Imagen2 = hotelTO.Imagen2;
-                model.Imagen3 = hotelTO.Imagen3;
-                model.web = hotelTO.web;
-                ViewBag.Nombre = hotelTO.NombreHotel;
-
-            }
-            return View(model);
-        }
 
 
 

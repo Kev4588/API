@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace KREAM_ProyectoFinal.Models.TableViewModel
+namespace PURIS_FLASH.Models.TableViewModel
 {
     public class UsersTableViewModel
     {

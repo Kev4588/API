@@ -2,7 +2,7 @@
 
 
 
-@using KREAM_ProyectoFinal.Models.ViewModel
+@using PURIS_FLASH.Models.ViewModel
 
 @{
     ViewBag.Title = "Home Page";
@@ -272,13 +272,13 @@
                         if (ViewBag.TipoUsuario == 1) // ADMIN
                         {
                             <li>@Html.ActionLink("Admin Usuarios", "Index", "Admin", new { area = "" }, new { @class = "nav-link" })</li>
-                            <li>@Html.ActionLink("Admin Tours", "Index", "Vendedor", new { area = "" }, new { @class = "nav-link" })</li>
-                            <li>@Html.ActionLink("Admin Habitaciones", "MostrarInformacion", "Hoteles", new { area = "" }, new { @class = "nav-link" })</li>
+                            <li>@Html.ActionLink("Admin Productos", "Index", "Vendedor", new { area = "" }, new { @class = "nav-link" })</li>
+                            <li>@Html.ActionLink("Admin Repartidores", "MostrarInformacion", "Hoteles", new { area = "" }, new { @class = "nav-link" })</li>
                         }
                         else if (ViewBag.TipoUsuario == 2) // COMPRADOR
                         {
 
-                            <li>@Html.ActionLink("Hoteles", "Index", "Hoteles", new { area = "" }, new { @class = "nav-link" })</li>
+                            <li>@Html.ActionLink("Repartidores", "Index", "Hoteles", new { area = "" }, new { @class = "nav-link" })</li>
 
                         }
                     }<!-- fin del if para HOME INDEX PRINCIPAL -->

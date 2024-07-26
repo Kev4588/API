@@ -1,4 +1,4 @@
-﻿@model KREAM_ProyectoFinal.Models.ViewModel.UsersViewModel
+﻿@model PURIS_FLASH.Models.ViewModel.UsersViewModel
 @{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,11 +11,76 @@
         padding: 0;
         color: white; /* Cambia el color del texto a blanco */
         overflow: hidden; /* Evita el scroll en la vista */
-        background-image: url('../../content/Images/art.png');
+        /*background-image: url('../../content/Images/arte.png');*/
         background-size: cover;
         background-position: center;
         background-color: black;
     }
+
+
+    .body-content {
+        min-width: 100%;
+        margin-top: 15px;
+
+    
+    }
+
+
+    #background-video1 { /*------ ESTILOS PARA EL VIDEO O LOS VIDEOS     */
+        position: fixed;
+        top: 0;
+        WIDTH: 25%;
+        left: 531px;
+        max-width: 70%;
+        min-height: 100%;
+        z-index: -1;
+        object-fit: cover;
+        clip-path: inset(16% 15% 12% 6% round 15px);
+        object-position: 43%;
+    }
+
+    #background-video2 { /*------ ESTILOS PARA EL VIDEO O LOS VIDEOS     */
+        position: fixed;
+        top: 0;
+        WIDTH: 25%;
+        left: 71px;
+        max-width: 72%;
+        min-height: 100%;
+        z-index: -1;
+        object-fit: cover;
+        clip-path: inset(16% 0% 50% 10% round 15px);
+        object-position: 3%;
+    }
+
+
+    #background-video3 { /*------ ESTILOS PARA EL VIDEO O LOS VIDEOS     */
+        position: fixed;
+        top: 0;
+        WIDTH: 25%;
+        right: 486px;
+        max-width: 70%;
+        min-height: 100%;
+        z-index: -1;
+        object-fit: cover;
+        clip-path: inset(16% 11% 12% 0% round 15px);
+        object-position: 79%;
+    }
+
+
+    #background-video4 { /*------ ESTILOS PARA EL VIDEO O LOS VIDEOS     */
+        position: fixed;
+        top: 0;
+        WIDTH: 25%;
+        left: 1373px;
+        max-width: 70%;
+        min-height: 100%;
+        z-index: -1;
+        object-fit: cover;
+        clip-path: inset(16% 0% 50% 3% round 15px);
+        object-position: 115%;
+    }
+
+
 
     .container-login {
         height: 100vh;
@@ -25,8 +90,12 @@
     }
 
     .login-form {
-        background-color: rgba(0, 0, 0, 0.7);
-        padding: 30px;
+        margin-left: 50%;
+        margin-right: 50%;
+        right: 39%;
+        background-color: rgb(0 0 0 / 73%);
+        padding: 40px;
+        border: inset;
         border-radius: 10px;
         text-align: center;
     }
@@ -91,8 +160,6 @@
         margin-left: 10px;
     }
 
-        
-
     .facebook-login-button {
         background-color: #3b5998;
         color: #fff;
@@ -108,6 +175,41 @@
             background-color: #2d4373;
         }
 </style>
+
+
+<!--VIDEOS PARA LA PORTADA -->
+<video autoplay muted loop id="background-video1">
+    <source src="../../content/Images/puriscal.mp4" type="video/mp4">
+    Tu navegador no soporta el elemento de video.
+</video>
+
+
+
+<video autoplay muted loop id="background-video2">
+    <source src="../../content/Images/puriscal.mp4" type="video/mp4">
+    Tu navegador no soporta el elemento de video.
+</video>
+
+
+<video autoplay muted loop id="background-video3">
+    <source src="../../content/Images/puriscal.mp4" type="video/mp4">
+    Tu navegador no soporta el elemento de video.
+</video>
+
+
+<video autoplay muted loop id="background-video4">
+    <source src="../../content/Images/puriscal.mp4" type="video/mp4">
+    Tu navegador no soporta el elemento de video.
+</video>
+
+
+
+
+
+<!--VIDEOS PARA LA PORTADA -->
+
+
+
 
 <div class="container-login">
     <div class="login-form">

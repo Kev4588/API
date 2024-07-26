@@ -5,20 +5,21 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using KREAM_ProyectoFinal.Models;
-using KREAM_ProyectoFinal.Models.TableViewModel;
-using KREAM_ProyectoFinal.Models.ViewModel;
+using PURIS_FLASH.Models;
+using PURIS_FLASH.Models.TableViewModel;
+using PURIS_FLASH.Models.ViewModel;
 
-namespace KREAM_ProyectoFinal.Controllers
+namespace PURIS_FLASH.Controllers
 {
     [VerificarSesion]
     public class HotelesController : Controller
     {
-        public ActionResult Index(string TipoDeHabitacion, string tipoDeHabitacion, int? cantidadDePersonas, decimal? precio, int? calificacionHotel, string web, string NombreHotel)
+        public ActionResult Index(string TipoDeHabitacion, string tipoDeHabitacion, int? cantidadDePersonas, int? Telefono, int? calificacionHotel, string web, string NombreHotel)
         {
             var usuarioActual = Session["UsuarioActual"] as UsersViewModel;
 
             ViewBag.UsuarioActual = usuarioActual.Nombre;
-            ViewBag.SexoUsuario = usuarioActual.Sexo;
+            
             ViewBag.TipoUsuario = usuarioActual.TipoDeUsuario;
 
             List<HotelesTableViewModel> lstHoteles = new List<HotelesTableViewModel>();
@@ -34,7 +35,7 @@ namespace KREAM_ProyectoFinal.Controllers
                                 Descripcion = h.Descripcion,
                                 TipoDeHabitacion = h.TipoDeHabitacion,
                                 CantidadDePersonas = (int)h.CantidadDePersonas,
-                                Precio = (decimal)h.Precio,
+                                Telefono = (int)h.Telefono,
                                 Imagen = h.Imagen,
                                 Imagen2 = h.Imagen2,
                                 Imagen3 = h.Imagen3,
@@ -46,25 +47,19 @@ namespace KREAM_ProyectoFinal.Controllers
                     query = query.Where(p => p.NombreHotel.Contains(NombreHotel));
                 }
 
-                // Filtrar por tipo de habitacion 
-                if (!string.IsNullOrEmpty(tipoDeHabitacion))
-                {
-                    query = query.Where(p => p.TipoDeHabitacion.Contains(tipoDeHabitacion));
-                }
-                var habitacion = db.Hoteles.Select(p => p.TipoDeHabitacion).Distinct().ToList();
-                ViewBag.tipoDeHabitacion = new SelectList(habitacion);
-                if (!string.IsNullOrEmpty(tipoDeHabitacion))
-                {
-                    query = query.Where(p => p.TipoDeHabitacion == tipoDeHabitacion);
-                }
+
 
                 // Filtrar por cantidad de personas 
-                if (cantidadDePersonas.HasValue)
-                {
-                    query = query.Where(h => h.CantidadDePersonas == cantidadDePersonas.Value);
-                }
                 var cantpersonas = db.Hoteles.Select(p => p.CantidadDePersonas).Distinct().ToList();
-                ViewBag.cantidadPersonas = new SelectList(cantpersonas);
+                if (cantpersonas.Count > 0)
+                {
+                    ViewBag.cantidadPersonas = new SelectList(cantpersonas);
+                }
+                else
+                {
+                    ViewBag.cantidadPersonas = new SelectList(new List<int>());
+                }
+
                 if (cantidadDePersonas.HasValue)
                 {
                     query = query.Where(h => h.CantidadDePersonas == cantidadDePersonas.Value);
@@ -73,7 +68,7 @@ namespace KREAM_ProyectoFinal.Controllers
 
                 ViewBag.PersonasSeleccionada = cantidadDePersonas;
                 ViewBag.tipoDeHabitacion = tipoDeHabitacion;
-                ViewBag.PrecioMaxSeleccionado = precio ?? 1000;
+                
                 ViewBag.NombreSeleccionado = NombreHotel;
 
                 lstHoteles = query.ToList();
@@ -93,7 +88,7 @@ namespace KREAM_ProyectoFinal.Controllers
 
 
         //---------------------------------------------- MOSTRAR LAS HABITACIONES  --------------------------------------------------  
-        public ActionResult MostrarInformacion(string tipoDeHabitacion, int? cantidadDePersonas, decimal? precio, int? calificacionHotel, string web, string NombreHotel)
+        public ActionResult MostrarInformacion(string tipoDeHabitacion, int? cantidadDePersonas, int? Telefono, int? calificacionHotel, string web, string NombreHotel)
         {
             var usuarioActual = Session["UsuarioActual"] as UsersViewModel;
 
@@ -114,7 +109,7 @@ namespace KREAM_ProyectoFinal.Controllers
                                 Descripcion = h.Descripcion,
                                 TipoDeHabitacion = h.TipoDeHabitacion,
                                 CantidadDePersonas = (int)h.CantidadDePersonas,
-                                Precio = (decimal)h.Precio,
+                                Telefono = (int)h.Telefono,
                                 Imagen = h.Imagen,
                                 Imagen2 = h.Imagen2,
                                 Imagen3 = h.Imagen3,
@@ -147,7 +142,7 @@ namespace KREAM_ProyectoFinal.Controllers
 
                 ViewBag.PersonasSeleccionada = cantidadDePersonas;
                 ViewBag.tipoDeHabitacion = tipoDeHabitacion;
-                ViewBag.PrecioMaxSeleccionado = precio ?? 1000;
+              
                 ViewBag.NombreSeleccionado = NombreHotel;
                
                 lstHoteles = query.ToList();
@@ -208,7 +203,7 @@ namespace KREAM_ProyectoFinal.Controllers
                     TipoDeHabitacion = model.TipoDeHabitacion,
                     web = model.web,
                     CantidadDePersonas = (int)model.CantidadDePersonas,
-                    Precio = model.Precio,
+                    Telefono = model.Telefono,
                     Imagen = imagenBytes,
                     Imagen2 = imagenBytes2,
                     Imagen3 = imagenBytes3,
@@ -249,7 +244,7 @@ namespace KREAM_ProyectoFinal.Controllers
                     TipoDeHabitacion = hotel.TipoDeHabitacion,
                     web = hotel.web,
                     CantidadDePersonas = (int)hotel.CantidadDePersonas,
-                    Precio = (decimal)hotel.Precio,
+                    Telefono = hotel.Telefono,
                     Descripcion = hotel.Descripcion,
                     Imagen = hotel.Imagen,
                     Imagen2 = hotel.Imagen2,
@@ -278,7 +273,7 @@ namespace KREAM_ProyectoFinal.Controllers
                 hotelTO.NombreHotel = model.NombreHotel;
                 hotelTO.TipoDeHabitacion = model.TipoDeHabitacion;
                 hotelTO.CantidadDePersonas = model.CantidadDePersonas;
-                hotelTO.Precio = model.Precio;
+                hotelTO.Telefono = model.Telefono;
                 hotelTO.Descripcion = model.Descripcion;
 
                 // IMAGENES  -- Esto tambien aplica para eliminarlas o agregar otra 

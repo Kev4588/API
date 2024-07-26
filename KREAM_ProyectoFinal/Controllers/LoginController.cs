@@ -1,5 +1,6 @@
 ﻿using KREAM_ProyectoFinal.Models;
-using KREAM_ProyectoFinal.Models.ViewModel;
+using PURIS_FLASH.Models;
+using PURIS_FLASH.Models.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
 
-namespace KREAM_ProyectoFinal.Controllers
+namespace PURIS_FLASH.Controllers
 {
     [VerificarSesion]
     public class LoginController : Controller

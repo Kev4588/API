@@ -43,8 +43,13 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">@hotel.NombreHotel</h5>
-                        <p class="card-text"> Habitación @hotel.TipoDeHabitacion para @hotel.CantidadDePersonas personas  </p>
-                        <p class="card-text">@hotel.Precio</p>
+                        <p class="card-text"> @hotel.Descripcion </p>
+                       
+                        <p>
+                            <a href="https://api.whatsapp.com/send?phone=50683046213&text=Hola%20estoy%20interesado%20en%20más%20información">
+                                <img src="/Content/Images/whatsapp-icon.png" alt="WhatsApp" style="width: 100px; height: auto;" />
+                            </a>
+                        </p>
                         <div id="carouselHotel@(hotel.IDHotel)" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
                             <div class="carousel-inner">
                                 @for (int i = 0; i < 3; i++)

@@ -30,8 +30,8 @@ namespace KREAM_ProyectoFinal.Models
         public virtual DbSet<Comentarios> Comentarios { get; set; }
         public virtual DbSet<Hoteles> Hoteles { get; set; }
         public virtual DbSet<Productos> Productos { get; set; }
-        public virtual DbSet<UserType> UserType { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<UserType> UserType { get; set; }
     
         public virtual int DeleteUserbyId(Nullable<int> var_Id)
         {

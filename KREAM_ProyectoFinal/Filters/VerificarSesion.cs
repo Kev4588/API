@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
-using KREAM_ProyectoFinal.Controllers;
-using KREAM_ProyectoFinal.Models.ViewModel;
+using PURIS_FLASH.Controllers;
+using PURIS_FLASH.Models.ViewModel;
 
 public class VerificarSesion : ActionFilterAttribute
 {

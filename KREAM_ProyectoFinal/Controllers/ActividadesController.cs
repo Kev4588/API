@@ -7,10 +7,11 @@ using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 using KREAM_ProyectoFinal.Models;
-using KREAM_ProyectoFinal.Models.TableViewModel;
-using KREAM_ProyectoFinal.Models.ViewModel;
+using PURIS_FLASH.Models;
+using PURIS_FLASH.Models.TableViewModel;
+using PURIS_FLASH.Models.ViewModel;
 
-namespace KREAM_ProyectoFinal.Controllers
+namespace PURIS_FLASH.Controllers
 {
     [VerificarSesion]
     public class ActividadesController : Controller
@@ -38,7 +39,7 @@ namespace KREAM_ProyectoFinal.Controllers
                                 Precio = (decimal)p.Precio,
                                 Categoria = p.Categoria,
                                 Personas = p.Personas,
-                                Comentario = p.Comentario,
+                                Comentario = p.Comentarios,
                                 Proveedor = p.Proveedor,
                                 Imagen = p.Imagen,
                                 Imagen2 = p.Imagen2,
@@ -92,7 +93,7 @@ namespace KREAM_ProyectoFinal.Controllers
                                 Categoria = p.Categoria,
                                 Personas = p.Personas,
                                 CantidadEnStock = p.CantidadEnStock,
-                                Comentario = p.Comentario,
+                                Comentario = p.Comentarios,
                                 Calificacion = p.Calificacion ?? 0,
                                 Proveedor = p.Proveedor,
                                 Imagen = p.Imagen,

@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace KREAM_ProyectoFinal
+namespace PURIS_FLASH
 {
     public class FilterConfig
     {

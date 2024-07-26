@@ -17,7 +17,7 @@
     <Property Name="TipoDeHabitacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="CantidadDePersonas" Type="Int32" />
     <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Telefono" Type="Int32" />
     <Property Name="NombreHotel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="Imagen2" Type="Binary" MaxLength="Max" FixedLength="false" />
@@ -38,14 +38,37 @@
     <Property Name="Categoria" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="Personas" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="CantidadEnStock" Type="Int32" />
-    <Property Name="Comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Comentarios" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Calificacion" Type="Int32" />
     <Property Name="Proveedor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="Vendedor" Type="Int32" />
     <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="Imagen2" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="Imagen3" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <NavigationProperty Name="Comentarios" Relationship="Self.FK_Comentarios_Productos" FromRole="Productos" ToRole="Comentarios" />
+    <NavigationProperty Name="Comentarios1" Relationship="Self.FK_Comentarios_Productos" FromRole="Productos" ToRole="Comentarios" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cedula" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PrimerApellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SegundoApellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Edad" Type="Int32" />
+    <Property Name="Telefono" Type="Int32" />
+    <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sexo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TipoDeUsuario" Type="Int32" />
+    <Property Name="Contrasena" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MarcaVendedor" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ProductosEnCarrito" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="socialMediaID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PreguntaSeguridad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RespuestaPreguntaSeguridad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="UserType" Relationship="Self.FK_Users_UserType" FromRole="Users" ToRole="UserType" />
   </EntityType>
   <EntityType Name="UserType">
     <Key>
@@ -53,7 +76,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="UserStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Users" Relationship="TRAVEL2Model.FK_Users_UserType" FromRole="UserType" ToRole="Users" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Users_UserType" FromRole="UserType" ToRole="Users" />
   </EntityType>
   <Association Name="FK_Comentarios_Productos">
     <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
@@ -67,14 +90,31 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Users_UserType">
+    <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="TipoDeUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="TRAVEL2Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Comentarios" EntityType="Self.Comentarios" />
     <EntitySet Name="Hoteles" EntityType="Self.Hoteles" />
     <EntitySet Name="Productos" EntityType="Self.Productos" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
     <EntitySet Name="UserType" EntityType="Self.UserType" />
     <AssociationSet Name="FK_Comentarios_Productos" Association="Self.FK_Comentarios_Productos">
       <End Role="Productos" EntitySet="Productos" />
       <End Role="Comentarios" EntitySet="Comentarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_UserType" Association="Self.FK_Users_UserType">
+      <End Role="UserType" EntitySet="UserType" />
+      <End Role="Users" EntitySet="Users" />
     </AssociationSet>
     <FunctionImport Name="DeleteUserbyId">
       <Parameter Name="var_Id" Mode="In" Type="Int32" />
@@ -122,11 +162,6 @@
     <FunctionImport Name="VerifyUserSocialMedia" ReturnType="Collection(TRAVEL2Model.VerifyUserSocialMedia_Result)">
       <Parameter Name="var_socialMediaID" Mode="In" Type="String" />
     </FunctionImport>
-    <EntitySet Name="Users" EntityType="TRAVEL2Model.Users" />
-    <AssociationSet Name="FK_Users_UserType" Association="TRAVEL2Model.FK_Users_UserType">
-      <End Role="UserType" EntitySet="UserType" />
-      <End Role="Users" EntitySet="Users" />
-    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="VerifyUser_Result">
     <Property Type="Int32" Name="Id" Nullable="false" />
@@ -204,39 +239,4 @@
     <Property Type="String" Name="PreguntaSeguridad" Nullable="true" MaxLength="100" />
     <Property Type="String" Name="RespuestaPreguntaSeguridad" Nullable="true" MaxLength="100" />
   </ComplexType>
-  <EntityType Name="Users">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Cedula" Type="Int32" Nullable="false" />
-    <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="PrimerApellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="SegundoApellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="Edad" Type="Int32" />
-    <Property Name="Telefono" Type="Int32" />
-    <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Sexo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-    <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="TipoDeUsuario" Type="Int32" />
-    <Property Name="Contrasena" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="MarcaVendedor" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Name="ProductosEnCarrito" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="socialMediaID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="PreguntaSeguridad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="RespuestaPreguntaSeguridad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="UserType" Relationship="TRAVEL2Model.FK_Users_UserType" FromRole="Users" ToRole="UserType" />
-  </EntityType>
-  <Association Name="FK_Users_UserType">
-    <End Type="TRAVEL2Model.UserType" Role="UserType" Multiplicity="0..1" />
-    <End Type="TRAVEL2Model.Users" Role="Users" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="UserType">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Users">
-        <PropertyRef Name="TipoDeUsuario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
 </Schema>
