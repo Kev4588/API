@@ -14,12 +14,11 @@ namespace PURIS_FLASH.Controllers
     [VerificarSesion]
     public class HotelesController : Controller
     {
-        public ActionResult Index(string TipoDeHabitacion, string tipoDeHabitacion, int? cantidadDePersonas, int? Telefono, int? calificacionHotel, string web, string NombreHotel)
+        public ActionResult Index(string nombre, string habitacion)
         {
             var usuarioActual = Session["UsuarioActual"] as UsersViewModel;
 
             ViewBag.UsuarioActual = usuarioActual.Nombre;
-            
             ViewBag.TipoUsuario = usuarioActual.TipoDeUsuario;
 
             List<HotelesTableViewModel> lstHoteles = new List<HotelesTableViewModel>();
@@ -42,40 +41,33 @@ namespace PURIS_FLASH.Controllers
                             };
 
                 // Filtrar por nombre
-                if (!string.IsNullOrEmpty(NombreHotel))
+                if (!string.IsNullOrEmpty(nombre))
                 {
-                    query = query.Where(p => p.NombreHotel.Contains(NombreHotel));
+                    query = query.Where(h => h.NombreHotel.Contains(nombre));
+                }
+                ViewBag.NombreHotelSeleccionado = nombre;
+
+                // Filtrar por habitacion
+                if (!string.IsNullOrEmpty(habitacion))
+                {
+                    query = query.Where(h => h.TipoDeHabitacion.Contains(habitacion));
                 }
 
+                // Obtener habitaciones distintas de la base de datos
+                var habitaciones = db.Hoteles.Select(h => h.TipoDeHabitacion).Distinct().ToList();
+                ViewBag.Categoria = new SelectList(habitaciones);
 
+                // Esta línea es redundante ya que el filtro ya se aplicó
+                // if (!string.IsNullOrEmpty(habitacion))
+                // {
+                //     query = query.Where(h => h.TipoDeHabitacion == habitacion);
+                // }
 
-                // Filtrar por cantidad de personas 
-                var cantpersonas = db.Hoteles.Select(p => p.CantidadDePersonas).Distinct().ToList();
-                if (cantpersonas.Count > 0)
-                {
-                    ViewBag.cantidadPersonas = new SelectList(cantpersonas);
-                }
-                else
-                {
-                    ViewBag.cantidadPersonas = new SelectList(new List<int>());
-                }
-
-                if (cantidadDePersonas.HasValue)
-                {
-                    query = query.Where(h => h.CantidadDePersonas == cantidadDePersonas.Value);
-                }
-
-
-                ViewBag.PersonasSeleccionada = cantidadDePersonas;
-                ViewBag.tipoDeHabitacion = tipoDeHabitacion;
-                
-                ViewBag.NombreSeleccionado = NombreHotel;
-
+                ViewBag.tipoDeHabitacionSeleccionada = habitacion;
                 lstHoteles = query.ToList();
             }
             return View(lstHoteles);
         }
-
 
 
 
@@ -248,7 +240,9 @@ namespace PURIS_FLASH.Controllers
                     Descripcion = hotel.Descripcion,
                     Imagen = hotel.Imagen,
                     Imagen2 = hotel.Imagen2,
-                    Imagen3 = hotel.Imagen3
+                    Imagen3 = hotel.Imagen3 
+
+
 
                 };
 

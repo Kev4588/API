@@ -39,7 +39,7 @@
     .boton-KREAM {
         text-decoration: none;
         font-weight: 900;
-        margin: 10;
+        margin: 10px;
     }
 
     .tipo-usuario {
@@ -258,7 +258,7 @@
 
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style="border-bottom: 2px solid #a9a7a2bc; padding-bottom: 0px; padding-top: 0px">
         <a class="boton-KREAM d-flex align-items-center" href="@Url.Action("Index", "Home")" style="text-decoration:none;">
-            Destinos Caribe
+            PURIS FLASH
         </a>
         <div class="container" style="font-family: Staatliches">
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar navegación" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -308,9 +308,10 @@
                                 </svg>
                             </a>
                         </div>
+
                         <!-- Icono de usuario -->
                         <div class="dropdown">
-                            <button id="dropdownMenuButton" class="btn btn-secondary" aria-expanded="false" style="margin-right: 130px">
+                            <button id="dropdownMenuButton" class="btn btn-secondary" aria-expanded="false" style="margin-right: 15px">
                                 <i class="bi bi-person-circle"></i> @ViewBag.UserSession
                             </button>
 
@@ -319,13 +320,17 @@
 
 
                                 <li><a class="dropdown-item mt-2" style="color:black !important" href="@Url.Action("Edit", "User", new { Id = usuario.Id })">Actualizar Perfil</a></li>
-                                                                                                                                       <!--aqui pasamos como parametro el ID para saber a quien vamos a editar-->
+                                <!--aqui pasamos como parametro el ID para saber a quien vamos a editar-->
 
 
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item mt-2" style="color:black !important" href="@Url.Action("Logout", "Login")">Cerrar sesión</a></li>
                             </ul>
+
                         </div>
+                        <p class="nombre-usuario" style="text-align: center; height: 10px; width: 10px;">@usuario.Nombre</p>
+
+
                     </div>
 
 
@@ -338,7 +343,44 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer style="margin: 0px;">
+        <!-- Footer -->
+        <footer class="footer mt-auto py-3 bg-dark text-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <h5>Contactanos</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-white">Sobre Nosotros</a></li>
+                            <li><a href="#" class="text-white">Soporte</a></li>
+                            <li><a href="#" class="text-white">Politica de Privacidad</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h5>Siguenos</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.facebook.com" class="text-white">Facebook</a></li>
+                            <li><a href="https://www.twitter.com" class="text-white">Twitter</a></li>
+                            <li><a href="https://www.instagram.com" class="text-white">Instagram</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h5>Subscribete</h5>
+                        <form>
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Email address">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">Subscribe</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12 text-center">
+                        <p>&copy; 2024 Your Company. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
 
@@ -356,6 +398,25 @@
             }
         });
     </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    @RenderSection("scripts", required: false)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
 

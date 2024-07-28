@@ -86,17 +86,35 @@ namespace PURIS_FLASH.Controllers
                     query = query.Where(p => p.Categoria == categoria);
                 }
 
+
+                //************************************************************************************
+
                 // Filtrar por LUGAR
                 if (!string.IsNullOrEmpty(lugar))
                 {
                     query = query.Where(p => p.Lugar.Contains(lugar));  // ESTO CON EL .CONTAINS , LO QUE HACE SES QUE SI POR EJEMPLO UN PRODUCTO DIJERA AZUL/BLANCO Y NO SOLO BLANCO  igual lo tomaria proque el contains lo que hace es traier justo eso que contenga la palabra = True 
                 }
+                // Obtener marcas distintas de la base de datos en caso que si este buscando alguna marca 
+                var lugares = db.Productos.Select(p => p.Lugar).Distinct().ToList();
+                ViewBag.Lugar = new SelectList(lugares);
+
+                if (!string.IsNullOrEmpty(lugar))
+                {
+                    query = query.Where(p => p.Lugar == lugar);
+                }
+
+
+              
+
 
                 // Filtrar por proveedor
                 if (!string.IsNullOrEmpty(proveedor))
                 {
                     query = query.Where(p => p.Proveedor.Contains(proveedor));
                 }
+
+
+                //************************************************************************************
 
                 // Filtrar por rango de precio
                 if (precioMin.HasValue)
@@ -109,11 +127,28 @@ namespace PURIS_FLASH.Controllers
                     query = query.Where(p => p.Precio <= precioMax.Value);
                 }
 
+                // Ejemplo de cómo obtener el precio máximo de la base de datos
+                var precioMaximo = db.Productos.Max(p => p.Precio);  // Asumiendo que tienes una entidad Producto con un campo Precio
+
+
+
+
+                // Pasar el precio máximo a la vista
+                ViewBag.PrecioMaximo = (int)precioMaximo; // hay que convertirlo  a INT o cuando se usa en los filtros da error , esto 
+                // porque los filtros de rango de precio no toman decimales sino numeros enteros y como precio si viene en decimales se va al demonio
+
+                // Obtener precios distintos y ordenarlos
+                var precios = db.Productos.Select(p => p.Precio).Distinct().OrderBy(p => p).ToList();
+                ViewBag.Precios = precios;
+
+                // Establecer el precio máximo seleccionado
+                ViewBag.PrecioMaxSeleccionado = precioMax ?? precios.LastOrDefault() ?? 1;
+
                 ViewBag.CategoriaSeleccionada = categoria;
                 ViewBag.LugarSeleccionado = lugar;
                 ViewBag.PersonasSeleccionada = personas;
                 ViewBag.IntensidadSeleccionada = proveedor;
-                ViewBag.PrecioMaxSeleccionado = precioMax ?? 1000;
+                ViewBag.PrecioMaxSeleccionado = precioMax ?? 1;
                 ViewBag.NombreSeleccionado = nombre;
                 lstProductos = query.ToList();
 

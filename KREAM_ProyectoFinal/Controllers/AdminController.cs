@@ -137,7 +137,7 @@ namespace PURIS_FLASH.Controllers
                 //ViewBag.UsuarioActual = usuario.Nombre;
 
                 db.Database.ExecuteSqlCommand(
-                    "EXEC UpdateUser @Id, @Cedula, @Nombre, @PrimerApellido, @SegundoApellido, @Edad, @Telefono, @Correo, @Direccion",
+                    "EXEC UpdateUser @Id, @Cedula, @Nombre, @PrimerApellido, @SegundoApellido, @Edad, @Telefono, @Correo, @Direccion,@Sexo",
                     new SqlParameter("@Id", model.Id),
                     new SqlParameter("@Cedula", model.Cedula),
                     new SqlParameter("@Nombre", model.Nombre),
@@ -146,7 +146,9 @@ namespace PURIS_FLASH.Controllers
                     new SqlParameter("@Edad", model.Edad),
                     new SqlParameter("@Telefono", model.Telefono),
                     new SqlParameter("@Correo", model.Correo),
-                    new SqlParameter("@Direccion", model.Direccion)
+                    new SqlParameter("@Direccion", model.Direccion),
+                    new SqlParameter("@Sexo", model.Sexo)
+
 
                 );
 

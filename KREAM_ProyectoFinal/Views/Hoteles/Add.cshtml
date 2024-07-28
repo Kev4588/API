@@ -1,6 +1,6 @@
 ﻿@model PURIS_FLASH.Models.TableViewModel.HotelesTableViewModel
 @{
-    ViewBag.Title = "Agregar Nueva Habitacion/Hotel";
+    ViewBag.Title = "Agregar Nuevo Repartidor";
 }
 
 <style>
@@ -63,7 +63,7 @@
             }
 </style>
 
-<h2>Agregar Nueva Habitación</h2>
+<h2>Agregar Nuevo Repartidor</h2>
 
 <div class="container-add">
     @using (Html.BeginForm("Add", "Hoteles", FormMethod.Post, new { enctype = "multipart/form-data", @class = "row g-3" }))
@@ -77,36 +77,23 @@
 
         <!-- Otros campos del formulario -->
 
-        <div class="col-md-6">
-            @Html.LabelFor(model => model.web, htmlAttributes: new { @class = "form-label" })
-            @Html.EditorFor(model => model.web, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.web, "", new { @class = "text-danger" })
-        </div>
 
-        <div class="col-md-6">
-            @Html.LabelFor(model => model.CantidadDePersonas, htmlAttributes: new { @class = "form-label" })
-            @Html.EditorFor(model => model.CantidadDePersonas, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.CantidadDePersonas, "", new { @class = "text-danger" })
-        </div>
 
         <!-- Otros campos del formulario -->
 
-        <div class="col-md-6">
-            @Html.LabelFor(model => model.Precio, htmlAttributes: new { @class = "form-label" })
-            @Html.EditorFor(model => model.Precio, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Precio, "", new { @class = "text-danger" })
-        </div>
 
         <div class="col-md-6">
             @Html.LabelFor(model => model.TipoDeHabitacion, htmlAttributes: new { @class = "form-label" })
-            <select id="GeneroDropdown" name="TipoDeHabitacion" class="form-control" data-val="true" data-val-required="La selección de género es obligatoria.">
-                <option value="" selected>-- Tipo de Habitación --</option>
-                <option value="Individual">Individual</option>
-                <option value="Doble">Doble</option>                
-                <option value="Familiar">Familiar</option>
+            <select id="TransporteDropdown" name="TipoDeTransporte" class="form-control" data-val="true" data-val-required="La selección de transporte es obligatoria.">
+                <option value="" selected>-- Tipo de Transporte --</option>
+                <option value="Bicicleta">Bicicleta</option>
+                <option value="Motocicleta">Motocicleta</option>
+                <option value="Automóvil">Automóvil</option>
+                <option value="Camion">Camion</option>
             </select>
             @Html.ValidationMessageFor(model => model.TipoDeHabitacion, "", new { @class = "text-danger" })
         </div>
+
 
         <!-- Otros campos del formulario -->
 
@@ -116,7 +103,7 @@
             @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
         </div>
 
-       
+
         <!-- IMAGENES -->
         <div class="col-md-6">
             @Html.LabelFor(model => model.Imagen, "Imagen")

@@ -224,34 +224,33 @@
                 <div class="col-lg-3 mb-4">
                     <div class="contenedor-filtros">
                         <form method="get" action="@Url.Action("Index", "Hoteles")">
-                            <div class="mb-3">
-                                <label for="nombre" class="form-label">Nombre:</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Cualquiera" value="@ViewBag.NombreSeleccionado" />
-                            </div>
-                            <div class="mb-3">
-                                <label for="personas" class="form-label">Personas:</label>
-                                <select class="form-select" id="personas" name="personas">
-                                    <option value="">Cantidad de Personas</option>
 
-                                </select>
+
+
+                            <!--Nombre-->
+
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre del Repartidor:</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Cualquiera" value=@ViewBag.NombreHotelSeleccionado>
                             </div>
 
-
-
-                            <div class="col-md-6 mb-3">
-                                <label for="cantidadDePersonas">Cantidad de Personas</label>
-                                <select class="form-control" id="cantidadDePersonas" name="cantidadDePersonas">
-                                    <option value=""> -- Cantidad de Personas --</option>
-                                    @foreach (var personas in ViewBag.cantidadPersonas as SelectList)
+                            <!--Nombre-->
+                            <!--Tipo de transporte-->
+                            <!--Tipo de transporte-->
+                            <div class="mb-3">
+                                <label for="tipoDeHabitacion" class="form-label">Tipo de Habitacion:</label>
+                                <select class="form-select" id="tipoDeHabitacion" name="habitacion">
+                                    <option value="">Cualquier Transporte</option>
+                                    @foreach (var tipoDeHabitacion in ViewBag.Categoria as SelectList)
                                     {
-                                        <option value="@personas.Value" @(personas.Text == ViewBag.tipoDeHabitacion ? "selected" : "")>@personas.Text</option>
+                                        <option value="@tipoDeHabitacion.Value" @(tipoDeHabitacion.Text == ViewBag.tipoDeHabitacionSeleccionada ? "selected" : "")>@tipoDeHabitacion.Text</option>
                                     }
-
-
-
                                 </select>
                             </div>
-                          
+
+
+
+
 
 
 

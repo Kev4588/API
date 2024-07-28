@@ -211,20 +211,30 @@
             <div class="col-lg-3 mb-4">
                 <div class="contenedor-filtros">
                     <form method="get" action="@Url.Action("Index", "Home")">
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre:</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Cualquiera" value="@ViewBag.NombreSeleccionado" />
-                        </div>
-                        <div class="mb-3">
-                            <label for="personas" class="form-label">Personas:</label>
-                            <select class="form-select" id="personas" name="personas">
-                                <option value="">Cantidad de Personas</option>
-                                @foreach (var personas in ViewBag.Personas as SelectList)
-                                {
-                                    <option value="@personas.Value" @(personas.Text == ViewBag.PersonasSeleccionada ? "selected" : "")>@personas.Text</option>
-                                }
-                            </select>
-                        </div>
+                        
+                        <!--Nombre-->
+                        <!--
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Cualquiera" value="@ViewBag.NombreSeleccionado" />
+    </div>
+                            -->
+                        <!--Nombre-->
+                        <!--Personas-->
+                        <!--
+    <div class="mb-3">
+        <label for="personas" class="form-label">Personas:</label>
+        <select class="form-select" id="personas" name="personas">
+            <option value="">Cantidad de Personas</option>
+            @foreach (var personas in ViewBag.Personas as SelectList)
+            {
+                <option value="@personas.Value" @(personas.Text == ViewBag.PersonasSeleccionada ? "selected" : "")>@personas.Text</option>
+            }
+        </select>
+    </div>
+                            -->
+    <!--Personas-->
+                        <!--Categoria-->
                         <div class="mb-3">
                             <label for="categoria" class="form-label">Categoría:</label>
                             <select class="form-select" id="categoria" name="categoria">
@@ -235,19 +245,42 @@
                                 }
                             </select>
                         </div>
+                        <!--Categoria-->
+                        <!-- Precio Máximo -->
+                        <div class="mb-3">
+
+                            <label for="precioMax" class="form-label">Precio Máximo:</label>
+                            <input type="range" class="form-range" id="precioMax" name="precioMax" min="100" max=@ViewBag.PrecioMaximo step="100" value="@ViewBag.PrecioMaxSeleccionado" oninput="updatePrecioMaxOutput(this.value)">
+                            <input type="text" id="precioMaxOutput" class="form-control" readonly value="₡@ViewBag.PrecioMaxSeleccionado">
+                        </div>
+                        <!-- Precio Máximo -->
+                       
                         <div class="mb-3">
                             <label for="lugar" class="form-label">Lugar:</label>
-                            <input type="text" class="form-control" id="lugar" name="lugar" placeholder="Cualquiera" value="@ViewBag.LugarSeleccionado" />
+                            <select class="form-select" id="lugar" name="lugar">
+                                <option value="">Cualquier Lugar</option>
+                                @foreach (var lugar in ViewBag.Lugar as SelectList)
+                                {
+                                    <option value="@lugar.Value" @(lugar.Text == ViewBag.LugarSeleccionado ? "selected" : "")>@lugar.Text</option>
+                                }
+                            </select>
                         </div>
+                       
 
 
-                        <div class="mb-3">
-                            <label for="precioMax" class="form-label">Precio Máximo:</label>
-                            <input type="range" class="form-range" id="precioMax" name="precioMax" min="1" max="1000" step="10" value="@ViewBag.PrecioMaxSeleccionado" />
-                            <output for="precioMax" id="precioMaxOutput">$@ViewBag.PrecioMaxSeleccionado</output>
-                        </div>
+
                         <button type="submit" class="btn btn-success">Buscar</button>
                     </form>
+
+
+
+
+
+
+
+
+
+
                 </div>
             </div>
             <!-- Contenido de productos en el lado derecho -->
@@ -259,7 +292,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title" style="height:100px !important">@producto.Nombre</h5>
-                                    <p class="card-text" style="height:35px !important">@producto.Lugar | @producto.Personas personas | @producto.Categoria</p>
+                                    <p class="card-text" style="height:35px !important">@producto.Lugar | @producto.Categoria</p>
                                     <p class="card-text"><strong>Precio: @string.Format("${0:N2}", producto.Precio) | @producto.CantidadEnStock Disponibles </strong></p>
                                     <div id="carouselProducto@(producto.ProductoID)" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
                                         <div class="carousel-inner">
@@ -325,9 +358,22 @@
 
 <!-- Script para actualizar el valor del rango de precio -->
 <script>
-    document.getElementById('precioMax').addEventListener('input', function () {
-        document.getElementById('precioMaxOutput').value = '$' + this.value;
+    document.addEventListener('DOMContentLoaded', function () {
+        var precioMax = document.getElementById('precioMax');
+        var precioMaxOutput = document.getElementById('precioMaxOutput');
+
+        // Actualizar el valor del precio máximo al cargar la página
+        precioMaxOutput.value = '₡' + precioMax.value;
+
+        // Añadir evento de cambio para actualizar el valor del precio máximo
+        precioMax.addEventListener('input', function () {
+            precioMaxOutput.value = '₡' + this.value;
+        });
     });
+
+    function updatePrecioMaxOutput(value) {
+        document.getElementById('precioMaxOutput').value = '₡' + value;
+    }
 </script>
 
 
@@ -336,7 +382,7 @@
 <script>
     // Actualiza el valor del output al cambiar el slider
     document.getElementById('precioMax').addEventListener('input', function () {
-        document.getElementById('precioMaxOutput').value = '$' + this.value;
+        document.getElementById('precioMaxOutput').value = '₡' + this.value;
     });
 
 </script>

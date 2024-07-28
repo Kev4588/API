@@ -23,7 +23,7 @@ namespace PURIS_FLASH.Controllers
             var usuarioActual = Session["UsuarioActual"] as UsersViewModel;
 
             ViewBag.UsuarioActual = usuarioActual.Nombre;
-            ViewBag.SexoUsuario = usuarioActual.Sexo;
+           ViewBag.SexoUsuario = usuarioActual.Sexo;
             ViewBag.TipoUsuario = usuarioActual.TipoDeUsuario;
 
             List<ProductosTableViewModel> lstProductos = new List<ProductosTableViewModel>();
@@ -145,7 +145,7 @@ namespace PURIS_FLASH.Controllers
                     Comentarios = model.Comentario,
                     Calificacion = model.Calificacion,
                     Proveedor = model.Proveedor,
-                    //Vendedor = usuario.Cedula,
+                    Vendedor = usuario.Cedula,
                     // Agregar el campo de imagen
                     Imagen = imagenBytes,
                     Imagen2 = imagenBytes2,
@@ -183,13 +183,13 @@ namespace PURIS_FLASH.Controllers
 
                 var model = new ProductosTableViewModel
                 {
-                    ProductoID = producto.ProductoID,
+                   
                     Nombre = producto.Nombre,
-                    Lugar = producto.Lugar,
+                   Lugar = producto.Lugar,
                     Descripcion = producto.Descripcion,
                     Precio = (decimal)producto.Precio,
                     Categoria = producto.Categoria,
-                    Personas = producto.Personas,
+                   
                     CantidadEnStock = producto.CantidadEnStock,
                     Comentario = producto.Comentarios,
                     Calificacion = producto.Calificacion != null ? (int)producto.Calificacion : 0, // Convertir de forma segura
@@ -197,9 +197,9 @@ namespace PURIS_FLASH.Controllers
 
 
                     // Cargando las imagenes para que la persona vea las que tiene relacionadas a ese producto 
-                    Imagen = producto.Imagen,
-                    Imagen2 = producto.Imagen2,
-                    Imagen3 = producto.Imagen3
+                    //Imagen = producto.Imagen,
+                    //Imagen2 = producto.Imagen2,
+                    //Imagen3 = producto.Imagen3
                 };
 
                 // Esta pequeña validacion de abajo lo que hace es que recuerde cual es el genero que ya tenia el producto y lo muestre si la persona queire cambiarlo puede hacerlo 
@@ -208,6 +208,8 @@ namespace PURIS_FLASH.Controllers
                 return View(model);
             }
         }
+
+        /*------------ ESTE METODO ES QUIEN ENVIA LO QUE SE HAYA INGRESADO EN EL EDIT ---------------------------   */
 
         [HttpPost]
         public ActionResult Edit(ProductosTableViewModel model, HttpPostedFileBase NuevaImagen, HttpPostedFileBase NuevaImagen2, HttpPostedFileBase NuevaImagen3, string action) // INCLUIDOS LOS PARAMETROS PARA LAS IMAGENES  llaamdsod nuevaimagen# eso le dice cual debe controlar
@@ -227,18 +229,13 @@ namespace PURIS_FLASH.Controllers
 
 
 
-                // Buscamos el producto relacionado a ese vendedor por su usarname (por ahora es la cedula)
-                if (productoTO.Vendedor != usuario.Cedula)
-                {
-                    return HttpNotFound(); // en caso que la persona no tenga nada relacionado le tira esto 
-                }
+                productoTO.Nombre = model.Nombre; 
 
-                productoTO.Nombre = model.Nombre;
                 productoTO.Lugar = model.Lugar;
                 productoTO.Descripcion = model.Descripcion;
                 productoTO.Precio = model.Precio;
                 productoTO.Categoria = model.Categoria;
-                productoTO.Personas = model.Personas;
+                //productoTO.Personas = model.Personas;
                 productoTO.CantidadEnStock = model.CantidadEnStock;
                 productoTO.Comentarios = model.Comentario;
                 productoTO.Calificacion = model.Calificacion;
@@ -306,8 +303,9 @@ namespace PURIS_FLASH.Controllers
                     {
                         productoTO.Imagen = binaryReader.ReadBytes(NuevaImagen.ContentLength);
                     }
-                }
+                } 
 
+               
 
 
                 db.SaveChanges();

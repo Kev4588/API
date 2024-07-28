@@ -1,10 +1,10 @@
 ﻿@model PURIS_FLASH.Models.TableViewModel.HotelesTableViewModel
 
 @{
-    ViewBag.Title = "Editar Tour";
+    ViewBag.Title = "Editar Repartidor";
 }
 
-<h2 class="text-center mt-4 mb-5">Editando Tour: @ViewBag.HotelNombre</h2>
+<h2 class="text-center mt-4 mb-5">Editando [ @ViewBag.HotelNombre ]</h2>
 
 <div class="container">
     @using (Html.BeginForm("Edit", "Hoteles", FormMethod.Post, new { enctype = "multipart/form-data", @class = "row g-3" }))

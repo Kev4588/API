@@ -46,11 +46,10 @@
                         <td style="max-height: 100px; overflow-y: auto;">@users.Direccion</td>
                         
                         <td>
-                            @if (!users.Sexo.Contains("X"))
-                            {
+                           
 
                                 <button class="btn btn-warning" onclick="document.location.href = '@Url.Content("~/Admin/Edit/")@users.Id'">Editar</button>
-                            }
+                           
                                 <button class="btn btn-danger" onclick="eliminarUser(@users.Id)"> Borrar </button>
                             </td>
 
