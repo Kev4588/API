@@ -22,13 +22,14 @@ namespace PURIS_FLASH.Controllers
     public class RegisterController : Controller
     {
         // GET: Register
-
+        // Prepara la vista para agregar un nuevo usuario
         [HttpGet]
         public ActionResult Create()
         {
             return View();
         }
 
+        // Metodo para agregar un nuevo usuario a la base de datos
         [HttpPost]
         public ActionResult Create(UsersViewModel nuevaCuenta)
         {
@@ -71,7 +72,7 @@ namespace PURIS_FLASH.Controllers
             return View(nuevaCuenta);
         }
 
-
+        // Controla si ya existe la cedula a un usuario en la base de datos
         public int usuarioExisteCedula(int cedula)
         {
 
@@ -103,7 +104,7 @@ namespace PURIS_FLASH.Controllers
             }
         }
 
-
+        // Controla si el usuario ya existe en la base de datos
         public int usuarioExisteEmail(string email)
         {
 
