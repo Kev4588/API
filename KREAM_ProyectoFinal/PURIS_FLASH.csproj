@@ -286,8 +286,6 @@
     <Content Include="Views\Comprador\Index.cshtml" />
     <Content Include="Views\Producto\Index.cshtml" />
     <Content Include="Views\Producto\MostrarInformacion.cshtml" />
-    <Content Include="Views\Register\Add.cshtml" />
-    <Content Include="Views\Register\Index.cshtml" />
     <Content Include="Views\Buses\About.cshtml" />
     <Content Include="Views\Buses\Contact.cshtml" />
     <Content Include="Views\Buses\Index.cshtml" />
