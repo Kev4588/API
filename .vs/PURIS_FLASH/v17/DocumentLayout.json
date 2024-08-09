@@ -3,32 +3,32 @@
   "WorkspaceRootPath": "E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|e:\\onedrive - ulacit ed cr\\servicios web\\proyecto api\\api\\kream_proyectofinal\\views\\carrito\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\views\\carrito\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|e:\\onedrive - ulacit ed cr\\servicios web\\proyecto api\\api\\kream_proyectofinal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|e:\\onedrive - ulacit ed cr\\servicios web\\proyecto api\\api\\kream_proyectofinal\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\kream_proyectofinal\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|e:\\onedrive - ulacit ed cr\\servicios web\\proyecto api\\api\\kream_proyectofinal\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\kream_proyectofinal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|e:\\onedrive - ulacit ed cr\\servicios web\\proyecto api\\api\\kream_proyectofinal\\views\\hoteles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\views\\hoteles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\kream_proyectofinal\\views\\register\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\views\\register\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|e:\\onedrive - ulacit ed cr\\servicios web\\proyecto api\\api\\kream_proyectofinal\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\kream_proyectofinal\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\kream_proyectofinal\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|e:\\onedrive - ulacit ed cr\\servicios web\\proyecto api\\api\\kream_proyectofinal\\views\\carrito\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\views\\carrito\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\kream_proyectofinal\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\kream_proyectofinal\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,12 +42,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 9,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -66,7 +62,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Create.cshtml",
               "DocumentMoniker": "E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\KREAM_ProyectoFinal\\Views\\Register\\Create.cshtml",
               "RelativeDocumentMoniker": "KREAM_ProyectoFinal\\Views\\Register\\Create.cshtml",
@@ -80,77 +76,78 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\KREAM_ProyectoFinal\\Views\\Hoteles\\Index.cshtml",
+              "RelativeDocumentMoniker": "KREAM_ProyectoFinal\\Views\\Hoteles\\Index.cshtml",
+              "ToolTip": "E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\KREAM_ProyectoFinal\\Views\\Hoteles\\Index.cshtml",
+              "RelativeToolTip": "KREAM_ProyectoFinal\\Views\\Hoteles\\Index.cshtml",
+              "ViewState": "AQIAADgBAAAAAAAAAAAAAE4BAABlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-09T01:00:58.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\KREAM_ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "KREAM_ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\KREAM_ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "KREAM_ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAHwBAAAAAAAAAAAAAF4BAAAnAAAA",
+              "ViewState": "AQIAAAQBAAAAAAAAAAAAAJABAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-08-07T22:36:03.285Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "LoginController.cs",
               "DocumentMoniker": "E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\KREAM_ProyectoFinal\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "KREAM_ProyectoFinal\\Controllers\\LoginController.cs",
               "ToolTip": "E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\KREAM_ProyectoFinal\\Controllers\\LoginController.cs",
               "RelativeToolTip": "KREAM_ProyectoFinal\\Controllers\\LoginController.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAowCsAAABvAAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAAA5wCsAAABvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-07T22:34:24.749Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\KREAM_ProyectoFinal\\Views\\Carrito\\Index.cshtml",
               "RelativeDocumentMoniker": "KREAM_ProyectoFinal\\Views\\Carrito\\Index.cshtml",
               "ToolTip": "E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\KREAM_ProyectoFinal\\Views\\Carrito\\Index.cshtml",
               "RelativeToolTip": "KREAM_ProyectoFinal\\Views\\Carrito\\Index.cshtml",
-              "ViewState": "AQIAAE4AAAAAAAAAAAAAAGIAAAAXAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAEYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-08-07T22:28:43.984Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Login.cshtml",
               "DocumentMoniker": "E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\KREAM_ProyectoFinal\\Views\\Login\\Login.cshtml",
               "RelativeDocumentMoniker": "KREAM_ProyectoFinal\\Views\\Login\\Login.cshtml",
               "ToolTip": "E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\KREAM_ProyectoFinal\\Views\\Login\\Login.cshtml",
               "RelativeToolTip": "KREAM_ProyectoFinal\\Views\\Login\\Login.cshtml",
-              "ViewState": "AQIAAFQCAAAAAAAAAAAmwF4CAAAWAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAmwDMAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-08-07T22:16:05.172Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Model1.edmx [Diagram1]",
-              "DocumentMoniker": "E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\KREAM_ProyectoFinal\\Models\\Model1.edmx",
-              "RelativeDocumentMoniker": "KREAM_ProyectoFinal\\Models\\Model1.edmx",
-              "ToolTip": "E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\KREAM_ProyectoFinal\\Models\\Model1.edmx [Diagram1]",
-              "RelativeToolTip": "KREAM_ProyectoFinal\\Models\\Model1.edmx [Diagram1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2024-08-06T01:37:32.764Z",
-              "EditorCaption": " [Diagram1]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Web.config",
               "DocumentMoniker": "E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\KREAM_ProyectoFinal\\Web.config",
               "RelativeDocumentMoniker": "KREAM_ProyectoFinal\\Web.config",
               "ToolTip": "E:\\OneDrive - ULACIT ED CR\\SERVICIOS WEB\\PROYECTO API\\API\\KREAM_ProyectoFinal\\Web.config",
               "RelativeToolTip": "KREAM_ProyectoFinal\\Web.config",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFkAAAADAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFcAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
               "WhenOpened": "2024-08-06T01:35:15.099Z",
               "EditorCaption": ""

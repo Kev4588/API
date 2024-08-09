@@ -49,7 +49,7 @@
         z-index: -1;
         object-fit: cover;
         clip-path: inset(16% 0% 50% 10% round 15px);
-        object-position: 3%;
+        object-position: 4%;
     }
 
 
@@ -223,13 +223,8 @@
             <button class="boton-RG" onclick="document.location.href = '@Url.Content("~/Register/Create")'">Crear cuenta</button>
 
             <br>
-            <a href="#" id="olvidadoContrasena" onclick="recuperarContrasena(); return false;">¿Se te ha olvidado la contraseña?</a>
 
-            <div class="social-login-buttons">
-                <div id="google-signin-button" class="google-signin-button"></div>
-                <div class="fb-login-button" data-width="150" data-size="large" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="false" scope="public_profile,email" onlogin="checkLoginState();"></div>
-            </div>
-
+          
             <p style="color: red;">
                 @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
                 {
@@ -243,8 +238,6 @@
 <script>
             /*este script permite la rotacion de las imagenes del login sin perder el formato definido en el container*/
 
-            var images = ['../../content/Images/Jordans.png', '../../content/Images/Kanye.png', '../../content/Images/Yeezys.png',
-                '../../content/Images/varias.png', '../../content/Images/varias1.png', '../../content/Images/NB.png']; // arreglo de imagenes
             var currentIndex = 0;
 
             function rotateBackgroundImage() {
@@ -356,133 +349,7 @@
 
 //********************************************************************************************************* */
 
-            function recuperarContrasena() {
-                // Solicitar al usuario que ingrese el correo electrónico
-                var correoElectronico = prompt("Por favor, ingresa el correo electrónico de la cuenta a recuperar:");
-
-                if (correoElectronico != null) {
-                    // Validar si el correo electrónico es válido
-                    if (correoElectronico.trim() != "") {
-                        $.ajax({
-                            url: '@Url.Action("usuarioExiste2", "Login")',
-                            type: 'POST',
-                            data: { email: correoElectronico },
-                            success: function (data) {
-                                if (data === "0") {
-                                    alert("El correo electrónico digitado no está registrado en la plataforma");
-                                    recuperarContrasena();
-                                } else {
-                                    var preguntaSeguridad = "";
-                                    var respuestaPreguntaSeguridad = "";
-                                    // Obtener la pregunta de seguridad
-                                    $.ajax({
-                                        url: '@Url.Action("devuelvePreguntaSeguridad", "Login")',
-                                        type: 'POST',
-                                        data: { email: correoElectronico },
-                                        success: function (preguntaData) {
-                                            preguntaSeguridad = preguntaData;
-                                            //alert(preguntaSeguridad);
-
-                                            if (preguntaSeguridad == "MarcaPrimerVehiculo") {
-                                                preguntaSeguridad = "¿Cuál era la marca de tu primer vehículo?";
-                                            } else if (preguntaSeguridad == "PeliculaLibroFavorito") {
-                                                preguntaSeguridad = "¿Cuál es tu película o libro favorito?";
-                                            } else if (preguntaSeguridad == "AmigoInfancia") {
-                                                preguntaSeguridad = "¿Cuál es el nombre de tu mejor amigo durante la infancia?";
-                                            } else if (preguntaSeguridad == "PrimerMascota") {
-                                                preguntaSeguridad = "¿Cuál es el nombre de tu primer mascota?";
-                                            } else {
-                                                alert("Recuperacion contrasena no disponible para usuarios API");
-                                                //recuperarContrasena();
-                                                window.location.href = "/Login/Login";
-
-                                            }
-
-                                            $.ajax({
-                                                url: '@Url.Action("devuelveRespuestaPreguntaSeguridad", "Login")',
-                                                type: 'POST',
-                                                data: { email: correoElectronico },
-                                                success: function (respuestaData) {
-                                                    respuestaPreguntaSeguridad = respuestaData;
-                                                    //alert(respuestaPreguntaSeguridad);
-                                                    //********************************************************* /
-                                                    var intentos = 3;
-                                                    var respuestaCorrecta = false;
-                                                    var cancelarOperacion = false;
-                                                    while (intentos > 0 && !respuestaCorrecta) {
-                                                        alert("Por favor digite la respuesta para la pregunta de seguridad' " + preguntaSeguridad + "'");
-                                                        respuestaUsuario = prompt("Por favor digite la respuesta para la pregunta mostrada anteriormente, intentos restantes:" + intentos);
-                                                        intentos--;
-                                                        if (respuestaUsuario != null) {
-                                                            if (respuestaUsuario.trim() != "") {
-                                                                if (respuestaUsuario.toLowerCase() == respuestaPreguntaSeguridad.toLowerCase()) {
-                                                                    respuestaCorrecta = true;
-                                                                    intentos = 0;
-                                                                    window.location.href = "/login/recuperaContrasena?email=" + encodeURIComponent(correoElectronico);
-
-                                                                } else {
-                                                                    alert("Respuesta incorrecta. Intentos restantes: " + intentos);
-                                                                }
-                                                            } else {
-                                                                alert("Debes ingresar una respuesta válida. Intentos restantes: " + intentos);
-                                                            }
-                                                        } else {
-                                                            alert("Has cancelado verificacion de preguntas seguridad. Redireccionando a pantalla de login...");
-                                                            intentos = 0;
-                                                            cancelarOperacion = true;
-                                                            window.location.href = "/Login/Login";
-                                                        }
-
-                                                    }
-                                                    if (!respuestaCorrecta) {
-                                                        if (cancelarOperacion == false) {
-                                                            alert("No cuenta con más intentos. Para cambiar sus preguntas de seguridad por favor contactar a la linea de ayuda +506 4080 4001");
-                                                        }
-                                                    } else {
-                                                        window.location.href = "/login/recuperaContrasena?email=" + encodeURIComponent(correoElectronico);
-
-
-                                                    }
-
-
-                                                }, error: function (xhr, status, error) {
-                                                    console.error("Error al obtener la respuesta de pregunta de seguridad: ", error);
-                                                }
-
-
-                                            });
-
-
-
-
-                                        }, error: function (xhr, status, error) {
-                                            console.error("Error al obtener la pregunta de seguridad: ", error);
-                                        }
-
-                                    });
-
-
-
-
-
-
-                                }
-
-                            }, error: function (error) {
-                                console.error("Error: ", error);
-                            }
-                        });
-                    } else {
-                        alert("Debes ingresar un correo electrónico válido.");
-                        recuperarContrasena();
-                    }
-                } else {
-                    alert("Has cancelado el ingreso de correo electrónico.");
-                    window.location.href = "/Login/Login";
-                }
-
-            }
-//***************************************************************************************************************************** */
+//******************************************************************************************************** */
 
 
         //Borra cualquier dato almacenado para que pida inicio de sesion todas las veces
