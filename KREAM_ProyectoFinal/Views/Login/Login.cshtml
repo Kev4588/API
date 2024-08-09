@@ -3,7 +3,10 @@
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<head>
+    @*BoxIcons: Se usa para poder usarlo como un font, para poder cambiarle de color*@
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
 <style>
 
     body {
@@ -21,8 +24,6 @@
     .body-content {
         min-width: 100%;
         margin-top: 15px;
-
-    
     }
 
 
@@ -90,13 +91,16 @@
     }
 
     .login-form {
-        margin-left: 50%;
-        margin-right: 50%;
-        right: 39%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
         background-color: rgb(0 0 0 / 73%);
         padding: 40px;
         border: inset;
         border-radius: 10px;
+        width: 300px; /* Adjust width as needed */
+        max-width: 100%;
         text-align: center;
     }
 
@@ -105,9 +109,8 @@
         border: 1px solid white;
         color: white;
         padding: 10px;
-        margin-bottom: 20px;
         font-family: Staatliches;
-        border-radius: 25px;
+        flex: 1; /* Make the input take up the remaining space */
     }
 
         .form-control::placeholder {
@@ -129,51 +132,16 @@
         font-size: 14px;
         letter-spacing: 1px;
         margin-top: 10px;
-        display: inline-block;
+        width: 100%; /* Buttons take full width */
     }
 
-        .boton-IS:hover,
-        .boton-RG:hover {
-            background-color: white;
-            color: black;
-        }
-
-    #olvidadoContrasena {
-        color: white;
-        text-decoration: underline;
-        margin-top: 10px;
-        display: inline-block;
+    .boton-IS:hover,
+    .boton-RG:hover {
+        background-color: white;
+        color: black;
     }
 
-    .social-login-buttons {
-        margin-top: 20px;
-    }
 
-    .google-signin-button {
-        color: #757575;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        padding: 10px 20px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        margin-left: 10px;
-    }
-
-    .facebook-login-button {
-        background-color: #3b5998;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        padding: 10px 20px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-        .facebook-login-button:hover {
-            background-color: #2d4373;
-        }
 </style>
 
 
@@ -214,17 +182,29 @@
 <div class="container-login">
     <div class="login-form">
         <form action="@Url.Action("Login", "Login")" method="post">
-            <h2>Iniciar sesión</h2>
+            <h2 style="margin-top:10%;">Iniciar sesión</h2>
 
-            <input type="text" id="username" name="username" class="form-control" placeholder="Nombre de usuario" required>
-            <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required>
+            <div id="login-container" style=" margin-top:5%; display:flex; flex-direction:column; justify-content:space-around; align-items:center;">
+                
+                <div id="username-container" class="input-group" style="margin-bottom: 5%;">
+                    <span class="input-group-text"><i class='bx bxs-user'></i></span>
+                    <input type="text" id="username" name="username" class="form-control" placeholder="Nombre de usuario" required>
+                </div>
 
-            <input type="submit" value="Ingresar" class="boton-IS">
-            <button class="boton-RG" onclick="document.location.href = '@Url.Content("~/Register/Create")'">Crear cuenta</button>
+
+                <div id="password-container" class="input-group">
+                    <span class="input-group-text"><i class='bx bxs-lock-open-alt'></i></span>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required>
+                </div>
+
+                <input type="submit" value="Ingresar" class="boton-IS" style="margin-top:20%;">
+                <button class="boton-RG" onclick="document.location.href = '@Url.Content("~/Register/Create")'">Crear cuenta</button>
+            </div>
+            
 
             <br>
 
-          
+
             <p style="color: red;">
                 @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
                 {
@@ -355,139 +335,6 @@
         //Borra cualquier dato almacenado para que pida inicio de sesion todas las veces
         localStorage.clear();
         sessionStorage.clear();
-
-        window.fbAsyncInit = function () {
-
-            FB.init({
-                appId: '726896496246194',// obtenido desde el meta developer portal
-                cookie: false,
-                xfbml: true,
-                version: 'v12.0'
-            });
-
-            FB.AppEvents.logPageView();
-        };
-
-        //funcion para cargar sdk de facebook
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) { return; }
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-
-
-
-        function checkLoginState() {
-
-            FB.getLoginStatus(function (response) {
-
-                console.log('loginState');
-                console.log(response);
-                statusChangeCallback(response);
-            });
-        }
-
-        function logoutAndClearData() {
-            if (window.FB) {
-                FB.logout(function (response) {
-                    console.log('User logged out successfully');
-                    clearBrowserData(); // Limpia datos del navegador
-                    //window.location.reload(); // Recarga la página para limpiar el estado en la memoria
-                });
-            } else {
-                console.log('FB SDK not initialized or already cleaned up.');
-            }
-        }
-        function clearBrowserData() {
-            // Limpia cookies
-            clearCookies();
-            // Limpia almacenamiento local
-            localStorage.clear();
-            // Limpia almacenamiento de sesión
-            sessionStorage.clear();
-            console.log("All browser data cleared.");
-        }
-
-        function clearCookies() {
-            var cookies = document.cookie.split(";");
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = cookies[i];
-                var eqPos = cookie.indexOf("=");
-                var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-                document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
-            }
-        }
-
- function statusChangeCallback(response) {
-    if (response.status === 'connected') {
-        // El usuario está conectado a Facebook y autorizado en tu aplicación
-        console.log('Logged in and authenticated');
-
-        FB.api('/me', { fields: 'first_name,last_name' }, function(apiResponse) {
-            if (!apiResponse.error) {
-                console.log('User ID:', response.authResponse.userID);
-                console.log('First Name:', apiResponse.first_name);
-                console.log('Last Name:', apiResponse.last_name);
-
-                var socialMediaID = response.authResponse.userID;
-                var nombre = apiResponse.first_name;
-                var primerApellido = apiResponse.last_name;
-                logoutAndClearData();
-
-                $.ajax({
-                    url: '@Url.Action("usuarioExisteSocialMedia", "Login")',
-                    type: 'POST',
-                    data: { socialMediaID: socialMediaID },
-                    success: function(data) {
-                        if (data === "0") {
-                            var respuesta = confirm("Usuario no registrado en plataforma, presione Aceptar para registrarlo y continuar");
-                            if (respuesta) {
-                                alert("Registrando usuario..." + nombre);
-                                $.ajax({
-                                    url: '@Url.Action("CreateAPI2", "Login")',
-                                    type: 'POST',
-                                    data: {
-                                        nombre: nombre,
-                                        primerApellido: primerApellido,
-                                        socialMediaID: socialMediaID
-                                    },
-                                    success: function(data) {
-                                        if (data == 0) {
-                                            window.location.href = "/Home/index";
-                                        } else {
-                                            window.location.href = "/Login/Login";
-                                        }
-                                    },
-                                    error: function(error) {
-                                        console.error("Error: ", error);
-                                    }
-                                });
-                            } else {
-                                alert("Ha cancelado el ingreso por Facebook API, redireccionando...");
-                                window.location.href = "/Login/Login";
-                            }
-                        } else {
-                            window.location.href = "/Home/index";
-                        }
-                    },
-                    error: function(error) {
-                        console.error("Error: ", error);
-                    }
-                });
-            } else {
-                console.log('Error fetching user details:', apiResponse.error);
-            }
-        });
-    } else {
-        // El usuario no está conectado a Facebook o no ha autorizado tu aplicación
-        console.log('Not logged into Facebook or not authenticated');
-    }
-}
-
-
-
 
 
 </script>
