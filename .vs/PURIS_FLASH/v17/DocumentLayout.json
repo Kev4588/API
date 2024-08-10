@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|c:\\users\\ronal\\onedrive\\documents\\github\\api\\kream_proyectofinal\\views\\producto\\mostrarinformacion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\views\\producto\\mostrarinformacion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|c:\\users\\ronal\\onedrive\\documents\\github\\api\\kream_proyectofinal\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|c:\\users\\ronal\\onedrive\\documents\\github\\api\\kream_proyectofinal\\views\\producto\\mostrarinformacion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\views\\producto\\mostrarinformacion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\kream_proyectofinal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,26 +62,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MostrarInformacion.cshtml",
               "DocumentMoniker": "C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\KREAM_ProyectoFinal\\Views\\Producto\\MostrarInformacion.cshtml",
               "RelativeDocumentMoniker": "KREAM_ProyectoFinal\\Views\\Producto\\MostrarInformacion.cshtml",
               "ToolTip": "C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\KREAM_ProyectoFinal\\Views\\Producto\\MostrarInformacion.cshtml",
               "RelativeToolTip": "KREAM_ProyectoFinal\\Views\\Producto\\MostrarInformacion.cshtml",
-              "ViewState": "AQIAAHAAAAAAAAAAAAAAAHYAAACcAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAcAAABzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-08-10T02:32:35.927Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\KREAM_ProyectoFinal\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "KREAM_ProyectoFinal\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\KREAM_ProyectoFinal\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "KREAM_ProyectoFinal\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAP8AAAAAAAAAAAAAAA8BAABpAAAA",
+              "ViewState": "AQIAAMgAAAAAAAAAAAAqwOIAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-08-10T02:29:16.41Z",
               "EditorCaption": ""

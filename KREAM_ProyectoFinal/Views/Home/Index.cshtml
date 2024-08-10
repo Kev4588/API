@@ -207,6 +207,28 @@
         transform: scale(1.02);
         transition: all 0.3s ease;
     }
+
+    .card-title {
+        height: 40px; /* Reduced height for the title */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Limits the title to 2 lines */
+        -webkit-box-orient: vertical;
+        margin-bottom: 5px; /* Reduce margin if needed */
+    }
+
+    .card-text {
+        height: 50px; /* Increased height for the description */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Limits the description to 2 lines */
+        -webkit-box-orient: vertical;
+        margin-bottom: 5px; /* Reduce margin if needed */
+    }
+
+
 </style>
 
 <main>
