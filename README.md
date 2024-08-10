@@ -21,7 +21,38 @@ Nuestro proyecto cuenta con dos tipos de usuarios:
 
 - **Cliente**: El que puede adquirir los productos que sean necesitados para el mismo. De la misma forma, puede comunicarse con los repartidores por medio de "WhatsApp".
 
-### Funcionamiento:
+### Tecnologías utilizadas:
+
+Se sabe que **MVC** es un modelo de diseño que se utiliza para desacoplar la interfaz (vista), los datos (modelo) y la lógica de la aplicación (controlador). Las solicitudes se enrutan a un controlador el cual se encarga de trabajar con el modelo para poder recuperar datos o hacer acciones. El controlador elige la vista que quiere que se muestre y le da el modelo. Al final, la vista representa el resultado final de la página, en función de los datos del modelo. A la hora de utilizar **ASP.NET**, este ofrece una forma eficaz en crear sitios web utilizando el patrón MVC, lo cual permite que se organice de mejor manera el proyecto. Utilizar ASP.NET permite utilizar varios motores de base de datos, como por ejemplo:
+
+- SQLite
+- SQL Server (se está utilizando para el proyecto)
+- MySQL
+- DB2
+
+Al utilizar vistas con Razor, esto proporciona una manera sencilla de representar contenido HTML en cuanto a la vista. Utilizando Razor, se puede representar una página por medio de C#.
+
+### Funcionamiento SQL Server con MVC:
+
+A la hora de utilizar SQL Server con nuestro proyecto (ASP.NET MVC), la base de datos es como la "capa de datos" del proyecto, y se integra de la siguiente manera:
+
+**Modelo:** Representa la estructura de datos en la aplicación. Utilizando clases de C#, estas se encargan de mostrar las tablas en la base de datos. Se puede utilizar tanto *Entity Framework*, como *ORM* para mapear las tablas de SQL Server a las clases de la aplicación. Al usar *Entity Framework*, se puede crear una clase de contexto de datos la cual maneja las conexiones a la base de datos.
+
+**Controlador:** Manejan la lógica de la aplicación. Se encargar de recibir las acciones o peticiones del usuario, e interactuan con el modelo (base de datos) ya sea para obtener o manejar los datos, y también decide que vista mostrarle al usuario. Usualmente cada acción en un controlador se asocia a una operación CRUD (Crear, Leer, Actualizar, Eliminar), es decir, una acción puede consultarle los datos a la base de datos y en base a eso, le devuelve los datos a una vista.
+
+**Vista:** Se encarga de presentarle los datos a los usuarios. Usualmente las vistas en MVC son archivos *.cshtml* los cuales combinan HTML con Razor para poder generar una interfaz de usuario dinámica. Los datos que se obtienen del controlador pasan a la vista, donde se convierten en formato HTML para que se le presenten así al usuario.
+
+#### Interacción con base de datos:
+
+Cuando alguna acción del controlador ocupa acceder a la base de datos, llama a los métodos en el contexto de datos para poder hacer consultas o actualizaciones. Este contexto de datos traduce las operaciones a comandos SQL los cuales se ejecutan en la base de datos. En caso de que hayan resultados, se devuelven al controlador, y después pasa los datos a la vista para que se puedan presentar.
+
+La base de datos cuenta con una pasarela de pagos, la cual se encarga de que, a la hora de "realizar un pago" en la página, que haya un proceso en el que el usuario ingrese los datos de una tarjeta, y que a la hora de que se realice el pago, se le indique al usuario que su pago fue realizado con éxito. Mientras esto sucede, la base de datos está conectada con la cantidad de productos restantes, por lo que, a la hora de que se haga un pago, se elimina cierta cantidad de productos de la base de datos (dependiendo de la compra realizada por el usuario).  
+
+De igual manera se cuenta con un sistema que administra los repartidores y los usuarios en el sistema. En cuanto a los repartidores, la base de datos almacena el tipo de transporte, una breve descripción de los repartidores, los números de teléfono, los nombres, y varias imágenes de los transportes respectivos de los repartidores. A la hora de agregar o eliminar repartidores en la aplicación (como administrador), la base de datos se actualizará según los cambios que se realicen.
+
+En cuanto a los usuarios, la base de datos se encarga de almacenar la cédula, el nombre, los apellidos, la edad, el teléfono, los correos, el género, la dirección, el tipo de usuario (1 si es admin, 2 si es usuario regular) y por último la contraseña. Al crear un usuario en la aplicación, este se guarda en la base de datos, lo cual permite que se pueda acceder al sistema. También se pueden eliminar usuarios o modificar los datos según la necesidad del usuario, y estos cambios se verán reflejados en la base de datos.
+
+### Funcionamiento de la aplicación:
 
 #### 1. Inicio de sesión / Registro:
 
