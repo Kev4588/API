@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|c:\\users\\ronal\\onedrive\\documents\\github\\api\\kream_proyectofinal\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|c:\\users\\ronal\\onedrive\\documents\\github\\api\\kream_proyectofinal\\views\\producto\\mostrarinformacion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\views\\producto\\mostrarinformacion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\kream_proyectofinal\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|c:\\users\\ronal\\onedrive\\documents\\github\\api\\kream_proyectofinal\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\kream_proyectofinal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\kream_proyectofinal\\views\\hoteles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\views\\hoteles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\kream_proyectofinal\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\kream_proyectofinal\\views\\carrito\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|c:\\users\\ronal\\onedrive\\documents\\github\\api\\kream_proyectofinal\\views\\carrito\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\views\\carrito\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\kream_proyectofinal\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\kream_proyectofinal\\views\\hoteles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|solutionrelative:kream_proyectofinal\\views\\hoteles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{452A4B3A-4DC8-4924-A3AA-98EEB79DAD80}|KREAM_ProyectoFinal\\PURIS_FLASH.csproj|C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\kream_proyectofinal\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,7 +62,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MostrarInformacion.cshtml",
+              "DocumentMoniker": "C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\KREAM_ProyectoFinal\\Views\\Producto\\MostrarInformacion.cshtml",
+              "RelativeDocumentMoniker": "KREAM_ProyectoFinal\\Views\\Producto\\MostrarInformacion.cshtml",
+              "ToolTip": "C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\KREAM_ProyectoFinal\\Views\\Producto\\MostrarInformacion.cshtml",
+              "RelativeToolTip": "KREAM_ProyectoFinal\\Views\\Producto\\MostrarInformacion.cshtml",
+              "ViewState": "AQIAAHAAAAAAAAAAAAAAAHYAAACcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-10T02:32:35.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\KREAM_ProyectoFinal\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "KREAM_ProyectoFinal\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\KREAM_ProyectoFinal\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "KREAM_ProyectoFinal\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAP8AAAAAAAAAAAAAAA8BAABpAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-10T02:29:16.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Web.config",
               "DocumentMoniker": "C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\KREAM_ProyectoFinal\\Web.config",
               "RelativeDocumentMoniker": "KREAM_ProyectoFinal\\Web.config",
@@ -67,20 +101,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\KREAM_ProyectoFinal\\Views\\Login\\Login.cshtml",
               "RelativeDocumentMoniker": "KREAM_ProyectoFinal\\Views\\Login\\Login.cshtml",
-              "ToolTip": "C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\KREAM_ProyectoFinal\\Views\\Login\\Login.cshtml*",
-              "RelativeToolTip": "KREAM_ProyectoFinal\\Views\\Login\\Login.cshtml*",
-              "ViewState": "AQIAAIAAAAAAAAAAAAAywJgAAAAAAAAA",
+              "ToolTip": "C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\KREAM_ProyectoFinal\\Views\\Login\\Login.cshtml",
+              "RelativeToolTip": "KREAM_ProyectoFinal\\Views\\Login\\Login.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-08-07T22:16:05.172Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\KREAM_ProyectoFinal\\Views\\Hoteles\\Index.cshtml",
               "RelativeDocumentMoniker": "KREAM_ProyectoFinal\\Views\\Hoteles\\Index.cshtml",
@@ -88,8 +122,7 @@
               "RelativeToolTip": "KREAM_ProyectoFinal\\Views\\Hoteles\\Index.cshtml",
               "ViewState": "AQIAADgBAAAAAAAAAAAAAE4BAABlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-09T01:00:58.241Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-09T01:00:58.241Z"
             },
             {
               "$type": "Document",
@@ -99,14 +132,14 @@
               "RelativeDocumentMoniker": "KREAM_ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\KREAM_ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "KREAM_ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAQBAAAAAAAAAAAAAJABAAAAAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAE0BAABLAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-08-07T22:36:03.285Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\KREAM_ProyectoFinal\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "KREAM_ProyectoFinal\\Controllers\\LoginController.cs",
@@ -114,8 +147,7 @@
               "RelativeToolTip": "KREAM_ProyectoFinal\\Controllers\\LoginController.cs",
               "ViewState": "AQIAACEAAAAAAAAAAAA5wCsAAABvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T22:34:24.749Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-07T22:34:24.749Z"
             },
             {
               "$type": "Document",
@@ -125,14 +157,14 @@
               "RelativeDocumentMoniker": "KREAM_ProyectoFinal\\Views\\Carrito\\Index.cshtml",
               "ToolTip": "C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\KREAM_ProyectoFinal\\Views\\Carrito\\Index.cshtml",
               "RelativeToolTip": "KREAM_ProyectoFinal\\Views\\Carrito\\Index.cshtml",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAEYAAAAAAAAA",
+              "ViewState": "AQIAAJwAAAAAAAAAAAAmwLkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-08-07T22:28:43.984Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "RegisterController.cs",
               "DocumentMoniker": "C:\\Users\\ronal\\OneDrive\\Documents\\GitHub\\API\\KREAM_ProyectoFinal\\Controllers\\RegisterController.cs",
               "RelativeDocumentMoniker": "KREAM_ProyectoFinal\\Controllers\\RegisterController.cs",
@@ -140,8 +172,7 @@
               "RelativeToolTip": "KREAM_ProyectoFinal\\Controllers\\RegisterController.cs",
               "ViewState": "AQIAAIAAAAAAAAAAAAAuwBgAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-28T02:20:22.561Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-28T02:20:22.561Z"
             }
           ]
         },
