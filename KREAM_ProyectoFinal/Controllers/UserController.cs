@@ -48,14 +48,14 @@ namespace PURIS_FLASH.Controllers
         [HttpPost]
         public ActionResult Edit(UsersTableViewModel model)
         {
-           if (!ModelState.IsValid) return View(model);
+           //if (!ModelState.IsValid) return View(model);
 
             using (var db = new TRAVEL2Entities())
             {
                 var usuario = Session["UsuarioActual"] as UsersTableViewModel;
 
 
-                ViewBag.UsuarioActual = usuario.Nombre;
+                //ViewBag.UsuarioActual = usuario.Nombre;
 
                 db.Database.ExecuteSqlCommand(
                     "EXEC UpdateUser @Id, @Cedula, @Nombre, @PrimerApellido, @SegundoApellido, @Edad, @Telefono, @Correo, @Direccion,@Sexo",
@@ -74,6 +74,7 @@ namespace PURIS_FLASH.Controllers
 
                 ViewBag.UsuarioActual = model.Nombre;
 
+                TempData["SuccessMessage"] = "Datos actualizados correctamente.";
 
                 return RedirectToAction("Index", "Home");
             }

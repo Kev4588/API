@@ -112,6 +112,7 @@ namespace PURIS_FLASH.Controllers
                 model.Edad = (int)userTO.Edad;
                 model.Telefono = (int)userTO.Telefono;
                 model.Correo = userTO.Correo;
+                model.Sexo = userTO.Sexo;
                 model.Direccion = userTO.Direccion;
 
 

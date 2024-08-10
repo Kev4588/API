@@ -227,40 +227,47 @@
         -webkit-box-orient: vertical;
         margin-bottom: 5px; /* Reduce margin if needed */
     }
-
-
 </style>
 
+
 <main>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <script>
+        alert('@TempData["SuccessMessage"]');
+        </script>
+    }
+
     <div class="container mt-4">
         <div class="row">
             <!-- Filtros en el lado izquierdo -->
             <div class="col-lg-3 mb-4">
                 <div class="contenedor-filtros">
                     <form method="get" action="@Url.Action("Index", "Home")">
-                        
+
                         <!--Nombre-->
                         <!--
-    <div class="mb-3">
-        <label for="nombre" class="form-label">Nombre:</label>
-        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Cualquiera" value="@ViewBag.NombreSeleccionado" />
-    </div>
-                            -->
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Cualquiera" value="@ViewBag.NombreSeleccionado" />
+                        </div>
+                                                -->
                         <!--Nombre-->
                         <!--Personas-->
                         <!--
-    <div class="mb-3">
-        <label for="personas" class="form-label">Personas:</label>
-        <select class="form-select" id="personas" name="personas">
-            <option value="">Cantidad de Personas</option>
-            @foreach (var personas in ViewBag.Personas as SelectList)
-            {
-                <option value="@personas.Value" @(personas.Text == ViewBag.PersonasSeleccionada ? "selected" : "")>@personas.Text</option>
-            }
-        </select>
-    </div>
-                            -->
-    <!--Personas-->
+                        <div class="mb-3">
+                            <label for="personas" class="form-label">Personas:</label>
+                            <select class="form-select" id="personas" name="personas">
+                                <option value="">Cantidad de Personas</option>
+                                @foreach (var personas in ViewBag.Personas as SelectList)
+                                {
+                                    <option value="@personas.Value" @(personas.Text == ViewBag.PersonasSeleccionada ? "selected" : "")>@personas.Text</option>
+                                }
+                            </select>
+                        </div>
+                                                -->
+                        <!--Personas-->
                         <!--Categoria-->
                         <div class="mb-3">
                             <label for="categoria" class="form-label">Categoría:</label>
@@ -281,7 +288,7 @@
                             <input type="text" id="precioMaxOutput" class="form-control" readonly value="₡@ViewBag.PrecioMaxSeleccionado">
                         </div>
                         <!-- Precio Máximo -->
-                       
+
                         <div class="mb-3">
                             <label for="lugar" class="form-label">Lugar:</label>
                             <select class="form-select" id="lugar" name="lugar">
@@ -292,7 +299,7 @@
                                 }
                             </select>
                         </div>
-                       
+
 
 
 
