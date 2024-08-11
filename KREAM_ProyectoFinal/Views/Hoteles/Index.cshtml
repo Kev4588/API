@@ -81,25 +81,40 @@
             opacity: 1;
         }
 
-
+        /* Contenedor de filtros sticky */
         .contenedor-filtros {
-            /* border: solid 1px; */
-            display: table;
+            justify-content: center;
+            display: flex;
             color: white;
             align-items: center;
             padding: 30px;
-            width: 98%;
+            width: 100%; /* Cambiar a 100% para ocupar todo el espacio disponible */
             margin: auto;
-            background: #54c47c;
-            box-shadow: 0px 94px 277px -6px #ffffff;
+            /*background: #c32424;*/
+            position: sticky; /* Para que sea sticky */
+            top: 20px; /* Se queda fijo cuando llegas a 20px del top */
+            z-index: 1000; /* Asegura que esté sobre otros elementos */
         }
 
+            /* Alineación de los filtros uno al lado del otro */
+            .contenedor-filtros form {
+                position: relative;
+                display: flex;
+                top: 50px;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 163px;
+                text-align: center;
+                align-items: center;
+            }
 
-        body {
-            /*background-image: url('/Content/images/fondoPrincipal.jpg');*/
-            background-color: #fff
-        }
+            .contenedor-filtros .mb-3 {
+                flex: 1; /* Hace que cada filtro ocupe un espacio proporcional */
+                min-width: 200px; /* Establece un ancho mínimo para cada filtro */
+            }
 
+
+   
 
 
         .button-85 {
@@ -191,6 +206,14 @@
             font-size: 18px;
         }
 
+        .sticky {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin-bottom: 90px;
+        }
+
+
 
 
         .boton-agregar-carrito {
@@ -210,6 +233,155 @@
             transform: scale(1.02);
             transition: all 0.3s ease;
         }
+body{
+       margin: 0;
+       padding: 0;
+       color: white;
+
+       background-image: none;
+       background-color: black;
+       background-image: url('@Url.Content("~/Content/images/fondoBlancoDerecha.jpg")');
+       background-size: cover;
+       background-repeat: round;
+
+       background-attachment: fixed;
+       background-color: black;
+       position: relative;
+   }
+
+   .body-content {
+       min-width: 100%;
+       margin-top: 15px;
+   }
+
+   /*------ NUEVO ESTILO DE CARD ------------ */
+
+    .card {
+
+        height: 100%;
+        background: #171717;
+        transition: 1s ease-in-out;
+        clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-title, .card-text {
+        font-weight: bold;
+        color: white;
+        text-align: center;
+    }
+
+    .card-text {
+        /* font-weight: 400; */
+        font-size: 0.89em;
+        margin: 1em;
+    }
+
+    .card-img {
+        width: 4.8em;
+
+        background: white;
+        border-radius: 15px;
+        margin: auto;
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+        margin-top: 1em;
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+    }
+
+    .card a {
+        color: white;
+        transition: .4s ease-in-out;
+    }
+
+        .card a:hover {
+            color: red;
+        }
+
+    .card button {
+        padding: 0.8em 1.7em;
+        display: block;
+        margin: auto;
+        border-radius: 25px;
+        border: none;
+        font-weight: bold;
+        /*background: #ffffff;
+
+         color: rgb(0, 0, 0);*/
+        transition: .4s ease-in-out;
+    }
+
+
+
+
+    .carousel {
+        background-color: white;
+
+        position: relative;
+    }
+
+
+    .banner {
+        display: flex;
+        position: absolute;
+        top: -36px;
+        height: 152%;
+        left: -137px;
+        z-index: -1;
+        width: 115%;
+        border-radius: 391px 661px 600px 0px;
+        opacity: 0; /* Inicialmente invisible */
+        transform: translateX(-100%); /* Empieza fuera de la pantalla a la izquierda */
+        animation: slideInBanner 1s forwards; /* Aplica la animación */
+    }
+
+    @@keyframes slideInBanner {
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Mueve el banner a su posición original */
+    }
+}
+
+
+
+    /* Oculta el formulario por defecto mientras que sale el banner rojo */
+    .hidden-form {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    /* Muestra el formulario con una transición suave */
+    .visible-form {
+        opacity: 1;
+    }
+
+
+
+    .cinto-rojo {
+        margin-left: 40px!important;
+    }
+
+
+
+    .alineaCards {
+        margin-left: 81px;
+    }
+
+
+
+
+
+
+
+
+
+        }
     </style>
 
 </head>
@@ -218,11 +390,20 @@
     <main>
         <div class="container mt-4">
             <div class="row">
-
                 <!-- Filtros en el lado izquierdo -->
-                <h1>REPARTIDORES PURIS FLASH</h1>
-                <div class="col-lg-3 mb-4">
+             
+                <div class="col-lg-12 mb-12 sticky  cinto-rojo">
+                   
                     <div class="contenedor-filtros">
+                        <h3>REPARTIDORES PURIS FLASH</h3>
+
+                        <div class="banner">
+
+                            <img src="@Url.Content("~/Content/images/BANNER.png")" class="banner">
+                        </div>
+
+
+
                         <form method="get" action="@Url.Action("Index", "Hoteles")">
 
 
@@ -236,9 +417,9 @@
 
                             <!--Nombre-->
                             <!--Tipo de transporte-->
-                            <!--Tipo de transporte-->
+
                             <div class="mb-3">
-                                <label for="tipoDeHabitacion" class="form-label">Tipo de Habitacion:</label>
+                                <label for="tipoDeHabitacion" class="form-label">Tipo de Transporte:</label>
                                 <select class="form-select" id="tipoDeHabitacion" name="habitacion">
                                     <option value="">Cualquier Transporte</option>
                                     @foreach (var tipoDeHabitacion in ViewBag.Categoria as SelectList)
@@ -259,8 +440,8 @@
                     </div>
                 </div>
 
-                <!-- Contenido de hoteles en el lado derecho -->
-                <div class="col-lg-9">
+                    <!-- Contenido de hoteles en el lado derecho -->
+                <div class="col-lg-12 alineaCards ">
                     <div class="row">
 
                         @foreach (var hotel in Model)
@@ -271,7 +452,7 @@
                                         <h5 class="card-title" style="height:100px !important">@hotel.NombreHotel</h5>
 
                                         <p class="card-text" style="height:35px !important">@hotel.TipoDeHabitacion</p>
-                                       
+
 
                                         <div id="carouselHotel@(hotel.IDHotel)" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
                                             <div class="carousel-inner">
@@ -312,7 +493,7 @@
 
 
 
-                                                  
+
 
 
 
@@ -331,7 +512,7 @@
                                             </button>
                                         </div>
                                         <div class="mt-3 text-end">
-                                            <p  style="text-align: center;">
+                                            <p style="text-align: center;">
                                                 <a href="https://api.whatsapp.com/send?phone=83046213&text=Hola%20estoy%20interesado%20en%20más%20información" target="_blank">
                                                     <img src="/Content/Images/whatsapp-icon.png" alt="WhatsApp" style="width: 100px; height: auto;" />
                                                 </a>
@@ -346,7 +527,7 @@
                     </div>
                     <a href="@Url.Action("Index", "Home")" class="btn btn-success">Regresar al menú principal</a>
                 </div>
-            </div>
+                </div>
     </div>
     </main>
 

@@ -64,7 +64,7 @@ namespace PURIS_FLASH.Controllers
             {
                 var usuario = Session["UsuarioActual"] as UsersTableViewModel;
 
-                db.Database.ExecuteSqlCommand(
+                int v = db.Database.ExecuteSqlCommand(
                     "EXEC GuardarComentario @IdProducto, @Comentario",                    
                     new SqlParameter("@IdProducto", idProducto),
                     new SqlParameter("@Comentario", comentario)

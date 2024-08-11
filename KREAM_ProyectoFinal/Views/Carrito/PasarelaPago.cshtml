@@ -7,73 +7,283 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/Style/Pago/Index.css" rel="stylesheet" />
     <style>
-        span {
-            font-size: 16px;
+        /* Aquí puedes mantener tus estilos personalizados, como los estilos de la tarjeta */
+        .glassy {
+            text-align:center;
+
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(6.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            color: white;
+            background-image: url('@Url.Content("~/Content/images/elegant.jpg")');
+            background-size: cover;
+            background-repeat: round;
+            background-attachment: fixed;
+            background-color: black;
+            position: relative;
+        }
+        .body-content {
+            min-width: 70%;
+            margin-top: 129px;
+            margin-bottom: 6%;
+        }
+        :root {
+            --glitter: url("https://assets.codepen.io/13471/silver-glitter-background.png");
+            --duration: 6.66s;
+        }
+        .card-front:before {
+            content: "";
+            inset: 0;
+            position: absolute;
+            transform: translate3d(0, 0, 0.01px);
+            background-image: var(--glitter), var(--glitter),
+                linear-gradient(120deg, black 25%, white, black 75%);
+            background-size: 100% 100%, 80% 80%, 200% 200%;
+            background-blend-mode: multiply, multiply, overlay;
+            background-position: 50% 50%, 50% 50%, 50% 50%;
+            mix-blend-mode: color-dodge;
+            filter: brightness(2) contrast(0.8);
+            animation: bg var(--duration) ease infinite;
+        }
+        .card-front {
+            display: grid;
+            position: relative;
+            transform: translate3d(0, 0, 0.01px);
+            width: 90vw;
+            max-width: 580px;
+            aspect-ratio: 3/2;
+            border-radius: 3.5% 3.5% 3.5% 3.5% / 5% 5% 5% 5%;
+            background-image: url('@Url.Content("~/Content/images/LOGO.jpg")');
+            background-size: cover;
+            box-shadow: 0 30px 40px -25px rgba(15, 5, 20, 1), 0 20px 50px -15px rgba(15, 5, 20, 1);
+            overflow: hidden;
+            animation: tilt var(--duration) ease infinite;
+            image-rendering: optimizequality;
+        }
+        .card-front:after {
+            content: "";
+            background: none, none, linear-gradient(125deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.4) 0.1%, rgba(255,255,255,0) 60%);
+            background-size: 200% 200%;
+            mix-blend-mode: hard-light;
+            animation: bg var(--duration) ease infinite;
+        }
+        .card-front * {
+            font-family: PT Mono, monospace;
+        }
+        .cardLogo, .expiry, .name, .number, .chip, .icon {
+            color: #ccc;
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            letter-spacing: 0.075em;
+            text-transform: uppercase;
+            font-size: clamp(0.75rem, 2.8vw + 0.2rem, 1.1rem);
+            inset: 5%;
+            text-shadow: -1px -1px 0px rgba(255,255,255,0.5),1px -1px 0px rgba(255,255,255,0.5),1px 1px 0px rgba(0,0,0,0.5),1px -1px 0px rgba(0,0,0,0.5);
+            z-index: 5;
+        }
+        .name, .number, .expiry {
+            background-image: linear-gradient(to bottom, #ededed 20%, #bababa 70%), none,
+                linear-gradient(120deg, transparent 10%, white 40%, white 60%, transparent 90%);
+            background-size: cover, cover, 200%;
+            background-position: 50% 50%;
+            background-blend-mode: overlay;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            animation: bg var(--duration) ease infinite;
+        }
+        .number {
+            font-family: PT Mono, monospace;
+            text-align: center;
+            font-size: clamp(1rem, 8vw - 0.5rem, 2.5rem);
+            letter-spacing: 0.025em;
+            top: 60%;
+            bottom: auto;
+        }
+        .expiry, .name {
+            top: auto;
+        }
+        .name {
+            right: auto;
+            max-width: 180px;
+            line-height: 1.2;
+            text-align: left;
+        }
+        .expiry {
+            left: auto;
+        }
+        .cardLogo {
+            bottom: auto;
+            left: auto;
+            width: 15%;
+            filter: invert(1) saturate(0) brightness(1) contrast(1.2);
+            mix-blend-mode: screen;
+        }
+        .chip {
+            display: grid;
+            place-items: center;
+            width: 14%;
+            aspect-ratio: 5/4;
+            left: 10%;
+            top: 30%;
+            border-radius: 10% 10% 10% 10% / 15% 15% 15% 15%;
+            background-image: none, none,
+                linear-gradient(120deg, #777 10%, #ddd 40%, #ddd 60%, #777 90%);
+            background-size: 200% 200%;
+            background-position: 50% 50%;
+            overflow: hidden;
+            animation: bg var(--duration) ease infinite;
+        }
+        .chip svg {
+            display: block;
+            width: 90%;
+            fill: none;
+            stroke: #444;
+            stroke-width: 2;
+        }
+        .contactless {
+            position: absolute;
+            left: 23%;
+            top: 30%;
+            width: 12%;
+            rotate: 90deg;
+            stroke-width: 1.25;
+            stroke: currentColor;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            opacity: 0.5;
+        }
+        .icon {
+            width: 25%;
+            bottom: auto;
+            right: auto;
+            top: 0;
+            left: 15px;
+            filter: invert(1) hue-rotate(180deg) saturate(5) contrast(2);
+        }
+        @@keyframes tilt {
+            0%, 100% { transform: translate3d(0, 0, 0.01px) rotateY(-20deg) rotateX(5deg); }
+            50% { transform: translate3d(0, 0, 0.01px) rotateY(20deg) rotateX(5deg); }
+        }
+        @@keyframes bg {
+            0%, 100% { background-position: 50% 50%, calc(50% + 1px) calc(50% + 1px), 0% 50%; }
+            50% { background-position: 50% 50%, calc(50% - 1px) calc(50% - 1px), 100% 50%; }
+        }
+        #chip, #contactless {
+            display: grid;
+            place-items: center;
+            width: 14%;
+            aspect-ratio: 5/4;
+            left: 10%;
+            top: 30%;
+            border-radius: 10% 10% 10% 10% / 15% 15% 15% 15%;
+            background-image: none, none, linear-gradient(120deg, #777 10%, #ddd 40%, #ddd 60%, #777 90%);
+            background-size: 200% 200%;
+            background-position: 50% 50%;
+            overflow: hidden;
+            animation: bg var(--duration) ease infinite;
+        }
+        .tarjeta {
+            flex: 0 0 41.666667%;
+            max-width: 56.666667%;
         }
 
-        label {
-            font-size: 20px;
+
+        .form {
+            display: grid;
+            justify-content: center;
+            display: inline-block!important;
         }
+
     </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <div class="card">
-            <div class="card-header text-center">
-                <h3>Confirmar Pago</h3>
-            </div>
-            <div class="card-body">
-                <div class="container mt-5">
-                    <div class="row justify-content-center">
-                        <div class="col-md-5">
-                            <div class="credit-card" id="credit-card">
-                                <h4 class="card-title text-center">Tarjeta</h4>
-                                <div class="card-field">
-                                    <label for="card-number">Número</label>
-                                    <span id="cardNumber">XXXX XXXX XXXX XXXX</span>
-                                </div>
-                                <div class="card-field">
-                                    <label for="name">Nombre</label>
-                                    <span id="name"></span>
-                                </div>
-                                <div class="card-field">
-                                    <label for="expiry">Fecha (MM/YY)</label>
-                                    <span id="expiry">XX/XX</span>
-                                    <label for="cvv">CVV</label>
-                                    <span id="cvv">XXX</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-5">
-                            <div class="checkout-form mt-4">
-                                <form id="payment-form" method="post" action="@Url.Action("CompraRealizada", "Carrito")">
-                                    <div class="form-group">
-                                        <label for="card-number">Número de Tarjeta</label>
-                                        <input type="text" class="form-control" id="card-number" maxlength="19" placeholder="XXXX XXXX XXXX XXXX" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="card-holder">Titular de la Tarjeta</label>
-                                        <input type="text" class="form-control" maxlength="17" id="card-holder" placeholder="Nombre Apellido" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="card-expiry">Fecha de Expiración</label>
-                                        <input type="text" class="form-control" id="card-expiry" maxlength="5" pattern="\d{2}/\d{2}" placeholder="MM/YY" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="card-cvv">CVV</label>
-                                        <input type="password" class="form-control" id="cvv-form" maxlength="3" placeholder="XXX" required>
-                                    </div>
-                                    <button type="submit" class="btn btn-lg btn-block btn-success">Pagar</button>
-                                </form>
-                            </div>
-                        </div>
+
+
+    <div class="card-body glassy">
+        <h3>Confirmar Pago</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card-front">
+                    <img src="https://simey-credit-card.netlify.app/img/logos/visa.svg" class="cardLogo" />
+                    <img src="https://simey-credit-card.netlify.app/img/icons/contactless.svg" class="contactless" />
+                    <div id="chip" class="chip">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 45">
+                            <path d="M10,10h40v25H10Z"></path>
+                            <path d="M10,35h40v5H10Z"></path>
+                            <path d="M20,15v20"></path>
+                            <path d="M30,15v20"></path>
+                        </svg>
                     </div>
+                    <div id="card-number" class="number"></div>
+                    <div id="card-name" class="name"> </div>
+                    <div id="card-expiry" class="expiry"></div>
                 </div>
             </div>
+            <div class="col-md-6" style="text-align: left;">
+                <form id="payment-form" method="post" action="@Url.Action("CompraRealizada", "Carrito")">
+                    <div class="form-group">
+                        <label for="card-number-input">Número de Tarjeta:</label>
+                        <input type="text" class="form-control" id="card-number-input" placeholder="Ingresa tu número de tarjeta " required>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-name-input">Nombre del Titular:</label>
+                        <input type="text" class="form-control" id="card-name-input" placeholder="Nombre en la tarjeta" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-expiry-input">Fecha de Expiración:</label>
+                        <input type="text" class="form-control" id="card-expiry-input" placeholder="MM/YY" required>
+                    </div>
 
+                    <button type="submit" class="btn btn-lg btn-block btn-success">Pagar</button>
+
+
+
+                </form>
+            </div>
         </div>
-
     </div>
+
+
+
+
+
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const cardNumberInput = document.getElementById('card-number-input');
+            const cardNameInput = document.getElementById('card-name-input');
+            const cardExpiryInput = document.getElementById('card-expiry-input');
+
+            const cardNumberDisplay = document.getElementById('card-number');
+            const cardNameDisplay = document.getElementById('card-name');
+            const cardExpiryDisplay = document.getElementById('card-expiry');
+
+            cardNumberInput.addEventListener('input', function () {
+                cardNumberDisplay.textContent = cardNumberInput.value;
+            });
+
+            cardNameInput.addEventListener('input', function () {
+                cardNameDisplay.textContent = cardNameInput.value;
+            });
+
+            cardExpiryInput.addEventListener('input', function () {
+                cardExpiryDisplay.textContent = cardExpiryInput.value;
+            });
+        });
+
+
+    </script>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -135,7 +345,8 @@
     <script>
 
 
-        
+
     </script>
-</body>
+
+    </body>
 </html>

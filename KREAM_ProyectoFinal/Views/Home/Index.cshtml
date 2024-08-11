@@ -15,7 +15,7 @@
 
         .carousel-item img {
             max-height: 300px;
-            width: 100%;
+            width: max-content !important;
             object-fit: cover;
         }
 
@@ -39,18 +39,13 @@
             margin-left: 3px;
             text-indent: -999px;
             cursor: pointer;
-            background-color: #fff;
+
             background-clip: padding-box;
             border: 0;
             border-top: 10px solid transparent;
             border-bottom: 10px solid transparent;
             transition: opacity 0.6s ease;
         }
-
-
-
-
-
 
 
 
@@ -74,23 +69,7 @@
     }
 
 
-    .contenedor-filtros {
-        /* border: solid 1px; */
-        display: table;
-        color: white;
-        align-items: center;
-        padding: 30px;
-        width: 98%;
-        margin: auto;
-        background: #54c47c;
-        box-shadow: 0px 94px 277px -6px #ffffff;
-    }
 
-
-    body {
-        /*background-image: url('/Content/images/fondoPrincipal.jpg');*/
-        background-color: #fff
-    }
 
 
 
@@ -202,38 +181,211 @@
         transform: scale(1.02);
         transition: all 0.3s ease;
     }
+
+    /* Contenedor de filtros sticky */
+    .contenedor-filtros {
+        justify-content: center;
+        display: flex;
+        color: white;
+        align-items: center;
+        padding: 30px;
+        width: 100%; /* Cambiar a 100% para ocupar todo el espacio disponible */
+        margin: auto;
+        /*background: #c32424;*/
+        position: sticky; /* Para que sea sticky */
+        top: 20px; /* Se queda fijo cuando llegas a 20px del top */
+        z-index: 1000; /* Asegura que esté sobre otros elementos */
+    }
+
+        /* Alineación de los filtros uno al lado del otro */
+        .contenedor-filtros form {
+            position: relative;
+            display: flex;
+            top: 50px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 163px;
+            text-align: center;
+            align-items: center;
+        }
+
+        .contenedor-filtros .mb-3 {
+            flex: 1; /* Hace que cada filtro ocupe un espacio proporcional */
+            min-width: 200px; /* Establece un ancho mínimo para cada filtro */
+        }
+
+    .sticky {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        margin-bottom: 90px;
+    }
+
+
+
+         body {
+       margin: 0;
+       padding: 0;
+       color: white;
+
+       background-image: none;
+       background-color: black;
+       background-image: url('@Url.Content("~/Content/images/fondoBlancoDerecha.jpg")');
+       background-size: cover;
+       background-repeat: round;
+
+       background-attachment: fixed;
+       background-color: black;
+       position: relative;
+   }
+
+   .body-content {
+       min-width: 100%;
+       margin-top: 15px;
+   }
+
+   /*------ NUEVO ESTILO DE CARD ------------ */
+
+    .card {
+
+        height: 100%;
+        background: #171717;
+        transition: 1s ease-in-out;
+        clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-title, .card-text {
+        font-weight: bold;
+        color: white;
+        text-align: center;
+    }
+
+    .card-text {
+        /* font-weight: 400; */
+        font-size: 0.89em;
+        margin: 1em;
+    }
+
+    .card-img {
+        width: 4.8em;
+
+        background: white;
+        border-radius: 15px;
+        margin: auto;
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+        margin-top: 1em;
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+    }
+
+    .card a {
+        color: white;
+        transition: .4s ease-in-out;
+    }
+
+        .card a:hover {
+            color: red;
+        }
+
+    .card button {
+        padding: 0.8em 1.7em;
+        display: block;
+        margin: auto;
+        border-radius: 25px;
+        border: none;
+        font-weight: bold;
+        /*background: #ffffff;
+
+         color: rgb(0, 0, 0);*/
+        transition: .4s ease-in-out;
+    }
+
+
+
+
+    .carousel {
+        background-color: white;
+
+        position: relative;
+    }
+
+
+    .banner {
+        display: flex;
+        position: absolute;
+        top: -23px;
+        height: 152%;
+        left: -137px;
+        z-index: -1;
+        width: 115%;
+        border-radius: 391px 661px 600px 0px;
+        opacity: 0; /* Inicialmente invisible */
+        transform: translateX(-100%); /* Empieza fuera de la pantalla a la izquierda */
+        animation: slideInBanner 1s forwards; /* Aplica la animación */
+    }
+
+    @@keyframes slideInBanner {
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Mueve el banner a su posición original */
+    }
+}
+
+
+
+    /* Oculta el formulario por defecto mientras que sale el banner rojo */
+    .hidden-form {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    /* Muestra el formulario con una transición suave */
+    .visible-form {
+        opacity: 1;
+    }
+
+
+
+    .cinto-rojo {
+        margin-left: 40px!important;
+    }
+
+
+
+    .alineaCards {
+        margin-left: 81px;
+    }
+
+
+
+
+
 </style>
 
 <main>
     <div class="container mt-4">
         <div class="row">
             <!-- Filtros en el lado izquierdo -->
-            <div class="col-lg-3 mb-4">
+            <div class="col-lg-12 mb-12 sticky  cinto-rojo">
                 <div class="contenedor-filtros">
-                    <form method="get" action="@Url.Action("Index", "Home")">
-                        
-                        <!--Nombre-->
-                        <!--
-    <div class="mb-3">
-        <label for="nombre" class="form-label">Nombre:</label>
-        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Cualquiera" value="@ViewBag.NombreSeleccionado" />
-    </div>
-                            -->
-                        <!--Nombre-->
+
+                    <div class="banner">
+
+                        <img src="@Url.Content("~/Content/images/BANNER.png")" class="banner">
+                    </div>
+
+
+                    <form method="get" action="@Url.Action("Index", "Home")" class="hidden-form">
+
+
                         <!--Personas-->
-                        <!--
-    <div class="mb-3">
-        <label for="personas" class="form-label">Personas:</label>
-        <select class="form-select" id="personas" name="personas">
-            <option value="">Cantidad de Personas</option>
-            @foreach (var personas in ViewBag.Personas as SelectList)
-            {
-                <option value="@personas.Value" @(personas.Text == ViewBag.PersonasSeleccionada ? "selected" : "")>@personas.Text</option>
-            }
-        </select>
-    </div>
-                            -->
-    <!--Personas-->
                         <!--Categoria-->
                         <div class="mb-3">
                             <label for="categoria" class="form-label">Categoría:</label>
@@ -250,11 +402,11 @@
                         <div class="mb-3">
 
                             <label for="precioMax" class="form-label">Precio Máximo:</label>
-                            <input type="range" class="form-range" id="precioMax" name="precioMax" min="100" max=@ViewBag.PrecioMaximo step="100" value="@ViewBag.PrecioMaxSeleccionado" oninput="updatePrecioMaxOutput(this.value)">
+                            <input type="range" class="form-range" id="precioMax" name="precioMax" min="1000" max=@ViewBag.PrecioMaximo step="100" value="@ViewBag.PrecioMaxSeleccionado" oninput="updatePrecioMaxOutput(this.value)">
                             <input type="text" id="precioMaxOutput" class="form-control" readonly value="₡@ViewBag.PrecioMaxSeleccionado">
                         </div>
                         <!-- Precio Máximo -->
-                       
+
                         <div class="mb-3">
                             <label for="lugar" class="form-label">Lugar:</label>
                             <select class="form-select" id="lugar" name="lugar">
@@ -265,7 +417,7 @@
                                 }
                             </select>
                         </div>
-                       
+
 
 
 
@@ -284,7 +436,7 @@
                 </div>
             </div>
             <!-- Contenido de productos en el lado derecho -->
-            <div class="col-lg-9">
+            <div class="col-lg-12 alineaCards ">
                 <div class="row">
                     @foreach (var producto in Model)
                     {
@@ -293,7 +445,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title" style="height:100px !important">@producto.Nombre</h5>
                                     <p class="card-text" style="height:35px !important">@producto.Lugar | @producto.Categoria</p>
-                                    <p class="card-text"><strong>Precio: @string.Format("${0:N2}", producto.Precio) | @producto.CantidadEnStock Disponibles </strong></p>
+                                    <p class="card-text"><strong>Precio: @string.Format("₡{0:N0}", producto.Precio) | @producto.CantidadEnStock Disponibles </strong></p><!--N0 SIGNIFICA QUE NO LE VAMOS A METER DECIMALES POR SI LO VEN POR AHI-->
                                     <div id="carouselProducto@(producto.ProductoID)" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
                                         <div class="carousel-inner">
                                             @if (producto.Imagen != null && producto.Imagen.Length > 0)
@@ -375,6 +527,24 @@
         document.getElementById('precioMaxOutput').value = '₡' + value;
     }
 </script>
+
+
+
+<!--este es para controlar el banner rojo al cargar y que no cargue los forms hasta que eso este completado -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Selecciona el banner y el formulario
+    const banner = document.querySelector(".banner");
+    const form = document.querySelector(".hidden-form");
+
+    // Escucha el final de la animación del banner
+    banner.addEventListener("animationend", function () {
+        // Añade la clase visible al formulario para mostrarlo
+        form.classList.add("visible-form");
+    });
+});
+
+        </script>
 
 
 

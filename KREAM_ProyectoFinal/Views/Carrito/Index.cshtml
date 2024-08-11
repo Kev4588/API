@@ -13,60 +13,6 @@
     }
 }
 
-<div class="container mt-4">
-    <h3 class="text-center mb-4">Carrito de @usuario.Nombre | Llevas @productosEnCarritoIds.Count productos en el carrito</h3>
-
-    <table class="table table-striped">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">Producto</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Precio Unitario</th>
-                <th scope="col"></th> <!-- Espacio para el botón "Quitar" -->
-            </tr>
-        </thead>
-        <tbody>
-            @if (ViewBag.DetallesProductosEnCarrito != null && ViewBag.DetallesProductosEnCarrito.Count > 0)
-            {
-                foreach (var producto in ViewBag.DetallesProductosEnCarrito)
-                {
-                    <tr>
-                        <td>@producto.Nombre</td>
-                        <td>@producto.Cantidad</td>
-                        <td>$@producto.Precio</td>
-                        <td>
-                            <form method="post" action="@Url.Action("QuitarProducto", "Carrito")">
-                                <input type="hidden" name="productoId" value="@producto.ProductoID" />
-                                <button type="submit" class="btn btn-danger">Quitar</button>
-                            </form>
-                        </td>
-                    </tr>
-                }
-
-                <!-- Total General -->
-                <tr>
-                    <td colspan="3" class="text-right">Total General:</td>
-                    <td>@ViewBag.TotalGeneral.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture("en-US"))</td>
-                </tr>
-
-            }
-            else
-            {
-                <tr>
-                    <td colspan="4" class="text-center">No hay productos en el carrito</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-
-    <!-- Botones de regresar y comprar -->
-    <div class="d-flex justify-content-between">
-        <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Regresar</a>
-        <a href="@Url.Action("PasarelaPago", "Carrito")" class="btn btn-success">Comprar</a>
-    </div>
-</div>
-
-
 
 
 
@@ -169,7 +115,125 @@
     .text-center {
         text-align: center;
     }
+
+
+
+         body {
+       margin: 0;
+       padding: 0;
+       color: white;
+
+       background-image: none;
+       background-color: black;
+       background-image: url('@Url.Content("~/Content/images/FondoNegroBlanco.png")');
+       background-size: cover;
+     
+
+       background-attachment: fixed;
+       background-color: black;
+       position: relative;
+   }
+
+    .body-content {
+        min-width: 80%;
+        margin-top: 15px;
+        min-height: 56%;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container mt-4">
+    <h3 class="text-center mb-4">Carrito de @usuario.Nombre | Llevas @productosEnCarritoIds.Count productos en el carrito</h3>
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Producto</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio Unitario</th>
+                <th scope="col"></th> <!-- Espacio para el botón "Quitar" -->
+            </tr>
+        </thead>
+        <tbody>
+            @if (ViewBag.DetallesProductosEnCarrito != null && ViewBag.DetallesProductosEnCarrito.Count > 0)
+            {
+                foreach (var producto in ViewBag.DetallesProductosEnCarrito)
+                {
+                    <tr>
+                        <td>@producto.Nombre</td>
+                        <td>@producto.Cantidad</td>
+                        <td>$@producto.Precio</td>
+                        <td>
+                            <form method="post" action="@Url.Action("QuitarProducto", "Carrito")">
+                                <input type="hidden" name="productoId" value="@producto.ProductoID" />
+                                <button type="submit" class="btn btn-danger">Quitar</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+
+                <!-- Total General -->
+                <tr>
+                    <td colspan="3" class="text-right">Total General:</td>
+                    <td>@ViewBag.TotalGeneral.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture("en-US"))</td>
+                </tr>
+
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4" class="text-center">No hay productos en el carrito</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Botones de regresar y comprar -->
+    <div class="d-flex justify-content-between">
+        <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Regresar</a>
+        <a href="@Url.Action("PasarelaPago", "Carrito")" class="btn btn-success">Comprar</a>
+    </div>
+</div>
+
+
+
+
 
 
 

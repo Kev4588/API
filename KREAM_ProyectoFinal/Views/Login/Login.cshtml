@@ -6,30 +6,13 @@
 
 <style>
 
-    body {
-        margin: 0;
-        padding: 0;
-        color: white; /* Cambia el color del texto a blanco */
-        overflow: hidden; /* Evita el scroll en la vista */
-        /*background-image: url('../../content/Images/arte.png');*/
-        background-size: cover;
-        background-position: center;
-        background-color: black;
-    }
 
 
-    .body-content {
-        min-width: 100%;
-        margin-top: 15px;
 
-    
-    }
-
-
-    #background-video1 { /*------ ESTILOS PARA EL VIDEO O LOS VIDEOS     */
+    #background-video1 {
         position: fixed;
         top: 0;
-        WIDTH: 25%;
+        width: 25%;
         left: 531px;
         max-width: 70%;
         min-height: 100%;
@@ -39,24 +22,23 @@
         object-position: 43%;
     }
 
-    #background-video2 { /*------ ESTILOS PARA EL VIDEO O LOS VIDEOS     */
-        position: fixed;
-        top: 0;
-        WIDTH: 25%;
-        left: 71px;
-        max-width: 72%;
-        min-height: 100%;
-        z-index: -1;
-        object-fit: cover;
-        clip-path: inset(16% 0% 50% 10% round 15px);
-        object-position: 4%;
+    @@keyframes clipPathAnimation {
+        from {
+            clip-path: inset(16% 15% 12% 6% round 15px);
+        }
+        to {
+            clip-path: inset(16% 15% 0% 6% round 15px);
+        }
     }
 
+    .animated-video1 {
+        animation: clipPathAnimation 3s forwards;
+    }
 
-    #background-video3 { /*------ ESTILOS PARA EL VIDEO O LOS VIDEOS     */
+    #background-video3 {
         position: fixed;
         top: 0;
-        WIDTH: 25%;
+        width: 25%;
         right: 486px;
         max-width: 70%;
         min-height: 100%;
@@ -66,21 +48,44 @@
         object-position: 79%;
     }
 
+    @@keyframes video3 {
+        from {
+            clip-path: inset(16% 11% 12% 0% round 15px);
+        }
+        to {
+            clip-path: inset(0% 11% 12% 0% round 15px);
+        }
+    }
 
-    #background-video4 { /*------ ESTILOS PARA EL VIDEO O LOS VIDEOS     */
+    .animated-video3 {
+        animation: video3 3s forwards;
+    }
+
+    #background-video4 {
         position: fixed;
         top: 0;
-        WIDTH: 25%;
+        width: 25%;
         left: 1373px;
         max-width: 70%;
         min-height: 100%;
         z-index: -1;
         object-fit: cover;
-        clip-path: inset(16% 0% 50% 3% round 15px);
+        clip-path: inset(16% 0% 12% 3% round 15px);
         object-position: 115%;
     }
 
+    @@keyframes video4 {
+        from {
+            clip-path: inset(16% 0% 12% 3% round 15px);
+        }
+        to {
+            clip-path: inset(16% 0% 0% 3% round 15px);
+        }
+    }
 
+    .animated-video4 {
+        animation: video4 3s forwards;
+    }
 
     .container-login {
         height: 100vh;
@@ -90,13 +95,17 @@
     }
 
     .login-form {
-        margin-left: 50%;
-        margin-right: 50%;
+        position: absolute;
+        top: 11%;
+        margin-right: 36%;
         right: 39%;
-        background-color: rgb(0 0 0 / 73%);
+        background: rgba(255, 255, 255, 0.1); /* Fondo blanco transparente para efecto glassy */
+       
+        backdrop-filter: blur(8.5px); /* Filtro de desenfoque para el efecto glassy */
+        -webkit-backdrop-filter: blur(8.5px); /* Soporte para Webkit */
+        border-radius: 10px; /* Bordes redondeados */
+        border: 1px solid rgba(255, 255, 255, 0.18); /* Borde blanco transparente */
         padding: 40px;
-        border: inset;
-        border-radius: 10px;
         text-align: center;
     }
 
@@ -110,12 +119,14 @@
         border-radius: 25px;
     }
 
-        .form-control::placeholder {
-            color: white;
-        }
+    .form-control::placeholder {
+        color: white;
+    }
+
 
     .boton-IS,
     .boton-RG {
+        font-size: large;
         background-color: transparent;
         border: 2px solid white;
         border-radius: 25px;
@@ -134,363 +145,86 @@
 
         .boton-IS:hover,
         .boton-RG:hover {
-            background-color: white;
-            color: black;
+            font-size: large;
+            background-color: crimson;
+            color: white;
+            box-shadow: 0 0 25px 10px rgb(255 0 51 / 80%);
         }
 
-    #olvidadoContrasena {
-        color: white;
-        text-decoration: underline;
-        margin-top: 10px;
-        display: inline-block;
+
+       body {
+       margin: 0;
+       padding: 0;
+       color: white;
+       overflow: hidden;
+       background-image: none;
+       background-color: black; 
+       background-image: url('@Url.Content("~/Content/images/Fondodiagonal.jpg")');
+       background-size: cover;
+       background-repeat: no-repeat;
+       background-position: center center;
+       background-attachment: fixed;
+       background-color: black;
+       position: relative;
+   }
+
+   .body-content {
+       min-width: 100%;
+       margin-top: 15px;
+   }
+
+
+    .logo {
+        margin: auto;
+        align-items: center;
+        height: auto;
+        width: 100%;
+        display: flex;
+        max-height: 290px;
+        max-width: 261px;
     }
 
-    .social-login-buttons {
-        margin-top: 20px;
-    }
 
-    .google-signin-button {
-        color: #757575;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        padding: 10px 20px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        margin-left: 10px;
-    }
 
-    .facebook-login-button {
-        background-color: #3b5998;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        padding: 10px 20px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-        .facebook-login-button:hover {
-            background-color: #2d4373;
-        }
 </style>
 
+<div class="main-container">
+    
+        <div class="contenedor-videos" >
+            <video autoplay muted loop id="background-video1" class="animated-video1">
+                <source src="../../content/Images/puriscal.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
 
-<!--VIDEOS PARA LA PORTADA -->
-<video autoplay muted loop id="background-video1">
-    <source src="../../content/Images/puriscal.mp4" type="video/mp4">
-    Tu navegador no soporta el elemento de video.
-</video>
+            <video autoplay muted loop id="background-video3" class="animated-video3">
+                <source src="../../content/Images/puriscal.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
 
+            <video autoplay muted loop id="background-video4" class="animated-video4">
+                <source src="../../content/Images/puriscal.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+       
 
-
-<video autoplay muted loop id="background-video2">
-    <source src="../../content/Images/puriscal.mp4" type="video/mp4">
-    Tu navegador no soporta el elemento de video.
-</video>
-
-
-<video autoplay muted loop id="background-video3">
-    <source src="../../content/Images/puriscal.mp4" type="video/mp4">
-    Tu navegador no soporta el elemento de video.
-</video>
-
-
-<video autoplay muted loop id="background-video4">
-    <source src="../../content/Images/puriscal.mp4" type="video/mp4">
-    Tu navegador no soporta el elemento de video.
-</video>
-
-
-
-
-
-<!--VIDEOS PARA LA PORTADA -->
-
-
-
-
-<div class="container-login">
-    <div class="login-form">
-        <form action="@Url.Action("Login", "Login")" method="post">
-            <h2>Iniciar sesión</h2>
-
-            <input type="text" id="username" name="username" class="form-control" placeholder="Nombre de usuario" required>
-            <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required>
-
-            <input type="submit" value="Ingresar" class="boton-IS">
-            <button class="boton-RG" onclick="document.location.href = '@Url.Content("~/Register/Create")'">Crear cuenta</button>
-
-            <br>
-
-          
-            <p style="color: red;">
-                @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
-                {
-                    @ViewBag.ErrorMessage
-                }
-            </p>
-        </form>
+        <div class="container-login">
+            <div class="login-form">
+                <img src="@Url.Content("~/Content/images/LOGO.png")" alt="Logo PurisFlash" class="logo">
+                <form action="@Url.Action("Login", "Login")" method="post">
+                    <h2>Iniciar sesión</h2>
+                    <input type="text" id="username" name="username" class="form-control" placeholder="Nombre de usuario" required>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required>
+                    <input type="submit" value="Ingresar" class="boton-IS">
+                    <button class="boton-RG" onclick="document.location.href = '@Url.Content("~/Register/Create")'">Crear cuenta</button>
+                    <br>
+                    <p style="color: red;">
+                        @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                        {
+                            @ViewBag.ErrorMessage
+                        }
+                    </p>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
-
-<script>
-            /*este script permite la rotacion de las imagenes del login sin perder el formato definido en el container*/
-
-            var currentIndex = 0;
-
-            function rotateBackgroundImage() {
-                currentIndex = (currentIndex + 1) % images.length; // moverse a la siguiente imagen
-                var imageUrl = images[currentIndex];
-                document.querySelector('.background-container').style.backgroundImage = 'url(' + imageUrl + ')';
-            }
-
-            setInterval(rotateBackgroundImage, 3000); // rotar cada 3 segundos y se pueden definir otros intervalos
-
-            window.onload = function () {//Acciones a ejecitar una vez que la pagina carga
-
-                google.accounts.id.initialize({
-                    client_id: '80683042380-k970d3dvshehfrs19t4ng07fhki94f8c.apps.googleusercontent.com',//Obtenido desde el Google developer console
-                    callback: handleCredentialResponse,
-                    scope: 'openid profile email' // Solicitar permiso acceso al perfil y correo electrónico del usuario
-                });
-                google.accounts.id.renderButton(
-                    document.getElementById('google-signin-button'),
-                    { theme: 'filled_blue', size: 'large' }
-                );
-            };
-
-            function handleCredentialResponse(response) {
-                const token = response.credential;
-
-                // Separar el token  JWT recibido en  partes (encabezado, cuerpo y firma)
-                const [encodedHeader, encodedPayload, signature] = token.split('.');
-
-                try {
-                    // Decodificar las partes Base64 utilizando atob
-                    const decodedHeader = atob(encodedHeader);
-                    const decodedPayload = atob(encodedPayload);
-
-                    // Parsea el cuerpo decodificado como JSON para obtener los datos
-                    const payloadData = JSON.parse(decodedPayload);
-
-                    // Verificar si el token contiene la propiedad email y name
-                    if (payloadData && payloadData.email && payloadData.name) {
-                        const userEmail = payloadData.email;
-                        const userName = payloadData.name;
-                        console.log('Correo almacenado:', userEmail);
-
-                        // Dividir el nombre en nombre, primer apellido y segundo apellido
-                        const [nombre, primerApellido] = userName.split(' ');
-
-                        console.log('Nombre:', nombre);
-                        console.log('Primer Apellido:', primerApellido);
-
-
-
-                        $.ajax({
-                            url: '@Url.Action("usuarioExiste", "Login")',
-                            type: 'POST',
-                            data: { email: userEmail },
-                            success: function(data) {
-                                if (data === "0") {
-
-                                    var respuesta = confirm("Usuario no registrado en plataforma, presione Aceptar para registrarlo y continuar");
-                                    if (respuesta) {
-                                        alert("Registrando usuario..." + nombre);
-
-                                        $.ajax({
-                                                 url: '@Url.Action("CreateAPI", "Login")',
-                                                 type: 'POST',
-                                                 data: {
-                                                    nombre: nombre,
-                                                    primerApellido: primerApellido,
-                                                    userEmail: userEmail
-                                                  },
-                                                  success: function (data) {
-
-                                                      if (data == 0) {
-
-                                                          window.location.href = "/Home/index";
-                                                      } else {
-                                                          window.location.href = "/Login/Login";
-                                                      }
-
-                                                },
-                                                error: function (error) {
-                                                console.error("Error: ", error);
-                                                }
-                                        });
-
-
-
-                                    } else {
-                                        alert("Ha cancelado el ingreso por Google API, redireccionando...");
-                                        window.location.href = "/Login/Login";
-                                    }
-
-
-                                 } else {
-                                    window.location.href = "/Home/index";
-                                }
-                            },
-                            error: function(error) {
-                                console.error("Error: ", error);
-                            }
-                        });
-                    } else {
-                        console.log('No se encontró el correo electrónico o el nombre en el token JWT.');
-                    }
-                } catch (error) {
-                    console.error('Error al decodificar el token JWT:', error.message);
-                }
-            }
-
-//********************************************************************************************************* */
-
-//******************************************************************************************************** */
-
-
-        //Borra cualquier dato almacenado para que pida inicio de sesion todas las veces
-        localStorage.clear();
-        sessionStorage.clear();
-
-        window.fbAsyncInit = function () {
-
-            FB.init({
-                appId: '726896496246194',// obtenido desde el meta developer portal
-                cookie: false,
-                xfbml: true,
-                version: 'v12.0'
-            });
-
-            FB.AppEvents.logPageView();
-        };
-
-        //funcion para cargar sdk de facebook
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) { return; }
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-
-
-
-        function checkLoginState() {
-
-            FB.getLoginStatus(function (response) {
-
-                console.log('loginState');
-                console.log(response);
-                statusChangeCallback(response);
-            });
-        }
-
-        function logoutAndClearData() {
-            if (window.FB) {
-                FB.logout(function (response) {
-                    console.log('User logged out successfully');
-                    clearBrowserData(); // Limpia datos del navegador
-                    //window.location.reload(); // Recarga la página para limpiar el estado en la memoria
-                });
-            } else {
-                console.log('FB SDK not initialized or already cleaned up.');
-            }
-        }
-        function clearBrowserData() {
-            // Limpia cookies
-            clearCookies();
-            // Limpia almacenamiento local
-            localStorage.clear();
-            // Limpia almacenamiento de sesión
-            sessionStorage.clear();
-            console.log("All browser data cleared.");
-        }
-
-        function clearCookies() {
-            var cookies = document.cookie.split(";");
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = cookies[i];
-                var eqPos = cookie.indexOf("=");
-                var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-                document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
-            }
-        }
-
- function statusChangeCallback(response) {
-    if (response.status === 'connected') {
-        // El usuario está conectado a Facebook y autorizado en tu aplicación
-        console.log('Logged in and authenticated');
-
-        FB.api('/me', { fields: 'first_name,last_name' }, function(apiResponse) {
-            if (!apiResponse.error) {
-                console.log('User ID:', response.authResponse.userID);
-                console.log('First Name:', apiResponse.first_name);
-                console.log('Last Name:', apiResponse.last_name);
-
-                var socialMediaID = response.authResponse.userID;
-                var nombre = apiResponse.first_name;
-                var primerApellido = apiResponse.last_name;
-                logoutAndClearData();
-
-                $.ajax({
-                    url: '@Url.Action("usuarioExisteSocialMedia", "Login")',
-                    type: 'POST',
-                    data: { socialMediaID: socialMediaID },
-                    success: function(data) {
-                        if (data === "0") {
-                            var respuesta = confirm("Usuario no registrado en plataforma, presione Aceptar para registrarlo y continuar");
-                            if (respuesta) {
-                                alert("Registrando usuario..." + nombre);
-                                $.ajax({
-                                    url: '@Url.Action("CreateAPI2", "Login")',
-                                    type: 'POST',
-                                    data: {
-                                        nombre: nombre,
-                                        primerApellido: primerApellido,
-                                        socialMediaID: socialMediaID
-                                    },
-                                    success: function(data) {
-                                        if (data == 0) {
-                                            window.location.href = "/Home/index";
-                                        } else {
-                                            window.location.href = "/Login/Login";
-                                        }
-                                    },
-                                    error: function(error) {
-                                        console.error("Error: ", error);
-                                    }
-                                });
-                            } else {
-                                alert("Ha cancelado el ingreso por Facebook API, redireccionando...");
-                                window.location.href = "/Login/Login";
-                            }
-                        } else {
-                            window.location.href = "/Home/index";
-                        }
-                    },
-                    error: function(error) {
-                        console.error("Error: ", error);
-                    }
-                });
-            } else {
-                console.log('Error fetching user details:', apiResponse.error);
-            }
-        });
-    } else {
-        // El usuario no está conectado a Facebook o no ha autorizado tu aplicación
-        console.log('Not logged into Facebook or not authenticated');
-    }
-}
-
-
-
-
-
-</script>
-<script src="https://accounts.google.com/gsi/client" async defer></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
