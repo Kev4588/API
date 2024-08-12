@@ -73,9 +73,6 @@ E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO API\API\KREAM_ProyectoFinal\ob
 E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO API\API\KREAM_ProyectoFinal\obj\Debug\PURIS_FL.D52B4069.Up2Date
 E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO API\API\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.dll
 E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO API\API\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.pdb
-C:\Users\danie\OneDrive\Desktop\Proyecto Servicios Web\API\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy - Copy.png
-C:\Users\danie\OneDrive\Desktop\Proyecto Servicios Web\API\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy.png
-C:\Users\danie\OneDrive\Desktop\Proyecto Servicios Web\API\KREAM_ProyectoFinal\bin\Content\Images\logindunks.png
 C:\Users\danie\OneDrive\Desktop\Proyecto Servicios Web\API\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll.config
 C:\Users\danie\OneDrive\Desktop\Proyecto Servicios Web\API\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll
 C:\Users\danie\OneDrive\Desktop\Proyecto Servicios Web\API\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.pdb

@@ -80,6 +80,37 @@ namespace PURIS_FLASH.Controllers
                             totalGeneral += detalleProducto.Precio * detalleProducto.Cantidad;
                         }
                     }
+
+                    // Calcular la cantidad total de productos
+                    int cantidadTotal = productosConCantidad.Sum(p => p.Item2);
+
+                    // Determinar el tipo de vehículo necesario
+                    string tipoDeVehiculoNecesario;
+                    if (cantidadTotal >= 1 && cantidadTotal <= 3)
+                    {
+                        tipoDeVehiculoNecesario = "Moto";
+                    }
+                    else if (cantidadTotal >= 4 && cantidadTotal <= 5)
+                    {
+                        tipoDeVehiculoNecesario = "Carro";
+                    }
+                    else
+                    {
+                        tipoDeVehiculoNecesario = "Camion";
+                    }
+
+                    // Buscar un repartidor que tenga el vehículo adecuado
+                    Hoteles repartidorSeleccionado = db.Hoteles
+                        .FirstOrDefault(h => h.TipoDeHabitacion == tipoDeVehiculoNecesario);
+
+                    if (repartidorSeleccionado != null)
+                    {
+                        ViewBag.TipoDeTransporte = $"Tus artículos serán llevados por {repartidorSeleccionado.NombreHotel} en un {repartidorSeleccionado.TipoDeHabitacion}.";
+                    }
+                    else
+                    {
+                        ViewBag.TipoDeTransporte = "No se encontró un repartidor con un vehículo adecuado para su pedido.";
+                    }
                 }
 
                 ViewBag.DetallesProductosEnCarrito = detallesProductosEnCarrito;
@@ -121,6 +152,8 @@ namespace PURIS_FLASH.Controllers
                 .Where(parts => parts.Length == 2) // Verificar que haya al menos dos partes
                 .Select(parts => new { ProductoId = int.Parse(parts[0]), Cantidad = int.Parse(parts[1]) })
                 .ToList();
+
+                    
 
                     // Recorrer la lista de productos en el carrito y actualizar las existencias en la base de datos
                     foreach (var item in productosEnCarrito)
