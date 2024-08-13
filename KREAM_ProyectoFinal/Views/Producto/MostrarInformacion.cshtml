@@ -77,6 +77,40 @@
             display: block;
             text-align: center;
         }
+
+
+            @@font-face {
+    font-family: 'body';
+    src: url('@Url.Content("~/Content/Font/Roboto-Regular.otf")') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+        body {
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-family: 'body';
+            background-image: none;
+            background-color: black;
+            background-image: url('@Url.Content("~/Content/images/fondoNegroDerecha.jpg")');
+            background-size: cover;
+            background-repeat: round;
+            background-attachment: fixed;
+            background-color: black;
+            position: relative;
+        }
+
+   .body-content {
+       min-width: 100%;
+       margin-top: 15px;
+   }
+
+
+
+
     </style>
 </head>
 <body>
@@ -134,32 +168,7 @@
 
 
         <br /><br />
-        <h3>Dejar un comentario:</h3>
-        <form asp-controller="Producto" asp-action="MostrarInformacion" method="post" onsubmit="return validarFormulario()">
-                        
-            <input type="hidden" id="idProducto" name="idProducto" value="@Model.ProductoID" />
-
-            <div class="form-group">
-                <label for="comentario">Comentario:</label>
-                <textarea id="comentario" name="comentario" class="form-control" rows="4" required></textarea>
-            </div>
-            <br />
-            <button type="submit" class="btn btn-primary"><i class='bx bx-message-dots'></i> Publicar</button>
-            <button type="button" class="btn btn-secondary" onclick="limpiarTexto()"><i class='bx bx-trash'></i> Cancelar</button>
-        </form>
-
-        <br />
-        <h3>Comentario publicados:</h3>
-        @foreach (var comentario in Model.Comentarios)
-        {
-            <div class="card mb-3">
-                <div class="card-body" style="background-color: #e7f5ff;">
-                    
-                    <p class="card-text">@comentario.Comentario</p>
-                   
-                </div>
-            </div>
-        }
+       
 
 
     </div>

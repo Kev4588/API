@@ -273,7 +273,34 @@
 
 
 
+    @@font-face {
+        font-family: 'puris';
+        src: url('@Url.Content("~/Content/Font/62Dragz-vmAp9.otf")') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
 
+        @@font-face {
+    font-family: 'body';
+    src: url('@Url.Content("~/Content/Font/Roboto-Regular.otf")') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+    body, a {
+        font-family: 'body'!important;
+    }
+
+
+    /* Aplicando la fuente personalizada */
+    .titulo-esquina {
+        font-family: 'puris';
+        width: min-content;
+        margin-left:0;
+        text-decoration: none;
+        color: white !important;
+        z-index: 2;
+    }
 
 </style>
 
@@ -284,6 +311,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/site.css")" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -308,16 +336,13 @@
                 <div class="diagonal"></div>
             </div>
 
-
-
-          
-
-
-
             <a class=" d-flex align-items-center" href="@Url.Action("Index", "Home")" style="text-decoration:none;">
                 <img src="@Url.Content("~/Content/images/LOGO.png")" alt="Logo PurisFlash" class="logo">
                 <h3 class="titulo-esquina">PURIS FLASH</h3>
             </a>
+
+
+
             <div class="container" style="font-family: Staatliches">
 
 
@@ -335,12 +360,14 @@
                             {
                                 <li>@Html.ActionLink("Admin Usuarios", "Index", "Admin", new { area = "" }, new { @class = "nav-link" })</li>
                                 <li>@Html.ActionLink("Admin Productos", "Index", "Vendedor", new { area = "" }, new { @class = "nav-link" })</li>
-                                <li><h3>@Html.ActionLink("Admin Repartidores", "MostrarInformacion", "Hoteles", new { area = "" }, new { @class = "nav-link" })</h3></li>
+                                <li>@Html.ActionLink("Admin Repartidores", "MostrarInformacion", "Hoteles", new { area = "" }, new { @class = "nav-link" })</li>
                             }
                             else if (ViewBag.TipoUsuario == 2) // COMPRADOR
                             {
 
                                 <li><h3>@Html.ActionLink("Repartidores", "Index", "Hoteles", new { area = "" }, new { @class = "nav-link" })</h3></li>
+
+                              
 
                             }
                         }<!-- fin del if para HOME INDEX PRINCIPAL -->
@@ -451,7 +478,7 @@
 
 
 <!-- Footer -->
-<footer class="footer mt-auto py-3 bg-dark text-white">
+<footer class="footer mt-auto py-3 bg-dark text-white"  style="background-color:black!important;">
     <div class="container">
         <div class="row">
             <div class="col-md-4 mb-3">

@@ -12,7 +12,7 @@
             flex: 1 1 auto;
             padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
             color: var(--bs-card-color);
-            height: 520px;
+            height: 680px;
         }
 
 
@@ -114,7 +114,7 @@
             }
 
 
-   
+
 
 
         .button-85 {
@@ -233,21 +233,29 @@
             transform: scale(1.02);
             transition: all 0.3s ease;
         }
-body{
-       margin: 0;
-       padding: 0;
-       color: white;
 
-       background-image: none;
-       background-color: black;
-       background-image: url('@Url.Content("~/Content/images/fondoBlancoDerecha.jpg")');
-       background-size: cover;
-       background-repeat: round;
+            @@font-face {
+    font-family: 'body';
+    src: url('@Url.Content("~/Content/Font/Roboto-Regular.otf")') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
-       background-attachment: fixed;
-       background-color: black;
-       position: relative;
-   }
+
+        body {
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-family: 'body';
+            background-image: none;
+            background-color: black;
+            background-image: url('@Url.Content("~/Content/images/fondoBlancoDerecha.jpg")');
+            background-size: cover;
+            background-repeat: round;
+            background-attachment: fixed;
+            background-color: black;
+            position: relative;
+        }
 
    .body-content {
        min-width: 100%;
@@ -449,9 +457,12 @@ body{
                             <div class="col-md-4 col-lg-4 mb-4">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="card-title" style="height:100px !important">@hotel.NombreHotel</h5>
+                                        <h5 class="card-title" style="height: 37px !important">@hotel.NombreHotel</h5>
 
                                         <p class="card-text" style="height:35px !important">@hotel.TipoDeHabitacion</p>
+
+
+                                        <p style="color:white;">@hotel.Descripcion</p>
 
 
                                         <div id="carouselHotel@(hotel.IDHotel)" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">

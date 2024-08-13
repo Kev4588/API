@@ -117,22 +117,27 @@
     }
 
 
+    @@font-face {
+    font-family: 'body';
+    src: url('@Url.Content("~/Content/Font/Roboto-Regular.otf")') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
-         body {
-       margin: 0;
-       padding: 0;
-       color: white;
 
-       background-image: none;
-       background-color: black;
-       background-image: url('@Url.Content("~/Content/images/FondoNegroBlanco.png")');
-       background-size: cover;
-     
-
-       background-attachment: fixed;
-       background-color: black;
-       position: relative;
-   }
+    body {
+        margin: 0;
+        padding: 0;
+        color: white;
+        font-family: 'body';
+        background-image: none;
+        background-color: black;
+        background-image: url('@Url.Content("~/Content/images/FondoNegroBlanco.png")');
+        background-size: cover;
+        background-attachment: fixed;
+        background-color: black;
+        position: relative;
+    }
 
     .body-content {
         min-width: 80%;
@@ -198,7 +203,7 @@
                     <tr>
                         <td>@producto.Nombre</td>
                         <td>@producto.Cantidad</td>
-                        <td>$@producto.Precio</td>
+                        <td>₡@producto.Precio</td>
                         <td>
                             <form method="post" action="@Url.Action("QuitarProducto", "Carrito")">
                                 <input type="hidden" name="productoId" value="@producto.ProductoID" />
@@ -209,11 +214,10 @@
                 }
 
                 <!-- Total General -->
-                <tr>
-                    <td colspan="3" class="text-right">Total General:</td>
-                    <td>@ViewBag.TotalGeneral.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture("en-US"))</td>
-                </tr>
-
+        <tr>
+            <td colspan="3" class="text-right">Total General:</td>
+            <td>@ViewBag.TotalGeneral.ToString("C0", System.Globalization.CultureInfo.CreateSpecificCulture("es-CR"))</td>
+        </tr>
             }
             else
             {

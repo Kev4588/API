@@ -22,7 +22,7 @@
             color: white;
             background-image: url('@Url.Content("~/Content/images/elegant.jpg")');
             background-size: cover;
-            background-repeat: round;
+           
             background-attachment: fixed;
             background-color: black;
             position: relative;
@@ -230,7 +230,8 @@
                 <form id="payment-form" method="post" action="@Url.Action("CompraRealizada", "Carrito")">
                     <div class="form-group">
                         <label for="card-number-input">Número de Tarjeta:</label>
-                        <input type="text" class="form-control" id="card-number-input" placeholder="Ingresa tu número de tarjeta " required>
+                        <input type="text" class="form-control" id="card-number-input" placeholder="Ingresa tu número de tarjeta" maxlength="19" required>
+
                     </div>
                     <div class="form-group">
                         <label for="card-name-input">Nombre del Titular:</label>
@@ -252,12 +253,17 @@
 
 
 
+    <script> 
+            document.getElementById('card-number-input').addEventListener('input', function (e) {
+    let input = e.target.value.replace(/\D/g, '');
+    let formattedInput = input.match(/.{1,4}/g)?.join(' ') || '';
+    e.target.value = formattedInput;
+});</script>
 
 
 
 
-
-
+    <!--este espacio que sigue lo queh ace es controlar de que los numeros ingresados en la tarjeta sean 16 4 espacios de 4 digitos-->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const cardNumberInput = document.getElementById('card-number-input');

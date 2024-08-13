@@ -24,7 +24,7 @@
 
     @@keyframes clipPathAnimation {
         from {
-            clip-path: inset(16% 15% 12% 6% round 15px);
+            clip-path: inset(16% 15% 22% 6% round 15px);
         }
         to {
             clip-path: inset(16% 15% 0% 6% round 15px);
@@ -39,7 +39,7 @@
         position: fixed;
         top: 0;
         width: 25%;
-        right: 486px;
+        right: 491px;
         max-width: 70%;
         min-height: 100%;
         z-index: -1;
@@ -145,7 +145,7 @@
 
         .boton-IS:hover,
         .boton-RG:hover {
-            font-size: large;
+       
             background-color: crimson;
             color: white;
             box-shadow: 0 0 25px 10px rgb(255 0 51 / 80%);
@@ -184,6 +184,10 @@
         max-width: 261px;
     }
 
+    /* BOTON PARA EL LOGIN */ 
+
+
+
 
 
 </style>
@@ -213,8 +217,13 @@
                 <form action="@Url.Action("Login", "Login")" method="post">
                     <h2>Iniciar sesión</h2>
                     <input type="text" id="username" name="username" class="form-control" placeholder="Nombre de usuario" required>
-                    <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required>
-                    <input type="submit" value="Ingresar" class="boton-IS">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required> 
+
+
+                    <input type="submit" value="Ingresar" class="boton-IS">  
+
+
+
                     <button class="boton-RG" onclick="document.location.href = '@Url.Content("~/Register/Create")'">Crear cuenta</button>
                     <br>
                     <p style="color: red;">

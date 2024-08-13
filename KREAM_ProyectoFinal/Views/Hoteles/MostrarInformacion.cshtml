@@ -1,4 +1,438 @@
 ﻿
+<style>
+    .floating-buttons {
+        position: fixed;
+        bottom: 50%;
+        right: 20px;
+        transform: translateY(50%);
+    }
+
+        .floating-buttons a {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+
+
+                .card:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transform: scale(1.02);
+            transition: all 0.3s ease;
+        }
+body{
+       margin: 0;
+       padding: 0;
+       color: white;
+
+       background-image: none;
+       background-color: black;
+       background-image: url('@Url.Content("~/Content/images/fondoBlancoDerecha.jpg")');
+       background-size: cover;
+       background-repeat: round;
+
+       background-attachment: fixed;
+       background-color: black;
+       position: relative;
+   }
+
+    .body-content {
+        min-width: 100%;
+        margin-top: 15px;
+        margin-left: 120px!important;
+    }
+
+   /*------ NUEVO ESTILO DE CARD ------------ */
+        .card-body {
+            flex: 1 1 auto;
+            padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+            color: var(--bs-card-color);
+            height: 520px;
+            text-align:center;
+            background-color:black;
+        }
+
+
+        .carousel-item {
+            text-align: center;
+            overflow: hidden;
+        }
+
+            .carousel-item img {
+                height: 375px;
+                width: 100%;
+                object-fit: cover;
+            }
+
+        .carousel-indicators {
+            bottom: 10px;
+        }
+
+            .carousel-indicators button {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+            }
+
+            .carousel-indicators [data-bs-target] {
+                box-sizing: content-box;
+                flex: 0 1 auto;
+                width: 12px;
+                height: 18px;
+                padding: 0;
+                margin-right: 3px;
+                margin-left: 3px;
+                text-indent: -999px;
+                cursor: pointer;
+                background-color: #fff;
+                background-clip: padding-box;
+                border: 0;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                transition: opacity 0.6s ease;
+            }
+
+
+
+
+
+
+
+
+        /*Lo que sigue controla que todas las imagenes tengan el mismo tamaño y un width ya heredado de 100%*/
+        .img-container {
+            height: 232px; /* Altura deseada */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ddd; /* Color de fondo si no hay imagen */
+        }
+
+
+        button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
+            cursor: pointer;
+            opacity: 1;
+        }
+
+        /* Contenedor de filtros sticky */
+        .contenedor-filtros {
+            justify-content: center;
+            display: block;
+            color: white;
+            align-items: center;
+            padding: 30px;
+            width: 100%; /* Cambiar a 100% para ocupar todo el espacio disponible */
+            margin: auto;
+            background: #c32424;
+
+            top: 20px; /* Se queda fijo cuando llegas a 20px del top */
+            z-index: 1000; /* Asegura que esté sobre otros elementos */
+        }
+
+            /* Alineación de los filtros uno al lado del otro */
+            .contenedor-filtros form {
+                position: relative;
+                display: contents;
+                top: 50px;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 163px;
+
+                align-items: center;
+            }
+
+            .contenedor-filtros .mb-3 {
+                flex: 1; /* Hace que cada filtro ocupe un espacio proporcional */
+                min-width: 200px; /* Establece un ancho mínimo para cada filtro */
+            }
+
+
+
+
+
+        .button-85 {
+            padding: 0.6em 2em;
+            border: none;
+            outline: none;
+            color: rgb(255, 255, 255);
+            background: #111;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+            .button-85:before {
+                content: "";
+                background: linear-gradient( 45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000 );
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                background-size: 400%;
+                z-index: -1;
+                filter: blur(5px);
+                -webkit-filter: blur(5px);
+                width: calc(100% + 4px);
+                height: calc(100% + 4px);
+                animation: glowing-button-85 20s linear infinite;
+                transition: opacity 0.3s ease-in-out;
+                border-radius: 10px;
+            }
+
+        @@keyframes glowing-button-85 {
+            0% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 400% 0;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        .button-85:after {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #222;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+
+        .button-29 {
+            align-items: center;
+            appearance: none;
+            background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+            border: 0;
+            border-radius: 6px;
+            box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: "JetBrains Mono",monospace;
+            height: 48px;
+            justify-content: center;
+            line-height: 1;
+            list-style: none;
+            overflow: hidden;
+            padding-left: 16px;
+            padding-right: 16px;
+            position: relative;
+            text-align: left;
+            text-decoration: none;
+            transition: box-shadow .15s,transform .15s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            will-change: box-shadow,transform;
+            font-size: 18px;
+        }
+
+
+
+
+
+
+        .boton-agregar-carrito {
+            height: 31px;
+            margin-left: 5px;
+            width: 282%;
+            padding: 1px;
+        }
+
+            .boton-agregar-carrito svg {
+                width: 21px;
+                height: 20px;
+            }
+
+        .card:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transform: scale(1.02);
+            transition: all 0.3s ease;
+        }
+
+
+    @@font-face {
+    font-family: 'body';
+    src: url('@Url.Content("~/Content/Font/Roboto-Regular.otf")') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+    body {
+        margin: 0;
+        padding: 0;
+        color: white;
+        font-family: 'body';
+        background-image: none;
+        background-color: black;
+        background-image: url('@Url.Content("~/Content/images/fondoBlancoDerecha.jpg")');
+        background-size: cover;
+        background-repeat: round;
+        background-attachment: fixed;
+        background-color: black;
+        position: relative;
+    }
+
+   .body-content {
+       min-width: 100%;
+       margin-top: 15px;
+   }
+
+   /*------ NUEVO ESTILO DE CARD ------------ */
+
+    .card {
+
+        height: 100%;
+        background: #171717;
+        transition: 1s ease-in-out;
+        clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-title, .card-text {
+        font-weight: bold;
+        color: white;
+        text-align: center;
+    }
+
+    .card-text {
+        /* font-weight: 400; */
+        font-size: 0.89em;
+
+        margin: 1em;
+    }
+
+    .card-img {
+        width: 4.8em;
+
+        background: white;
+        border-radius: 15px;
+        margin: auto;
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+        margin-top: 1em;
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+    }
+
+    .card a {
+        color: white;
+        transition: .4s ease-in-out;
+    }
+
+        .card a:hover {
+            color: red;
+        }
+
+    .card button {
+        padding: 0.8em 1.7em;
+        display: block;
+        margin: auto;
+        border-radius: 25px;
+        border: none;
+        font-weight: bold;
+        /*background: #ffffff;
+
+         color: rgb(0, 0, 0);*/
+        transition: .4s ease-in-out;
+    }
+
+
+
+
+    .carousel {
+        background-color: white;
+
+        position: relative;
+    }
+
+
+    .banner {
+        display: flex;
+        position: absolute;
+        top: -36px;
+        height: 152%;
+        left: -137px;
+        z-index: -1;
+        width: 115%;
+        border-radius: 391px 661px 600px 0px;
+        opacity: 0; /* Inicialmente invisible */
+        transform: translateX(-100%); /* Empieza fuera de la pantalla a la izquierda */
+        animation: slideInBanner 1s forwards; /* Aplica la animación */
+    }
+
+    @@keyframes slideInBanner {
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Mueve el banner a su posición original */
+    }
+}
+
+
+
+    /* Oculta el formulario por defecto mientras que sale el banner rojo */
+    .hidden-form {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    /* Muestra el formulario con una transición suave */
+    .visible-form {
+        opacity: 1;
+    }
+
+
+
+    .cinto-rojo {
+        margin-left: 40px!important;
+    }
+
+
+
+    .alineaCards {
+        margin-left: 81px;
+    }
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="container mt-4">
     <h2 class="mb-4" style="color: black;">Lista de Repartidores | @ViewBag.UsuarioActual</h2>
 
@@ -10,8 +444,8 @@
                     <label for="NombreHotel">Nombre</label>
                     <input type="text" class="form-control" id="NombreHotel" name="NombreHotel" placeholder="Nombre del Repartidor" />
                 </div>
-                
-               
+
+
                 <div class="col-md-2 mb-3">
                     <button type="submit" class="btn btn-success">Buscar</button>
                 </div>
@@ -23,16 +457,17 @@
     <div class="col-md-2 mb-3">
         <a href="@Url.Action("Add", "Hoteles")" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="left" title="Agregar nuevo">Agregar</a>
     </div>
-    <!-- Lista de Hoteles -->
+    <!-- Lista de Repartidores -->
     <div class="row">
         @foreach (var hotel in Model)
         {
             <div class="col-md-4 col-lg-4 mb-4">
                 <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">@hotel.NombreHotel</h5>
+                    <div class="card-body" style=" height: 65%;">
+                        <h5 class="card-title" style="color: white; "    >@hotel.NombreHotel</h5>
+
                         <p class="card-text"> @hotel.Descripcion </p>
-                       
+
                         <p>
                             <a href="https://api.whatsapp.com/send?phone=50683046213&text=Hola%20estoy%20interesado%20en%20más%20información">
                                 <img src="/Content/Images/whatsapp-icon.png" alt="WhatsApp" style="width: 100px; height: auto;" />
@@ -87,7 +522,7 @@
                         </div>
                         <div class="mt-3">
                             <a class="btn btn-secondary" href="@Url.Action("Edit", new { IDHotel = @hotel.IDHotel })">Editar</a>
-                            <a class="btn btn-danger" href="@Url.Action("Delete", new { IDHotel = @hotel.IDHotel })" onclick="return confirm('¿Estás seguro de que deseas eliminar este hotel?');">Eliminar</a>
+                            <a class="btn btn-danger" href="@Url.Action("Delete", new { IDHotel = @hotel.IDHotel })" onclick="return confirm('¿Estás seguro de que deseas eliminar este repartidor?');">Eliminar</a>
                         </div>
                     </div>
                 </div>
@@ -106,19 +541,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
 
-<style>
-    .floating-buttons {
-        position: fixed;
-        bottom: 50%;
-        right: 20px;
-        transform: translateY(50%);
-    }
-
-        .floating-buttons a {
-            display: block;
-            margin-bottom: 10px;
-        }
-</style>
 
 <script>
     // Inicializar tooltips de Bootstrap

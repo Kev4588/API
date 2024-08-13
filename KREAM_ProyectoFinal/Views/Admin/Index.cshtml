@@ -5,7 +5,57 @@
     var usuario = Session["UsuarioActual"] as UsersViewModel;
 }
 
-@model List<PURIS_FLASH.Models.TableViewModel.UsersTableViewModel>
+@model List<PURIS_FLASH.Models.TableViewModel.UsersTableViewModel> 
+
+
+<style>
+
+        @@font-face {
+    font-family: 'body';
+    src: url('@Url.Content("~/Content/Font/Roboto-Regular.otf")') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+    body {
+        margin: 0;
+        padding: 0;
+        color: white;
+        font-family: 'body';
+        background-image: none;
+        background-color: black;
+        background-image: url('@Url.Content("~/Content/images/FondoNegroBlanco.png")');
+        background-size: cover;
+        background-repeat: round;
+        background-attachment: fixed;
+        background-color: black;
+        position: relative;
+    }
+
+   .body-content {
+       min-width: 100%;
+       margin-top: 15px;
+   }
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <h2 class="text-center">BIENVENIDO @usuario.Nombre.ToUpper()  </h2>
 
@@ -28,6 +78,7 @@
                     <th>Correo</th>
                     <th>Sexo</th>
                     <th>Direccion</th>
+                    <th></th>
 
                 </tr>
             </thead>

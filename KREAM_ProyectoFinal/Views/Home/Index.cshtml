@@ -11,6 +11,7 @@
     .carousel-item {
         text-align: center;
         overflow: hidden;
+        clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
     }
 
         .carousel-item img {
@@ -221,23 +222,29 @@
         margin-bottom: 90px;
     }
 
+        @@font-face {
+        font-family: 'body';
+        src: url('@Url.Content("~/Content/Font/Roboto-Regular.otf")') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
 
 
-         body {
-       margin: 0;
-       padding: 0;
-       color: white;
 
-       background-image: none;
-       background-color: black;
-       background-image: url('@Url.Content("~/Content/images/fondoBlancoDerecha.jpg")');
-       background-size: cover;
-       background-repeat: round;
-
-       background-attachment: fixed;
-       background-color: black;
-       position: relative;
-   }
+    body {
+        margin: 0;
+        padding: 0;
+        color: white;
+        font-family: 'body';
+        background-image: none;
+        background-color: black;
+        background-image: url('@Url.Content("~/Content/images/fondoBlancoDerecha.jpg")');
+        background-size: cover;
+        background-repeat: round;
+        background-attachment: fixed;
+        background-color: black;
+        position: relative;
+    }
 
    .body-content {
        min-width: 100%;
@@ -321,7 +328,7 @@
         display: flex;
         position: absolute;
         top: -23px;
-        height: 152%;
+        height: 135%;
         left: -137px;
         z-index: -1;
         width: 115%;
@@ -361,6 +368,7 @@
 
     .alineaCards {
         margin-left: 81px;
+        margin-top: 31px;
     }
 
 
@@ -443,7 +451,7 @@
                         <div class="col-md-4 col-lg-4 mb-4">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title" style="height:100px !important">@producto.Nombre</h5>
+                                    <h5 class="card-title" >@producto.Nombre</h5>
                                     <p class="card-text" style="height:35px !important">@producto.Lugar | @producto.Categoria</p>
                                     <p class="card-text"><strong>Precio: @string.Format("₡{0:N0}", producto.Precio) | @producto.CantidadEnStock Disponibles </strong></p><!--N0 SIGNIFICA QUE NO LE VAMOS A METER DECIMALES POR SI LO VEN POR AHI-->
                                     <div id="carouselProducto@(producto.ProductoID)" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
