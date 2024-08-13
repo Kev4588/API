@@ -46,6 +46,7 @@ namespace PURIS_FLASH.Controllers
                 }
 
                 var detallesProductosEnCarrito = new List<ProductosTableViewModel>();
+                bool necesitaCamion = false; // Indicador de si se necesita un camión
 
                 decimal? totalGeneral = 0; // Inicializa el total general
 
@@ -78,25 +79,42 @@ namespace PURIS_FLASH.Controllers
 
                             // Suma el total multiplicando el precio por la cantidad
                             totalGeneral += detalleProducto.Precio * detalleProducto.Cantidad;
+
+                            // Verificar si el nombre del producto contiene alguna de las palabras clave
+                            if (detalleProducto.Nombre.IndexOf("Barbacoa", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                                detalleProducto.Nombre.IndexOf("Refrigerador", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                                detalleProducto.Nombre.IndexOf("Muebles", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                                detalleProducto.Nombre.IndexOf("Bicicleta", StringComparison.OrdinalIgnoreCase) >= 0)
+                            {
+                                necesitaCamion = true;
+                            }
+
                         }
                     }
 
-                    // Calcular la cantidad total de productos
-                    int cantidadTotal = productosConCantidad.Sum(p => p.Item2);
-
-                    // Determinar el tipo de vehículo necesario
                     string tipoDeVehiculoNecesario;
-                    if (cantidadTotal >= 1 && cantidadTotal <= 3)
+
+                    if (necesitaCamion)
                     {
-                        tipoDeVehiculoNecesario = "Moto";
-                    }
-                    else if (cantidadTotal >= 4 && cantidadTotal <= 5)
-                    {
-                        tipoDeVehiculoNecesario = "Carro";
+                        tipoDeVehiculoNecesario = "Camion";
                     }
                     else
                     {
-                        tipoDeVehiculoNecesario = "Camion";
+                        // Determinar el tipo de vehículo basado en la cantidad de productos
+                        int cantidadTotal = productosConCantidad.Sum(p => p.Item2);
+
+                        if (cantidadTotal >= 1 && cantidadTotal <= 3)
+                        {
+                            tipoDeVehiculoNecesario = "Moto";
+                        }
+                        else if (cantidadTotal >= 4 && cantidadTotal <= 5)
+                        {
+                            tipoDeVehiculoNecesario = "Carro";
+                        }
+                        else
+                        {
+                            tipoDeVehiculoNecesario = "Camion";
+                        }
                     }
 
                     // Buscar un repartidor que tenga el vehículo adecuado
@@ -105,7 +123,14 @@ namespace PURIS_FLASH.Controllers
 
                     if (repartidorSeleccionado != null)
                     {
-                        ViewBag.TipoDeTransporte = $"Tus artículos serán llevados por {repartidorSeleccionado.NombreHotel} en un {repartidorSeleccionado.TipoDeHabitacion}.";
+                        string articulo = "un"; // Por defecto usamos "un"
+                        if (repartidorSeleccionado.TipoDeHabitacion.Equals("Moto", StringComparison.OrdinalIgnoreCase) ||
+                            repartidorSeleccionado.TipoDeHabitacion.Equals("Bicicleta", StringComparison.OrdinalIgnoreCase))
+                        {
+                            articulo = "una";
+                        }
+
+                        ViewBag.TipoDeTransporte = $"Tus artículos serán llevados por {repartidorSeleccionado.NombreHotel} en {articulo} {repartidorSeleccionado.TipoDeHabitacion}.";
                     }
                     else
                     {
