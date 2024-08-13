@@ -11,16 +11,47 @@
 
 }
 
+<head>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
 <style>
+    /* Font */
+    @@font-face {
+        font-family: 'puris';
+        src: url('@Url.Content("~/Content/Font/62Dragz-vmAp9.otf")') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @@font-face {
+        font-family: 'body';
+        src: url('@Url.Content("~/Content/Font/Roboto-Regular.otf")') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body, a {
+        font-family: 'body' !important;
+    }
+
+    /* Aplicando la fuente personalizada */
+    .titulo-esquina {
+        font-family: 'puris';
+        width: min-content;
+        margin-left: 0;
+        text-decoration: none;
+        color: white !important;
+        z-index: 2;
+    }
+
     .carrito-icono {
         margin-right: 33px;
     }
 
-
     .bg-light {
         --bs-bg-opacity: 0;
     }
-
 
     .rounded-circle {
         border-radius: 50% !important;
@@ -45,8 +76,6 @@
     .tipo-usuario {
         flex-direction: row-reverse !important;
     }
-
-
 
     .button-49,
     .button-49:after {
@@ -133,7 +162,7 @@
         }
 
         80% {
-            clip-path: var(--slice-5);
+            clip-path: var (--slice-5);
             transform: translate(20px, -10px);
         }
 
@@ -157,13 +186,10 @@
         }
     }
 
-
     .button-49-fix {
         height: auto !important;
         width: 20% !important;
     }
-
-
 
     /*CLASE PRINCIPAL DEL NAV BAR */
 
@@ -233,7 +259,6 @@
         justify-content: center;
     }
 
-
     .logo {
         margin-left: 32px;
         display: flex;
@@ -242,18 +267,12 @@
         z-index: 2;
     }
 
-
-
-
-
     .titulo-esquina {
         margin-left: 64px;
         text-decoration: none;
         color: white !important;
         z-index: 2;
     }
-
-
 
     .contact {
         position: absolute;
@@ -265,41 +284,110 @@
 
     .diagonal {
         margin-left: 50%;
-        /* width: 0px; */
         border-width: 80px 200px 0px 0px;
         border-style: solid;
         border-color: black transparent transparent transparent;
     }
 
-
-
-    @@font-face {
-        font-family: 'puris';
-        src: url('@Url.Content("~/Content/Font/62Dragz-vmAp9.otf")') format('opentype');
-        font-weight: normal;
-        font-style: normal;
+    /* On Hover para settings con iconitos */
+    .tipo-usuario {
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
-        @@font-face {
-    font-family: 'body';
-    src: url('@Url.Content("~/Content/Font/Roboto-Regular.otf")') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-    body, a {
-        font-family: 'body'!important;
+    .nav-item-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
     }
 
+    .tipo-usuario .nav-item {
+        display: flex;
+        align-items: center;
+        padding: 5px 10px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border-radius: 5px;
+    }
 
-    /* Aplicando la fuente personalizada */
-    .titulo-esquina {
-        font-family: 'puris';
-        width: min-content;
-        margin-left:0;
-        text-decoration: none;
-        color: white !important;
-        z-index: 2;
+        .tipo-usuario .nav-item i {
+            margin-right: 5px;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .tipo-usuario .nav-item .nav-link {
+            white-space: nowrap;
+            text-decoration: none;
+            display: inline-block;
+            color: white;
+        }
+
+        .tipo-usuario .nav-item:hover {
+            background-color: white;
+            color: black;
+        }
+
+            .tipo-usuario .nav-item:hover i {
+                color: black;
+            }
+
+            .tipo-usuario .nav-item:hover .nav-link {
+                color: black !important;
+                background-color: transparent !important;
+            }
+
+    /* Additional styles for the username display */
+
+    .nombre-usuario {
+        margin: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        color: white;
+        font-size: 16px;
+        white-space: nowrap; /* Prevent text wrapping */
+        overflow: hidden; /* Hide overflowing text */
+        text-overflow: ellipsis; /* Show ellipsis for overflow */
+        max-width: 150px; /* Set a maximum width based on your design */
+        border: none;
+    }
+
+    /* Ensure the dropdown and cart icon are centered with the username */
+    .d-flex.align-items-center.ml-auto {
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Adjust spacing between cart icon, dropdown, and username */
+    }
+
+    /* User button styles */
+    #dropdownMenuButton {
+        background-color: transparent;
+        color: white;
+        border: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+        #dropdownMenuButton:hover {
+            background-color: white;
+            color: black;
+        }
+
+        #dropdownMenuButton i {
+            transition: color 0.3s ease;
+        }
+
+        #dropdownMenuButton:hover i {
+            color: black;
+        }
+
+    /* Dropdown hover effect */
+    .dropdown-menu .dropdown-item:hover {
+        background-color: #e0e0e0; /* Gray hover effect */
+        color: black; /* Change text to black on hover */
     }
 
 </style>
@@ -355,78 +443,80 @@
                     <ul class="tipo-usuario navbar-nav flex-grow-1 boton-por-tipo admin-options">
                         @if (ViewContext.RouteData.Values["controller"].ToString().Equals("Home", StringComparison.OrdinalIgnoreCase)
                             && ViewContext.RouteData.Values["action"].ToString().Equals("Index", StringComparison.OrdinalIgnoreCase))
-                        {
+                         {
                             if (ViewBag.TipoUsuario == 1) // ADMIN
                             {
-                                <li>@Html.ActionLink("Admin Usuarios", "Index", "Admin", new { area = "" }, new { @class = "nav-link" })</li>
-                                <li>@Html.ActionLink("Admin Productos", "Index", "Vendedor", new { area = "" }, new { @class = "nav-link" })</li>
-                                <li>@Html.ActionLink("Admin Repartidores", "MostrarInformacion", "Hoteles", new { area = "" }, new { @class = "nav-link" })</li>
-                            }
+                                <div class="nav-item-container">
+                                        <li class="nav-item">
+                                            <i class='bx bx-edit'></i>@Html.ActionLink("Repartidores", "MostrarInformacion", "Hoteles", new { area = "" }, new { @class = "nav-link" })
+                                        </li>
+                                        <li class="nav-item">
+                                            <i class='bx bx-edit'></i>@Html.ActionLink("Productos", "Index", "Vendedor", new { area = "" }, new { @class = "nav-link" })
+                                        </li>
+                                        <li class="nav-item">
+                                            <i class='bx bx-edit'></i>@Html.ActionLink("Usuarios", "Index", "Admin", new { area = "" }, new { @class = "nav-link" })
+                                        </li>
+                                </div>
+                            }  
                             else if (ViewBag.TipoUsuario == 2) // COMPRADOR
                             {
-
-                                <li><h3>@Html.ActionLink("Repartidores", "Index", "Hoteles", new { area = "" }, new { @class = "nav-link" })</h3></li>
-
-                              
-
+                                <li><i class='bx bx-car'></i>@Html.ActionLink("Repartidores", "Index", "Hoteles", new { area = "" }, new { @class = "nav-link" })</li>
                             }
-                        }<!-- fin del if para HOME INDEX PRINCIPAL -->
-
+                         }
                     </ul>
 
-                    @if (Session["UsuarioActual"] != null)
-                    {
 
-                        <div class="d-flex align-items-center ml-auto">
-                            <!-- Icono de carrito -->
-                            <div class="carrito-icono">
-                                <a href="@Url.Action("Index", "Carrito")" class="d-flex align-items-center">
-                                    <!-- Contenido del icono de carrito -->
-                                    @{
-                                        var productosEnCarritoIds = new List<int>();
-                                        if (!string.IsNullOrEmpty(usuario?.ProductosEnCarrito))
-                                        {
-                                            productosEnCarritoIds = usuario.ProductosEnCarrito.Split(',').Select(int.Parse).ToList();
+                        @if (Session["UsuarioActual"] != null)
+                        {
+
+                            <div class="d-flex align-items-center ml-auto">
+                                <!-- Icono de carrito -->
+                                <div class="carrito-icono">
+                                    <a href="@Url.Action("Index", "Carrito")" class="d-flex align-items-center">
+                                        <!-- Contenido del icono de carrito -->
+                                        @{
+                                            var productosEnCarritoIds = new List<int>();
+                                            if (!string.IsNullOrEmpty(usuario?.ProductosEnCarrito))
+                                            {
+                                                productosEnCarritoIds = usuario.ProductosEnCarrito.Split(',').Select(int.Parse).ToList();
+                                            }
                                         }
-                                    }
-                                    <span id="carritoBadge" class="contador-carrito bg-light text-dark rounded-circle">
-                                        @productosEnCarritoIds.Count
-                                    </span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
-                                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"></path>
-                                    </svg>
-                                </a>
+                                        <span id="carritoBadge" class="contador-carrito bg-light text-dark rounded-circle">
+                                            @productosEnCarritoIds.Count
+                                        </span>
+                                        <i class='bx bx-cart' style="font-size:2.5rem; text-decoration:none;"></i>
+                                    </a>
+                                </div>
+
+                                <!-- Icono de usuario -->
+                                <div class="dropdown">
+                                    <button id="dropdownMenuButton" class="btn btn-secondary" aria-expanded="false" style="margin-right: 15px">
+                                        <i class='bx bx-user-circle' style="font-size:2rem;"></i> @ViewBag.UserSession
+                                    </button>
+
+
+                                    <ul id="userDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+
+                                        <li><a class="dropdown-item mt-2" style="color:black !important" href="@Url.Action("Edit", "User", new { Id = usuario.Id })">Actualizar Perfil</a></li>
+                                        <!--aqui pasamos como parametro el ID para saber a quien vamos a editar-->
+
+
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item mt-2" style="color:black !important" href="@Url.Action("Logout", "Login")">Cerrar sesión</a></li>
+                                    </ul>
+
+                                </div>
+                                <p class="nombre-usuario" style="text-align: center; height:100%; width: 100%;">@usuario.Nombre</p>
+
+
                             </div>
 
-                            <!-- Icono de usuario -->
-                            <div class="dropdown">
-                                <button id="dropdownMenuButton" class="btn btn-secondary" aria-expanded="false" style="margin-right: 15px">
-                                    <i class="bi bi-person-circle"></i> @ViewBag.UserSession
-                                </button>
+
+                        }
 
 
-                                <ul id="userDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
-
-                                    <li><a class="dropdown-item mt-2" style="color:black !important" href="@Url.Action("Edit", "User", new { Id = usuario.Id })">Actualizar Perfil</a></li>
-                                    <!--aqui pasamos como parametro el ID para saber a quien vamos a editar-->
-
-
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item mt-2" style="color:black !important" href="@Url.Action("Logout", "Login")">Cerrar sesión</a></li>
-                                </ul>
-
-                            </div>
-                            <p class="nombre-usuario" style="text-align: center; height: 10px; width: 10px;">@usuario.Nombre</p>
-
-
-                        </div>
-
-
-                    }
-
-
-                </div>
+                    </div>
             </div>
         </nav>
     }
