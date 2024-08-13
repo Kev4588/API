@@ -26,30 +26,22 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .product-images {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
+        .carousel-inner img {
+            width: 100%; /* Ensures the image takes the full width of its container */
+            height: 400px; /* Sets a fixed height for all images */
+            object-fit: contain; /* Ensures the image fits within the container without being cut off */
+            border-radius: 10px;
         }
 
-            .product-images .no-image {
-                display: flex;
-                justify-content: center; /* Centra el contenido horizontalmente */
-                align-items: center; /* Centra el contenido verticalmente */
-                margin-bottom: 25px;
-            }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: black; /* Sets the background color of the arrows */
+            border-radius: 50%;
+        }
 
-            .product-images img {
-                max-width: 400px;
-                height: auto;
-                margin-right: 20px;
-                transition: transform 0.3s ease;
-                cursor: pointer;
-            }
-
-                .product-images img:hover {
-                    transform: scale(1.1); /* Hacer zoom al pasar el cursor sobre la imagen */
-                }
+        .carousel-indicators [data-bs-target] {
+            background-color: black;
+        }
 
         .product-info p {
             margin-bottom: 10px;
@@ -78,15 +70,12 @@
             text-align: center;
         }
 
-
-            @@font-face {
-    font-family: 'body';
-    src: url('@Url.Content("~/Content/Font/Roboto-Regular.otf")') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
+        @@font-face {
+            font-family: 'body';
+            src: url('@Url.Content("~/Content/Font/Roboto-Regular.otf")') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
 
         body {
             margin: 0;
@@ -103,13 +92,10 @@
             position: relative;
         }
 
-   .body-content {
-       min-width: 100%;
-       margin-top: 15px;
-   }
-
-
-
+        .body-content {
+            min-width: 100%;
+            margin-top: 15px;
+        }
 
     </style>
 </head>
@@ -119,26 +105,52 @@
         <h1 style="text-align: center;">@Html.DisplayFor(model => model.Nombre)</h1>
 
         <div class="product-images">
-            <div>
-                @if (Model.Imagen != null)
-                {
-                    <img id="main-image" src="data:image/png;base64,@Convert.ToBase64String(Model.Imagen)" alt="Imagen del Producto" class="img-fluid" />
-                }
-                else
-                {
-                    <img class="no-image" src="~/Images/No-image-found.jpg" alt="Imagen del Producto" />
-                }
-            </div>
-            <div style="display: flex; flex-direction: column;">
-                @if (Model.Imagen2 != null)
-                {
-                    <img src="data:image/png;base64,@Convert.ToBase64String(Model.Imagen2)" alt="Imagen del Producto" class="img-fluid" style="max-width: 200px; height: auto; margin-bottom: 10px;" onclick="swapImages(this)" />
-                }
-                @if (Model.Imagen3 != null)
-                {
-                    <img src="data:image/png;base64,@Convert.ToBase64String(Model.Imagen3)" alt="Imagen del Producto" class="img-fluid" style="max-width: 200px; height: auto;" onclick="swapImages(this)" />
-                }
+            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    @if (Model.Imagen2 != null)
+                    {
+                        <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    }
+                    @if (Model.Imagen3 != null)
+                    {
+                        <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    }
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        @if (Model.Imagen != null)
+                        {
+                            <img src="data:image/png;base64,@Convert.ToBase64String(Model.Imagen)" alt="Imagen del Producto" class="d-block w-100 img-fluid" />
+                        }
+                        else
+                        {
+                            <img src="~/Images/No-image-found.jpg" alt="Imagen del Producto" class="d-block w-100 img-fluid" />
+                        }
+                    </div>
 
+                    @if (Model.Imagen2 != null)
+                    {
+                        <div class="carousel-item">
+                            <img src="data:image/png;base64,@Convert.ToBase64String(Model.Imagen2)" alt="Imagen del Producto" class="d-block w-100 img-fluid" />
+                        </div>
+                    }
+                    @if (Model.Imagen3 != null)
+                    {
+                        <div class="carousel-item">
+                            <img src="data:image/png;base64,@Convert.ToBase64String(Model.Imagen3)" alt="Imagen del Producto" class="d-block w-100 img-fluid" />
+                        </div>
+                    }
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
 
@@ -146,9 +158,7 @@
             <p><strong>Descripción:</strong> @Html.DisplayFor(model => model.Descripcion)</p>
             <p><strong>Precio:</strong> @Html.DisplayFor(model => model.Precio)</p>
             <p><strong>Categoría:</strong> @Html.DisplayFor(model => model.Categoria)</p>
-            <p><strong>Cantidad de Personas:</strong> @Html.DisplayFor(model => model.Personas)</p>
 
-            
             @if (Model.CantidadEnStock != 0)
             {
                 <form method="post" action="@Url.Action("AgregarAlCarrito", "Home")">
@@ -162,52 +172,12 @@
             }
 
             <input type="button" class="regresar btn btn-danger" value="Regresar" onclick="document.location.href = '@Url.Content("~/Home/Index")'" />
-
-
         </div>
 
-
         <br /><br />
-       
-
-
     </div>
 
-    <script>
-        function swapImages(img) {
-            var mainImage = document.getElementById('main-image');
-            var clickedSrc = img.src;
-            var mainSrc = mainImage.src;
-            mainImage.src = clickedSrc;
-            img.src = mainSrc;
-            mainImage.style.maxWidth = '400px';
-            mainImage.style.marginRight = '20px';
-            img.style.maxWidth = '200px';
-            img.style.marginRight = '0';
-        }
-    </script>
-
-    <script>
-        function limpiarTexto() {
-            document.getElementById('comentario').value = '';
-        }
-    </script>
-
-    <script>
-        function validarFormulario() {
-            var comentario = document.getElementById('comentario').value.trim(); 
-
-            if (comentario === '') {
-                alert('El comentario no puede estar vacío'); 
-                return false; 
-            }
-                        
-            return true;
-        }
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
-
-
-
