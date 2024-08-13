@@ -168,7 +168,9 @@
             }
             else
             {
-                <h3>AGOTADO</h3>
+                <div class="alert alert-danger" role="alert">
+                   Agotado!
+                </div>
             }
 
             <input type="button" class="regresar btn btn-danger" value="Regresar" onclick="document.location.href = '@Url.Content("~/Home/Index")'" />

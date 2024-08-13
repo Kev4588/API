@@ -1,4 +1,6 @@
-﻿
+﻿<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+
 <style>
     .floating-buttons {
         position: fixed;
@@ -413,6 +415,34 @@ body{
     }
 
 
+    /* Base styles for buttons */
+    .buscar-btn{
+        background-color: #EDF2F4;
+        border-color: #8D99AE;
+        color: black;
+        transition: all 0.3s ease-in-out;
+    }
+
+        /* Hover effect for buttons */
+        .buscar-btn:hover {
+            background-color: #8D99AE;
+            color: white;
+            border-color: #EDF2F4;
+        }
+    .volver-btn, .agregar-btn {
+        background-color: #8D99AE;
+        border-color: #8D99AE;
+        color: black;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .volver-btn:hover, .agregar-btn:hover {
+            background-color: #818da2;
+            border-color: #818da2;
+            color: black;
+            transition: all 0.3s ease-in-out;
+        }
+
 
 
 
@@ -447,7 +477,7 @@ body{
 
 
                 <div class="col-md-2 mb-3">
-                    <button type="submit" class="btn btn-success">Buscar</button>
+                    <button type="submit" class="btn btn-success buscar-btn"><i class="bi bi-search"></i> Buscar</button>
                 </div>
 
 
@@ -455,7 +485,7 @@ body{
         </form>
     </div>
     <div class="col-md-2 mb-3">
-        <a href="@Url.Action("Add", "Hoteles")" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="left" title="Agregar nuevo">Agregar</a>
+        <a href="@Url.Action("Add", "Hoteles")" class="btn btn-success  agregar-btn" data-bs-toggle="tooltip" data-bs-placement="left" title="Agregar nuevo"><i class="bi bi-person-plus-fill"></i> Agregar</a>
     </div>
     <!-- Lista de Repartidores -->
     <div class="row">
@@ -464,7 +494,7 @@ body{
             <div class="col-md-4 col-lg-4 mb-4">
                 <div class="card">
                     <div class="card-body" style=" height: 65%;">
-                        <h5 class="card-title" style="color: white; "    >@hotel.NombreHotel</h5>
+                        <h5 class="card-title" style="color: white; ">@hotel.NombreHotel</h5>
 
                         <p class="card-text"> @hotel.Descripcion </p>
 
@@ -529,15 +559,14 @@ body{
             </div>
         }
     </div>
-    <a href="@Url.Action("Index", "Home")" class="btn btn-success">Regresar al menú principal</a>
+    <a href="@Url.Action("Index", "Home")" class="btn btn-success volver-btn">Regresar al menú principal</a>
 
 </div>
 
 
 
 <!-- Agregar Font Awesome y Bootstrap (popper.js y bootstrap.js) -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
 
