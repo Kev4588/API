@@ -1,6 +1,3 @@
-E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO API\API\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy - Copy.png
-E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO API\API\KREAM_ProyectoFinal\bin\Content\Images\logindunks - Copy.png
-E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO API\API\KREAM_ProyectoFinal\bin\Content\Images\logindunks.png
 E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO API\API\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll.config
 E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO API\API\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll
 E:\OneDrive - ULACIT ED CR\SERVICIOS WEB\PROYECTO API\API\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.pdb
