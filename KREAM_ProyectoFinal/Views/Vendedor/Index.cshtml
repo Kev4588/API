@@ -3,6 +3,9 @@
     document.addEventListener('DOMContentLoaded', actualizarContadorCarrito);
 </script>
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+
 
 <style>
 
@@ -199,6 +202,21 @@
             min-width: 200px; /* Establece un ancho mínimo para cada filtro */
         }
 
+    .volver-btn, .agregar-btn {
+        background-color: #8D99AE;
+        border-color: #8D99AE;
+        color: black;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .volver-btn:hover, .agregar-btn:hover {
+            background-color: #818da2;
+            border-color: #818da2;
+            color: black;
+            transition: all 0.3s ease-in-out;
+        }
+
+
 
 </style>
 
@@ -207,14 +225,14 @@
 
 <main>
 
-  
+
 
 
     <div class="container mt-4" style="margin-left: 380px;">
 
         <h2 class="mb-4" style="color: white;">Lista de Tours | @ViewBag.UsuarioActual  </h2> <!--USAMOS VIEWBAGS PARA JALAR DE CONTROLADOR EL DATO DEL USUARIOACTUAL QUE DECLARAMOS EN EL CONTROLER-->
 
-        <a class="btn btn-primary mb-4" href="@Url.Action("Add")">Agregar</a>
+        <a class="btn btn-primary mb-4 agregar-btn" href="@Url.Action("Add")"><i class="bi bi-bag-plus-fill"></i> Agregar</a>
 
         <div class="row">
             @foreach (var producto in Model)
@@ -312,7 +330,7 @@
                                 <a class="btn btn-danger" href="@Url.Action("Delete", new { ProductoID = @producto.ProductoID })" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?');">Eliminar</a>
                             </div>
 
-                            
+
                         </div>
                     </div>
                 </div>
@@ -322,7 +340,7 @@
 
 
 </main>
-<a href="@Url.Action("Index", "Home")" class="btn btn-success">Regresar al menú principal</a>
+<a href="@Url.Action("Index", "Home")" class="btn btn-success volver-btn">Regresar al menú principal</a>
 <script>
     // Inicializar los carruseles al cargar la página
     @foreach (var producto in Model)
@@ -338,8 +356,7 @@
 
 
 <!-- Agregar Font Awesome y Bootstrap (popper.js y bootstrap.js) -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
 

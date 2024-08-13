@@ -372,7 +372,20 @@
     }
 
 
+    /* Base styles for both buttons */
+    .buscar-btn, .ver-mas-btn {
+        background-color: #EDF2F4;
+        border-color: #8D99AE;
+        color: black;
+        transition: all 0.3s ease-in-out;
+    }
 
+        /* Hover effect for both buttons */
+        .buscar-btn:hover, .ver-mas-btn:hover {
+            background-color: #8D99AE;
+            color: white;
+            border-color: #EDF2F4;
+        }
 
 
 </style>
@@ -426,10 +439,10 @@
                             </select>
                         </div>
 
-
-
-
-                        <button type="submit" class="btn btn-success">Buscar</button>
+                        @* Boton de Buscar *@
+                        <button type="submit" class="btn btn-success buscar-btn">
+                            <i class="bi bi-search"></i> Buscar
+                        </button>
                     </form>
 
 
@@ -502,8 +515,8 @@
                                         </button>
                                     </div>
                                     <div class="mt-3 text-end">
-                                        <button class="btn btn-success" onclick="document.location.href = '@Url.Content("~/Producto/MostrarInformacion/")@producto.ProductoID'">
-                                            Ver más
+                                        <button class="btn btn-success ver-mas-btn" onclick="document.location.href = '@Url.Content("~/Producto/MostrarInformacion/")@producto.ProductoID'">
+                                            <i class="bi bi-eye"></i> Ver más
                                         </button>
                                     </div>
                                 </div>
