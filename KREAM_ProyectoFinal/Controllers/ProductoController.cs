@@ -50,8 +50,7 @@ namespace PURIS_FLASH.Controllers
                 ViewBag.Nombre = productTO.Nombre;
 
                 
-                var comments = db.Comentarios.Where(c => c.IdProducto == Id).ToList();
-                model.Comentarios = comments;
+                
 
             }
             return View(model);
