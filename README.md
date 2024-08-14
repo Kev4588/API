@@ -1,3 +1,4 @@
+# ![](imgs/logoUlacit.jpeg)
 # Sistema de Productos PurisFlash
 
 ### Problemática:
