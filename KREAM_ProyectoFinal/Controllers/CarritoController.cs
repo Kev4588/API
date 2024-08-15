@@ -9,19 +9,26 @@ using KREAM_ProyectoFinal.Models;
 
 namespace PURIS_FLASH.Controllers
 {
+    // Atributo que verifica si hay una sesión activa antes de permitir el acceso al controlador.
     [VerificarSesion]
     public class CarritoController : Controller
     {
+        // Método que maneja la vista principal del carrito, mostrando los productos en el carrito del usuario.
         public ActionResult Index()
         {
+            // Recupera el usuario actual desde la sesión.
             var usuarioActual = Session["UsuarioActual"] as UsersViewModel;
 
+            // Verifica si el usuario tiene productos en el carrito.
             if (usuarioActual != null && usuarioActual.ProductosEnCarrito != null && usuarioActual.ProductosEnCarrito.Any())
             {
+                // Obtiene los IDs de los productos en el carrito y los convierte en una lista de enteros.
                 var productosEnCarritoIds = usuarioActual.ProductosEnCarrito.Split(',').Select(int.Parse).ToList();
 
+                // Lista que almacenará los productos junto con sus cantidades.
                 var productosConCantidad = new List<Tuple<int, int>>();
 
+                // Recorre los IDs de productos en el carrito para contar las cantidades.
                 foreach (var productoId in productosEnCarritoIds)
                 {
                     Tuple<int, int> productoEnLista = null;
@@ -34,6 +41,7 @@ namespace PURIS_FLASH.Controllers
                         }
                     }
 
+                    // Si el producto ya está en la lista, incrementa su cantidad.
                     if (productoEnLista != null)
                     {
                         productosConCantidad.Remove(productoEnLista);
@@ -41,15 +49,17 @@ namespace PURIS_FLASH.Controllers
                     }
                     else
                     {
+                        // Si no está, agrégalo con una cantidad de 1.
                         productosConCantidad.Add(new Tuple<int, int>(productoId, 1));
                     }
                 }
 
+                // Lista para almacenar los detalles de los productos en el carrito.
                 var detallesProductosEnCarrito = new List<ProductosTableViewModel>();
-                bool necesitaCamion = false; // Indicador de si se necesita un camión
+                bool necesitaCamion = false; // Indicador de si se necesita un camión para la entrega.
+                decimal? totalGeneral = 0; // Inicializa el total general de la compra.
 
-                decimal? totalGeneral = 0; // Inicializa el total general
-
+                // Usa la base de datos para obtener los detalles de los productos.
                 using (var db = new TRAVEL2Entities())
                 {
                     foreach (var productoConCantidad in productosConCantidad)
@@ -58,6 +68,7 @@ namespace PURIS_FLASH.Controllers
 
                         if (producto != null)
                         {
+                            // Crea un modelo para el detalle del producto y lo agrega a la lista.
                             var detalleProducto = new ProductosTableViewModel
                             {
                                 ProductoID = producto.ProductoID,
@@ -67,7 +78,7 @@ namespace PURIS_FLASH.Controllers
                                 Precio = (decimal)producto.Precio,
                                 Categoria = producto.Categoria,
                                 Personas = producto.Personas,
-                                CantidadEnStock = producto.CantidadEnStock,                                
+                                CantidadEnStock = producto.CantidadEnStock,
                                 Proveedor = producto.Proveedor,
                                 Imagen = producto.Imagen,
                                 Imagen2 = producto.Imagen2,
@@ -77,10 +88,10 @@ namespace PURIS_FLASH.Controllers
 
                             detallesProductosEnCarrito.Add(detalleProducto);
 
-                            // Suma el total multiplicando el precio por la cantidad
+                            // Suma el total multiplicando el precio por la cantidad.
                             totalGeneral += detalleProducto.Precio * detalleProducto.Cantidad;
 
-                            // Verificar si el nombre del producto contiene alguna de las palabras clave
+                            // Verifica si el producto requiere un camión para la entrega.
                             if (detalleProducto.Nombre.IndexOf("Barbacoa", StringComparison.OrdinalIgnoreCase) >= 0 ||
                                 detalleProducto.Nombre.IndexOf("Refrigerador", StringComparison.OrdinalIgnoreCase) >= 0 ||
                                 detalleProducto.Nombre.IndexOf("Muebles", StringComparison.OrdinalIgnoreCase) >= 0 ||
@@ -88,10 +99,10 @@ namespace PURIS_FLASH.Controllers
                             {
                                 necesitaCamion = true;
                             }
-
                         }
                     }
 
+                    // Determina el tipo de vehículo necesario para la entrega.
                     string tipoDeVehiculoNecesario;
 
                     if (necesitaCamion)
@@ -100,7 +111,7 @@ namespace PURIS_FLASH.Controllers
                     }
                     else
                     {
-                        // Determinar el tipo de vehículo basado en la cantidad de productos
+                        // Determina el tipo de vehículo basado en la cantidad de productos.
                         int cantidadTotal = productosConCantidad.Sum(p => p.Item2);
 
                         if (cantidadTotal >= 1 && cantidadTotal <= 3)
@@ -117,19 +128,21 @@ namespace PURIS_FLASH.Controllers
                         }
                     }
 
-                    // Buscar un repartidor que tenga el vehículo adecuado
+                    // Busca un repartidor que tenga el vehículo adecuado para la entrega.
                     Hoteles repartidorSeleccionado = db.Hoteles
                         .FirstOrDefault(h => h.TipoDeHabitacion == tipoDeVehiculoNecesario);
 
                     if (repartidorSeleccionado != null)
                     {
-                        string articulo = "un"; // Por defecto usamos "un"
+                        // Determina el artículo ("un" o "una") para el tipo de vehículo.
+                        string articulo = "un";
                         if (repartidorSeleccionado.TipoDeHabitacion.Equals("Moto", StringComparison.OrdinalIgnoreCase) ||
                             repartidorSeleccionado.TipoDeHabitacion.Equals("Bicicleta", StringComparison.OrdinalIgnoreCase))
                         {
                             articulo = "una";
                         }
 
+                        // Almacena el mensaje sobre el tipo de transporte en ViewBag.
                         ViewBag.TipoDeTransporte = $"Tus artículos serán llevados por {repartidorSeleccionado.NombreHotel} en {articulo} {repartidorSeleccionado.TipoDeHabitacion}.";
                     }
                     else
@@ -138,67 +151,63 @@ namespace PURIS_FLASH.Controllers
                     }
                 }
 
+                // Almacena los detalles de los productos y el total general en ViewBag.
                 ViewBag.DetallesProductosEnCarrito = detallesProductosEnCarrito;
-                ViewBag.TotalGeneral = totalGeneral; // Asigna el total general a ViewBag
+                ViewBag.TotalGeneral = totalGeneral;
             }
             else
             {
+                // Si no hay productos en el carrito, inicializa las listas y el total.
                 ViewBag.DetallesProductosEnCarrito = new List<ProductosTableViewModel>();
-                ViewBag.TotalGeneral = 0; // Si no hay productos, el total general es cero
+                ViewBag.TotalGeneral = 0;
             }
 
+            // Devuelve la vista del carrito.
             return View();
         }
 
-
+        // Método que muestra la vista de la pasarela de pago.
         public ActionResult PasarelaPago()
         {
-
-
             return View();
         }
 
-
-
+        // Método para realizar la compra, actualizando la base de datos y vaciando el carrito.
         [HttpPost]
         public ActionResult RealizarCompra()
         {
-            // Obtener el usuario actual desde la sesión
+            // Obtiene el usuario actual desde la sesión.
             var usuario = Session["UsuarioActual"] as UsersViewModel;
 
-            // Verificar si el usuario tiene productos en el carrito
+            // Verifica si el usuario tiene productos en el carrito.
             if (!string.IsNullOrEmpty(usuario?.ProductosEnCarrito))
             {
                 using (var db = new TRAVEL2Entities())
                 {
-                    // Obtener la lista de IDs y cantidades de productos en el carrito
+                    // Obtiene la lista de IDs y cantidades de productos en el carrito.
                     var productosEnCarrito = usuario.ProductosEnCarrito.Split(',')
-                .Select(item => item.Split(':'))
-                .Where(parts => parts.Length == 2) // Verificar que haya al menos dos partes
-                .Select(parts => new { ProductoId = int.Parse(parts[0]), Cantidad = int.Parse(parts[1]) })
-                .ToList();
+                        .Select(item => item.Split(':'))
+                        .Where(parts => parts.Length == 2) // Verifica que haya al menos dos partes.
+                        .Select(parts => new { ProductoId = int.Parse(parts[0]), Cantidad = int.Parse(parts[1]) })
+                        .ToList();
 
-                    
-
-                    // Recorrer la lista de productos en el carrito y actualizar las existencias en la base de datos
+                    // Recorre la lista de productos en el carrito y actualiza las existencias en la base de datos.
                     foreach (var item in productosEnCarrito)
                     {
-                        // Obtener el producto desde la base de datos
+                        // Obtiene el producto desde la base de datos.
                         var producto = db.Productos.Find(item.ProductoId);
 
                         if (producto != null)
                         {
-                            // Restar la cantidad comprada de las existencias
+                            // Resta la cantidad comprada de las existencias.
                             producto.CantidadEnStock -= item.Cantidad;
 
-                            // Aquí puedes agregar lógica adicional si lo necesitas
-
-                            // Guardar los cambios en la base de datos
+                            // Guarda los cambios en la base de datos.
                             db.SaveChanges();
                         }
                     }
 
-                    // Actualizar el atributo ProductosEnCarrito a null en la base de datos
+                    // Actualiza el atributo ProductosEnCarrito a null en la base de datos.
                     var usuarioEnBD = db.Users.FirstOrDefault(u => u.Id == usuario.Id);
                     if (usuarioEnBD != null)
                     {
@@ -207,34 +216,35 @@ namespace PURIS_FLASH.Controllers
                     }
                 }
 
-                // Actualizar el carrito en la sesión
+                // Actualiza el carrito en la sesión.
                 usuario.ProductosEnCarrito = null;
                 Session["UsuarioActual"] = usuario;
 
-                // Redirigir a la página principal con el mensaje de compra realizada
+                // Redirige a la página principal con el mensaje de compra realizada.
                 TempData["CompraRealizada"] = "Compra realizada con éxito";
                 return RedirectToAction("Index", "Home");
             }
             else
             {
-                // El usuario no tiene productos en el carrito
+                // Si no hay productos en el carrito, muestra un mensaje de error.
                 TempData["CompraFallida"] = "No hay productos en el carrito";
                 return RedirectToAction("Index", "Home");
             }
         }
 
-
+        // Método para confirmar la compra, actualizando las existencias y vaciando el carrito.
         [HttpPost]
         public ActionResult CompraRealizada()
         {
-            // Obtener el usuario actual desde la sesión
+            // Obtiene el usuario actual desde la sesión.
             var usuarioActual = Session["UsuarioActual"] as UsersViewModel;
 
-            // Verificar si el usuario y su carrito no son nulos o vacíos
+            // Verifica si el usuario y su carrito no son nulos o vacíos.
             if (usuarioActual != null && !string.IsNullOrEmpty(usuarioActual.ProductosEnCarrito))
             {
                 var productosEnCarritoIds = usuarioActual.ProductosEnCarrito.Split(',').Select(int.Parse).ToList();
 
+                // Lista para almacenar los productos y sus cantidades.
                 var productosConCantidad = new List<Tuple<int, int>>();
 
                 foreach (var productoId in productosEnCarritoIds)
@@ -262,30 +272,24 @@ namespace PURIS_FLASH.Controllers
 
                 using (var db = new TRAVEL2Entities())
                 {
+                    // Actualiza las existencias de los productos en la base de datos.
                     foreach (var productoConCantidad in productosConCantidad)
                     {
                         var producto = db.Productos.Find(productoConCantidad.Item1);
 
                         if (producto != null)
                         {
-                            // Restar la cantidad comprada de las existencias
+                            // Resta la cantidad comprada de las existencias.
                             producto.CantidadEnStock -= productoConCantidad.Item2;
-
-                            // Otras acciones o lógica adicional si es necesario
-
-
                         }
                     }
 
-                    // Limpia el carrito del usuario después de actualizar la base de datos
+                    // Limpia el carrito del usuario y guarda los cambios.
                     usuarioActual.ProductosEnCarrito = null;
-                    Session["UsuarioActual"] = usuarioActual; // Asegúrate de que esta asignación funcione correctamente 
-                    // Guardar los cambios en la base de datos
+                    Session["UsuarioActual"] = usuarioActual;
                     db.SaveChanges();
 
-
-
-                    // Actualizar el atributo ProductosEnCarrito a null en la base de datos
+                    // Actualiza el atributo ProductosEnCarrito a null en la base de datos.
                     var usuarioEnBD = db.Users.FirstOrDefault(u => u.Id == usuarioActual.Id);
                     if (usuarioEnBD != null)
                     {
@@ -294,47 +298,48 @@ namespace PURIS_FLASH.Controllers
                     }
                 }
 
-
-
+                // Redirige a la página principal con el mensaje de compra realizada.
                 TempData["CompraRealizada"] = "Compra realizada con éxito";
                 return RedirectToAction("Index", "Home");
             }
             else
             {
+                // Si no hay productos en el carrito, muestra un mensaje de error.
                 TempData["CompraFallida"] = "No hay productos en el carrito";
                 return RedirectToAction("Index", "Home");
             }
         }
 
-
+        // Método para quitar un producto del carrito.
         [HttpPost]
         public ActionResult QuitarProducto(int productoId)
         {
+            // Obtiene el usuario actual desde la sesión.
             var usuario = Session["UsuarioActual"] as UsersViewModel;
 
             if (usuario != null)
             {
-                // Elimina el producto del carrito en la sesión
+                // Elimina el producto del carrito en la sesión.
                 var productosEnCarritoIds = usuario.ProductosEnCarrito.Split(',').Select(int.Parse).ToList();
                 productosEnCarritoIds.Remove(productoId);
 
-                // Actualiza la sesión solo si quedan productos en el carrito
+                // Actualiza la sesión solo si quedan productos en el carrito.
                 if (productosEnCarritoIds.Count > 0)
                 {
                     usuario.ProductosEnCarrito = string.Join(",", productosEnCarritoIds);
                 }
                 else
                 {
-                    // Si la lista es vacía, asigna null
+                    // Si la lista es vacía, asigna null.
                     usuario.ProductosEnCarrito = null;
                 }
 
-                // Actualiza la sesión
+                // Actualiza la sesión.
                 Session["UsuarioActual"] = usuario;
 
                 using (var db = new TRAVEL2Entities())
                 {
-                    // Obtén el usuario desde la base de datos y actualiza su carrito
+                    // Obtén el usuario desde la base de datos y actualiza su carrito.
                     var usuarioEnBD = db.Users.FirstOrDefault(u => u.Id == usuario.Id);
 
                     if (usuarioEnBD != null)
@@ -345,12 +350,8 @@ namespace PURIS_FLASH.Controllers
                 }
             }
 
-            // No redirijas a ninguna acción específica, simplemente refresca la página actual
+            // Redirige a la página del carrito.
             return RedirectToAction("Index", "Carrito");
         }
-
-
-
-
     }
 }

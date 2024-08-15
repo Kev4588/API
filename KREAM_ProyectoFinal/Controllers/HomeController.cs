@@ -13,24 +13,29 @@ using PURIS_FLASH.Models.ViewModel;
 
 namespace PURIS_FLASH.Controllers
 {
+    // Atributo que verifica si hay una sesión activa antes de permitir el acceso al controlador.
     [VerificarSesion]
     public class HomeController : Controller
     {
-
-
+        // Método que maneja la lógica de la vista principal. Permite la búsqueda y filtrado de productos según varios parámetros.
         public ActionResult Index(string nombre, string personas, string lugar, string proveedor, decimal? precioMin, decimal? precioMax, string categoria)
         {
+            // Recupera el usuario actual desde la sesión.
             var usuarioActual = Session["UsuarioActual"] as UsersViewModel;
 
+            // Pasa la información del usuario a la vista mediante ViewBag.
             ViewBag.UsuarioActual = usuarioActual.Nombre;
             ViewBag.SexoUsuario = usuarioActual.Sexo;
             ViewBag.TipoUsuario = usuarioActual.TipoDeUsuario;
             ViewBag.Id = usuarioActual.Id;
 
+            // Inicializa una lista de productos.
             List<ProductosTableViewModel> lstProductos = null;
 
+            // Usa la base de datos para realizar consultas sobre los productos.
             using (TRAVEL2Entities db = new TRAVEL2Entities())
             {
+                // Consulta básica para seleccionar productos de la base de datos y mapearlos a la vista.
                 var query = from p in db.Productos
                             select new ProductosTableViewModel
                             {
@@ -50,167 +55,147 @@ namespace PURIS_FLASH.Controllers
                                 Imagen3 = p.Imagen3,
                             };
 
-                // Filtrar por nombre
+                // Filtra por nombre del producto si se proporciona.
                 if (!string.IsNullOrEmpty(nombre))
                 {
                     query = query.Where(p => p.Nombre.Contains(nombre));
                 }
 
-                // Filtrar por persona 
+                // Filtra por cantidad de personas si se proporciona.
                 if (!string.IsNullOrEmpty(personas))
                 {
                     query = query.Where(p => p.Personas.Contains(personas));
                 }
 
-                // Obtener marcas distintas de la base de datos en caso que si este buscando alguna marca 
+                // Obtiene la lista de personas (número de personas) distintas de la base de datos.
                 var Personas = db.Productos.Select(p => p.Personas).Distinct().ToList();
                 ViewBag.Personas = new SelectList(Personas);
 
+                // Filtra nuevamente por la cantidad de personas si se proporciona.
                 if (!string.IsNullOrEmpty(personas))
                 {
                     query = query.Where(p => p.Personas == personas);
                 }
 
-                // CATEGORIA 
-                // Esto es por si la persona quiera simplemente no buscar una categoria en particular igual se puede 
+                // Filtra por categoría si se proporciona.
                 if (!string.IsNullOrEmpty(categoria))
                 {
                     query = query.Where(p => p.Categoria.Contains(categoria));
                 }
-                // Obtener marcas distintas de la base de datos en caso que si este buscando alguna marca 
+
+                // Obtiene la lista de categorías distintas de la base de datos.
                 var categorias = db.Productos.Select(p => p.Categoria).Distinct().ToList();
                 ViewBag.Categoria = new SelectList(categorias);
 
+                // Filtra nuevamente por categoría si se proporciona.
                 if (!string.IsNullOrEmpty(categoria))
                 {
                     query = query.Where(p => p.Categoria == categoria);
                 }
 
-
-                //************************************************************************************
-
-                // Filtrar por LUGAR
+                // Filtra por lugar si se proporciona.
                 if (!string.IsNullOrEmpty(lugar))
                 {
-                    query = query.Where(p => p.Lugar.Contains(lugar));  // ESTO CON EL .CONTAINS , LO QUE HACE SES QUE SI POR EJEMPLO UN PRODUCTO DIJERA AZUL/BLANCO Y NO SOLO BLANCO  igual lo tomaria proque el contains lo que hace es traier justo eso que contenga la palabra = True 
+                    query = query.Where(p => p.Lugar.Contains(lugar));
                 }
-                // Obtener marcas distintas de la base de datos en caso que si este buscando alguna marca 
+
+                // Obtiene la lista de lugares distintos de la base de datos.
                 var lugares = db.Productos.Select(p => p.Lugar).Distinct().ToList();
                 ViewBag.Lugar = new SelectList(lugares);
 
+                // Filtra nuevamente por lugar si se proporciona.
                 if (!string.IsNullOrEmpty(lugar))
                 {
                     query = query.Where(p => p.Lugar == lugar);
                 }
 
-
-              
-
-
-                // Filtrar por proveedor
+                // Filtra por proveedor si se proporciona.
                 if (!string.IsNullOrEmpty(proveedor))
                 {
                     query = query.Where(p => p.Proveedor.Contains(proveedor));
                 }
 
-
-                //************************************************************************************
-
-                // Filtrar por rango de precio
+                // Filtra por rango de precio mínimo.
                 if (precioMin.HasValue)
                 {
                     query = query.Where(p => p.Precio >= precioMin.Value);
                 }
 
+                // Filtra por rango de precio máximo.
                 if (precioMax.HasValue)
                 {
                     query = query.Where(p => p.Precio <= precioMax.Value);
                 }
 
-                // Ejemplo de cómo obtener el precio máximo de la base de datos
-                var precioMaximo = db.Productos.Max(p => p.Precio);  // Asumiendo que tienes una entidad Producto con un campo Precio
+                // Obtiene el precio máximo de la base de datos.
+                var precioMaximo = db.Productos.Max(p => p.Precio);
 
+                // Pasa el precio máximo a la vista.
+                ViewBag.PrecioMaximo = (int)precioMaximo; // Se convierte a entero porque los filtros no aceptan decimales.
 
-
-
-                // Pasar el precio máximo a la vista
-                ViewBag.PrecioMaximo = (int)precioMaximo; // hay que convertirlo  a INT o cuando se usa en los filtros da error , esto 
-                // porque los filtros de rango de precio no toman decimales sino numeros enteros y como precio si viene en decimales se va al demonio
-
-                // Obtener precios distintos y ordenarlos
+                // Obtiene y ordena la lista de precios distintos.
                 var precios = db.Productos.Select(p => p.Precio).Distinct().OrderBy(p => p).ToList();
                 ViewBag.Precios = precios;
 
-                // Establecer el precio máximo seleccionado
+                // Establece el precio máximo seleccionado.
                 ViewBag.PrecioMaxSeleccionado = precioMax ?? precios.LastOrDefault() ?? 1;
 
+                // Pasa los parámetros seleccionados a la vista.
                 ViewBag.CategoriaSeleccionada = categoria;
                 ViewBag.LugarSeleccionado = lugar;
                 ViewBag.PersonasSeleccionada = personas;
                 ViewBag.IntensidadSeleccionada = proveedor;
                 ViewBag.PrecioMaxSeleccionado = precioMax ?? 1;
                 ViewBag.NombreSeleccionado = nombre;
+
+                // Convierte la consulta en una lista de productos.
                 lstProductos = query.ToList();
-
-
-
             }
 
+            // Devuelve la vista con la lista de productos filtrados.
             return View(lstProductos);
         }
 
-
-
-
-
-
-
+        // Método para agregar un producto al carrito.
         [HttpPost]
         public ActionResult AgregarAlCarrito(int productoId)
         {
+            // Usa la base de datos para realizar operaciones.
             using (var db = new TRAVEL2Entities())
             {
-                // Obtener el usuario actual desde la sesión
+                // Obtiene el usuario actual desde la sesión.
                 var usuario = Session["UsuarioActual"] as UsersViewModel;
 
-                // Obtener el objeto User de la base de datos
+                // Busca el objeto User correspondiente en la base de datos.
                 var usuarioEnBD = db.Users.FirstOrDefault(u => u.Id == usuario.Id);
 
-                // Verificar si el usuario existe en la base de datos
+                // Verifica si el usuario existe en la base de datos.
                 if (usuarioEnBD != null)
                 {
-                    // Si ProductosEnCarrito es null, establecerlo en el primer productoId, de lo contrario, agregarlo a la lista existente
+                    // Si no hay productos en el carrito, establece el primer producto. De lo contrario, agrega el nuevo producto.
                     usuarioEnBD.ProductosEnCarrito = usuarioEnBD.ProductosEnCarrito == null
                         ? productoId.ToString()
                         : usuarioEnBD.ProductosEnCarrito + "," + productoId;
 
                     try
                     {
-                        // Guardar los cambios en la base de datos
+                        // Guarda los cambios en la base de datos.
                         db.SaveChanges();
                     }
                     catch (DbUpdateException)
                     {
-                        // Manejar excepciones de base de datos, si es necesario
-                        // Por ejemplo, el productoId no existe
+                        // Maneja excepciones relacionadas con la base de datos si es necesario.
+                        // Por ejemplo, si el productoId no existe.
                     }
 
-                    // Actualizar la propiedad ProductosEnCarrito en el ViewModel y guardar en la sesión
+                    // Actualiza la propiedad ProductosEnCarrito en el ViewModel y guarda en la sesión.
                     usuario.ProductosEnCarrito = usuarioEnBD.ProductosEnCarrito;
                     Session["UsuarioActual"] = usuario;
-
-
                 }
 
-
+                // Redirige a la acción Index para mostrar la lista de productos actualizada.
                 return RedirectToAction("Index");
             }
         }
-
-
-
-
     }
 }
-
-

@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Antlr.Runtime.Misc;
 using KREAM_ProyectoFinal.Models;
 using PURIS_FLASH.Models;
 using PURIS_FLASH.Models.TableViewModel;
@@ -12,22 +11,23 @@ using PURIS_FLASH.Models.ViewModel;
 
 namespace PURIS_FLASH.Controllers
 {
+    // Atributo que verifica si hay una sesión activa antes de permitir el acceso al controlador.
     [VerificarSesion]
     public class VendedorController : Controller
     {
-        // GET: Productos
-        
+        // Acción GET para mostrar la lista de productos con la posibilidad de aplicar filtros.
         public ActionResult Index(string nombre, string personas, string lugar, string proveedor, decimal? precio, decimal? precioMin, decimal? precioMax, string categoria)
         {
-
+            // Recupera el usuario actual desde la sesión y lo pasa a la vista mediante ViewBag.
             var usuarioActual = Session["UsuarioActual"] as UsersViewModel;
-
             ViewBag.UsuarioActual = usuarioActual.Nombre;
-           ViewBag.SexoUsuario = usuarioActual.Sexo;
+            ViewBag.SexoUsuario = usuarioActual.Sexo;
             ViewBag.TipoUsuario = usuarioActual.TipoDeUsuario;
 
+            // Inicializa una lista de productos para la vista.
             List<ProductosTableViewModel> lstProductos = new List<ProductosTableViewModel>();
 
+            // Usa la base de datos para consultar los productos.
             using (TRAVEL2Entities db = new TRAVEL2Entities())
             {
                 var query = from p in db.Productos
@@ -48,7 +48,7 @@ namespace PURIS_FLASH.Controllers
                                 Imagen3 = p.Imagen3,
                             };
 
-                // Apply filters
+                // Aplicar filtros según los parámetros recibidos.
                 if (!string.IsNullOrEmpty(categoria))
                 {
                     query = query.Where(p => p.Categoria.Contains(categoria));
@@ -64,45 +64,43 @@ namespace PURIS_FLASH.Controllers
                     query = query.Where(p => p.Nombre.Contains(nombre));
                 }
 
+                // Convertir la consulta en una lista de productos.
                 lstProductos = query.ToList();
             }
 
+            // Devuelve la vista con la lista de productos filtrados.
             return View(lstProductos);
-            
         }
-
 
         // --------------------------------------------  ADD  -----------------------------------------------
 
+        // Acción GET que muestra la vista para agregar un nuevo producto.
         [HttpGet]
-
         public ActionResult Add()
         {
             return View();
         }
 
+        // Acción POST que maneja la lógica para agregar un nuevo producto.
         [HttpPost]
-        [ValidateInput(false)] // TIENE QUE VER CON LAS IMAGENES 
-        // Aqui estamos pasando los parametros del form en ADD donde estan los productos model y algo especial para las imagenes 1 2 y 3
+        [ValidateInput(false)] // Permite la entrada de HTML, necesaria para manejar las imágenes.
         public ActionResult Add(ProductosTableViewModel model, HttpPostedFileBase ImagenFile, HttpPostedFileBase ImagenFile2, HttpPostedFileBase ImagenFile3)
-
-
         {
+            // Verifica si el modelo es válido.
             if (!ModelState.IsValid) return View(model);
 
+            // Usa la base de datos para agregar el nuevo producto.
             using (var db = new TRAVEL2Entities())
-
             {
-                // estamos tomando la sesion activa de usuario para instanciarla y manipularla aqui 
+                // Recupera el usuario actual desde la sesión.
                 var usuario = Session["UsuarioActual"] as UsersViewModel;
 
-
-                // capturando la imagen que se subio como un null por ahora , ya luego cuando el user la suba habra una conversion a base 64
+                // Variables para almacenar las imágenes en bytes.
                 byte[] imagenBytes = null;
                 byte[] imagenBytes2 = null;
                 byte[] imagenBytes3 = null;
 
-                // Proceso para la primera imagen
+                // Procesa la primera imagen.
                 if (ImagenFile != null && ImagenFile.ContentLength > 0)
                 {
                     using (var binaryReader = new BinaryReader(ImagenFile.InputStream))
@@ -111,7 +109,7 @@ namespace PURIS_FLASH.Controllers
                     }
                 }
 
-                // Proceso para la segunda imagen
+                // Procesa la segunda imagen.
                 if (ImagenFile2 != null && ImagenFile2.ContentLength > 0)
                 {
                     using (var binaryReader = new BinaryReader(ImagenFile2.InputStream))
@@ -120,7 +118,7 @@ namespace PURIS_FLASH.Controllers
                     }
                 }
 
-                // Proceso para la tercera imagen
+                // Procesa la tercera imagen.
                 if (ImagenFile3 != null && ImagenFile3.ContentLength > 0)
                 {
                     using (var binaryReader = new BinaryReader(ImagenFile3.InputStream))
@@ -129,10 +127,7 @@ namespace PURIS_FLASH.Controllers
                     }
                 }
 
-
-
-                // fin de proceso de captura de imagenes 
-
+                // Crea una nueva instancia de la entidad Productos con los datos proporcionados.
                 Productos productoTO = new Productos
                 {
                     Nombre = model.Nombre,
@@ -145,108 +140,90 @@ namespace PURIS_FLASH.Controllers
                     Comentarios = model.Comentario,
                     Calificacion = model.Calificacion,
                     Proveedor = model.Proveedor,
-                    Vendedor = usuario.Cedula,
-                    // Agregar el campo de imagen
+                    Vendedor = usuario.Cedula, // Asigna la cédula del vendedor al producto.
                     Imagen = imagenBytes,
                     Imagen2 = imagenBytes2,
                     Imagen3 = imagenBytes3
-
                 };
 
+                // Agrega el producto a la base de datos y guarda los cambios.
                 db.Productos.Add(productoTO);
                 db.SaveChanges();
 
+                // Redirige al usuario a la página de índice después de agregar el producto.
                 return Redirect(Url.Content("~/Vendedor/Index"));
             }
         }
 
-
-
         // --------------------------------------------  EDIT  -----------------------------------------------
 
+        // Acción GET que muestra la vista para editar un producto específico.
         [HttpGet]
         public ActionResult Edit(int ProductoID)
         {
             using (var db = new TRAVEL2Entities())
             {
-                var producto = db.Productos.Find(ProductoID); // El ProductID viene como parametro para poder buscar el Producto
+                // Busca el producto por su ID.
+                var producto = db.Productos.Find(ProductoID);
 
-                ViewBag.ProductoNombre = producto.Nombre; // SALVAMOS EL NOMBRE DEL PRODUCTO EN UN VIEWBAG PARA USARLO LUEGO EN LA VISTA DE EDIT
-
+                // Guarda el nombre del producto en un ViewBag para usarlo en la vista de edición.
+                ViewBag.ProductoNombre = producto.Nombre;
                 ViewBag.ProductoGenero = producto.Lugar;
 
-
+                // Si el producto no se encuentra, redirige al índice.
                 if (producto == null)
                 {
                     return RedirectToAction("Index");
                 }
 
+                // Mapea los datos del producto al modelo de la vista.
                 var model = new ProductosTableViewModel
                 {
-                   
                     Nombre = producto.Nombre,
-                   Lugar = producto.Lugar,
+                    Lugar = producto.Lugar,
                     Descripcion = producto.Descripcion,
                     Precio = (decimal)producto.Precio,
                     Categoria = producto.Categoria,
-                   
                     CantidadEnStock = producto.CantidadEnStock,
                     Comentario = producto.Comentarios,
-                    Calificacion = producto.Calificacion != null ? (int)producto.Calificacion : 0, // Convertir de forma segura
-                    Proveedor = producto.Proveedor,
-
-
-                    // Cargando las imagenes para que la persona vea las que tiene relacionadas a ese producto 
-                    //Imagen = producto.Imagen,
-                    //Imagen2 = producto.Imagen2,
-                    //Imagen3 = producto.Imagen3
+                    Calificacion = producto.Calificacion != null ? (int)producto.Calificacion : 0,
+                    Proveedor = producto.Proveedor
                 };
 
-                // Esta pequeña validacion de abajo lo que hace es que recuerde cual es el genero que ya tenia el producto y lo muestre si la persona queire cambiarlo puede hacerlo 
+                // Guarda el proveedor actual en un ViewBag para usarlo en la vista.
                 ViewBag.GeneroSeleccionado = producto.Proveedor;
 
+                // Devuelve la vista con el modelo de producto.
                 return View(model);
             }
         }
 
-        /*------------ ESTE METODO ES QUIEN ENVIA LO QUE SE HAYA INGRESADO EN EL EDIT ---------------------------   */
-
+        // Acción POST que maneja la lógica para actualizar un producto.
         [HttpPost]
-        public ActionResult Edit(ProductosTableViewModel model, HttpPostedFileBase NuevaImagen, HttpPostedFileBase NuevaImagen2, HttpPostedFileBase NuevaImagen3, string action) // INCLUIDOS LOS PARAMETROS PARA LAS IMAGENES  llaamdsod nuevaimagen# eso le dice cual debe controlar
+        public ActionResult Edit(ProductosTableViewModel model, HttpPostedFileBase NuevaImagen, HttpPostedFileBase NuevaImagen2, HttpPostedFileBase NuevaImagen3, string action)
         {
+            // Verifica si el modelo es válido.
             if (!ModelState.IsValid) return View(model);
-
 
             using (var db = new TRAVEL2Entities())
             {
-
-                // DECLARANDO LA SESION ACTIVA AL USUARIO ACTUAL PARA PASAR POR VIEWBAGS
-                var usuario = Session["UsuarioActual"] as UsersViewModel;
-
-
-                // DECLARANDO LOS ATRIBUTOS DE PRODUCTO COMO VIEWBAGS
+                // Busca el producto por su ID en la base de datos.
                 var productoTO = db.Productos.Find(model.ProductoID);
 
-
-
-                productoTO.Nombre = model.Nombre; 
-
+                // Actualiza las propiedades del producto con los valores del modelo.
+                productoTO.Nombre = model.Nombre;
                 productoTO.Lugar = model.Lugar;
                 productoTO.Descripcion = model.Descripcion;
                 productoTO.Precio = model.Precio;
                 productoTO.Categoria = model.Categoria;
-                //productoTO.Personas = model.Personas;
                 productoTO.CantidadEnStock = model.CantidadEnStock;
                 productoTO.Comentarios = model.Comentario;
                 productoTO.Calificacion = model.Calificacion;
                 productoTO.Proveedor = model.Proveedor;
 
-                // IMAGENES  -- Esto tambien aplica para eliminarlas o agregar otra 
-
-                // Actualiza las propiedades de las imágenes según la acción del usuario
+                // Actualiza las imágenes del producto según las acciones del usuario.
                 if (NuevaImagen != null && NuevaImagen.ContentLength > 0)
                 {
-                    // El usuario ha proporcionado una nueva imagen
                     using (var binaryReader = new BinaryReader(NuevaImagen.InputStream))
                     {
                         productoTO.Imagen = binaryReader.ReadBytes(NuevaImagen.ContentLength);
@@ -264,9 +241,7 @@ namespace PURIS_FLASH.Controllers
                 if (action == "EliminarImagen2" || model.EliminarImagen2)
                 {
                     productoTO.Imagen2 = null;
-
                 }
-
 
                 else if (NuevaImagen2 != null && NuevaImagen2.ContentLength > 0)
                 {
@@ -275,9 +250,6 @@ namespace PURIS_FLASH.Controllers
                         productoTO.Imagen2 = binaryReader.ReadBytes(NuevaImagen2.ContentLength);
                     }
                 }
-
-                // Actualiza las propiedades de las imágenes según la acción del usuario para Imagen3
-
 
                 if (action == "EliminarImagen3" || model.EliminarImagen3)
                 {
@@ -291,53 +263,52 @@ namespace PURIS_FLASH.Controllers
                     }
                 }
 
-
                 if (action == "EliminarImagen" || model.EliminarImagen)
                 {
                     productoTO.Imagen = null;
                 }
                 else if (NuevaImagen != null && NuevaImagen.ContentLength > 0)
                 {
-                    // El usuario ha proporcionado una nueva imagen
                     using (var binaryReader = new BinaryReader(NuevaImagen.InputStream))
                     {
                         productoTO.Imagen = binaryReader.ReadBytes(NuevaImagen.ContentLength);
                     }
-                } 
+                }
 
-               
-
-
+                // Guarda los cambios en la base de datos.
                 db.SaveChanges();
 
+                // Redirige al usuario a la página de índice después de actualizar el producto.
                 return Redirect(Url.Content("~/Vendedor/Index"));
             }
         }
 
-
-
         // --------------------------------------------  DELETE  -----------------------------------------------
 
-
-
+        // Acción GET que maneja la eliminación de un producto.
         [HttpGet]
         public ActionResult Delete(int ProductoID)
         {
             using (var db = new TRAVEL2Entities())
             {
+                // Recupera el usuario actual desde la sesión.
                 var usuario = Session["UsuarioActual"] as UsersViewModel;
 
+                // Busca el producto por su ID en la base de datos.
                 var productoTO = db.Productos.Find(ProductoID);
 
+                // Si el producto no se encuentra, retorna un error 404.
                 if (productoTO == null)
                 {
                     return HttpNotFound();
                 }
 
+                // Elimina el producto de la base de datos y guarda los cambios.
                 db.Productos.Remove(productoTO);
                 db.SaveChanges();
             }
 
+            // Redirige al usuario a la página de índice después de eliminar el producto.
             return RedirectToAction("Index");
         }
     }
