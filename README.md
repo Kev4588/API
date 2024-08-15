@@ -96,7 +96,7 @@ En cuanto a los usuarios, la base de datos se encarga de almacenar la cédula, e
 
 ![](imgs/producto.PNG)
 
-![](imgs/tablaProd.PNG)
+![](imgs/tablaProd.png)
 
 En caso de que un producto estuviese agotado, se le indicará al usuario que el mismo no está disponible. Se podrá acceder al producto, pero no se podrá agregar al carrito.
 
