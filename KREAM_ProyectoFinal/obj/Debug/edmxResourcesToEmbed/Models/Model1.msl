@@ -1,33 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="TRAVEL2ModelStoreContainer" CdmEntityContainer="TRAVEL2Entities">
-    <EntitySetMapping Name="Comentarios">
-      <EntityTypeMapping TypeName="TRAVEL2Model.Comentarios">
-        <MappingFragment StoreEntitySet="Comentarios">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
-          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Hoteles">
-      <EntityTypeMapping TypeName="TRAVEL2Model.Hoteles">
-        <MappingFragment StoreEntitySet="Hoteles">
-          <ScalarProperty Name="IDHotel" ColumnName="IDHotel" />
-          <ScalarProperty Name="TipoDeHabitacion" ColumnName="TipoDeHabitacion" />
-          <ScalarProperty Name="CantidadDePersonas" ColumnName="CantidadDePersonas" />
-          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-          <ScalarProperty Name="NombreHotel" ColumnName="NombreHotel" />
-          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
-          <ScalarProperty Name="Imagen2" ColumnName="Imagen2" />
-          <ScalarProperty Name="Imagen3" ColumnName="Imagen3" />
-          <ScalarProperty Name="web" ColumnName="web" />
-          <ScalarProperty Name="ComentarioHotel" ColumnName="ComentarioHotel" />
-          <ScalarProperty Name="CalificacionHotel" ColumnName="CalificacionHotel" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Productos">
       <EntityTypeMapping TypeName="TRAVEL2Model.Productos">
         <MappingFragment StoreEntitySet="Productos">
@@ -43,6 +16,20 @@
           <ScalarProperty Name="Calificacion" ColumnName="Calificacion" />
           <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
           <ScalarProperty Name="Vendedor" ColumnName="Vendedor" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="Imagen2" ColumnName="Imagen2" />
+          <ScalarProperty Name="Imagen3" ColumnName="Imagen3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Repartidores">
+      <EntityTypeMapping TypeName="TRAVEL2Model.Repartidores">
+        <MappingFragment StoreEntitySet="Repartidores">
+          <ScalarProperty Name="IDRepartidor" ColumnName="IDRepartidor" />
+          <ScalarProperty Name="TipoDeTransporte" ColumnName="TipoDeTransporte" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="NombreRepartidor" ColumnName="NombreRepartidor" />
           <ScalarProperty Name="Imagen" ColumnName="Imagen" />
           <ScalarProperty Name="Imagen2" ColumnName="Imagen2" />
           <ScalarProperty Name="Imagen3" ColumnName="Imagen3" />

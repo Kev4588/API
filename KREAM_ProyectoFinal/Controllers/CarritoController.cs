@@ -31,15 +31,7 @@ namespace PURIS_FLASH.Controllers
                 // Recorre los IDs de productos en el carrito para contar las cantidades.
                 foreach (var productoId in productosEnCarritoIds)
                 {
-                    Tuple<int, int> productoEnLista = null;
-                    foreach (var tupla in productosConCantidad)
-                    {
-                        if (tupla.Item1 == productoId)
-                        {
-                            productoEnLista = tupla;
-                            break;
-                        }
-                    }
+                    Tuple<int, int> productoEnLista = productosConCantidad.FirstOrDefault(tupla => tupla.Item1 == productoId);
 
                     // Si el producto ya está en la lista, incrementa su cantidad.
                     if (productoEnLista != null)
@@ -129,21 +121,21 @@ namespace PURIS_FLASH.Controllers
                     }
 
                     // Busca un repartidor que tenga el vehículo adecuado para la entrega.
-                    Hoteles repartidorSeleccionado = db.Hoteles
-                        .FirstOrDefault(h => h.TipoDeHabitacion == tipoDeVehiculoNecesario);
+                    Repartidores repartidorSeleccionado = db.Repartidores
+                        .FirstOrDefault(r => r.TipoDeTransporte == tipoDeVehiculoNecesario);
 
                     if (repartidorSeleccionado != null)
                     {
                         // Determina el artículo ("un" o "una") para el tipo de vehículo.
                         string articulo = "un";
-                        if (repartidorSeleccionado.TipoDeHabitacion.Equals("Moto", StringComparison.OrdinalIgnoreCase) ||
-                            repartidorSeleccionado.TipoDeHabitacion.Equals("Bicicleta", StringComparison.OrdinalIgnoreCase))
+                        if (repartidorSeleccionado.TipoDeTransporte.Equals("Moto", StringComparison.OrdinalIgnoreCase) ||
+                            repartidorSeleccionado.TipoDeTransporte.Equals("Bicicleta", StringComparison.OrdinalIgnoreCase))
                         {
                             articulo = "una";
                         }
 
                         // Almacena el mensaje sobre el tipo de transporte en ViewBag.
-                        ViewBag.TipoDeTransporte = $"Tus artículos serán llevados por {repartidorSeleccionado.NombreHotel} en {articulo} {repartidorSeleccionado.TipoDeHabitacion}.";
+                        ViewBag.TipoDeTransporte = $"Tus artículos serán llevados por {repartidorSeleccionado.NombreRepartidor} en {articulo} {repartidorSeleccionado.TipoDeTransporte}.";
                     }
                     else
                     {
@@ -249,15 +241,7 @@ namespace PURIS_FLASH.Controllers
 
                 foreach (var productoId in productosEnCarritoIds)
                 {
-                    Tuple<int, int> productoEnLista = null;
-                    foreach (var tupla in productosConCantidad)
-                    {
-                        if (tupla.Item1 == productoId)
-                        {
-                            productoEnLista = tupla;
-                            break;
-                        }
-                    }
+                    Tuple<int, int> productoEnLista = productosConCantidad.FirstOrDefault(tupla => tupla.Item1 == productoId);
 
                     if (productoEnLista != null)
                     {

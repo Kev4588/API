@@ -61,10 +61,6 @@ namespace PURIS_FLASH.Models.TableViewModel
         public bool EliminarImagen2 { get; set; }
         public bool EliminarImagen3 { get; set; }
 
-
-        public List<Comentarios> Comentarios { get; set; }
-
-
         // COSAS NECESARIAS PARA CARRITO 
 
 

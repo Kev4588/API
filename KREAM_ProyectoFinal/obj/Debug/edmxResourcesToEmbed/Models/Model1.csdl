@@ -1,31 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="TRAVEL2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Comentarios">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="IdProducto" Type="Int32" Nullable="false" />
-    <Property Name="Comentario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Productos" Relationship="Self.FK_Comentarios_Productos" FromRole="Comentarios" ToRole="Productos" />
-  </EntityType>
-  <EntityType Name="Hoteles">
-    <Key>
-      <PropertyRef Name="IDHotel" />
-    </Key>
-    <Property Name="IDHotel" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TipoDeHabitacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="CantidadDePersonas" Type="Int32" />
-    <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="Telefono" Type="Int32" />
-    <Property Name="NombreHotel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="Imagen2" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="Imagen3" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="web" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="ComentarioHotel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="CalificacionHotel" Type="Int32" />
-  </EntityType>
   <EntityType Name="Productos">
     <Key>
       <PropertyRef Name="ProductoID" />
@@ -45,7 +19,19 @@
     <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="Imagen2" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="Imagen3" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <NavigationProperty Name="Comentarios1" Relationship="Self.FK_Comentarios_Productos" FromRole="Productos" ToRole="Comentarios" />
+  </EntityType>
+  <EntityType Name="Repartidores">
+    <Key>
+      <PropertyRef Name="IDRepartidor" />
+    </Key>
+    <Property Name="IDRepartidor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TipoDeTransporte" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="Int32" />
+    <Property Name="NombreRepartidor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Imagen2" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Imagen3" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -78,18 +64,6 @@
     <Property Name="UserStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Users" Relationship="Self.FK_Users_UserType" FromRole="UserType" ToRole="Users" />
   </EntityType>
-  <Association Name="FK_Comentarios_Productos">
-    <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
-    <End Role="Comentarios" Type="Self.Comentarios" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Productos">
-        <PropertyRef Name="ProductoID" />
-      </Principal>
-      <Dependent Role="Comentarios">
-        <PropertyRef Name="IdProducto" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Users_UserType">
     <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
     <End Role="Users" Type="Self.Users" Multiplicity="*" />
@@ -103,15 +77,10 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="TRAVEL2Entities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Comentarios" EntityType="Self.Comentarios" />
-    <EntitySet Name="Hoteles" EntityType="Self.Hoteles" />
     <EntitySet Name="Productos" EntityType="Self.Productos" />
+    <EntitySet Name="Repartidores" EntityType="Self.Repartidores" />
     <EntitySet Name="Users" EntityType="Self.Users" />
     <EntitySet Name="UserType" EntityType="Self.UserType" />
-    <AssociationSet Name="FK_Comentarios_Productos" Association="Self.FK_Comentarios_Productos">
-      <End Role="Productos" EntitySet="Productos" />
-      <End Role="Comentarios" EntitySet="Comentarios" />
-    </AssociationSet>
     <AssociationSet Name="FK_Users_UserType" Association="Self.FK_Users_UserType">
       <End Role="UserType" EntitySet="UserType" />
       <End Role="Users" EntitySet="Users" />

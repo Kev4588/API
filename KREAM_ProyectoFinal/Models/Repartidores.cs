@@ -12,18 +12,15 @@ namespace KREAM_ProyectoFinal.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class UserType
+    public partial class Repartidores
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public UserType()
-        {
-            this.Users = new HashSet<Users>();
-        }
-    
-        public int Id { get; set; }
-        public string UserStatus { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Users> Users { get; set; }
+        public int IDRepartidor { get; set; }
+        public string TipoDeTransporte { get; set; }
+        public string Descripcion { get; set; }
+        public Nullable<int> Telefono { get; set; }
+        public string NombreRepartidor { get; set; }
+        public byte[] Imagen { get; set; }
+        public byte[] Imagen2 { get; set; }
+        public byte[] Imagen3 { get; set; }
     }
 }

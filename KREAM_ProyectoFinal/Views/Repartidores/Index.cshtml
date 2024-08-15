@@ -394,14 +394,14 @@
 
 </head>
 <body>
-    
+
     <main>
         <div class="container mt-4">
             <div class="row">
                 <!-- Filtros en el lado izquierdo -->
-             
+
                 <div class="col-lg-12 mb-12 sticky  cinto-rojo">
-                   
+
                     <div class="contenedor-filtros">
                         <h3>REPARTIDORES PURIS FLASH</h3>
 
@@ -410,114 +410,87 @@
                             <img src="@Url.Content("~/Content/images/BANNER.png")" class="banner">
                         </div>
 
-
-
-                        <form method="get" action="@Url.Action("Index", "Hoteles")">
-
-
-
-                            <!--Nombre-->
-
+                        <form method="get" action="@Url.Action("Index", "Repartidores")">
+                            <!-- Nombre -->
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Nombre del Repartidor:</label>
                                 <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Cualquiera" value=@ViewBag.NombreHotelSeleccionado>
                             </div>
 
-                            <!--Nombre-->
-                            <!--Tipo de transporte-->
-
+                            <!-- Tipo de Transporte -->
                             <div class="mb-3">
-                                <label for="tipoDeHabitacion" class="form-label">Tipo de Transporte:</label>
-                                <select class="form-select" id="tipoDeHabitacion" name="habitacion">
+                                <label for="tipoDeTransporte" class="form-label">Tipo de Transporte:</label>
+                                <select class="form-select" id="tipoDeTransporte" name="tipoDeTransporte">
                                     <option value="">Cualquier Transporte</option>
-                                    @foreach (var tipoDeHabitacion in ViewBag.Categoria as SelectList)
+                                    @foreach (var tipoDeTransporte in ViewBag.Categoria as SelectList)
                                     {
-                                        <option value="@tipoDeHabitacion.Value" @(tipoDeHabitacion.Text == ViewBag.tipoDeHabitacionSeleccionada ? "selected" : "")>@tipoDeHabitacion.Text</option>
+                                        <option value="@tipoDeTransporte.Value" @(tipoDeTransporte.Text == ViewBag.tipoDeTransporteSeleccionado ? "selected" : "")>@tipoDeTransporte.Text</option>
                                     }
                                 </select>
                             </div>
-
-
-
-
-
-
 
                             <button type="submit" class="btn btn-success">Buscar</button>
                         </form>
                     </div>
                 </div>
 
-                    <!-- Contenido de hoteles en el lado derecho -->
+                <!-- Contenido de repartidores en el lado derecho -->
                 <div class="col-lg-12 alineaCards ">
                     <div class="row">
-
-                        @foreach (var hotel in Model)
+                        @foreach (var repartidor in Model)
                         {
                             <div class="col-md-4 col-lg-4 mb-4">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="card-title" style="height: 37px !important">@hotel.NombreHotel</h5>
+                                        <h5 class="card-title" style="height: 37px !important">@repartidor.NombreRepartidor</h5>
 
-                                        <p class="card-text" style="height:35px !important">@hotel.TipoDeHabitacion</p>
+                                        <p class="card-text" style="height:35px !important">@repartidor.TipoDeTransporte</p>
 
+                                        <p style="color:white;">@repartidor.Descripcion</p>
 
-                                        <p style="color:white;">@hotel.Descripcion</p>
-
-
-                                        <div id="carouselHotel@(hotel.IDHotel)" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
+                                        <div id="carouselRepartidor@(repartidor.IDRepartidor)" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
                                             <div class="carousel-inner">
                                                 @for (int i = 0; i < 3; i++)
                                                 {
                                                     <div class="carousel-item @(i == 0 ? "active" : "")">
-                                                        @if (i == 0 && hotel.Imagen != null && hotel.Imagen.Length > 0)
+                                                        @if (i == 0 && repartidor.Imagen != null && repartidor.Imagen.Length > 0)
                                                         {
-                                                            <img src="data:image/png;base64,@Convert.ToBase64String(hotel.Imagen)" alt="Imagen del Transporte" class="img-fluid" />
+                                                            <img src="data:image/png;base64,@Convert.ToBase64String(repartidor.Imagen)" alt="Imagen del Transporte" class="img-fluid" />
                                                         }
-                                                        @if (i == 0 && (hotel.Imagen == null || hotel.Imagen.Length == 0))
+                                                        @if (i == 0 && (repartidor.Imagen == null || repartidor.Imagen.Length == 0))
                                                         {
                                                             <div style="height: 232px;  display: flex; justify-content: center; align-items: center;">
                                                                 <p style="font-size: x-large; color: #0d6efd;">Sin Imagen [@i]</p>
                                                             </div>
                                                         }
-                                                        @if (i == 1 && hotel.Imagen2 != null && hotel.Imagen2.Length > 0)
+                                                        @if (i == 1 && repartidor.Imagen2 != null && repartidor.Imagen2.Length > 0)
                                                         {
-                                                            <img src="data:image/png;base64,@Convert.ToBase64String(hotel.Imagen2)" alt="Segunda Imagen del Transporte" class="img-fluid" />
+                                                            <img src="data:image/png;base64,@Convert.ToBase64String(repartidor.Imagen2)" alt="Segunda Imagen del Transporte" class="img-fluid" />
                                                         }
-                                                        @if (i == 1 && (hotel.Imagen2 == null || hotel.Imagen2.Length == 0))
+                                                        @if (i == 1 && (repartidor.Imagen2 == null || repartidor.Imagen2.Length == 0))
                                                         {
                                                             <div style="height: 232px; display: flex; justify-content: center; align-items: center;">
                                                                 <p style="font-size: x-large; color: #0d6efd;">Sin Imagen [@i]</p>
                                                             </div>
                                                         }
-                                                        @if (i == 2 && hotel.Imagen3 != null && hotel.Imagen3.Length > 0)
+                                                        @if (i == 2 && repartidor.Imagen3 != null && repartidor.Imagen3.Length > 0)
                                                         {
-                                                            <img src="data:image/png;base64,@Convert.ToBase64String(hotel.Imagen3)" alt="Tercera Imagen del Transporte" class="img-fluid" />
+                                                            <img src="data:image/png;base64,@Convert.ToBase64String(repartidor.Imagen3)" alt="Tercera Imagen del Transporte" class="img-fluid" />
                                                         }
-                                                        @if (i == 2 && (hotel.Imagen3 == null || hotel.Imagen3.Length == 0))
+                                                        @if (i == 2 && (repartidor.Imagen3 == null || repartidor.Imagen3.Length == 0))
                                                         {
                                                             <div style="height: 232px; display: flex; justify-content: center; align-items: center;">
                                                                 <p style="font-size: x-large; color: #0d6efd;">Sin Imagen [@i]</p>
                                                             </div>
                                                         }
                                                     </div>
-
-
-
-
-
-
-
-
-
-
                                                 }
                                             </div>
-                                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselHotel@(hotel.IDHotel)" data-bs-slide="prev">
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselRepartidor@(repartidor.IDRepartidor)" data-bs-slide="prev">
                                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                                 <span class="visually-hidden">Previous</span>
                                             </button>
-                                            <button class="carousel-control-next" type="button" data-bs-target="#carouselHotel@(hotel.IDHotel)" data-bs-slide="next">
+                                            <button class="carousel-control-next" type="button" data-bs-target="#carouselRepartidor@(repartidor.IDRepartidor)" data-bs-slide="next">
                                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                                 <span class="visually-hidden">Next</span>
                                             </button>
@@ -533,33 +506,20 @@
                                 </div>
                             </div>
                         }
-
-
                     </div>
                     <a href="@Url.Action("Index", "Home")" class="btn btn-success">Regresar al menú principal</a>
                 </div>
-                </div>
-    </div>
+            </div>
+        </div>
     </main>
 
     <!-- Scripts -->
-
     <script>
-        // Actualiza el valor del output al cambiar el slider
-        document.getElementById('precioMax').addEventListener('input', function () {
-            document.getElementById('precioMaxOutput').value = '$' + this.value;
-        });
-
-
-
-
-
-        function MostrarInformacion(IDHotel) {
-            // Redirige al controlador con el ID del hotel como parámetro
-            console.log(IDHotel)
-            window.location.href = '/Hoteles/MostrarInformacion?IDHotel=' + IDHotel;
+        function MostrarInformacion(IDRepartidor) {
+            // Redirige al controlador con el ID del repartidor como parámetro
+            window.location.href = '/Repartidores/MostrarInformacion?IDRepartidor=' + IDRepartidor;
         }
     </script>
-    
+
 </body>
 </html>
