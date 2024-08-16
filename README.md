@@ -105,6 +105,8 @@ En caso de que un producto estuviese agotado, se le indicará al usuario que el 
 
 **2.3. Filtro de categoría:**  En la página donde podemos ver los productos, hay un cuadro en el que podemos elegir ver los productos según su categoría. De igual manera, podemos filtrar los productos según su precio máximo y el lugar en el que se venden los mismos. Al elegir los filtros y darle al botón "Buscar", se deberían de ver solo los productos que cumplan con los criterios del filtro.
 
+![](imgs/filtcat.PNG)
+
 ![](imgs/ejfiltcat.PNG)
 
 #### 3. Página de Repartidores: 
