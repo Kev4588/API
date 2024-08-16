@@ -285,10 +285,8 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\Repartidores\MostrarInformacion.cshtml" />
-    <Content Include="Views\Repartidores\Index.cshtml" />
-    <Content Include="Views\Repartidores\Edit.cshtml" />
-    <Content Include="Views\Repartidores\AdminHoteles.cshtml" />
     <Content Include="Views\Repartidores\Add.cshtml" />
+    <Content Include="Views\Repartidores\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

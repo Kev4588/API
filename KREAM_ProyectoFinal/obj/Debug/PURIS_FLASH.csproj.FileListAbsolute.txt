@@ -142,8 +142,6 @@ C:\Users\danie\OneDrive\Desktop\Proyecto Servicios Web\API\KREAM_ProyectoFinal\o
 C:\Users\danie\OneDrive\Desktop\Proyecto Servicios Web\API\KREAM_ProyectoFinal\obj\Debug\PURIS_FL.D52B4069.Up2Date
 C:\Users\danie\OneDrive\Desktop\Proyecto Servicios Web\API\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.dll
 C:\Users\danie\OneDrive\Desktop\Proyecto Servicios Web\API\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.pdb
-C:\Users\ronal\OneDrive\Documents\GitHub\API\KREAM_ProyectoFinal\obj\Debug\PURIS_FLASH.csproj.AssemblyReference.cache
-C:\Users\ronal\OneDrive\Documents\GitHub\API\KREAM_ProyectoFinal\obj\Debug\PURIS_FLASH.csproj.CoreCompileInputs.cache
 C:\Users\ronal\OneDrive\Documents\GitHub\API\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll.config
 C:\Users\ronal\OneDrive\Documents\GitHub\API\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.dll
 C:\Users\ronal\OneDrive\Documents\GitHub\API\KREAM_ProyectoFinal\bin\KREAM_ProyectoFinal.pdb
@@ -211,6 +209,8 @@ C:\Users\ronal\OneDrive\Documents\GitHub\API\KREAM_ProyectoFinal\bin\es\System.W
 C:\Users\ronal\OneDrive\Documents\GitHub\API\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\ronal\OneDrive\Documents\GitHub\API\KREAM_ProyectoFinal\bin\es\System.Web.WebPages.Razor.resources.dll
 C:\Users\ronal\OneDrive\Documents\GitHub\API\KREAM_ProyectoFinal\bin\es\System.Web.Optimization.resources.dll
+C:\Users\ronal\OneDrive\Documents\GitHub\API\KREAM_ProyectoFinal\obj\Debug\PURIS_FLASH.csproj.AssemblyReference.cache
+C:\Users\ronal\OneDrive\Documents\GitHub\API\KREAM_ProyectoFinal\obj\Debug\PURIS_FLASH.csproj.CoreCompileInputs.cache
 C:\Users\ronal\OneDrive\Documents\GitHub\API\KREAM_ProyectoFinal\obj\Debug\PURIS_FL.D52B4069.Up2Date
 C:\Users\ronal\OneDrive\Documents\GitHub\API\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.dll
 C:\Users\ronal\OneDrive\Documents\GitHub\API\KREAM_ProyectoFinal\obj\Debug\KREAM_ProyectoFinal.pdb

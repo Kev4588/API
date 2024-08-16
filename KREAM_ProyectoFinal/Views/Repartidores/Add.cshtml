@@ -1,4 +1,4 @@
-﻿@model PURIS_FLASH.Models.TableViewModel.HotelesTableViewModel
+﻿@model KREAM_ProyectoFinal.Models.TableViewModel.RepartidoresTableViewModel
 @{
     ViewBag.Title = "Agregar Nuevo Repartidor";
 }
@@ -66,24 +66,18 @@
 <h2>Agregar Nuevo Repartidor</h2>
 
 <div class="container-add">
-    @using (Html.BeginForm("Add", "Hoteles", FormMethod.Post, new { enctype = "multipart/form-data", @class = "row g-3" }))
+    @using (Html.BeginForm("Add", "Repartidores", FormMethod.Post, new { enctype = "multipart/form-data", @class = "row g-3" }))
     {
-        <!-- Campos del formulario -->
+        <!-- Campo para el nombre del repartidor -->
         <div class="col-md-6">
-            @Html.LabelFor(model => model.NombreHotel, htmlAttributes: new { @class = "form-label" })
-            @Html.EditorFor(model => model.NombreHotel, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.NombreHotel, "", new { @class = "text-danger" })
+            @Html.LabelFor(model => model.NombreRepartidor, htmlAttributes: new { @class = "form-label" })
+            @Html.EditorFor(model => model.NombreRepartidor, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NombreRepartidor, "", new { @class = "text-danger" })
         </div>
 
-        <!-- Otros campos del formulario -->
-
-
-
-        <!-- Otros campos del formulario -->
-
-
+        <!-- Campo para el tipo de transporte del repartidor -->
         <div class="col-md-6">
-            @Html.LabelFor(model => model.TipoDeHabitacion, htmlAttributes: new { @class = "form-label" })
+            @Html.LabelFor(model => model.TipoDeTransporte, htmlAttributes: new { @class = "form-label" })
             <select id="TransporteDropdown" name="TipoDeTransporte" class="form-control" data-val="true" data-val-required="La selección de transporte es obligatoria.">
                 <option value="" selected>-- Tipo de Transporte --</option>
                 <option value="Bicicleta">Bicicleta</option>
@@ -91,20 +85,17 @@
                 <option value="Automóvil">Automóvil</option>
                 <option value="Camion">Camion</option>
             </select>
-            @Html.ValidationMessageFor(model => model.TipoDeHabitacion, "", new { @class = "text-danger" })
+            @Html.ValidationMessageFor(model => model.TipoDeTransporte, "", new { @class = "text-danger" })
         </div>
 
-
-        <!-- Otros campos del formulario -->
-
+        <!-- Campo para la descripción del repartidor -->
         <div class="col-md-6">
             @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "form-label" })
             @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
         </div>
 
-
-        <!-- IMAGENES -->
+        <!-- Campos para las imágenes del repartidor -->
         <div class="col-md-6">
             @Html.LabelFor(model => model.Imagen, "Imagen")
             <input type="file" name="ImagenFile" id="ImagenFile" class="form-control" onchange="previewImage(this, 'previewImagen')" />
@@ -123,14 +114,17 @@
             <img id="previewImagen3" style="max-width: 200px; max-height: 200px; margin-top: 10px;" />
         </div>
 
+        <!-- Botones de acción -->
         <div class="col-12 mt-4">
             <input type="submit" value="Agregar" class="btn btn-primary" />
-            <input type="button" class="btn btn-outline-danger ms-2" value="Regresar" onclick="document.location.href = '@Url.Content("~/Hoteles/MostrarInformacion")'" />
+            <input type="button" class="btn btn-outline-danger ms-2" value="Regresar" onclick="document.location.href = '@Url.Content("~/Repartidores/MostrarInformacion")'" />
         </div>
     }
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+    // Función para mostrar una vista previa de la imagen seleccionada
     function previewImage(input, previewId) {
         var preview = document.getElementById(previewId);
         var file = input.files[0];
