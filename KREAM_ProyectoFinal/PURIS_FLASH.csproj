@@ -259,7 +259,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Register\Create.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
@@ -273,24 +272,17 @@
     <Content Include="Views\Comprador\Index.cshtml" />
     <Content Include="Views\Producto\Index.cshtml" />
     <Content Include="Views\Producto\MostrarInformacion.cshtml" />
-    <Content Include="Views\Buses\About.cshtml" />
-    <Content Include="Views\Buses\Contact.cshtml" />
-    <Content Include="Views\Buses\Index.cshtml" />
-    <Content Include="Views\Actividades\About.cshtml" />
-    <Content Include="Views\Actividades\Contact.cshtml" />
-    <Content Include="Views\Actividades\Index.cshtml" />
     <Content Include="Views\Login\recuperaContrasena.cshtml" />
     <Content Include="Views\Carrito\PasarelaPago.cshtml" />
-    <Content Include="Views\Producto\MostrarInformacionHoteles.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\Repartidores\MostrarInformacion.cshtml" />
     <Content Include="Views\Repartidores\Add.cshtml" />
     <Content Include="Views\Repartidores\Edit.cshtml" />
+    <Content Include="Views\Repartidores\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

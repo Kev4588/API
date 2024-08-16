@@ -1,0 +1,526 @@
+﻿﻿
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Hoteles</title>
+
+
+    <style>
+
+        .card-body {
+            flex: 1 1 auto;
+            padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+            color: var(--bs-card-color);
+            height: 680px;
+        }
+
+
+        .carousel-item {
+            text-align: center;
+            overflow: hidden;
+        }
+
+            .carousel-item img {
+                max-height: 300px;
+                width: 100%;
+                object-fit: cover;
+            }
+
+        .carousel-indicators {
+            bottom: 10px;
+        }
+
+            .carousel-indicators button {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+            }
+
+            .carousel-indicators [data-bs-target] {
+                box-sizing: content-box;
+                flex: 0 1 auto;
+                width: 12px;
+                height: 18px;
+                padding: 0;
+                margin-right: 3px;
+                margin-left: 3px;
+                text-indent: -999px;
+                cursor: pointer;
+                background-color: #fff;
+                background-clip: padding-box;
+                border: 0;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                transition: opacity 0.6s ease;
+            }
+
+
+
+
+
+
+
+
+        /*Lo que sigue controla que todas las imagenes tengan el mismo tamaño y un width ya heredado de 100%*/
+        .img-container {
+            height: 232px; /* Altura deseada */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ddd; /* Color de fondo si no hay imagen */
+        }
+
+        .img-fluid {
+            height: 232px;
+            object-fit: cover;
+        }
+
+        button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
+            cursor: pointer;
+            opacity: 1;
+        }
+
+        /* Contenedor de filtros sticky */
+        .contenedor-filtros {
+            justify-content: center;
+            display: flex;
+            color: white;
+            align-items: center;
+            padding: 30px;
+            width: 100%; /* Cambiar a 100% para ocupar todo el espacio disponible */
+            margin: auto;
+            /*background: #c32424;*/
+            position: sticky; /* Para que sea sticky */
+            top: 20px; /* Se queda fijo cuando llegas a 20px del top */
+            z-index: 1000; /* Asegura que esté sobre otros elementos */
+        }
+
+            /* Alineación de los filtros uno al lado del otro */
+            .contenedor-filtros form {
+                position: relative;
+                display: flex;
+                top: 50px;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 163px;
+                text-align: center;
+                align-items: center;
+            }
+
+            .contenedor-filtros .mb-3 {
+                flex: 1; /* Hace que cada filtro ocupe un espacio proporcional */
+                min-width: 200px; /* Establece un ancho mínimo para cada filtro */
+            }
+
+
+
+
+
+        .button-85 {
+            padding: 0.6em 2em;
+            border: none;
+            outline: none;
+            color: rgb(255, 255, 255);
+            background: #111;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+            .button-85:before {
+                content: "";
+                background: linear-gradient( 45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000 );
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                background-size: 400%;
+                z-index: -1;
+                filter: blur(5px);
+                -webkit-filter: blur(5px);
+                width: calc(100% + 4px);
+                height: calc(100% + 4px);
+                animation: glowing-button-85 20s linear infinite;
+                transition: opacity 0.3s ease-in-out;
+                border-radius: 10px;
+            }
+
+        @@keyframes glowing-button-85 {
+            0% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 400% 0;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        .button-85:after {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #222;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+
+        .button-29 {
+            align-items: center;
+            appearance: none;
+            background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+            border: 0;
+            border-radius: 6px;
+            box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: "JetBrains Mono",monospace;
+            height: 48px;
+            justify-content: center;
+            line-height: 1;
+            list-style: none;
+            overflow: hidden;
+            padding-left: 16px;
+            padding-right: 16px;
+            position: relative;
+            text-align: left;
+            text-decoration: none;
+            transition: box-shadow .15s,transform .15s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            will-change: box-shadow,transform;
+            font-size: 18px;
+        }
+
+        .sticky {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin-bottom: 90px;
+        }
+
+
+
+
+        .boton-agregar-carrito {
+            height: 31px;
+            margin-left: 5px;
+            width: 282%;
+            padding: 1px;
+        }
+
+            .boton-agregar-carrito svg {
+                width: 21px;
+                height: 20px;
+            }
+
+        .card:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transform: scale(1.02);
+            transition: all 0.3s ease;
+        }
+
+            @@font-face {
+    font-family: 'body';
+    src: url('@Url.Content("~/Content/Font/Roboto-Regular.otf")') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+        body {
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-family: 'body';
+            background-image: none;
+            background-color: black;
+            background-image: url('@Url.Content("~/Content/images/fondoBlancoDerecha.jpg")');
+            background-size: cover;
+            background-repeat: round;
+            background-attachment: fixed;
+            background-color: black;
+            position: relative;
+        }
+
+   .body-content {
+       min-width: 100%;
+       margin-top: 15px;
+   }
+
+   /*------ NUEVO ESTILO DE CARD ------------ */
+
+    .card {
+
+        height: 100%;
+        background: #171717;
+        transition: 1s ease-in-out;
+        clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-title, .card-text {
+        font-weight: bold;
+        color: white;
+        text-align: center;
+    }
+
+    .card-text {
+        /* font-weight: 400; */
+        font-size: 0.89em;
+        margin: 1em;
+    }
+
+    .card-img {
+        width: 4.8em;
+
+        background: white;
+        border-radius: 15px;
+        margin: auto;
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+        margin-top: 1em;
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+    }
+
+    .card a {
+        color: white;
+        transition: .4s ease-in-out;
+    }
+
+        .card a:hover {
+            color: red;
+        }
+
+    .card button {
+        padding: 0.8em 1.7em;
+        display: block;
+        margin: auto;
+        border-radius: 25px;
+        border: none;
+        font-weight: bold;
+        /*background: #ffffff;
+
+         color: rgb(0, 0, 0);*/
+        transition: .4s ease-in-out;
+    }
+
+
+
+
+    .carousel {
+        background-color: white;
+
+        position: relative;
+    }
+
+
+    .banner {
+        display: flex;
+        position: absolute;
+        top: -36px;
+        height: 152%;
+        left: -137px;
+        z-index: -1;
+        width: 115%;
+        border-radius: 391px 661px 600px 0px;
+        opacity: 0; /* Inicialmente invisible */
+        transform: translateX(-100%); /* Empieza fuera de la pantalla a la izquierda */
+        animation: slideInBanner 1s forwards; /* Aplica la animación */
+    }
+
+    @@keyframes slideInBanner {
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Mueve el banner a su posición original */
+    }
+}
+
+
+
+    /* Oculta el formulario por defecto mientras que sale el banner rojo */
+    .hidden-form {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    /* Muestra el formulario con una transición suave */
+    .visible-form {
+        opacity: 1;
+    }
+
+
+
+    .cinto-rojo {
+        margin-left: 40px!important;
+    }
+
+
+
+    .alineaCards {
+        margin-left: 81px;
+    }
+
+
+
+
+
+
+
+
+
+        }
+    </style>
+
+</head>
+<body>
+
+    <main>
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Filtros en el lado izquierdo -->
+
+                <div class="col-lg-12 mb-12 sticky  cinto-rojo">
+
+                    <div class="contenedor-filtros">
+                        <h3>REPARTIDORES PURIS FLASH</h3>
+
+                        <div class="banner">
+
+                            <img src="@Url.Content("~/Content/images/BANNER.png")" class="banner">
+                        </div>
+
+                        <form method="get" action="@Url.Action("Index", "Repartidores")">
+                            <!-- Nombre -->
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre del Repartidor:</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Cualquiera" value=@ViewBag.NombreHotelSeleccionado>
+                            </div>
+
+                            <!-- Tipo de Transporte -->
+                            <div class="mb-3">
+                                <label for="tipoDeTransporte" class="form-label">Tipo de Transporte:</label>
+                                <select class="form-select" id="tipoDeTransporte" name="tipoDeTransporte">
+                                    <option value="">Cualquier Transporte</option>
+                                    @foreach (var tipoDeTransporte in ViewBag.Categoria as SelectList)
+                                    {
+                                        <option value="@tipoDeTransporte.Value" @(tipoDeTransporte.Text == ViewBag.tipoDeTransporteSeleccionado ? "selected" : "")>@tipoDeTransporte.Text</option>
+                                    }
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-success">Buscar</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contenido de repartidores en el lado derecho -->
+                <div class="col-lg-12 alineaCards ">
+                    <div class="row">
+                        @foreach (var repartidor in Model)
+                        {
+                            <div class="col-md-4 col-lg-4 mb-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title" style="height: 37px !important">@repartidor.NombreRepartidor</h5>
+
+                                        <p class="card-text" style="height:35px !important">@repartidor.TipoDeTransporte</p>
+
+                                        <p style="color:white;">@repartidor.Descripcion</p>
+
+                                        <div id="carouselRepartidor@(repartidor.IDRepartidor)" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
+                                            <div class="carousel-inner">
+                                                @for (int i = 0; i < 3; i++)
+                                                {
+                                                    <div class="carousel-item @(i == 0 ? "active" : "")">
+                                                        @if (i == 0 && repartidor.Imagen != null && repartidor.Imagen.Length > 0)
+                                                        {
+                                                            <img src="data:image/png;base64,@Convert.ToBase64String(repartidor.Imagen)" alt="Imagen del Transporte" class="img-fluid" />
+                                                        }
+                                                        @if (i == 0 && (repartidor.Imagen == null || repartidor.Imagen.Length == 0))
+                                                        {
+                                                            <div style="height: 232px;  display: flex; justify-content: center; align-items: center;">
+                                                                <p style="font-size: x-large; color: #0d6efd;">Sin Imagen [@i]</p>
+                                                            </div>
+                                                        }
+                                                        @if (i == 1 && repartidor.Imagen2 != null && repartidor.Imagen2.Length > 0)
+                                                        {
+                                                            <img src="data:image/png;base64,@Convert.ToBase64String(repartidor.Imagen2)" alt="Segunda Imagen del Transporte" class="img-fluid" />
+                                                        }
+                                                        @if (i == 1 && (repartidor.Imagen2 == null || repartidor.Imagen2.Length == 0))
+                                                        {
+                                                            <div style="height: 232px; display: flex; justify-content: center; align-items: center;">
+                                                                <p style="font-size: x-large; color: #0d6efd;">Sin Imagen [@i]</p>
+                                                            </div>
+                                                        }
+                                                        @if (i == 2 && repartidor.Imagen3 != null && repartidor.Imagen3.Length > 0)
+                                                        {
+                                                            <img src="data:image/png;base64,@Convert.ToBase64String(repartidor.Imagen3)" alt="Tercera Imagen del Transporte" class="img-fluid" />
+                                                        }
+                                                        @if (i == 2 && (repartidor.Imagen3 == null || repartidor.Imagen3.Length == 0))
+                                                        {
+                                                            <div style="height: 232px; display: flex; justify-content: center; align-items: center;">
+                                                                <p style="font-size: x-large; color: #0d6efd;">Sin Imagen [@i]</p>
+                                                            </div>
+                                                        }
+                                                    </div>
+                                                }
+                                            </div>
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselRepartidor@(repartidor.IDRepartidor)" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button" data-bs-target="#carouselRepartidor@(repartidor.IDRepartidor)" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
+                                        </div>
+                                        <div class="mt-3 text-end">
+                                            <p style="text-align: center;">
+                                                <a href="https://api.whatsapp.com/send?phone=83046213&text=Hola%20estoy%20interesado%20en%20más%20información" target="_blank">
+                                                    <img src="/Content/Images/whatsapp-icon.png" alt="WhatsApp" style="width: 100px; height: auto;" />
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <a href="@Url.Action("Index", "Home")" class="btn btn-success">Regresar al menú principal</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        function MostrarInformacion(IDRepartidor) {
+            // Redirige al controlador con el ID del repartidor como parámetro
+            window.location.href = '/Repartidores/MostrarInformacion?IDRepartidor=' + IDRepartidor;
+        }
+    </script>
+
+</body>
+</html>
