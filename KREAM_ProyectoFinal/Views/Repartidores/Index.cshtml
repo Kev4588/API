@@ -384,7 +384,34 @@
 
 
 
+        /* Base styles for buttons */
+        .buscar-btn {
+            background-color: #EDF2F4;
+            border-color: #8D99AE;
+            color: black;
+            transition: all 0.3s ease-in-out;
+        }
 
+            /* Hover effect for buttons */
+            .buscar-btn:hover {
+                background-color: #8D99AE;
+                color: white;
+                border-color: #EDF2F4;
+            }
+
+        .volver-btn {
+            background-color: #8D99AE;
+            border-color: #8D99AE;
+            color: black;
+            transition: all 0.3s ease-in-out;
+        }
+
+            .volver-btn:hover {
+                background-color: #818da2;
+                border-color: #818da2;
+                color: black;
+                transition: all 0.3s ease-in-out;
+            }
 
 
 
@@ -430,7 +457,7 @@
                                 </select>
                             </div>
 
-                            <button type="submit" class="btn btn-success">Buscar</button>
+                            <button type="submit" class="btn btn-success buscar-btn">Buscar</button>
                         </form>
                     </div>
                 </div>
@@ -508,7 +535,7 @@
                             </div>
                         }
                     </div>
-                    <a href="@Url.Action("Index", "Home")" class="btn btn-success">Regresar al menú principal</a>
+                    <a href="@Url.Action("Index", "Home")" class="btn btn-success volver-btn">Regresar al menú principal</a>
                 </div>
             </div>
         </div>

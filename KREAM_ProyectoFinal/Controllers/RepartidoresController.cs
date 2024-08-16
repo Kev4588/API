@@ -61,7 +61,7 @@ namespace PURIS_FLASH.Controllers
 
                 // Obtener la lista de tipos de transporte distintos de la base de datos.
                 var transportes = db.Repartidores.Select(r => r.TipoDeTransporte).Distinct().ToList();
-                ViewBag.TipoDeTransporte = new SelectList(transportes);
+                ViewBag.Categoria = new SelectList(transportes);
 
                 // Pasa el tipo de transporte seleccionado a la vista.
                 ViewBag.TipoDeTransporteSeleccionado = transporte;
@@ -113,9 +113,9 @@ namespace PURIS_FLASH.Controllers
                     query = query.Where(r => r.NombreRepartidor.Contains(NombreRepartidor));
                 }
 
-                // Filtrar por tipo de transporte si se proporciona.
+                // Obtener la lista de tipos de transporte distintos de la base de datos.
                 var transportes = db.Repartidores.Select(r => r.TipoDeTransporte).Distinct().ToList();
-                ViewBag.TipoDeTransporte = new SelectList(transportes);
+                ViewBag.Categoria = new SelectList(transportes);
 
                 // Pasa los parámetros seleccionados a la vista.
                 ViewBag.TipoDeTransporteSeleccionado = tipoDeTransporte;
@@ -135,6 +135,13 @@ namespace PURIS_FLASH.Controllers
         [HttpGet]
         public ActionResult Add()
         {
+            // Establecer el ViewBag.Categoria con tipos de transporte antes de cargar la vista.
+            using (var db = new TRAVEL2Entities())
+            {
+                var transportes = db.Repartidores.Select(r => r.TipoDeTransporte).Distinct().ToList();
+                ViewBag.Categoria = new SelectList(transportes);
+            }
+
             return View();
         }
 
@@ -144,7 +151,17 @@ namespace PURIS_FLASH.Controllers
         public ActionResult Add(RepartidoresTableViewModel model, HttpPostedFileBase ImagenFile, HttpPostedFileBase ImagenFile2, HttpPostedFileBase ImagenFile3)
         {
             // Si el modelo no es válido, devuelve la vista con el modelo actual.
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                // Reestablecer ViewBag.Categoria antes de devolver la vista.
+                using (var db = new TRAVEL2Entities())
+                {
+                    var transportes = db.Repartidores.Select(r => r.TipoDeTransporte).Distinct().ToList();
+                    ViewBag.Categoria = new SelectList(transportes);
+                }
+
+                return View(model);
+            }
 
             // Usa la base de datos para agregar el nuevo repartidor.
             using (var db = new TRAVEL2Entities())
@@ -206,7 +223,6 @@ namespace PURIS_FLASH.Controllers
         [HttpGet]
         public ActionResult Edit(int IDRepartidor)
         {
-            // Usa la base de datos para buscar el repartidor por su ID.
             using (var db = new TRAVEL2Entities())
             {
                 var repartidor = db.Repartidores.Find(IDRepartidor);
@@ -220,9 +236,14 @@ namespace PURIS_FLASH.Controllers
                     return RedirectToAction("MostrarInformacion");
                 }
 
+                // Obtener la lista de tipos de transporte distintos de la base de datos.
+                var transportes = db.Repartidores.Select(r => r.TipoDeTransporte).Distinct().ToList();
+                ViewBag.Categoria = new SelectList(transportes);
+
                 // Crea un modelo de vista con los datos del repartidor.
                 var model = new RepartidoresTableViewModel
                 {
+                    IDRepartidor = repartidor.IDRepartidor,
                     NombreRepartidor = repartidor.NombreRepartidor,
                     TipoDeTransporte = repartidor.TipoDeTransporte,
                     Descripcion = repartidor.Descripcion,
@@ -242,7 +263,15 @@ namespace PURIS_FLASH.Controllers
         public ActionResult Edit(RepartidoresTableViewModel model, HttpPostedFileBase NuevaImagen, HttpPostedFileBase NuevaImagen2, HttpPostedFileBase NuevaImagen3, string action)
         {
             // Si el modelo no es válido, devuelve la vista con el modelo actual.
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                using (var db = new TRAVEL2Entities())
+                {
+                    var transportes = db.Repartidores.Select(r => r.TipoDeTransporte).Distinct().ToList();
+                    ViewBag.Categoria = new SelectList(transportes);
+                }
+                return View(model);
+            }
 
             // Usa la base de datos para actualizar los datos del repartidor.
             using (var db = new TRAVEL2Entities())
