@@ -100,7 +100,7 @@ En cuanto a los usuarios, la base de datos se encarga de almacenar la cédula, e
 
 En caso de que un producto estuviese agotado, se le indicará al usuario que el mismo no está disponible. Se podrá acceder al producto, pero no se podrá agregar al carrito.
 
-**-insertar imagen producto agotado-**
+![](imgs/agotado.PNG)
 
 
 **2.3. Filtro de categoría:**  En la página donde podemos ver los productos, hay un cuadro en el que podemos elegir ver los productos según su categoría. De igual manera, podemos filtrar los productos según su precio máximo y el lugar en el que se venden los mismos. Al elegir los filtros y darle al botón "Buscar", se deberían de ver solo los productos que cumplan con los criterios del filtro.
@@ -117,11 +117,11 @@ En la página principal donde se pueden observar todos los productos, se puede v
 
 Al presionar este botón, podemos ver todos los repartidores disponibles en nuestro sitio web, tanto sus nombres como el tipo de transporte que manejan los mismos. Igualmente, podemos observar un botón de "WhatsApp" debajo de cada repartidor, esto por si un cliente quiere comunicarse con su repartidor encargado de la entrega de su producto.
 
-**-insertar imagen pagina Repartidores-**
+![](imgs/r1.PNG)
 
 Al igual que con la página de productos, contamos con un filtro en el cual podemos buscar el nombre del repartidor que queramos al igual que el tipo de transporte, esto para poder ver solo los conductores con cierto nombre, y su respectivo vehículo.
 
-**-insertar imagen filtro repartidores-**
+![](imgs/r2.PNG)
 
 #### 4. Carrito:
 
@@ -129,29 +129,29 @@ En todas las páginas, se puede acceder al carrito en la parte superior derecha 
 
 ![](imgs/btnCarr.PNG)
 
-En la página del carrito podemos ver los productos que hemos seleccionado anteriormente, junto con la cantidad seleccionada y el precio unitario. También podemos observar el precio total de todos los productos seleccionados.
+En la página del carrito podemos ver los productos que hemos seleccionado anteriormente, junto con la cantidad seleccionada y el precio unitario. También podemos observar el precio total de todos los productos seleccionados. Igualmente se puede ver el nombre del repartidor asignado, junto con su vehículo respectivo, esto dependiendo de la cantidad de productos ordenados por el cliente.
 
-**-insertar imagen pagina carrito-**
+![](imgs/c1.PNG)
 
 En caso de querer quitar un producto del carrito, contamos con un botón "Quitar".
 
-**-insertar imagen boton Quitar-**
+![](imgs/cQuitar.PNG)
 
 Al estar seguro de los productos que se quieren adquirir, presionar el botón de "Comprar".
 
-**-insertar imagen boton Comprar-**
+![](imgs/cComprar.PNG)
 
 #### 5. Comprar producto:
 
 Para finalizar la compra de los productos que se quieran adquirir, insertar la información de la tarjeta como el número, el nombre, la fecha de expiración y el CVV. Para finalizar presionar el botón de "Pagar".
 
-**-insertar imagen pagina Pago-**
+![](imgs/pago.PNG)
 
 Al presionar el botón de "Pagar", saldrá un anuncio de "Procesando pago", y seguido de esto, se mostrará que el pago fue exitoso.
 
-**-insertar imagen procesando pago-**
+![](imgs/pago2.PNG)
 
-**-insertar imagen pago exitoso-**
+![](imgs/pago3.PNG)
 
 Al realizar el pago de un producto, se regresará al menú principal, donde se podrá observar que la cantidad de productos (según los productos adquiridos) fueron actualizados.
 
