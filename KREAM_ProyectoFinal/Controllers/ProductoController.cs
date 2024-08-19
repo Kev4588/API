@@ -9,31 +9,33 @@ using System.Web;
 using System.Web.Mvc;
 using KREAM_ProyectoFinal.Models;
 
-
 namespace PURIS_FLASH.Controllers
 {
+    // Atributo que verifica si hay una sesión activa antes de permitir el acceso al controlador.
     [VerificarSesion]
     public class ProductoController : Controller
     {
-        // GET: Producto
+        // Acción que maneja la vista principal del producto (actualmente solo devuelve la vista).
         public ActionResult Index()
-        { 
+        {
             return View();
         }
 
+        // Acción GET que muestra la información detallada de un producto específico.
         [HttpGet]
         public ActionResult MostrarInformacion(int Id)
         {
+            // Inicializa un modelo para pasar los datos del producto a la vista.
             ProductosViewModel model = new ProductosViewModel();
+
+            // Usa la base de datos para buscar el producto por su ID.
             using (var db = new TRAVEL2Entities())
             {
                 var productTO = db.Productos.Find(Id);
 
-                model.Nombre = productTO.Nombre; 
-
+                // Mapea los datos del producto al modelo.
+                model.Nombre = productTO.Nombre;
                 model.ProductoID = productTO.ProductoID;
-
-
                 model.Lugar = productTO.Lugar;
                 model.Descripcion = productTO.Descripcion;
                 model.Precio = (decimal)productTO.Precio;
@@ -47,41 +49,35 @@ namespace PURIS_FLASH.Controllers
                 model.Imagen = productTO.Imagen;
                 model.Imagen2 = productTO.Imagen2;
                 model.Imagen3 = productTO.Imagen3;
+
+                // Guarda el nombre del producto en un ViewBag para usarlo en la vista.
                 ViewBag.Nombre = productTO.Nombre;
-
-                
-                
-
             }
+
+            // Devuelve la vista con el modelo de producto.
             return View(model);
         }
 
-        [HttpPost]      
+        // Acción POST que maneja la lógica para guardar un comentario sobre un producto.
+        [HttpPost]
         public ActionResult MostrarInformacion(int idProducto, string comentario)
         {
+            // Usa la base de datos para guardar el comentario.
             using (var db = new TRAVEL2Entities())
             {
+                // Recupera el usuario actual desde la sesión.
                 var usuario = Session["UsuarioActual"] as UsersTableViewModel;
 
+                // Ejecuta un procedimiento almacenado para guardar el comentario del usuario sobre el producto.
                 int v = db.Database.ExecuteSqlCommand(
-                    "EXEC GuardarComentario @IdProducto, @Comentario",                    
+                    "EXEC GuardarComentario @IdProducto, @Comentario",
                     new SqlParameter("@IdProducto", idProducto),
                     new SqlParameter("@Comentario", comentario)
                 );
-
             }
+
+            // Redirige a la vista de mostrar información del producto para actualizar la vista con el nuevo comentario.
             return RedirectToAction("MostrarInformacion", new { Id = idProducto });
-
         }
-
-
-
-
-
-
-
-
     }
 }
-
-

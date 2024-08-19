@@ -24,7 +24,5 @@ namespace PURIS_FLASH.Models.ViewModel
         public byte[] Imagen { get; set; }
         public byte[] Imagen2 { get; set; }
         public byte[] Imagen3 { get; set; }
-
-        public List<Comentarios> Comentarios { get; set; }
     }
 }

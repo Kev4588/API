@@ -447,23 +447,28 @@
                             if (ViewBag.TipoUsuario == 1) // ADMIN
                             {
                                 <div class="nav-item-container">
-                                        <li class="nav-item">
-                                            <i class='bx bx-edit'></i>@Html.ActionLink("Repartidores", "MostrarInformacion", "Hoteles", new { area = "" }, new { @class = "nav-link" })
-                                        </li>
-                                        <li class="nav-item">
-                                            <i class='bx bx-edit'></i>@Html.ActionLink("Productos", "Index", "Vendedor", new { area = "" }, new { @class = "nav-link" })
-                                        </li>
-                                        <li class="nav-item">
-                                            <i class='bx bx-edit'></i>@Html.ActionLink("Usuarios", "Index", "Admin", new { area = "" }, new { @class = "nav-link" })
-                                        </li>
+                                    <li class="nav-item">
+                                        <i class='bx bx-edit'></i>@Html.ActionLink("Repartidores", "MostrarInformacion", "Repartidores", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        <i class='bx bx-edit'></i>@Html.ActionLink("Productos", "Index", "Vendedor", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        <i class='bx bx-edit'></i>@Html.ActionLink("Usuarios", "Index", "Admin", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
                                 </div>
-                            }  
+                            }
                             else if (ViewBag.TipoUsuario == 2) // COMPRADOR
                             {
-                                <li><i class='bx bx-car'></i>@Html.ActionLink("Repartidores", "Index", "Hoteles", new { area = "" }, new { @class = "nav-link" })</li>
+                                <li class="nav-item">
+                                    <i class='bx bx-car'></i>@Html.ActionLink("Repartidores", "Index", "Repartidores", new { area = "" }, new { @class = "nav-link" })
+                                </li>
                             }
+
                          }
-                    </ul>
+
+                        </ul>
+
 
 
                         @if (Session["UsuarioActual"] != null)

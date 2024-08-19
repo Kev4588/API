@@ -122,24 +122,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ActividadesController.cs" />
-    <Compile Include="Controllers\HotelesController.cs" />
     <Compile Include="Controllers\CarritoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\CompradorController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\RepartidoresController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\VendedorController.cs" />
     <Compile Include="Filters\VerificarSesion.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Comentarios.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Hoteles.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -159,7 +153,10 @@
     <Compile Include="Models\Productos.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\TableViewModel\HotelesTableViewModel.cs" />
+    <Compile Include="Models\Repartidores.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TableViewModel\RepartidoresTableViewModel.cs" />
     <Compile Include="Models\TableViewModel\UsersTableViewModel.cs" />
     <Compile Include="Models\TableViewModel\ProductosTableViewModel.cs" />
     <Compile Include="Models\Users.cs">
@@ -180,7 +177,6 @@
     <Compile Include="Models\VerifyUser_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ViewModel\HotelesViewModel.cs" />
     <Compile Include="Models\ViewModel\ProductosViewModel.cs" />
     <Compile Include="Models\ViewModel\UsersViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -263,7 +259,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Register\Create.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
@@ -277,26 +272,17 @@
     <Content Include="Views\Comprador\Index.cshtml" />
     <Content Include="Views\Producto\Index.cshtml" />
     <Content Include="Views\Producto\MostrarInformacion.cshtml" />
-    <Content Include="Views\Buses\About.cshtml" />
-    <Content Include="Views\Buses\Contact.cshtml" />
-    <Content Include="Views\Buses\Index.cshtml" />
-    <Content Include="Views\Hoteles\Index.cshtml" />
-    <Content Include="Views\Actividades\About.cshtml" />
-    <Content Include="Views\Actividades\Contact.cshtml" />
-    <Content Include="Views\Actividades\Index.cshtml" />
-    <Content Include="Views\Hoteles\MostrarInformacion.cshtml" />
-    <Content Include="Views\Hoteles\AdminHoteles.cshtml" />
-    <Content Include="Views\Hoteles\Add.cshtml" />
-    <Content Include="Views\Hoteles\Edit.cshtml" />
     <Content Include="Views\Login\recuperaContrasena.cshtml" />
     <Content Include="Views\Carrito\PasarelaPago.cshtml" />
-    <Content Include="Views\Producto\MostrarInformacionHoteles.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\Repartidores\MostrarInformacion.cshtml" />
+    <Content Include="Views\Repartidores\Add.cshtml" />
+    <Content Include="Views\Repartidores\Edit.cshtml" />
+    <Content Include="Views\Repartidores\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
