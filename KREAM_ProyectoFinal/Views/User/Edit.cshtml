@@ -16,11 +16,6 @@
     font-style: normal;
 }
 
-
-
-
-
-
     body {
         margin: 0;
         padding: 0;
@@ -56,84 +51,87 @@
 
 
 </style>
+<h2>Usuario: @ViewBag.Nombre</h2>
 
-    <h2>Usuario: @ViewBag.Nombre  </h2>
+@* // Muestra un mensaje de éxito si existe en ViewBag.Message *@
+@if (!string.IsNullOrEmpty(ViewBag.Message))
+{
+    <div class="alert alert-success">
+        @ViewBag.Message
+    </div>
+}
 
-    @if (!string.IsNullOrEmpty(ViewBag.Message))
+@* // Contenedor principal del formulario *@
+<div class="container mt-4 formContainer">
+
+    @* // Formulario para editar la información del usuario *@
+    @using (Html.BeginForm("Edit", "User", FormMethod.Post, new { role = "form", @class = "" }))
     {
-        <div class="alert alert-success">
-            @ViewBag.Message
+        @Html.AntiForgeryToken()
+
+        @* // Campo oculto para el ID del usuario (necesario para la edición) *@
+        @Html.HiddenFor(model => model.Id)
+
+        @* // editar la cédula *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Cedula, htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(model => model.Cedula, new { htmlAttributes = new { @class = "form-control", type = "text", pattern = "[0-9]*", title = "Ingrese solo números" } })
+            @Html.ValidationMessageFor(model => model.Cedula, "", new { @class = "text-danger" })
+        </div>
+
+        @* // editar el nombre *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+        </div>
+
+        @* // apellido *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.PrimerApellido, htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(model => model.PrimerApellido, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PrimerApellido, "", new { @class = "text-danger" })
+        </div>
+
+        @* // editar el segundo apellido *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.SegundoApellido, htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(model => model.SegundoApellido, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.SegundoApellido, "", new { @class = "text-danger" })
+        </div>
+
+        @* // editar la edad *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Edad, htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(model => model.Edad, new { htmlAttributes = new { @class = "form-control", type = "text", pattern = "[0-9]*", title = "Ingrese solo números" } })
+            @Html.ValidationMessageFor(model => model.Edad, "", new { @class = "text-danger" })
+        </div>
+
+        @* // teléfono *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Telefono, htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(model => model.Telefono, new { htmlAttributes = new { @class = "form-control", type = "text", pattern = "[0-9]*", title = "Ingrese solo números" } })
+            @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
+        </div>
+
+        @* // editar el correo *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Correo, htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(model => model.Correo, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Correo, "", new { @class = "text-danger" })
+        </div>
+
+        @* // editar la dirección *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Direccion, htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Direccion, "", new { @class = "text-danger" })
+        </div>
+
+        @* // Botones para actualizar o regresar *@
+        <div class="mt-2">
+            <input type="submit" class="btn btn-info" value="Actualizar" />
+            <input type="button" class="btn btn-outline-danger" value="Regresar" onclick="document.location.href = '@Url.Content("~/Home/Index")'" />
         </div>
     }
-
-    <div class="container mt-4 formContainer">
-
-        @using (Html.BeginForm("Edit", "User", FormMethod.Post, new { role = "form", @class = "" }))
-        {
-
-            @Html.AntiForgeryToken()
-
-            <!--  IMPORTANTE: Sin este campo no se jala bien el ID y fallaria a la hora de querer editar el valor del usuario asegurarnos de incluirlo siempre   -->
-            @Html.HiddenFor(model => model.Id)
-            <!--  IMPORTANTE: Sin este campo no se jala bien el ID y fallaria a la hora de querer editar el valor del usuario asegurarnos de incluirlo siempre   -->
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Cedula, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.Cedula, new { htmlAttributes = new { @class = "form-control", type = "text", pattern = "[0-9]*", title = "Ingrese solo números" } })
-                @Html.ValidationMessageFor(model => model.Cedula, "", new { @class = "text-danger" })
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.PrimerApellido, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.PrimerApellido, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PrimerApellido, "", new { @class = "text-danger" })
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.SegundoApellido, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.SegundoApellido, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SegundoApellido, "", new { @class = "text-danger" })
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Edad, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.Edad, new { htmlAttributes = new { @class = "form-control", type = "text", pattern = "[0-9]*", title = "Ingrese solo números" } })
-                @Html.ValidationMessageFor(model => model.Edad, "", new { @class = "text-danger" })
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Telefono, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.Telefono, new { htmlAttributes = new { @class = "form-control", type = "text", pattern = "[0-9]*", title = "Ingrese solo números" } })
-                @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Correo, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.Correo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Correo, "", new { @class = "text-danger" })
-            </div>
-
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Direccion, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Direccion, "", new { @class = "text-danger" })
-            </div>
-
-
-
-            <div class="mt-2">
-                <input type="submit" class="btn btn-info" value="Actualizar" />
-                <input type="button" class="btn btn-outline-danger" value="Regresar" onclick="document.location.href = '@Url.Content("~/Home/Index")'" />
-            </div>
-
-        }
-    </div>
-
-
+</div>

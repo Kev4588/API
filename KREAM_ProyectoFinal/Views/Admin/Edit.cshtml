@@ -1,53 +1,58 @@
 ﻿@model PURIS_FLASH.Models.ViewModel.UsersViewModel
 
 @{
+    // Título de la página
     ViewBag.Title = "Editar Usuarios";
 }
-
 
 <h2>Usuario: @ViewBag.Nombre  </h2>
 
 <div class="container mt-4">
 
-    @using (Html.BeginForm("Edit", "Admin", FormMethod.Post, new { role = "form", @class = "" }))
+    @using (Html.BeginForm("Edit", "Admin", FormMethod.Post, new { role = "form" }))
     {
 
         @Html.AntiForgeryToken()
 
-        <!--  IMPORTANTE: Sin este campo no se jala bien el ID y fallaria a la hora de querer editar el valor del articulo asegurarnos de incluirlo siempre   -->
+        @* // Campo oculto para el ID, necesario para editar *@
         @Html.HiddenFor(model => model.Id)
 
-
+        @* // Cedula *@
         <div class="form-group">
             @Html.LabelFor(model => model.Cedula, htmlAttributes: new { @class = "control-label" })
             @Html.EditorFor(model => model.Cedula, new { htmlAttributes = new { @class = "form-control", type = "text", pattern = "[0-9]*", title = "Ingrese solo números" } })
             @Html.ValidationMessageFor(model => model.Cedula, "", new { @class = "text-danger" })
         </div>
 
+        @* // Nombre *@
         <div class="form-group">
             @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label" })
             @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
         </div>
 
+        @* // Primer Apellido *@
         <div class="form-group">
             @Html.LabelFor(model => model.PrimerApellido, htmlAttributes: new { @class = "control-label" })
             @Html.EditorFor(model => model.PrimerApellido, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.PrimerApellido, "", new { @class = "text-danger" })
         </div>
 
+        @* // Segundo Apellido *@
         <div class="form-group">
             @Html.LabelFor(model => model.SegundoApellido, htmlAttributes: new { @class = "control-label" })
             @Html.EditorFor(model => model.SegundoApellido, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.SegundoApellido, "", new { @class = "text-danger" })
         </div>
 
+        @* // Edad *@
         <div class="form-group">
             @Html.LabelFor(model => model.Edad, htmlAttributes: new { @class = "control-label" })
             @Html.EditorFor(model => model.Edad, new { htmlAttributes = new { @class = "form-control", type = "text", pattern = "[0-9]*", title = "Ingrese solo números" } })
             @Html.ValidationMessageFor(model => model.Edad, "", new { @class = "text-danger" })
         </div>
 
+        @* // Sexo *@
         <div class="form-group">
             @Html.LabelFor(model => model.Sexo, htmlAttributes: new { @class = "control-label" })
             <select id="GenderTypeDropdown" name="Sexo" class="form-control" data-val="true" data-val-required="Genero obligatorio">
@@ -58,35 +63,31 @@
             @Html.ValidationMessageFor(model => model.Sexo, "", new { @class = "text-danger" })
         </div>
 
-
-
+        @* // Teléfono *@
         <div class="form-group">
             @Html.LabelFor(model => model.Telefono, htmlAttributes: new { @class = "control-label" })
             @Html.EditorFor(model => model.Telefono, new { htmlAttributes = new { @class = "form-control", type = "text", pattern = "[0-9]*", title = "Ingrese solo números" } })
             @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
         </div>
 
+        @* // Correo *@
         <div class="form-group">
             @Html.LabelFor(model => model.Correo, htmlAttributes: new { @class = "control-label" })
             @Html.EditorFor(model => model.Correo, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Correo, "", new { @class = "text-danger" })
         </div>
 
-
+        @* // Dirección *@
         <div class="form-group">
             @Html.LabelFor(model => model.Direccion, htmlAttributes: new { @class = "control-label" })
             @Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Direccion, "", new { @class = "text-danger" })
         </div>
 
-
-
+        // Botones para guardar los cambios o regresar a la página anterior
         <div class="mt-2">
             <input type="submit" class="btn btn-success" value="Guardar" />
             <input type="button" class="btn btn-outline-danger" value="Regresar" onclick="document.location.href = '@Url.Content("~/Admin/Index")'" />
         </div>
-
     }
 </div>
-
-

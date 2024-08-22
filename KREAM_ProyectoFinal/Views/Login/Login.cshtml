@@ -100,7 +100,7 @@
         margin-right: 36%;
         right: 39%;
         background: rgba(255, 255, 255, 0.1); /* Fondo blanco transparente para efecto glassy */
-       
+
         backdrop-filter: blur(8.5px); /* Filtro de desenfoque para el efecto glassy */
         -webkit-backdrop-filter: blur(8.5px); /* Soporte para Webkit */
         border-radius: 10px; /* Bordes redondeados */
@@ -145,7 +145,7 @@
 
         .boton-IS:hover,
         .boton-RG:hover {
-       
+
             background-color: crimson;
             color: white;
             box-shadow: 0 0 25px 10px rgb(255 0 51 / 80%);
@@ -158,7 +158,7 @@
        color: white;
        overflow: hidden;
        background-image: none;
-       background-color: black; 
+       background-color: black;
        background-image: url('@Url.Content("~/Content/images/Fondodiagonal.jpg")');
        background-size: cover;
        background-repeat: no-repeat;
@@ -184,7 +184,7 @@
         max-width: 261px;
     }
 
-    /* BOTON PARA EL LOGIN */ 
+    /* BOTON PARA EL LOGIN */
 
 
 
@@ -193,39 +193,44 @@
 </style>
 
 <div class="main-container">
-    
-        <div class="contenedor-videos" >
-            <video autoplay muted loop id="background-video1" class="animated-video1">
-                <source src="../../content/Images/puriscal.mp4" type="video/mp4">
-                Tu navegador no soporta el elemento de video.
-            </video>
 
-            <video autoplay muted loop id="background-video3" class="animated-video3">
-                <source src="../../content/Images/puriscal.mp4" type="video/mp4">
-                Tu navegador no soporta el elemento de video.
-            </video>
+    @* // Contenedor de videos de fondo *@
+    <div class="contenedor-videos">
+        <video autoplay muted loop id="background-video1" class="animated-video1">
+            <source src="../../content/Images/puriscal.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
 
-            <video autoplay muted loop id="background-video4" class="animated-video4">
-                <source src="../../content/Images/puriscal.mp4" type="video/mp4">
-                Tu navegador no soporta el elemento de video.
-            </video>
-       
+        <video autoplay muted loop id="background-video3" class="animated-video3">
+            <source src="../../content/Images/puriscal.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
 
+        <video autoplay muted loop id="background-video4" class="animated-video4">
+            <source src="../../content/Images/puriscal.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+
+        @* // Contenedor del formulario de inicio de sesión *@
         <div class="container-login">
             <div class="login-form">
+                @* // Logo de PurisFlash *@
                 <img src="@Url.Content("~/Content/images/LOGO.png")" alt="Logo PurisFlash" class="logo">
+
+                @* // Formulario de inicio de sesión *@
                 <form action="@Url.Action("Login", "Login")" method="post">
                     <h2>Iniciar sesión</h2>
                     <input type="text" id="username" name="username" class="form-control" placeholder="Nombre de usuario" required>
-                    <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required> 
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required>
 
+                    @* // Botón para ingresar *@
+                    <input type="submit" value="Ingresar" class="boton-IS">
 
-                    <input type="submit" value="Ingresar" class="boton-IS">  
-
-
-
+                    @* // Botón para redirigir a la página de registro *@
                     <button class="boton-RG" onclick="document.location.href = '@Url.Content("~/Register/Create")'">Crear cuenta</button>
                     <br>
+
+                    @* // Muestra mensaje de error si existe *@
                     <p style="color: red;">
                         @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
                         {

@@ -5,20 +5,23 @@
 }
 
 <h2 class="text-center mt-4 mb-5">Editando [ @ViewBag.RepartidorNombre ]</h2>
-
 <div class="container">
+    @* // Formulario para editar información del repartidor *@
     @using (Html.BeginForm("Edit", "Repartidores", FormMethod.Post, new { enctype = "multipart/form-data", @class = "row g-3" }))
     {
         @Html.AntiForgeryToken()
 
+        @* // Campo oculto para el ID del repartidor *@
         @Html.HiddenFor(model => model.IDRepartidor)
 
+        @* // Campo para editar el nombre del repartidor *@
         <div class="col-md-6">
             <label class="form-label">Nombre del Repartidor</label>
             @Html.EditorFor(model => model.NombreRepartidor, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.NombreRepartidor, "", new { @class = "text-danger" })
         </div>
 
+        @* // Campo para seleccionar el tipo de transporte del repartidor *@
         <div class="col-md-6">
             <label class="form-label">Tipo de Transporte</label>
             @Html.DropDownListFor(model => model.TipoDeTransporte, new List<SelectListItem>
@@ -32,18 +35,21 @@
             @Html.ValidationMessageFor(model => model.TipoDeTransporte, "", new { @class = "text-danger" })
         </div>
 
+        @* // Campo para editar el teléfono del repartidor *@
         <div class="col-md-6">
             <label class="form-label">Teléfono (max 8 dígitos)</label>
             @Html.TextBoxFor(model => model.Telefono, new { @class = "form-control", @type = "text", @pattern = "[0-9]{8}", @maxlength = "8", @inputmode = "numeric", @title = "Solo se permiten números con una longitud de 8 dígitos" })
             @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
         </div>
 
+        @* // Campo para editar la descripción del repartidor *@
         <div class="col-md-6">
             <label class="form-label">Descripción</label>
             @Html.TextAreaFor(model => model.Descripcion, new { @class = "form-control", @rows = 5 })
             @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
         </div>
 
+        @* // Campo para subir la primera imagen del repartidor *@
         <div class="col-md-6">
             <label class="form-label">Imagen 1</label>
             <input class="form-control" type="file" name="NuevaImagen" onchange="mostrarImagenCargada(this, 'Imagen', 'imagenActual', 'contenedorImagen')" />
@@ -55,6 +61,7 @@
             }
         </div>
 
+        @* // Campo para subir la segunda imagen del repartidor *@
         <div class="col-md-6 offset-6">
             <label class="form-label">Imagen 2</label>
             <input class="form-control" type="file" name="NuevaImagen2" onchange="mostrarImagenCargada(this, 'Imagen2', 'imagenActual2', 'contenedorImagen2')" />
@@ -66,6 +73,7 @@
             }
         </div>
 
+        @* // Campo para subir la tercera imagen del repartidor *@
         <div class="col-md-6 offset-6">
             <label class="form-label">Imagen 3</label>
             <input class="form-control" type="file" name="NuevaImagen3" onchange="mostrarImagenCargada(this, 'Imagen3', 'imagenActual3', 'contenedorImagen3')" />
@@ -77,12 +85,14 @@
             }
         </div>
 
+        @* // Botones para guardar los cambios o regresar *@
         <div class="col-12 mt-4">
             <button type="submit" class="btn btn-success">Guardar</button>
             <a class="btn btn-secondary ms-2" href="@Url.Content("~/Repartidores/MostrarInformacion")">Regresar</a>
         </div>
     }
 </div>
+
 
 <script>
     function mostrarImagenCargada(input, id, imagenId, contenedorId) {

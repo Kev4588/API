@@ -101,11 +101,15 @@
 </head>
 <body>
 
+    @* // Detalles del producto *@
     <div class="product-details">
         <h1 style="text-align: center;">@Html.DisplayFor(model => model.Nombre)</h1>
 
+        @* // Carrusel de imágenes del producto *@
         <div class="product-images">
             <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+
+                @* // Indicadores del carrusel *@
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     @if (Model.Imagen2 != null)
@@ -117,8 +121,11 @@
                         <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     }
                 </div>
+
+                @* // Contenido del carrusel *@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
+                        @* // Imagen principal del producto *@
                         @if (Model.Imagen != null)
                         {
                             <img src="data:image/png;base64,@Convert.ToBase64String(Model.Imagen)" alt="Imagen del Producto" class="d-block w-100 img-fluid" />
@@ -129,12 +136,15 @@
                         }
                     </div>
 
+                    @* // Segunda imagen del producto, si existe *@
                     @if (Model.Imagen2 != null)
                     {
                         <div class="carousel-item">
                             <img src="data:image/png;base64,@Convert.ToBase64String(Model.Imagen2)" alt="Imagen del Producto" class="d-block w-100 img-fluid" />
                         </div>
                     }
+
+                    @* // Tercera imagen del producto, si existe *@
                     @if (Model.Imagen3 != null)
                     {
                         <div class="carousel-item">
@@ -143,6 +153,7 @@
                     }
                 </div>
 
+                @* // Controles para navegar entre las imágenes del carrusel *@
                 <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
@@ -154,11 +165,13 @@
             </div>
         </div>
 
+        @* // Información del producto *@
         <div class="product-info">
             <p><strong>Descripción:</strong> @Html.DisplayFor(model => model.Descripcion)</p>
             <p><strong>Precio:</strong> @Html.DisplayFor(model => model.Precio)</p>
             <p><strong>Categoría:</strong> @Html.DisplayFor(model => model.Categoria)</p>
 
+            @* // Botón para agregar al carrito si hay stock, o mostrar mensaje de agotado *@
             @if (Model.CantidadEnStock != 0)
             {
                 <form method="post" action="@Url.Action("AgregarAlCarrito", "Home")">
@@ -169,10 +182,11 @@
             else
             {
                 <div class="alert alert-danger" role="alert">
-                   Agotado!
+                    Agotado!
                 </div>
             }
 
+            @* // Botón para regresar *@
             <input type="button" class="regresar btn btn-danger" value="Regresar" onclick="document.location.href = '@Url.Content("~/Home/Index")'" />
         </div>
 
@@ -183,3 +197,4 @@
 
 </body>
 </html>
+

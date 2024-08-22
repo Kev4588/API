@@ -412,12 +412,7 @@
                 color: black;
                 transition: all 0.3s ease-in-out;
             }
-
-
-
-
-
-        }
+        
     </style>
 
 </head>
@@ -426,26 +421,26 @@
     <main>
         <div class="container mt-4">
             <div class="row">
-                <!-- Filtros en el lado izquierdo -->
-
-                <div class="col-lg-12 mb-12 sticky  cinto-rojo">
+                <!-- Sección de filtros en la parte superior -->
+                <div class="col-lg-12 mb-12 sticky cinto-rojo">
 
                     <div class="contenedor-filtros">
                         <h3>REPARTIDORES PURIS FLASH</h3>
 
+                        @* // Banner de imagen *@
                         <div class="banner">
-
                             <img src="@Url.Content("~/Content/images/BANNER.png")" class="banner">
                         </div>
 
+                        @* // Formulario de búsqueda para filtrar repartidores *@
                         <form method="get" action="@Url.Action("Index", "Repartidores")">
-                            <!-- Nombre -->
+                            <!-- Filtro por nombre -->
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Nombre del Repartidor:</label>
                                 <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Cualquiera" value=@ViewBag.NombreHotelSeleccionado>
                             </div>
 
-                            <!-- Tipo de Transporte -->
+                            <!-- Filtro por tipo de transporte -->
                             <div class="mb-3">
                                 <label for="tipoDeTransporte" class="form-label">Tipo de Transporte:</label>
                                 <select class="form-select" id="tipoDeTransporte" name="tipoDeTransporte">
@@ -457,30 +452,36 @@
                                 </select>
                             </div>
 
+                            <!-- Botón para buscar repartidores -->
                             <button type="submit" class="btn btn-success buscar-btn">Buscar</button>
                         </form>
                     </div>
                 </div>
 
-                <!-- Contenido de repartidores en el lado derecho -->
-                <div class="col-lg-12 alineaCards ">
+                <!-- Sección de tarjetas de repartidores -->
+                <div class="col-lg-12 alineaCards">
                     <div class="row">
                         @foreach (var repartidor in Model)
                         {
                             <div class="col-md-4 col-lg-4 mb-4">
                                 <div class="card">
                                     <div class="card-body">
+                                        @* // Nombre del repartidor *@
                                         <h5 class="card-title" style="height: 37px !important">@repartidor.NombreRepartidor</h5>
 
+                                        @* // Tipo de transporte del repartidor *@
                                         <p class="card-text" style="height:35px !important">@repartidor.TipoDeTransporte</p>
 
+                                        @* // Descripción del repartidor *@
                                         <p style="color:white;">@repartidor.Descripcion</p>
 
+                                        @* // Carrusel de imágenes del repartidor *@
                                         <div id="carouselRepartidor@(repartidor.IDRepartidor)" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
                                             <div class="carousel-inner">
                                                 @for (int i = 0; i < 3; i++)
                                                 {
                                                     <div class="carousel-item @(i == 0 ? "active" : "")">
+                                                        @* // Mostrar la imagen correspondiente o mensaje de "Sin Imagen" *@
                                                         @if (i == 0 && repartidor.Imagen != null && repartidor.Imagen.Length > 0)
                                                         {
                                                             <img src="data:image/png;base64,@Convert.ToBase64String(repartidor.Imagen)" alt="Imagen del Transporte" class="img-fluid" />
@@ -514,6 +515,8 @@
                                                     </div>
                                                 }
                                             </div>
+
+                                            @* // Controles del carrusel *@
                                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselRepartidor@(repartidor.IDRepartidor)" data-bs-slide="prev">
                                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                                 <span class="visually-hidden">Previous</span>
@@ -523,6 +526,8 @@
                                                 <span class="visually-hidden">Next</span>
                                             </button>
                                         </div>
+
+                                        @* // Enlace a WhatsApp *@
                                         <div class="mt-3 text-end">
                                             <p style="text-align: center;">
                                                 <a href="https://api.whatsapp.com/send?phone=83046213&text=Hola%20estoy%20interesado%20en%20más%20información" target="_blank">
@@ -535,10 +540,12 @@
                             </div>
                         }
                     </div>
+                    @* // Botón para regresar al menú principal *@
                     <a href="@Url.Action("Index", "Home")" class="btn btn-success volver-btn">Regresar al menú principal</a>
                 </div>
             </div>
         </div>
+
     </main>
 
     <!-- Scripts -->

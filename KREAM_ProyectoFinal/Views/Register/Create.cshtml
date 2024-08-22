@@ -83,6 +83,7 @@
 </head>
 <body>
 
+    @* // Muestra un mensaje de alerta si existe en TempData *@
     @if (TempData["Mensaje"] != null)
     {
         <script>
@@ -91,6 +92,7 @@
         </script>
     }
 
+    @* // Contenedor principal del formulario *@
     <div class="container mt-5">
         @using (Html.BeginForm("Create", "Register", FormMethod.Post, new { @class = "needs-validation", id = "mainForm", novalidate = "novalidate" }))
         {
@@ -99,36 +101,42 @@
                     <div class="form-container">
                         <h2 class="form-title">Crear una cuenta</h2>
 
+                        @* // Campo para ingresar la cédula *@
                         <div class="form-group">
                             @Html.LabelFor(model => model.Cedula)
                             @Html.TextBoxFor(model => model.Cedula, new { @class = "form-control", placeholder = "Cédula", required = "required", pattern = "[0-9]{9}", title = "La cédula debe contener solo números y tener 9 dígitos" })
                             @Html.ValidationMessageFor(model => model.Cedula, "", new { @class = "text-danger" })
                         </div>
 
+                        @* // Campo para ingresar el nombre *@
                         <div class="form-group">
                             @Html.LabelFor(model => model.Nombre)
                             @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control", placeholder = "Nombre", required = "required" })
                             @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
                         </div>
 
+                        @* // Campo para ingresar el primer apellido *@
                         <div class="form-group">
                             @Html.LabelFor(model => model.PrimerApellido)
                             @Html.TextBoxFor(model => model.PrimerApellido, new { @class = "form-control", placeholder = "Primer Apellido", required = "required" })
                             @Html.ValidationMessageFor(model => model.PrimerApellido, "", new { @class = "text-danger" })
                         </div>
 
+                        @* // Campo para ingresar el segundo apellido *@
                         <div class="form-group">
                             @Html.LabelFor(model => model.SegundoApellido)
                             @Html.TextBoxFor(model => model.SegundoApellido, new { @class = "form-control", placeholder = "Segundo Apellido", required = "required" })
                             @Html.ValidationMessageFor(model => model.SegundoApellido, "", new { @class = "text-danger" })
                         </div>
 
+                        @* // Campo para ingresar la edad *@
                         <div class="form-group">
                             @Html.LabelFor(model => model.Edad)
                             @Html.TextBoxFor(model => model.Edad, new { @class = "form-control", placeholder = "Edad", required = "required", pattern = "[0-9]+", title = "La edad debe ser un número" })
                             @Html.ValidationMessageFor(model => model.Edad, "", new { @class = "text-danger" })
                         </div>
 
+                        @* // Campo para seleccionar el género *@
                         <div class="form-group">
                             @Html.LabelFor(model => model.Sexo)
                             @Html.DropDownListFor(model => model.Sexo, new SelectList(
@@ -142,30 +150,35 @@
                             @Html.ValidationMessageFor(model => model.Sexo, "", new { @class = "text-danger" })
                         </div>
 
+                        @* // Campo para ingresar el teléfono *@
                         <div class="form-group">
                             @Html.LabelFor(model => model.Telefono)
                             @Html.TextBoxFor(model => model.Telefono, new { @class = "form-control", placeholder = "Teléfono", required = "required", pattern = "[0-9]{8}", title = "El teléfono debe contener exactamente 8 dígitos" })
                             @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
                         </div>
 
+                        @* // Campo para ingresar la dirección *@
                         <div class="form-group">
                             @Html.LabelFor(model => model.Direccion)
                             @Html.TextAreaFor(model => model.Direccion, new { @class = "form-control", placeholder = "Dirección", required = "required" })
                             @Html.ValidationMessageFor(model => model.Direccion, "", new { @class = "text-danger" })
                         </div>
 
+                        @* // Campo para ingresar el correo *@
                         <div class="form-group">
                             @Html.LabelFor(model => model.Correo)
                             @Html.TextBoxFor(model => model.Correo, new { @class = "form-control", placeholder = "Correo", required = "required", type = "email" })
                             @Html.ValidationMessageFor(model => model.Correo, "", new { @class = "text-danger" })
                         </div>
 
+                        @* // Campo para ingresar la contraseña *@
                         <div class="form-group">
                             @Html.LabelFor(model => model.Contrasena)
                             @Html.TextBoxFor(model => model.Contrasena, new { @class = "form-control", id = "Contrasena", placeholder = "Contraseña", type = "password", required = "required" })
                             @Html.ValidationMessageFor(model => model.Contrasena, "", new { @class = "text-danger" })
                         </div>
 
+                        @* // Campo para seleccionar la pregunta de seguridad *@
                         <div class="form-group">
                             @Html.LabelFor(model => model.PreguntaSeguridad)
                             @Html.DropDownListFor(model => model.PreguntaSeguridad, new SelectList(
@@ -180,12 +193,14 @@
                             @Html.ValidationMessageFor(model => model.PreguntaSeguridad, "", new { @class = "text-danger" })
                         </div>
 
+                        @* // Campo para ingresar la respuesta de seguridad *@
                         <div class="form-group">
                             @Html.LabelFor(model => model.RespuestaPreguntaSeguridad)
                             @Html.TextBoxFor(model => model.RespuestaPreguntaSeguridad, new { @class = "form-control", placeholder = "Respuesta", required = "required" })
                             @Html.ValidationMessageFor(model => model.RespuestaPreguntaSeguridad, "", new { @class = "text-danger" })
                         </div>
 
+                        @* // Botón para crear la cuenta y botón para regresar al login *@
                         <button type="submit" class="btn btn-primary btn-custom">Crear Cuenta</button>
                         <button type="button" class="btn btn-secondary btn-custom" onclick="window.location.href='@Url.Action("Login", "Login")'">Regresar</button>
                     </div>
@@ -194,26 +209,27 @@
         }
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function () {
-            'use strict';
-            window.addEventListener('load', function () {
-                var forms = document.getElementsByClassName('needs-validation');
-                Array.prototype.filter.call(forms, function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
-    </script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            var forms = document.getElementsByClassName('needs-validation');
+            Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
 </body>
 </html>
 

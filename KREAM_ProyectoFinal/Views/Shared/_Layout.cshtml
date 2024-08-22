@@ -414,71 +414,68 @@
 </head>
 <body style="padding: 0px">
 
-
+    @* // Verifica si hay un usuario en sesión *@
     @if (Session["UsuarioActual"] != null)
     {
+        @* // Barra de navegación superior *@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style="padding-bottom: 0px; padding-top: 0px">
 
-
+            @* // Sección de contacto (posiblemente decorativa) *@
             <div class="contact hidden-xs">
                 <div class="diagonal"></div>
             </div>
 
-            <a class=" d-flex align-items-center" href="@Url.Action("Index", "Home")" style="text-decoration:none;">
+            @* // Logo y título de la página *@
+            <a class="d-flex align-items-center" href="@Url.Action("Index", "Home")" style="text-decoration:none;">
                 <img src="@Url.Content("~/Content/images/LOGO.png")" alt="Logo PurisFlash" class="logo">
                 <h3 class="titulo-esquina">PURIS FLASH</h3>
             </a>
 
-
-
             <div class="container" style="font-family: Staatliches">
 
-
-
-
+                @* // Botón para colapsar la barra de navegación en pantallas pequeñas *@
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar navegación" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                @* // Opciones de la barra de navegación, dependiendo del tipo de usuario *@
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                     <ul class="tipo-usuario navbar-nav flex-grow-1 boton-por-tipo admin-options">
                         @if (ViewContext.RouteData.Values["controller"].ToString().Equals("Home", StringComparison.OrdinalIgnoreCase)
                             && ViewContext.RouteData.Values["action"].ToString().Equals("Index", StringComparison.OrdinalIgnoreCase))
-                         {
+                        {
+                            @* // Opciones para el administrador *@
                             if (ViewBag.TipoUsuario == 1) // ADMIN
                             {
                                 <div class="nav-item-container">
-                                    <li class="nav-item">
-                                        <i class='bx bx-edit'></i>@Html.ActionLink("Repartidores", "MostrarInformacion", "Repartidores", new { area = "" }, new { @class = "nav-link" })
-                                    </li>
-                                    <li class="nav-item">
-                                        <i class='bx bx-edit'></i>@Html.ActionLink("Productos", "Index", "Vendedor", new { area = "" }, new { @class = "nav-link" })
-                                    </li>
-                                    <li class="nav-item">
-                                        <i class='bx bx-edit'></i>@Html.ActionLink("Usuarios", "Index", "Admin", new { area = "" }, new { @class = "nav-link" })
-                                    </li>
-                                </div>
-                            }
-                            else if (ViewBag.TipoUsuario == 2) // COMPRADOR
-                            {
                                 <li class="nav-item">
-                                    <i class='bx bx-car'></i>@Html.ActionLink("Repartidores", "Index", "Repartidores", new { area = "" }, new { @class = "nav-link" })
+                                    <i class='bx bx-edit'></i>@Html.ActionLink("Repartidores", "MostrarInformacion", "Repartidores", new { area = "" }, new { @class = "nav-link" })
                                 </li>
-                            }
-
-                         }
-
+                                <li class="nav-item">
+                                    <i class='bx bx-edit'></i>@Html.ActionLink("Productos", "Index", "Vendedor", new { area = "" }, new { @class = "nav-link" })
+                                </li>
+                                <li class="nav-item">
+                                    <i class='bx bx-edit'></i>@Html.ActionLink("Usuarios", "Index", "Admin", new { area = "" }, new { @class = "nav-link" })
+                                </li>
+                        </div>
+                    }
+                    @* // Opciones para el comprador *@
+                    else if (ViewBag.TipoUsuario == 2) // COMPRADOR
+                    {
+                        <li class="nav-item">
+                            <i class='bx bx-car'></i>@Html.ActionLink("Repartidores", "Index", "Repartidores", new { area = "" }, new { @class = "nav-link" })
+                        </li>
+                    }
+                }
                         </ul>
 
-
-
+                        @* // Sección de íconos de carrito y usuario si el usuario está logueado *@
                         @if (Session["UsuarioActual"] != null)
                         {
-
                             <div class="d-flex align-items-center ml-auto">
-                                <!-- Icono de carrito -->
+                                @* // Ícono de carrito con contador de productos *@
                                 <div class="carrito-icono">
                                     <a href="@Url.Action("Index", "Carrito")" class="d-flex align-items-center" style="text-decoration:none;">
-                                        <!-- Contenido del icono de carrito -->
                                         @{
                                             var productosEnCarritoIds = new List<int>();
                                             if (!string.IsNullOrEmpty(usuario?.ProductosEnCarrito))
@@ -493,48 +490,36 @@
                                     </a>
                                 </div>
 
-                                <!-- Icono de usuario -->
+                                @* // Ícono de usuario con menú desplegable *@
                                 <div class="dropdown">
                                     <button id="dropdownMenuButton" class="btn btn-secondary" aria-expanded="false" style="margin-right: 15px">
                                         <i class='bx bx-user-circle' style="font-size:2rem;"></i> @ViewBag.UserSession
                                     </button>
 
-
+                                    @* // Opciones del menú desplegable del usuario *@
                                     <ul id="userDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
-
                                         <li><a class="dropdown-item mt-2" style="color:black !important" href="@Url.Action("Edit", "User", new { Id = usuario.Id })">Actualizar Perfil</a></li>
-                                        <!--aqui pasamos como parametro el ID para saber a quien vamos a editar-->
-
-
                                         <li><hr class="dropdown-divider"></li>
                                         <li><a class="dropdown-item mt-2" style="color:black !important" href="@Url.Action("Logout", "Login")">Cerrar sesión</a></li>
                                     </ul>
-
                                 </div>
+
+                                @* // Nombre del usuario logueado *@
                                 <p class="nombre-usuario" style="text-align: center; height:100%; width: 100%;">@usuario.Nombre</p>
-
-
                             </div>
-
-
                         }
-
-
                     </div>
-            </div>
-        </nav>
-    }
+                    </div>
+                </nav>
+            }
 
-
-
-
+            @* // Contenedor principal del cuerpo de la página *@
     <div class="container body-content">
         @RenderBody()
         <hr />
-
     </div>
 
+    @* // Scripts de la página *@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
 
@@ -550,60 +535,52 @@
         });
     </script>
 
+    @* // Carga de scripts adicionales *@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     @RenderSection("scripts", required: false)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 
-
-
-<!-- Footer -->
-<footer class="footer mt-auto py-3 bg-dark text-white"  style="background-color:black!important;">
+@* // Footer de la página *@
+<footer class="footer mt-auto py-3 bg-dark text-white" style="background-color:black!important;">
     <div class="container">
         <div class="row">
+            @* // Sección de contacto en el footer *@
             <div class="col-md-4 mb-3">
-                <h5>Contactanos</h5>
+                <h5>Contáctanos</h5>
                 <ul class="list-unstyled">
                     <li><a href="#" class="text-white">Sobre Nosotros</a></li>
                     <li><a href="#" class="text-white">Soporte</a></li>
-                    <li><a href="#" class="text-white">Politica de Privacidad</a></li>
+                    <li><a href="#" class="text-white">Política de Privacidad</a></li>
                 </ul>
             </div>
+
+            @* // Sección de redes sociales en el footer *@
             <div class="col-md-4 mb-3">
-                <h5>Siguenos</h5>
+                <h5>Síguenos</h5>
                 <ul class="list-unstyled">
                     <li><a href="https://www.facebook.com" class="text-white">Facebook</a></li>
                     <li><a href="https://www.twitter.com" class="text-white">Twitter</a></li>
                     <li><a href="https://www.instagram.com" class="text-white">Instagram</a></li>
                 </ul>
             </div>
+
+            @* // Sección de suscripción en el footer *@
             <div class="col-md-4 mb-3">
-                <h5>Subscribete</h5>
+                <h5>Suscríbete</h5>
                 <form>
                     <div class="input-group">
                         <input type="email" class="form-control" placeholder="Email address">
                         <div class="input-group-append">
-                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                            <button class="btn btn-primary" type="submit">Suscribir</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
+
+        @* // Sección de derechos de autor en el footer *@
         <div class="row mt-3">
             <div class="col-md-12 text-center">
                 <p>&copy; 2024 Your Company. All rights reserved.</p>
@@ -611,24 +588,6 @@
         </div>
     </div>
 </footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </html>
 

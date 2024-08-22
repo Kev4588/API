@@ -1,6 +1,7 @@
 ﻿@model PURIS_FLASH.Models.TableViewModel.UsersTableViewModel
 
 @{
+    // titulo
     ViewBag.Title = "Agregar Nuevo Usuario";
 }
 
@@ -8,55 +9,61 @@
 
 @using (Html.BeginForm("Add", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
+    
     @Html.AntiForgeryToken()
 
 <div class="container mt-4">
 
-
+    @*// cédula *@
     <div class="form-group">
         @Html.LabelFor(model => model.Cedula, htmlAttributes: new { @class = "control-label" })
         @Html.EditorFor(model => model.Cedula, new { htmlAttributes = new { @class = "form-control", type = "text" } })
         @Html.ValidationMessageFor(model => model.Cedula, "", new { @class = "text-danger" })
     </div>
 
-
+    @*// nombre*@
     <div class="form-group">
         @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label" })
         @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
     </div>
 
+    @*// apellido*@
     <div class="form-group">
         @Html.LabelFor(model => model.PrimerApellido, htmlAttributes: new { @class = "control-label" })
         @Html.EditorFor(model => model.PrimerApellido, new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.PrimerApellido, "", new { @class = "text-danger" })
     </div>
 
+    @*// segundo apellido *@
     <div class="form-group">
         @Html.LabelFor(model => model.SegundoApellido, htmlAttributes: new { @class = "control-label" })
         @Html.EditorFor(model => model.SegundoApellido, new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.SegundoApellido, "", new { @class = "text-danger" })
     </div>
 
+    @*// edad del usuario, con validación para solo permitir números.*@
     <div class="form-group">
         @Html.LabelFor(model => model.Edad, htmlAttributes: new { @class = "control-label" })
         @Html.EditorFor(model => model.Edad, new { htmlAttributes = new { @class = "form-control", type = "text", pattern = "[0-9]*", title = "Ingrese solo números" } })
         @Html.ValidationMessageFor(model => model.Edad, "", new { @class = "text-danger" })
     </div>
 
+    @*// teléfono del usuario, igual con validacion.*@
     <div class="form-group">
         @Html.LabelFor(model => model.Telefono, htmlAttributes: new { @class = "control-label" })
         @Html.EditorFor(model => model.Telefono, new { htmlAttributes = new { @class = "form-control", type = "text", pattern = "[0-9]*", title = "Ingrese solo números" } })
         @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
     </div>
 
+    @*// correo electrónico*@
     <div class="form-group">
         @Html.LabelFor(model => model.Correo, htmlAttributes: new { @class = "control-label" })
         @Html.EditorFor(model => model.Correo, new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.Correo, "", new { @class = "text-danger" })
     </div>
 
-
+    @*// genero*@
     <div class="form-group">
         @Html.LabelFor(model => model.Sexo, htmlAttributes: new { @class = "control-label" })
         <select id="GenderTypeDropdown" name="Sexo" class="form-control" data-val="true" data-val-required="Genero obligatorio">
@@ -67,23 +74,22 @@
         @Html.ValidationMessageFor(model => model.Sexo, "", new { @class = "text-danger" })
     </div>
 
-
+    @*// la dirección *@
     <div class="form-group">
         @Html.LabelFor(model => model.Direccion, htmlAttributes: new { @class = "control-label" })
         @Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.Direccion, "", new { @class = "text-danger" })
     </div>
 
-
+    @*// contraseña *@
     <div class="form-group">
         @Html.LabelFor(model => model.Contrasena, htmlAttributes: new { @class = "control-label" })
         @Html.EditorFor(model => model.Contrasena, new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.Contrasena, "", new { @class = "text-danger" })
     </div>
-
-
 </div>
 
+    // Botones para enviar el formulario (Agregar) y regresar a la página anterior (Regresar).
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Agregar" class="btn btn-primary" />
@@ -92,4 +98,3 @@
         </div>
     </div>
 }
-

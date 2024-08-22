@@ -145,46 +145,11 @@
         min-height: 56%;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <div class="container mt-4">
 
+    @* // Muestra un mensaje si hay un tipo de transporte en ViewBag *@
     @if (ViewBag.TipoDeTransporte != null)
     {
         <div class="alert alert-info">
@@ -192,18 +157,21 @@
         </div>
     }
 
+    @* // Título del carrito, muestra el nombre del usuario y la cantidad de productos en el carrito *@
     <h3 class="text-center mb-4">Carrito de @usuario.Nombre | Llevas @productosEnCarritoIds.Count productos en el carrito</h3>
 
+    @* // Tabla que muestra los productos en el carrito *@
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">Producto</th>
                 <th scope="col">Cantidad</th>
                 <th scope="col">Precio Unitario</th>
-                <th scope="col"></th> <!-- Espacio para el botón "Quitar" -->
+                <th scope="col"></th> <!-- Columna para el botón "Quitar" -->
             </tr>
         </thead>
         <tbody>
+            @* // Verifica si hay productos en el carrito y los muestra *@
             @if (ViewBag.DetallesProductosEnCarrito != null && ViewBag.DetallesProductosEnCarrito.Count > 0)
             {
                 foreach (var producto in ViewBag.DetallesProductosEnCarrito)
@@ -213,6 +181,7 @@
                         <td>@producto.Cantidad</td>
                         <td>₡@producto.Precio</td>
                         <td>
+                            @* // Formulario para quitar un producto del carrito *@
                             <form method="post" action="@Url.Action("QuitarProducto", "Carrito")">
                                 <input type="hidden" name="productoId" value="@producto.ProductoID" />
                                 <button type="submit" class="btn btn-danger">Quitar</button>
@@ -221,14 +190,14 @@
                     </tr>
                 }
 
-                <!-- Total General -->
-        <tr>
-            <td colspan="3" class="text-right">Total General:</td>
-            <td>@ViewBag.TotalGeneral.ToString("C0", System.Globalization.CultureInfo.CreateSpecificCulture("es-CR"))</td>
-        </tr>
+                <tr>
+                    <td colspan="3" class="text-right">Total General:</td>
+                    <td>@ViewBag.TotalGeneral.ToString("C0", System.Globalization.CultureInfo.CreateSpecificCulture("es-CR"))</td>
+                </tr>
             }
             else
             {
+                @* // Mensaje si no hay productos en el carrito *@
                 <tr>
                     <td colspan="4" class="text-center">No hay productos en el carrito</td>
                 </tr>
@@ -236,12 +205,13 @@
         </tbody>
     </table>
 
-    <!-- Botones de regresar y comprar -->
+    @* // Botones para regresar y proceder a comprar *@
     <div class="d-flex justify-content-between">
         <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Regresar</a>
         <a href="@Url.Action("PasarelaPago", "Carrito")" class="btn btn-success">Comprar</a>
     </div>
 </div>
+
 
 
 
